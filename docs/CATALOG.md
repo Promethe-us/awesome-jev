@@ -11,7 +11,7 @@
 | [System One 概念文档](https://docs.typesafe.ai/concepts/system-one) | “决策模型”与聊天模型的本质区别 |
 | [State 概念文档](https://docs.typesafe.ai/concepts/state) | 如何把上下文组织成 Jev 能吃的结构化状态 |
 | [Confidence 文档](https://docs.typesafe.ai/confidence) | confidence 与 probability 的区别、怎么用 |
-| [ [@CompleteSkeptic 官宣推文](https://x.com/CompleteSkeptic/status/2099925682726002904)（7.3 万赞）](https://x.com/CompleteSkeptic/status/2099925682726002904) | 90 秒读懂创始人的叙事 |
+| [@CompleteSkeptic 官宣推文（7.3 万赞）](https://x.com/CompleteSkeptic/status/2099925682726002904) | 90 秒读懂创始人的叙事 |
 | [《Jev 模型从 0 到 1 小白教程》（中文）](https://x.com/i/article/2101132195796791296) | 中文世界最系统的入门长文 |
 | [whatisjev.com（含中文版）](https://whatisjev.com/zh/getting-started) | 社区维护的知识站 |
 
