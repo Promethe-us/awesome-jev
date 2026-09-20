@@ -1,0 +1,8 @@
+# 本地参考材料与编辑器配置，不进入仓库
+/awesome-skills/
+/.claude/
+/.vscode/
+
+# 系统文件
+.DS_Store
+Thumbs.db
