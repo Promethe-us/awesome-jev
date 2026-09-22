@@ -1,8 +1,34 @@
-# 本地参考材料与编辑器配置，不进入仓库
 /awesome-skills/
 /.claude/
 /.vscode/
+/.idea/
+/AGENTS.md
+/Agent.md
 
-# 系统文件
+.env
+.env.*
+!.env.example
+!.env.*.example
+!.env.sample
+!.env.template
+
+node_modules/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+*.log
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
 .DS_Store
+._*
 Thumbs.db
+Desktop.ini
