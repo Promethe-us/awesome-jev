@@ -93,6 +93,7 @@
 | [realZachi/pg-jev](https://github.com/realZachi/pg-jev) | 291 | PostgreSQL 扩展：自然语言查表 |
 | [colliber/duckdb-jev](https://github.com/colliber/duckdb-jev) | 20 | DuckDB：typed Jev 答案即 SQL 类型 |
 | [maayanlevy/mysql-ailike](https://github.com/maayanlevy/mysql-ailike) | 4 | MySQL：按语义过滤行 |
+| [kylemclaren/jevql](https://github.com/kylemclaren/jevql) | 12 | 原生 PostgreSQL 的类 psql 客户端，无需扩展：SQL 在服务端执行，Jev 判断返回的行 |
 | [superagents-lab/jev-search](https://github.com/superagents-lab/jev-search) | 390 | Jev 驱动的网络搜索（信源选择 + 相关性排序） |
 | [kyotofin/tax-doc-classifier](https://github.com/kyotofin/tax-doc-classifier) | 358 | 作者报告在其 261 份 IRS 表格集合上的分类结果；不是跨领域准确率 |
 
