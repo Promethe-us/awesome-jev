@@ -2,7 +2,7 @@
 
 **语言 / Language: 简体中文 · [English](SOURCES_EN.md)**
 
-> 核验日期：**2026-09-22，Asia/Shanghai（UTC+8）**；**2026-09-24 两轮增补**——第一轮为 13 篇 arXiv 论文（方式见下文“论文检索与实验阅读”），第二轮为社区建议的评测、教程与待核验线索（见下文“关键事实”表 09-24 社区增补轮一行）。其余章节维持 09-22 快照。
+> 核验日期：**2026-09-22，Asia/Shanghai（UTC+8）**；**2026-09-24 两轮增补并完成全库链接核查**（见“关键事实”表 09-24 各行），仓库主标注更新为 **2026-09-24（Asia/Wuhan）**。
 > 返回 [README](../README.md) · [项目目录](CATALOG.md) · [论文与评测](RESEARCH.md) · [安装指南](INSTALLATION.md)
 
 ## 覆盖范围与证据等级
@@ -32,8 +32,9 @@
 | Cloudflare / OpenRouter | [Cloudflare 模型页](https://developers.cloudflare.com/ai/models/typesafe/jev/)、[OpenRouter 模型页](https://openrouter.ai/typesafe/jev-1.13)及[官方 beta 公告](https://x.com/OpenRouter/status/2100744709589316009) |
 | LangSmith Evals / Gateway | [09-21 产品公告](https://www.langchain.com/blog/jev-is-now-available-in-langsmith-evals)、[Decision models 文档](https://docs.langchain.com/langsmith/llm-gateway-decision-models)；区分 Jev BYOK、托管 SemIf 及其 09-28 免费期限与地区 / 计划限制 |
 | 服务事件 | [官方状态页](https://status.typesafe.ai/)；09-20 Console 事件在 09-21 08:16 UTC 标为恢复，09-21 API 事件在 23:40 UTC 标为恢复；复读时页面更新标记为 09-22 07:28 UTC，显示服务在线 |
-| 2026-09 论文潮（09-24 增补） | 线索来自 [PaperWeekly 09-23 盘点](https://mp.weixin.qq.com/s/kK3du8zji4fa_9chnBl7Dw)；13 个 arXiv 编号经 [arXiv API](https://export.arxiv.org/api/query) 逐篇核对标题、作者与首发日期（13/13 命中，其中 09-21 首发确为 6 篇）；正文要点与数字取自各论文摘要；5 个配套 GitHub 仓库核对过 `full_name` 与星数（09-24 快照），未审计代码 |
+| 2026-09 论文潮（09-24 增补） | 线索来自 [PaperWeekly 09-23 盘点](https://mp.weixin.qq.com/s/kK3du8zji4fa_9chnBl7Dw)；13 个 arXiv 编号经 [arXiv API](https://export.arxiv.org/api/query?id_list=2609.22753,2609.23136,2609.24052,2609.24965,2609.23986,2609.26532,2609.26550,2609.23959,2609.24395,2609.25845,2609.23886,2609.24574,2609.26758) 逐篇核对标题、作者与首发日期（13/13 命中，其中 09-21 首发确为 6 篇）；正文要点与数字取自各论文摘要；5 个配套 GitHub 仓库核对过 `full_name` 与星数（09-24 快照），未审计代码 |
 | 2026-09-24 社区增补轮 | **GitHub**：jev-benchmarks、jev-arena、pi-warden、jev-codex-router、jev-hub、awesome-jev-cn 六个仓库经公开 API 核对 `full_name` 与星数；jev-benchmarks / jev-arena / jev-codex-router 另读 README 原文核对数字与免责声明。**文章与文档**：腾讯云 ADP 博客、Pydantic AI 文档、投资界（卡兹克授权转载，09-21）、虎扑（硅星人Pro 转载，09-20）、腾讯云开发者（程序员鱼皮）五篇 HTTP 可读并抽取关键数字；硅星人Pro 公众号原文与三个知乎入口返回验证墙 / 403，以可读转载为准或列为待核验。**X**：@rinte0321、@ctatedev、@yanhua1010 三条经 FxTwitter 镜像核对作者、UTC 时间与文本。**小红书**：DeepSleep 笔记访问返回“页面不存在”，仅按第三方索引列为待核验线索。无法读取的正文一律不采信其数字 |
+| 2026-09-24 全库链接核查 | 10 个 Markdown 文件的 **219 条外部链接、65 个 GitHub 仓库**与全部内部锚点、相对链接逐一检查：GitHub 无 404，除 SemIf 已更名（[SemIf-OpenJev](https://github.com/TheoLeeCJ/SemIf-OpenJev)，README 与 CATALOG 同步更新）外无仓库改名；x.com、HN、Medium、Reddit、Substack、Discord、HuggingFace 等域名在本轮网络环境遭 DNS 污染不可达（其内容 09-22 已核验或经镜像可读），知乎 403、小红书“暂无法浏览”跳转、businesswire 403、微信验证墙与既有条目标注一致；未发现新增失效链接。README 主标注据此更新为 2026-09-24（Asia/Wuhan） |
 | 公司与融资 | [09-15 公司新闻稿](https://www.businesswire.com/news/home/20260915525333/en/)；保留有出处的信息，删除未核实的估值与人物细节 |
 
 以上都是日期快照。状态页会变化，模型别名、限流、价格与促销也应在实际使用前重查。
@@ -71,7 +72,7 @@
 
 - 检查官方发布文章、[文档索引](https://docs.typesafe.ai/llms.txt)和访谈中的公开技术材料。
 - [arXiv：Jev TypeSafe](https://arxiv.org/search/?query=Jev+TypeSafe&searchtype=all&abstracts=show&order=-announced_date_first&size=50) 本轮返回无结果；补充搜索精确 RLCD 全称及 OpenReview，未找到匹配的官方论文。精确全称的 arXiv 检索页另一次访问超时，不将这次失败计作“零结果”。
-- **09-24 论文增补**：微信公众号文章可读取原文（HTML 直取，正文完整），但其角色只是**发现线索**；13 篇论文以 [arXiv API 的 `id_list` 批量查询](https://export.arxiv.org/api/query)为准，逐篇核对编号、标题、作者与首发日期，全部命中后才收录。文章的分组（首批应用 / Jev-Anything / 开源平替与挑错）与“09-21 一天 6 篇”的说法与 API 返回一致；文章没给出各论文作者，作者名单取自 API。关键词站内检索可能漏检，09-22 关于“未找到官方论文”的检索结论按原样保留。
+- **09-24 论文增补**：微信公众号文章可读取原文（HTML 直取，正文完整），但其角色只是**发现线索**；13 篇论文以 [arXiv API 的 `id_list` 批量查询](https://export.arxiv.org/api/query?id_list=2609.22753,2609.23136,2609.24052,2609.24965,2609.23986,2609.26532,2609.26550,2609.23959,2609.24395,2609.25845,2609.23886,2609.24574,2609.26758)为准，逐篇核对编号、标题、作者与首发日期，全部命中后才收录。文章的分组（首批应用 / Jev-Anything / 开源平替与挑错）与“09-21 一天 6 篇”的说法与 API 返回一致；文章没给出各论文作者，作者名单取自 API。关键词站内检索可能漏检，09-22 关于“未找到官方论文”的检索结论按原样保留。
 - 阅读两篇先前工作预印本、校准基础论文、LLaDA / iLLaDA，以及同缩写但不同含义的 RLCD 论文；完整元数据与关联范围见 [RESEARCH.md](RESEARCH.md)。
 - 核对 judge 实验的 **5 个独立轨迹**、Archestra 的模型裁判一致子集、JevBench 的延迟修正、中文实验的 **40 个样本**与阈值选择方式。
 - `sysone-bench` 最初按 `main` 抓取失败，后确认默认分支为 `master`，成功读取 README、两版报告、硬件信息与原始 Jev JSON；核算为 541 条状态、751 个计分判断，更正作者概述的口径。未调用付费 API，也未重新训练或跑基准。
