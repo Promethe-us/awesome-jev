@@ -45,6 +45,9 @@ For direct TypeSafe access and the Vercel, Cloudflare, OpenRouter, and LangSmith
 | [samuelfaj/distill](https://github.com/samuelfaj/distill) | 683 | Coding agent with documents on Jev routing and token savings |
 | [reticlehq/reticle](https://github.com/reticlehq/reticle) | 810 | Agent-output verification tool; README listed Jev routing as planned, not delivered |
 | [kitze/skillbox](https://github.com/kitze/skillbox) | 224 | Self-hosted skill library with optional Jev integration |
+| [DevMortimer/pi-warden](https://github.com/DevMortimer/pi-warden) | 138 | Uses Jev to review coding-agent writes and project rules (added 09-24; stars snapshotted 09-24, same below) |
+| [0xNatoshi/jev-codex-router](https://github.com/0xNatoshi/jev-codex-router) | 247 | Per-turn Codex model and reasoning routing; the ~−60% saving comes from a 237-turn historical simulation and, per the project, is not measured billing (added 09-24) |
+| [Pydantic AI: TypeSafe (Jev) docs](https://pydantic.dev/docs/ai/models/typesafe/) | — | Framework's official integration docs: `TypeSafeModel`, typed outputs, boolean thresholds, tool calls, and low-confidence fallback (added 09-24) |
 
 ## I want browser, phone, or computer automation
 
@@ -76,6 +79,8 @@ For direct TypeSafe access and the Vercel, Cloudflare, OpenRouter, and LangSmith
 |---|---|---|
 | [danielgshea/jev-as-a-judge](https://github.com/danielgshea/jev-as-a-judge) | 63 | Judges weather-agent traces; five cases repeated 100 times, not 500 independent examples |
 | [fstandhartinger/jevbench](https://github.com/fstandhartinger/jevbench) | 71 | Decision-model benchmark; distinguish raw measurements, latency adjustments, and composite scores |
+| [AbdelStark/jev-benchmarks](https://github.com/AbdelStark/jev-benchmarks) | 17 | Pilot comparison against local GLiNER2.5; accuracy, coverage under an error budget, and latency, with public conditions (added 09-24) |
+| [NanmiCoder/jev-arena](https://github.com/NanmiCoder/jev-arena) | 98 | Ten thousand comments comparing Jev and DeepSeek side by side; AI-reviewed labels with replayable per-item checks (added 09-24) |
 | [instax-dutta/sysone-bench](https://github.com/instax-dutta/sysone-bench) | — | Matched-input Jev, Laya, Router, and Qwen comparison; original results were read, and README “states” differs from the decision count |
 | [yibie/laya-jev-lab](https://github.com/yibie/laya-jev-lab) | 2 | Small Chinese support-ticket study, confidence and cascade experiments, raw outputs, and retracted early conclusions |
 | [agent-chaperone/agent-chaperone](https://github.com/agent-chaperone/agent-chaperone) | 2 | MCP proxy and tool-hook review; default shadow mode only records and is not a sandbox |
@@ -138,6 +143,7 @@ Start with the [2026-09-22 research and evaluation guide](RESEARCH_EN.md), which
 
 | Resource | Reading note |
 |---|---|
+| [mizzlelover/jev-hub](https://github.com/mizzlelover/jev-hub) (added 09-24) | Aggregation index of X long-form posts and demo videos, keeping authors and original links; inclusion does not mean the demos were reproduced |
 | [Jev vs. classical ML](https://quicqdev.github.io/Jev-vs-ML/) | Early experiment lead; page could not be read during the last audit, so its numerical claims are not repeated |
 | [Jev vs. XGBoost and BERT](https://explainx.ai/blog/jev-vs-xgboost-bert-classifiers-2026) | Qualitative discussion; article says it did not run a matched-condition three-way benchmark |
 | [Jev means structured output is interesting again](https://www.seangoedecke.com/jev-means-structured-output-is-interesting-again/) | Renewed interest in structured output |
@@ -159,6 +165,9 @@ Start with the [2026-09-22 research and evaluation guide](RESEARCH_EN.md), which
 | [cobanov/awesome-jev](https://github.com/cobanov/awesome-jev) | 318 |
 | [fatwang2/awesome-jev](https://github.com/fatwang2/awesome-jev) | 187 |
 | [logicrw/awesome-jev-projects](https://github.com/logicrw/awesome-jev-projects) | 339 |
+| [CodeAlex52/awesome-jev-cn](https://github.com/CodeAlex52/awesome-jev-cn) | 0 (09-24) |
+
+The older rows are a 2026-09-22 snapshot; the 09-24 addition awesome-jev-cn is a Chinese aggregation repository that reorganizes awesome-jev and indexes Xiaohongshu / Bilibili leads; its Xiaohongshu entries are listed under the [README's unverified leads](../README_EN.md#xiaohongshu).
 
 ---
 

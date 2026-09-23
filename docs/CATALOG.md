@@ -47,6 +47,9 @@
 | [samuelfaj/distill](https://github.com/samuelfaj/distill) | 683 | 编码 Agent；附 Jev 路由与 token 节省机制文档 |
 | [reticlehq/reticle](https://github.com/reticlehq/reticle) | 810 | Agent 产出验证工具；README 将 Jev 路由列为计划，尚未交付该集成 |
 | [kitze/skillbox](https://github.com/kitze/skillbox) | 224 | 自托管技能库，可选 Jev 集成 |
+| [DevMortimer/pi-warden](https://github.com/DevMortimer/pi-warden) | 138 | 用 Jev 检查编码 Agent 的写入与项目规则（09-24 收录；星数 09-24 快照，下同） |
+| [0xNatoshi/jev-codex-router](https://github.com/0xNatoshi/jev-codex-router) | 247 | 按调用选择 Codex 模型与推理深度；约 −60% 的节省来自 237 轮历史模拟，项目自述非实测账单（09-24 收录） |
+| [Pydantic AI：TypeSafe (Jev) 文档](https://pydantic.dev/docs/ai/models/typesafe/) | — | 框架官方接入文档：`TypeSafeModel`、类型化输出、布尔阈值、工具调用与低置信度回退（09-24 收录） |
 
 ## 我想做浏览器 / 手机 / 电脑自动化
 
@@ -78,6 +81,8 @@
 |---|---|---|
 | [danielgshea/jev-as-a-judge](https://github.com/danielgshea/jev-as-a-judge) | 63 | 天气 Agent 轨迹评判；5 个案例重复 100 次，不能当作 500 个独立样本 |
 | [fstandhartinger/jevbench](https://github.com/fstandhartinger/jevbench) | 71 | 决策模型综合评测；需要区分原始测量、延迟修正和综合评分 |
+| [AbdelStark/jev-benchmarks](https://github.com/AbdelStark/jev-benchmarks) | 17 | 与本地 GLiNER2.5 的同任务对比试点；准确率、错误预算下覆盖率与延迟，条件公开（09-24 收录） |
+| [NanmiCoder/jev-arena](https://github.com/NanmiCoder/jev-arena) | 98 | 一万条评论同批对比 Jev 与 DeepSeek；GPT 复核口径，可回放逐条核查（09-24 收录） |
 | [instax-dutta/sysone-bench](https://github.com/instax-dutta/sysone-bench) | — | 同输入比较 Jev、Laya、Router 与 Qwen；已读原始结果，README 的 states / decisions 口径有差异 |
 | [yibie/laya-jev-lab](https://github.com/yibie/laya-jev-lab) | 2 | 中文客服小样本、置信度与级联实验；附原始输出和撤回结论 |
 | [agent-chaperone/agent-chaperone](https://github.com/agent-chaperone/agent-chaperone) | 2 | MCP 代理和工具 hooks 审查；默认 shadow，仅记录，不能替代沙箱 |
@@ -140,6 +145,7 @@ Jev 发布 4 天后 arXiv 开始出现相关论文，至 09-22 共 13 篇（逐�
 
 | 资源 | 结论倾向 |
 |---|---|
+| [mizzlelover/jev-hub](https://github.com/mizzlelover/jev-hub)（09-24 收录） | X 长文与演示视频聚合索引，保留作者与原链；收录不等于演示已复现 |
 | [Jev vs. classical ML](https://quicqdev.github.io/Jev-vs-ML/) | 早期实验入口；本轮未成功读取页面，不引用其数值结论 |
 | [Jev vs. XGBoost and BERT](https://explainx.ai/blog/jev-vs-xgboost-bert-classifiers-2026) | 定性讨论；文章说明并未完成三者同条件基准 |
 | [Jev means structured output is interesting again](https://www.seangoedecke.com/jev-means-structured-output-is-interesting-again/) | 结构化输出被重新点燃 |
@@ -161,6 +167,9 @@ Jev 发布 4 天后 arXiv 开始出现相关论文，至 09-22 共 13 篇（逐�
 | [cobanov/awesome-jev](https://github.com/cobanov/awesome-jev) | 318 |
 | [fatwang2/awesome-jev](https://github.com/fatwang2/awesome-jev) | 187 |
 | [logicrw/awesome-jev-projects](https://github.com/logicrw/awesome-jev-projects) | 339 |
+| [CodeAlex52/awesome-jev-cn](https://github.com/CodeAlex52/awesome-jev-cn) | 0（09-24） |
+
+旧表星数快照为 2026-09-22；09-24 增补的 awesome-jev-cn 是中文聚合仓库，整理 awesome-jev 并索引小红书 / B 站线索，其小红书条目见 [README 的待核验线索](../README.md#xiaohongshu)。
 
 ---
 

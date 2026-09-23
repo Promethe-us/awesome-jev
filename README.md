@@ -17,7 +17,7 @@
 
 </div>
 
-> 社区整理，与 TypeSafe AI 官方无关。**全库核验：2026-09-22（Asia/Shanghai）；2026-09-24 增补论文区**——新增 09-19 至 09-22 首发的 13 篇 arXiv 论文，标题 / 作者 / 首发日期经 arXiv API 逐篇核对，内容要点取自论文摘要，本仓库未复现实验。其余章节维持 09-22 快照。来源可读取不等于性能已被本仓库复现；覆盖范围与访问限制见 [核验记录](docs/SOURCES.md)。
+> 社区整理，与 TypeSafe AI 官方无关。**全库核验：2026-09-22（Asia/Shanghai）；2026-09-24 两轮增补**——第一轮新增 09-19 至 09-22 首发的 13 篇 arXiv 论文（标题 / 作者 / 首发日期经 arXiv API 逐篇核对）；第二轮按社区线索补录独立评测、中文实测、Pydantic AI 接入与 X / 知乎 / 小红书待核验线索（GitHub 仓库经 API 核对，X 帖经镜像核对，无法读取的正文明确标注）。内容要点均取自原文，本仓库未复现实验。其余章节维持 09-22 快照。来源可读取不等于性能已被本仓库复现；覆盖范围与访问限制见 [核验记录](docs/SOURCES.md)。
 
 ## 📑 目录
 
@@ -39,6 +39,7 @@
 
 | 变化 | 对使用者的意义 | 一手来源 |
 |---|---|---|
+| **第二轮社区增补（09-24）** | 新增独立评测（[jev-benchmarks](https://github.com/AbdelStark/jev-benchmarks)、[jev-arena](https://github.com/NanmiCoder/jev-arena)、[腾讯云 ADP 博客](https://adp.tencent.com/zh/blog/jev-vs-general-llm-automated-decision-selection)、[硅星人Pro 实测](https://www.huxiu.com/article/4892583.html)）、[Pydantic AI 官方接入文档](https://pydantic.dev/docs/ai/models/typesafe/)、三个工程项目与 X / 知乎 / 小红书待核验线索 | [评测页](docs/RESEARCH.md) · [核验记录](docs/SOURCES.md) |
 | **arXiv 出现 13 篇 Jev 相关论文** | 09-19（发布后 4 天）起挂出，至 09-22 共 13 篇，其中 09-21 一天 6 篇：首批应用、Agent 记忆 / Judge / 视觉（“Jev-Anything”）、开源平替与失效分析；数字均为作者报告 | [论文区](#papers) · [PaperWeekly 中文盘点，09-23](https://mp.weixin.qq.com/s/kK3du8zji4fa_9chnBl7Dw) |
 | **已取消候补名单** | 官方于 09-20 21:30 UTC（北京时间 09-21 05:30）宣布向所有用户开放；直接前往 Console | [官方 X 公告](https://x.com/typesafeai/status/2101786156572823624) |
 | **新用户起始 $5 额度** | 官方同帖回复公布约 1.2 亿输入 token 的起始额度；不是持续免费的承诺 | [官方回复](https://x.com/typesafeai/status/2101786280946499671) |
@@ -108,6 +109,7 @@ Jev 是 TypeSafe AI 的决策模型。程序提供文本状态和边界明确的
 | [Agent Skill](https://github.com/typesafe-ai/skills) | 为编码助手提供 TypeSafe 使用资料 |
 | [System One LLM 适配器](https://github.com/typesafe-ai/system-one-adapter-python) | 用 LLM 实现类似接口；输出与性能不等同于 Jev |
 | [Cookbooks](https://docs.typesafe.ai/cookbooks) | 重排、引用核查、特征构造、分类与路由 |
+| [Pydantic AI：TypeSafe (Jev) 模型文档](https://pydantic.dev/docs/ai/models/typesafe/)（09-24 增补） | 第三方 Agent 框架的官方接入：`TypeSafeModel`、类型化输出、布尔阈值、工具调用与低置信度回退示例 |
 | [已知不足](https://docs.typesafe.ai/model-jaggedness/jev-1.13) | 数值、日期、对抗输入和跨问题一致性等限制 |
 | [Workflow evals](https://evals.typesafe.ai/) · [状态页](https://status.typesafe.ai/) | 厂商实验与服务事件 |
 | [官方 X](https://x.com/typesafeai) · [Discord](https://discord.gg/typesafe) | 公告与社区交流 |
@@ -158,6 +160,9 @@ Jev 是 TypeSafe AI 的决策模型。程序提供文本状态和边界明确的
 | 09-17 | [@TheINAOG](https://x.com/TheINAOG/status/2100384258804093139) | 从模拟器 RAM 提取状态并做动作前瞻；游戏专用适配器降低了感知难度 |
 | 09-17 | [@sid19arya0](https://x.com/sid19arya0/status/2100458351440048258) | 宝可梦对战的单次演示，不能当作跨游戏模型排行榜 |
 | 09-16 | [@jpschroeder](https://x.com/jpschroeder/status/2100347770867458384) | 驾驶决策演示；“复刻 FSD”是作者说法，不能写成真实道路自动驾驶能力已验证 |
+| 09-17 | [@rinte0321](https://x.com/rinte0321/status/2100736454850908344)（09-24 经[镜像核验](https://api.fxtwitter.com/status/2100736454850908344)） | 日文电商实时接客演示：对话中途按用户发言即时推荐商品（Jev + gpt-live-1）；体验为作者描述，视频未复现 |
+| 09-18 | [@ctatedev](https://x.com/ctatedev/status/2101022101750571357)（09-24 经[镜像核验](https://api.fxtwitter.com/status/2101022101750571357)） | json-render + Jev 的动态界面实验：组件化 UI 毫秒级渲染，属于生成式 UI 方向的早期尝试 |
+| 09-19 | [@yanhua1010](https://x.com/yanhua1010/status/2101257759497089171)（09-24 经[镜像核验](https://api.fxtwitter.com/status/2101257759497089171)） | 用浏览器 Agent（Jev Ultrafast）查 12306 动车票：日常任务可用性演示；原帖直连受限，文本经镜像读取 |
 
 <a id="xiaohongshu"></a>
 ## 📕 小红书线索（Xiaohongshu）
@@ -172,13 +177,26 @@ Jev 是 TypeSafe AI 的决策模型。程序提供文本状态和边界明确的
 | 09-20，二级索引 | [一个视频搞懂Jev！](https://www.xiaohongshu.com/explore/6aaf548c000000000d025edf) | 作者 / 正文待核验 |
 | 09-18，二级索引 | [给Codex配上Jev，真不想回去了](https://www.xiaohongshu.com/explore/6aace869000000002a024546) | 作者 / 正文待核验 |
 | 09-18，二级索引 | [一文了解 Jev 模型到底是啥](https://www.xiaohongshu.com/explore/6aac6d53000000002802a9ff) | 作者 / 正文待核验 |
+| 09-23，中文聚合仓库索引（09-24 收录） | [DeepSleep《GPT6 太慢？试试 Jev》](https://www.xiaohongshu.com/explore/6aafe241000000001103375f) | 标题与署名来自 [CodeAlex52/awesome-jev-cn](https://github.com/CodeAlex52/awesome-jev-cn) 的索引；本轮访问返回“页面不存在”，正文未核实 |
 
 二级索引来自什么值得买的[参考来源列表 A](https://post.smzdm.com/p/ad798m6x/)、[列表 B](https://post.smzdm.com/p/a5ro30p3/)与[列表 C](https://post.smzdm.com/p/aggqvg7m/)，只用于发现原始链接。站内可检索 `Jev`、`Jev 模型`、`TypeSafe`、`Jev 实测`。完整访问情况与收录门槛见 [SOURCES.md](docs/SOURCES.md#xiaohongshu-checks)。
+
+### 知乎线索（待核验，09-24 收录）
+
+> 本轮三条知乎入口均返回 403，无法读取正文；标题与链接来自检索索引。**读到正文前，标题中的数字与方法不采信**。
+
+| 入口 | 状态 |
+|---|---|
+| [《每步决策 385ms：接进两个真实系统》](https://zhuanlan.zhihu.com/p/2085717977140352185) | 09-24 访问返回 403 |
+| [《JEV 应用接入实测：距离“能用”还远着》](https://zhuanlan.zhihu.com/p/2085662736722276833) | 09-24 访问返回 403 |
+| [《Jev 实战系列 04：Jev + CDP 浏览器自动化》](https://zhuanlan.zhihu.com/p/2084848802809303864) | 09-24 访问返回 403 |
+
+另：[程序员鱼皮的实战教程](https://cloud.tencent.com/developer/article/2748472)有[知乎同题入口](https://zhuanlan.zhihu.com/p/2085400278489101833)，同一实验只算一条，已收录在[深度文章](#reading)区，以可读取的腾讯云原文为准。
 
 <a id="ecosystem"></a>
 ## 💻 GitHub 生态
 
-> 星数为 **2026-09-22 GitHub API 快照**，表示关注度，不是质量或性能评分。完整分类、更多项目和更新后的仓库名称见 [CATALOG.md](docs/CATALOG.md)。
+> 星数为 **2026-09-22 GitHub API 快照**（09-24 增补的五行快照于 2026-09-24），表示关注度，不是质量或性能评分。完整分类、更多项目和更新后的仓库名称见 [CATALOG.md](docs/CATALOG.md)。
 
 | 方向 | 项目 | ★ | 阅读重点 |
 |---|---|---|---|
@@ -191,8 +209,13 @@ Jev 是 TypeSafe AI 的决策模型。程序提供文本状态和边界明确的
 | 训练实现 | [TianyuCodings/NanoJev](https://github.com/TianyuCodings/NanoJev) | 1,886 | 小型训练管线；独立实现而非官方权重 |
 | Agent 评测 | [danielgshea/jev-as-a-judge](https://github.com/danielgshea/jev-as-a-judge) | 63 | 可检查实验设计，严格区分重复次数和样本数 |
 | 综合评测 | [fstandhartinger/jevbench](https://github.com/fstandhartinger/jevbench) | 71 | 题目、模型适配器、结果和评分口径公开 |
+| 独立评测 | [AbdelStark/jev-benchmarks](https://github.com/AbdelStark/jev-benchmarks) | 17 | 与本地 GLiNER2.5 的同任务对比试点；准确率、错误预算下覆盖率与延迟，条件公开（09-24） |
 | 中文评测 | [yibie/laya-jev-lab](https://github.com/yibie/laya-jev-lab) | 2 | 中文客服、概率阈值与本地模型级联 |
+| 中文评测 | [NanmiCoder/jev-arena](https://github.com/NanmiCoder/jev-arena) | 98 | 一万条评论同批对比 Jev 与 DeepSeek；AI 复核口径、可回放逐条核查（09-24） |
 | 工具审查 | [agent-chaperone/agent-chaperone](https://github.com/agent-chaperone/agent-chaperone) | 2 | 检查工具调用和返回内容，默认 shadow 模式；不是沙箱 |
+| Agent 审查 | [DevMortimer/pi-warden](https://github.com/DevMortimer/pi-warden) | 138 | 用 Jev 检查编码 Agent 的写入与项目规则，附维护者评测（09-24） |
+| 模型路由 | [0xNatoshi/jev-codex-router](https://github.com/0xNatoshi/jev-codex-router) | 247 | 按调用选 Codex 模型与推理深度；约 −60% 的节省来自 237 轮历史模拟，非实测账单（09-24） |
+| 内容索引 | [mizzlelover/jev-hub](https://github.com/mizzlelover/jev-hub) | 23 | X 长文与演示视频聚合，保留作者与原链；演示不因此视为已复现（09-24） |
 | 编译优化 | [Ramneet-Singh/jevopt](https://github.com/Ramneet-Singh/jevopt) | 2 | Jev 选择是否内联，LLVM 负责变换合法性；有运行日志和比较脚本 |
 | 增长应用 | [Refix](https://refix.ai) | — | 增长：通过产品试验、SEO、内容与广告，让产品以自动驾驶方式更快增长 |
 
@@ -257,6 +280,8 @@ Jev 是 TypeSafe AI 的决策模型。程序提供文本状态和边界明确的
 | 日期 | 材料 | 价值 |
 |---|---|---|
 | 09-23 | [PaperWeekly：13 篇论文盘点（中文）](https://mp.weixin.qq.com/s/kK3du8zji4fa_9chnBl7Dw) | 按“首批应用 / Jev-Anything / 开源平替与挑错”三组梳理 09-19 至 09-22 的 arXiv 论文潮；数字以各论文原文为准 |
+| 09-21 | [数字生命卡兹克：这个只会做选择题的 Jev（授权转载）](https://news.pedaily.cn/202609/569378.shtml) | 将 Jev 用于 AI 信息预筛的作者自测：100 题比较、一条新闻同时回答多个问题；结果以截图与叙述呈现，标注为作者自测（09-24 收录） |
+| 09-20 | [硅星人Pro：实测 Jev（虎扑转载）](https://www.huxiu.com/article/4892583.html) | 50 条中文客服题 × 4 项判断 × 15 次重复：约 64–65% 正确、约 0.73 秒 / 题；**阈值附近的分数波动**——1.99 分对 2.00 分转人工截断，15 次中 3 题翻转；[公众号原帖](https://mp.weixin.qq.com/s?__biz=MzkyNjU2ODM2NQ%3D%3D&chksm=c34d64c8d9c576303a91a12548bb0d3a63e9c0d03e25645cd7d460b5cfaf5d0a192546d90b33&idx=1&mid=2247633323&sn=936abc6916a79b3005f4fc6c42e8653f)本轮被验证墙拦截，数字取自可读转载（09-24 收录） |
 | 09-21 | [LangSmith：Jev 评估集成](https://www.langchain.com/blog/jev-is-now-available-in-langsmith-evals) | 将轨迹与问题映射到反馈字段；附在线评估配置步骤 |
 | 09-21 | [Latent Space × Diogo Almeida](https://www.latent.space/p/jev) | 创始人长访谈与文字稿；设计动机、使用方式和生态案例 |
 | 09-21 | [Simon Willison：Decision Models](https://simonwillison.net/2026/Sep/21/jev/) | 接口、搜索重排与黑箱可解释性 |
@@ -268,6 +293,7 @@ Jev 是 TypeSafe AI 的决策模型。程序提供文本状态和边界明确的
 | 09-17 | [LangChain：Building a Harness with Jev](https://www.langchain.com/blog/building-a-harness-with-jev) | Agent 路由和工具执行前判断 |
 | 09-16 | [Sean Goedecke：结构化输出](https://www.seangoedecke.com/jev-means-structured-output-is-interesting-again/) | 接口设计与不同实现路径 |
 | 09-15 | [TypeSafe 公司新闻稿](https://www.businesswire.com/news/home/20260915525333/en/) | 公司与融资信息的一手出处 |
+| 收录于 09-24 | [程序员鱼皮：一手实战测评 + 保姆级教程（腾讯云开发者）](https://cloud.tencent.com/developer/article/2748472) | 数字华容道、1,000 封模拟邮件、连连看、697 篇文章打标签的操作记录；邮件速度与费用为作者测试，不写成通用基准；[知乎同题入口](https://zhuanlan.zhihu.com/p/2085400278489101833)勿重复计数 |
 
 讨论入口：[HN 发布帖](https://news.ycombinator.com/item?id=49717558)、[Simon 文章讨论（09-22 收录）](https://news.ycombinator.com/item?id=49796843)、[工具调用评测讨论](https://news.ycombinator.com/item?id=49788402)、[Reddit 先前工作争议](https://www.reddit.com/r/LocalLLaMA/comments/1wijo3e/i_literally_built_the_jev_architecture_one_year/)。讨论热度和当事人主张都不能替代实验或论文证据。
 

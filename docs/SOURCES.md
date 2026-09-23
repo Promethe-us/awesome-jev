@@ -2,7 +2,7 @@
 
 **语言 / Language: 简体中文 · [English](SOURCES_EN.md)**
 
-> 核验日期：**2026-09-22，Asia/Shanghai（UTC+8）**；**2026-09-24 增补论文区**（13 篇 arXiv 论文，核验方式见下文“论文检索与实验阅读”）。其余章节维持 09-22 快照。
+> 核验日期：**2026-09-22，Asia/Shanghai（UTC+8）**；**2026-09-24 两轮增补**——第一轮为 13 篇 arXiv 论文（方式见下文“论文检索与实验阅读”），第二轮为社区建议的评测、教程与待核验线索（见下文“关键事实”表 09-24 社区增补轮一行）。其余章节维持 09-22 快照。
 > 返回 [README](../README.md) · [项目目录](CATALOG.md) · [论文与评测](RESEARCH.md) · [安装指南](INSTALLATION.md)
 
 ## 覆盖范围与证据等级
@@ -33,6 +33,7 @@
 | LangSmith Evals / Gateway | [09-21 产品公告](https://www.langchain.com/blog/jev-is-now-available-in-langsmith-evals)、[Decision models 文档](https://docs.langchain.com/langsmith/llm-gateway-decision-models)；区分 Jev BYOK、托管 SemIf 及其 09-28 免费期限与地区 / 计划限制 |
 | 服务事件 | [官方状态页](https://status.typesafe.ai/)；09-20 Console 事件在 09-21 08:16 UTC 标为恢复，09-21 API 事件在 23:40 UTC 标为恢复；复读时页面更新标记为 09-22 07:28 UTC，显示服务在线 |
 | 2026-09 论文潮（09-24 增补） | 线索来自 [PaperWeekly 09-23 盘点](https://mp.weixin.qq.com/s/kK3du8zji4fa_9chnBl7Dw)；13 个 arXiv 编号经 [arXiv API](https://export.arxiv.org/api/query) 逐篇核对标题、作者与首发日期（13/13 命中，其中 09-21 首发确为 6 篇）；正文要点与数字取自各论文摘要；5 个配套 GitHub 仓库核对过 `full_name` 与星数（09-24 快照），未审计代码 |
+| 2026-09-24 社区增补轮 | **GitHub**：jev-benchmarks、jev-arena、pi-warden、jev-codex-router、jev-hub、awesome-jev-cn 六个仓库经公开 API 核对 `full_name` 与星数；jev-benchmarks / jev-arena / jev-codex-router 另读 README 原文核对数字与免责声明。**文章与文档**：腾讯云 ADP 博客、Pydantic AI 文档、投资界（卡兹克授权转载，09-21）、虎扑（硅星人Pro 转载，09-20）、腾讯云开发者（程序员鱼皮）五篇 HTTP 可读并抽取关键数字；硅星人Pro 公众号原文与三个知乎入口返回验证墙 / 403，以可读转载为准或列为待核验。**X**：@rinte0321、@ctatedev、@yanhua1010 三条经 FxTwitter 镜像核对作者、UTC 时间与文本。**小红书**：DeepSleep 笔记访问返回“页面不存在”，仅按第三方索引列为待核验线索。无法读取的正文一律不采信其数字 |
 | 公司与融资 | [09-15 公司新闻稿](https://www.businesswire.com/news/home/20260915525333/en/)；保留有出处的信息，删除未核实的估值与人物细节 |
 
 以上都是日期快照。状态页会变化，模型别名、限流、价格与促销也应在实际使用前重查。
