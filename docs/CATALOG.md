@@ -86,6 +86,20 @@
 
 这些是工具或实验仓库，**不是 Jev 的学术论文**。方法和局限见 [RESEARCH.md](RESEARCH.md)。
 
+## 我想读 2026-09 的 Jev 论文（论文潮与配套代码）
+
+Jev 发布 4 天后 arXiv 开始出现相关论文，至 09-22 共 13 篇（逐篇条目见 [RESEARCH.md](RESEARCH.md)）。以下 5 篇公开了配套仓库；**星数为 2026-09-24 GitHub API 快照**，仓库链接已核对元数据，代码未经本仓库审计。
+
+| 论文（首发） | ★ | 配套仓库与说明 |
+|---|---|---|
+| [Calibrated Decisions at Scale（09-21）](https://arxiv.org/abs/2609.24052) | 0 | [pozapas/jev-calibrated-narrative-coding](https://github.com/pozapas/jev-calibrated-narrative-coding)：事故叙述批量编码流水线 |
+| [Jev-Mem（09-21）](https://arxiv.org/abs/2609.23986) | 47 | [libingzheren/Jev-Mem](https://github.com/libingzheren/Jev-Mem)：System-One 控制的 Agent 记忆系统 |
+| [Visual Jev（09-22）](https://arxiv.org/abs/2609.25845) | 4 | [guanxuyu-sv/Visual-Jev](https://github.com/guanxuyu-sv/Visual-Jev)：一图多问的共享视觉上下文实现 |
+| [this-that-model-1.0（09-20）](https://arxiv.org/abs/2609.23886) | 20 | [FLock-io/this-that-model](https://github.com/FLock-io/this-that-model)：约 2B 开源类型化决策模型；权重在 [Hugging Face](https://huggingface.co/flock-io/this-that-model-1.0) |
+| [CSS 标注横评（09-21）](https://arxiv.org/abs/2609.24574) | 0 | [hazemibrahim97/decision-models-css](https://github.com/hazemibrahim97/decision-models-css)：18 任务横评的复现包 |
+
+其余 8 篇（两篇边缘 / 6G 编排、科学决策、REFLEX、JEV-as-a-Judge、CallScreenBench、JEVQA、选项名敏感性）本轮未见配套仓库；微信端可见的中文盘点见 [PaperWeekly，09-23](https://mp.weixin.qq.com/s/kK3du8zji4fa_9chnBl7Dw)。
+
 ## 我想做数据 / 数据库方向
 
 | 项目 | ★ | 说明 |
@@ -154,6 +168,6 @@
 
 1. 与 Jev / System One 直接相关（模型、SDK、复刻、集成、评测、深度解读）
 2. 正式条目应有可访问来源；X / 小红书附作者与日期，受限线索明确标记待核验
-3. 热度数据注明快照日期（本文件：2026-09-22）
+3. 热度数据注明快照日期（本文件主体：2026-09-22；论文潮一节：2026-09-24）
 
 欢迎 PR 补充，尤其是小红书、即刻、B站等中文平台内容！

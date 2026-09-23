@@ -8,7 +8,7 @@
 
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Verified](https://img.shields.io/badge/Verified-2026--09--22-38bdf8)](docs/SOURCES_EN.md)
+[![Verified](https://img.shields.io/badge/Verified-2026--09--24-38bdf8)](docs/SOURCES_EN.md)
 
 **A source-backed collection of Jev / System One resources, community projects, and research.**
 
@@ -16,7 +16,7 @@
 
 </div>
 
-> Community-maintained; not affiliated with TypeSafe AI. **Last source audit: 2026-09-22 (Asia/Shanghai).** That audit focused on changes from September 20–22 and revisited launch-week material. This page distinguishes official statements, authors' experiments, and unverified leads. Being able to read a source does not mean this repository reproduced its performance claims. See the [source audit](docs/SOURCES_EN.md) for coverage and access limits.
+> Community-maintained; not affiliated with TypeSafe AI. **Full source audit: 2026-09-22 (Asia/Shanghai); papers section updated on 2026-09-24** with 13 arXiv papers first posted between September 19 and 22. Titles, authors, and first-submission dates were checked paper by paper against the arXiv API; content summaries come from the papers' abstracts, and this repository did not reproduce the experiments. All other sections keep the 09-22 snapshot. This page distinguishes official statements, authors' experiments, and unverified leads. Being able to read a source does not mean this repository reproduced its performance claims. See the [source audit](docs/SOURCES_EN.md) for coverage and access limits.
 
 ## 📑 Contents
 
@@ -34,10 +34,11 @@
 - [Contributing](#contributing)
 
 <a id="latest"></a>
-## 🆕 Latest changes (verified through 2026-09-22)
+## 🆕 Latest changes (full audit through 2026-09-22; papers added 09-24)
 
 | Change | What it means | Primary source |
 |---|---|---|
+| **13 Jev-related papers appeared on arXiv** | Starting September 19 (four days after launch), 13 papers had been posted by September 22, six of them on September 21 alone: first applications; agent memory, judge, and vision work (“Jev-Anything”); and open alternatives plus failure analysis. All numbers are author-reported | [Papers section](#papers) · [PaperWeekly's Chinese roundup, 09-23](https://mp.weixin.qq.com/s/kK3du8zji4fa_9chnBl7Dw) |
 | **Waitlist removed** | TypeSafe announced access for everyone at 21:30 UTC on September 20 (05:30 Beijing time on September 21); go directly to the Console | [Official X announcement](https://x.com/typesafeai/status/2101786156572823624) |
 | **$5 starting credit for new users** | An official reply described this as roughly 120 million input tokens; it is not a promise of ongoing free use | [Official reply](https://x.com/typesafeai/status/2101786280946499671) |
 | **Vercel's temporary free offer** | A September 19 announcement said Jev would be free on AI Gateway through September 25. Treat this separately from TypeSafe's direct price and starting credit; check Vercel for the exact cutoff and account terms | [Vercel Developers](https://x.com/vercel_dev/status/2101116818463281579) |
@@ -90,7 +91,8 @@ The name Jev refers to William Stanley Jevons; System One borrows terminology fr
 | 09-19 | [Vercel temporary free offer](https://x.com/vercel_dev/status/2101116818463281579); [LangChain judge experiment](https://x.com/LangChain/status/2101454284927959080) |
 | 09-20 | [TypeSafe removes the waitlist](https://x.com/typesafeai/status/2101786156572823624); the community continues exploring semantic search, podcast ad detection, and asset selection |
 | 09-21 | [LangSmith Jev evaluations](https://www.langchain.com/blog/jev-is-now-available-in-langsmith-evals) and [SemIf hosting](https://x.com/Hacubu/status/2102064714851455363); [Python SDK 0.7.1](https://docs.typesafe.ai/sdk/python/changelog); [Simon Willison's analysis](https://simonwillison.net/2026/Sep/21/jev/); [founder interview](https://www.latent.space/p/jev) |
-| 09-22 | HN newly indexed [jevopt](https://news.ycombinator.com/item?id=49795171) and [jevframe](https://news.ycombinator.com/item?id=49795313), among others; this is the indexing date, not necessarily the first release date |
+| 09-22 | HN newly indexed [jevopt](https://news.ycombinator.com/item?id=49795171) and [jevframe](https://news.ycombinator.com/item?id=49795313), among others; this is the indexing date, not necessarily the first release date. Jev-related papers on arXiv also reached 13 that day ([Visual Jev](https://arxiv.org/abs/2609.25845), [REFLEX](https://arxiv.org/abs/2609.26532), [JEV-as-a-Judge](https://arxiv.org/abs/2609.26550), [Type-Safe Is Not Error-Free](https://arxiv.org/abs/2609.26758)) |
+| 09-23 | [PaperWeekly's Chinese roundup](https://mp.weixin.qq.com/s/kK3du8zji4fa_9chnBl7Dw) of this paper wave; see the [papers section](#papers) |
 
 <a id="official"></a>
 ## 🏢 Official resources and access
@@ -203,14 +205,39 @@ The browser project had a demo target that expired with time: [issue #93 on Sept
 - **Readable small Chinese-language study:** Jev got 31 of 40 support tickets correct; ambiguous and boundary cases remained problematic. [Chinese experiment](https://github.com/yibie/laya-jev-lab)
 - **More tasks in matched-input comparisons:** sysone-bench compares Jev, Laya, routed Laya, and constrained-decoding Qwen; strengths vary by task. Its “751 states” actually corresponds to 751 scored decisions in the raw file. See the [count audit](docs/RESEARCH_EN.md). [Experiment repository](https://github.com/instax-dutta/sysone-bench)
 - **Tool-call evaluations need class baselines and label provenance:** Archestra's 100-call study uses a subset where model judges agreed; read beyond aggregate accuracy. [Experiment article](https://archestra.ai/blog/we-tested-jev-on-100-real-agent-calls)
-- **Type-correct is not semantically correct:** known limitations cover arithmetic, dates, long contexts, adversarial inputs, and cross-question identities. [Official documentation](https://docs.typesafe.ai/model-jaggedness/jev-1.13)
+- **Type-correct is not semantically correct:** known limitations cover arithmetic, dates, long contexts, adversarial inputs, and cross-question identities. [Official documentation](https://docs.typesafe.ai/model-jaggedness/jev-1.13). A [September 22 paper on option-name sensitivity](https://arxiv.org/abs/2609.26758) adds measurements: swapping only the option-name-to-definition assignment dropped open Jev-like models from AUC 0.94 to 0.23, with the same pattern in the hosted Jev but smaller, while the type-error rate stayed 0%
+- **Third-party benchmarks are arriving:** a [September 21 computational-social-science annotation benchmark](https://arxiv.org/abs/2609.24574) (18 tasks, 7,977 items) reports the decision model behind the per-task best LLM on 14 of 15 formal tasks (median gap 11.6 macro-F1) at about 1/44 of the cost, with low-confidence routing to an LLM matching it at 1/4–1/2 of the cost; [REFLEX](https://arxiv.org/abs/2609.26532) (09-22) also reports an unstable advantage over cheap generative cascades in external evaluations. All author-reported, with tasks and prompts that differ, so they cannot be merged into one ranking
 
 See [research and evaluations](docs/RESEARCH_EN.md) for methods, metric definitions, limitations, and a replication checklist.
 
 <a id="papers"></a>
 ## 📄 Papers and technical reading
 
-The last audit **did not find an official TypeSafe technical paper on Jev / RLCD**. The official blog, documentation, and founder interview explain the product. The six papers below are selected by relevance; background papers are not presented as Jev's training recipe.
+The audits **still have not found an official TypeSafe technical paper on Jev / RLCD**; the official blog, documentation, and founder interview explain the product. However, four days after launch (September 19), the first third-party papers appeared on arXiv, and 13 had been posted by September 22. The table below follows the three groups used in [PaperWeekly's September 23 roundup](https://mp.weixin.qq.com/s/kK3du8zji4fa_9chnBl7Dw); titles, authors, and first-submission dates were verified against the arXiv API on 2026-09-24.
+
+> **All numbers are author-reported and not reproduced by this repository.** All are arXiv preprints and none has been peer reviewed. Per-paper authors, methods, and reading boundaries are in the [research guide](docs/RESEARCH_EN.md).
+
+### The September 2026 paper wave (09-19 through 09-22, 13 papers)
+
+| Group | First posted | Paper | Key points (author-reported) | Code |
+|---|---|---|---|---|
+| Applications | 09-19 | [Replacing LLMs with Jev Decision Models for Low-Latency Edge Service Orchestration, 2609.22753](https://arxiv.org/abs/2609.22753) | Edge service orchestration; median decision latency 15.9–26.5% lower than structured-output DeepSeek, and API fees per correctly completed task about 70% lower without caching; caching largely removes the latency gap | — |
+| Applications | 09-19 | [Fast Intent-Driven Service Orchestration with Jev for 6G Edge Networks, 2609.23136](https://arxiv.org/abs/2609.23136) | Intent-driven 6G orchestration; median decision latency 22.4% lower than DeepSeek and 61.9% lower than Gemini; in a real image service, 459 of 1,080 requests completed correctly and on time (DeepSeek 463, Qwen 435) | — |
+| Applications | 09-21 | [Calibrated Decisions at Scale: … Crash Narratives … (Jev), 2609.24052](https://arxiv.org/abs/2609.24052) | Batch coding of Texas crash narratives: 499,500 screened, 195,857 coded with a 27-question schema; F1 0.908 against 2,416 blinded human judgments; probabilities drive the sampling for human review | [GitHub](https://github.com/pozapas/jev-calibrated-narrative-coding) |
+| Applications | 09-21 | [Jev for Scientific Decisions, 2609.24965](https://arxiv.org/abs/2609.24965) | Semantic choices in scientific workflows; tied five other configurations at complete semantic correctness across ten cases with the lowest observed median latency; checks semantic choices, downstream computations, and final labels separately | — |
+| Jev-Anything | 09-21 | [Jev-Mem: System-One-Controlled Agentic Memory, 2609.23986](https://arxiv.org/abs/2609.23986) | Memory typing, retrieval budgets, query routing, and stopping handled by a System-One controller; LoCoMo composite score 0.777 and 158-second memory construction (6.6× faster than the fastest baseline) | [GitHub](https://github.com/libingzheren/Jev-Mem) |
+| Jev-Anything | 09-22 | [REFLEX with Jev for Efficient Selective Control in LLM Agents, 2609.26532](https://arxiv.org/abs/2609.26532) | Executes bounded decisions when confident, escalates otherwise; on a frozen 100-task benchmark, 95% success with 72.7% fewer strong-model calls, but external evaluations show an unstable advantage over cheap generative cascades | — |
+| Jev-Anything | 09-22 | [JEV-as-a-Judge: Accept When Confident, Escalate When Unsure, 2609.26550](https://arxiv.org/abs/2609.26550) | Compared against 16 generative and reward-model judges; within three percentage points of the strongest LLM judge on ordinary preference and factuality judgments at about 0.36% of its fee; a confidence cascade retains 99% of its accuracy | — |
+| Jev-Anything | 09-21 | [Open-Jev Judgments on CallScreenBench, 2609.23959](https://arxiv.org/abs/2609.23959) | JevLite, a LoRA-tuned Qwen3-4B, reads scam probability in one forward pass; AUROC 0.974 over 577 per-turn decisions in 41 scenarios; 64.5 ms per decision, 4.9× faster than generating with the same backbone; authors note no architectural novelty, test-set exposure in recipe selection, and synthetic callers | — |
+| Jev-Anything | 09-21 | [JEVQA — Video Quality …, 2609.24395](https://arxiv.org/abs/2609.24395) | Zero-shot video quality; metadata-only Pearson correlation 0.737 approaches standardized P.1204.1 (0.733), rising to 0.824 with bitstream and pixel features; purpose-trained models on the same features remain clearly ahead | — |
+| Jev-Anything | 09-22 | [Visual Jev: … Shared Visual Context, 2609.25845](https://arxiv.org/abs/2609.25845) | One image, many structured questions, shared visual context; at 32 questions per image, 8.9× faster than per-question execution and 3.4× faster than a batched scheme that recomputes the visual prefix, at higher peak memory | [GitHub](https://github.com/guanxuyu-sv/Visual-Jev) |
+| Open models and benchmarks | 09-20 | [this-that-model-1.0, 2609.23886](https://arxiv.org/abs/2609.23886) | ~2B-parameter open typed decision model at 30.9 ms per decision; scores 0.941 versus Jev's 0.765 on a third party's 68 recorded questions, and 0.560 versus Jev's 0.98–1.00 on multi-step arithmetic | [GitHub](https://github.com/FLock-io/this-that-model) |
+| Open models and benchmarks | 09-21 | [Evaluating Decision Models for Text Annotation in Computational Social Science, 2609.24574](https://arxiv.org/abs/2609.24574) | 18 computational-social-science tasks, 7,977 items, against 19 LLMs; the decision model trails the per-task best LLM on 14 of 15 formal tasks (median gap 11.6 macro-F1) at about 1/44 of the cost; routing low-confidence items to an LLM matches or beats the LLM alone at 1/4–1/2 of its cost | [GitHub](https://github.com/hazemibrahim97/decision-models-css) |
+| Open models and benchmarks | 09-22 | [Type-Safe Is Not Error-Free, 2609.26758](https://arxiv.org/abs/2609.26758) | Swapping only the option-name-to-rubric assignment (0/1 ↔ no/yes) causes large-scale reversals, AUC 0.94 → 0.23; the hosted Jev shows the same pattern, smaller in magnitude; the type-error rate stays 0% throughout | — |
+
+### Background and disambiguation (launch-week entries)
+
+No official TypeSafe paper has been found, so **there is no “Jev training recipe” paper to read**. The six papers below are selected by relevance; background papers are not presented as Jev's training recipe.
 
 | Category | Original paper | Relationship |
 |---|---|---|
@@ -228,6 +255,7 @@ Authors, dates, publication status, and reading boundaries are in the [research 
 
 | Date | Material | Why read it |
 |---|---|---|
+| 09-23 | [PaperWeekly: roundup of 13 papers (Chinese)](https://mp.weixin.qq.com/s/kK3du8zji4fa_9chnBl7Dw) | Organizes the September 19–22 arXiv wave into “first applications / Jev-Anything / open alternatives and stress tests”; treat the papers themselves as the source of record for numbers |
 | 09-21 | [LangSmith: Jev evaluations](https://www.langchain.com/blog/jev-is-now-available-in-langsmith-evals) | Maps traces and questions to feedback fields; includes online evaluator setup |
 | 09-21 | [Latent Space × Diogo Almeida](https://www.latent.space/p/jev) | Long founder interview and transcript on design, use, and ecosystem examples |
 | 09-21 | [Simon Willison: Decision Models](https://simonwillison.net/2026/Sep/21/jev/) | Interface, search reranking, and interpretability with numeric-only output |

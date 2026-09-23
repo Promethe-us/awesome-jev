@@ -1,6 +1,6 @@
 # Sources and verification log
 
-> Audit date: **2026-09-22, Asia/Shanghai (UTC+8)**. This round focused on September 20–22 and rechecked launch-week material.
+> Audit date: **2026-09-22, Asia/Shanghai (UTC+8)**; **papers section added on 2026-09-24** (13 arXiv papers; method under “Paper search and evaluation reading”). All other sections keep the 09-22 snapshot.
 > [English README](../README_EN.md) · [Catalog](CATALOG_EN.md) · [Research and evaluations](RESEARCH_EN.md) · [Getting started](INSTALLATION_EN.md) · [中文原文](SOURCES.md)
 
 ## Coverage and evidence levels
@@ -10,7 +10,7 @@
 | Official information | TypeSafe launch article, documentation, SDK changelog, status page; official material from four gateways and LangSmith Evals | That this repository reproduced the documentation's claims or that all gateway specifications match |
 | X | Authors, dates, and readable text for **45 distinct posts**: 32 via X's official embed endpoint and 13 via the FxTwitter mirror | Exhaustive platform coverage, complete access to every long post or video, or reproduction of every demo |
 | GitHub | Public API metadata for **51 repositories**, plus README or result files for selected new and older entries | That stars measure quality or every project's code was audited |
-| Papers | Original pages for **six papers**; HTML full text for the two directly relevant to the prior-work dispute | That these are Jev papers or reveal Jev's private architecture |
+| Papers | Original pages for **six papers**, with HTML full text for the two directly relevant to the prior-work dispute (09-22 snapshot); **13 more added on 09-24** (first posted 09-19 to 09-22), each checked against the arXiv API for title, authors, and first-submission date, with content from abstracts | That these are Jev's official papers (still nonexistent) or that this repository reproduced the abstract numbers |
 | Engineering and evaluation | Author blogs, experiment repositories, result reports, founder interview, and transcript | That scores from different samples, hardware, regions, and price definitions can be ranked together |
 | Xiaohongshu | Search page, nine note links, and secondary indexes; **no verifiable note body text** | Complete platform coverage or confirmation of speed and cost claims in titles |
 
@@ -30,6 +30,7 @@ Main entries prefer official pages, authors' original posts, primary papers, and
 | Cloudflare / OpenRouter | [Cloudflare model page](https://developers.cloudflare.com/ai/models/typesafe/jev/), [OpenRouter model page](https://openrouter.ai/typesafe/jev-1.13), and [official beta announcement](https://x.com/OpenRouter/status/2100744709589316009) |
 | LangSmith Evals / Gateway | [September 21 product announcement](https://www.langchain.com/blog/jev-is-now-available-in-langsmith-evals), [decision-model docs](https://docs.langchain.com/langsmith/llm-gateway-decision-models); distinguished bring-your-own-key Jev from hosted SemIf and its September 28 promotion with region / plan restrictions |
 | Service incidents | [Official status page](https://status.typesafe.ai/); the September 20 Console incident was marked resolved at 08:16 UTC on September 21, and the September 21 API incident at 23:40 UTC. On rereading, the page showed an update timestamp of 07:28 UTC on September 22 and the service online |
+| The September 2026 paper wave (added 09-24) | The lead came from [PaperWeekly's September 23 roundup](https://mp.weixin.qq.com/s/kK3du8zji4fa_9chnBl7Dw); all 13 arXiv IDs were then checked one by one via the [arXiv API](https://export.arxiv.org/api/query) for title, authors, and first-submission date (13/13 matched, including exactly six first posted on 09-21). Content summaries and numbers come from the papers' abstracts. Five companion GitHub repositories had `full_name` and stars checked (09-24 snapshot); their code was not audited |
 | Company and financing | [September 15 company press release](https://www.businesswire.com/news/home/20260915525333/en/); retained sourced facts and removed unverified valuation and biographical details |
 
 These are dated snapshots. Recheck service status, aliases, rate limits, prices, and promotions before use.
@@ -67,6 +68,7 @@ We did not present “50×,” “200×,” or biographical titles as fact. A la
 
 - Checked the official launch article, [documentation index](https://docs.typesafe.ai/llms.txt), and publicly available technical material in the founder interview.
 - The [arXiv search for “Jev TypeSafe”](https://arxiv.org/search/?query=Jev+TypeSafe&searchtype=all&abstracts=show&order=-announced_date_first&size=50) returned no results in that round. Supplemental searches for the exact RLCD expansion and OpenReview found no matching official paper. One separate arXiv exact-phrase search timed out; we did not count that failure as “zero results.”
+- **09-24 papers addition:** the WeChat article was fully readable (direct HTML fetch), but it served only as a **lead**. The 13 papers were admitted after an [arXiv API `id_list` batch query](https://export.arxiv.org/api/query) confirmed each ID, title, author list, and first-submission date. The article's grouping (first applications / Jev-Anything / open alternatives and stress tests) and its “six papers on 09-21 alone” claim match the API response; the article named no authors, so author lists come from the API. Keyword site search may still miss items, so the 09-22 “no official paper found” conclusion is kept as-is.
 - Read the two prior-work preprints, a calibration paper, LLaDA / iLLaDA, and a paper using RLCD for a different expansion. Metadata and relevance boundaries are in the [research guide](RESEARCH_EN.md).
 - Checked the judge study's **five independent traces**, Archestra's model-judge agreement subset, JevBench's latency adjustments, and the Chinese study's **40 examples** and threshold selection.
 - An initial fetch of `sysone-bench` from `main` failed; its default branch was `master`. We then read its README, two report versions, hardware information, and raw Jev JSON, yielding 541 states and 751 scored decisions. We neither called a paid API nor reran training or benchmarks.

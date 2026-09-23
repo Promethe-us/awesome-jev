@@ -7,7 +7,7 @@
 
 ## 1. Jev 有没有官方论文？
 
-**本轮未检索到 TypeSafe 正式公开的 Jev / RLCD 技术论文。** 检查了官方发布文章、文档索引，以及 arXiv 的 `Jev TypeSafe` 检索；后者返回无结果。对 RLCD 全称和 OpenReview 的补充搜索也未找到匹配的官方论文。这是检索结论，不能证明所有渠道都不存在相关材料。
+**本轮未检索到 TypeSafe 正式公开的 Jev / RLCD 技术论文。** 检查了官方发布文章、文档索引，以及 arXiv 的 `Jev TypeSafe` 检索；后者返回无结果。对 RLCD 全称和 OpenReview 的补充搜索也未找到匹配的官方论文。这是检索结论，不能证明所有渠道都不存在相关材料。2026-09-24 增补的 13 篇论文（见下）**全部是第三方论文**，不改变这一结论。
 
 - [发布文章，2026-09-15](https://typesafe.ai/blog/introducing-system-one-models-and-jev)：官方给出训练目标、并行输出和工作流评测的说明，未提供完整训练配方。
 - [AI primer](https://docs.typesafe.ai/introduction/machine-learning-primer)：理解校准这一训练目标。
@@ -17,6 +17,30 @@
 因此，不把社区实现称为“官方架构复现”，也不根据某个 GitHub fork 推断 Jev 使用了某种具体底座。
 
 ## 2. 论文清单：每篇与 Jev 的关系
+
+### 2026-09 论文潮：Jev 发布后一周内出现的 13 篇论文
+
+Jev 于 09-15 发布；09-19（4 天后）第一批论文挂上 arXiv，至 09-22 累计 13 篇，其中 09-21 一天 6 篇。分组沿用 [PaperWeekly 09-23 的中文盘点](https://mp.weixin.qq.com/s/kK3du8zji4fa_9chnBl7Dw)。元数据核验方式：2026-09-24 通过 arXiv API（`export.arxiv.org`）逐篇核对标题、作者与首发日期，13 篇全部命中；内容与数字取自论文摘要，**均为作者报告，本仓库未复现**，且全部是未经同行评审的预印本。配套 GitHub 仓库来自论文摘要与上述盘点，仓库元数据于 09-24 核对，但本仓库未审计其代码。
+
+**与 Jev 的总体关系**：这批论文把 Jev 当作可调用的决策组件做应用、横评或压力测试（另有两篇开源替代实现），均**不涉及 Jev 的训练配方或内部架构**；比较对象、提示词与计费口径各不相同，不能合并成排行榜。
+
+| 分组 | 论文 | 作者与首发 | 核心内容与作者报告的数字 | 阅读边界 |
+|---|---|---|---|---|
+| 应用 | [Replacing LLMs with Jev Decision Models for Low-Latency Edge Service Orchestration](https://arxiv.org/abs/2609.22753) | Delong Li、Xu Wang、Haochen Gong、Rui Lang、Guangsheng Yu；2026-09-19；cs.DC/cs.NI | 从自然语言请求抽 4 个受限意图字段做边缘编排；三个测量块中位决策延迟比结构化输出 DeepSeek 低 15.9–26.5%；8 组配对 OCR 条件中 7 组正确按时数持平、1 组反超；无缓存时端到端延迟低 11.1–25.3%，每正确完成任务 API 费用低 69.0–70.6%；重复请求缓存基本抹平延迟差 | 对照组是特定部署的 DeepSeek 与自托管 Qwen / 规则基线；部分结果含建模执行成分；缓存命中场景收益消失是作者自己给出的边界 |
+| 应用 | [Fast Intent-Driven Service Orchestration with Jev for 6G Edge Networks](https://arxiv.org/abs/2609.23136) | 同上五作者；2026-09-19；cs.NI | Jev 从意图生成执行位置、截止时间、优先级约束，再交数值调度器；中位决策延迟比 DeepSeek 低 22.4%、比 Gemini 低 61.9%，建模场景完成率 +3.50 / +8.35 个百分点；对比直出属性的自托管 Qwen 仍低 53.0%、+4.78 个百分点；真实图像服务 1,080 请求中 459 个正确按时（DeepSeek 463、Qwen 435） | 与上一条同一团队、同一方向；优势集中在决策延迟而非解释质量；完成率提升来自建模仿真与 12 条轨迹的录制回放 |
+| 应用 | [Calibrated Decisions at Scale: Converting Police Crash Narratives into Probabilistic Crash Variables with a System One Model (Jev)](https://arxiv.org/abs/2609.24052) · [代码](https://github.com/pozapas/jev-calibrated-narrative-coding) | Amir Rafe、Subasish Das；2026-09-21；cs.CL | 德州事故叙述批量编码：筛查 499,500 条，27 题模式编码 195,857 条；对 2,416 条按抽样设计的盲评人工判断 F1 0.908；两个前沿 LLM 做同记录对照；同标签重校准把校准误差降为 1/3.3；加校准变量后九个因子年均 +10,747 起伤 / 死亡事故归因 | 成本是模式规模的函数而非叙述长度；校准因模型而异，“每个模型都要单独审计”是论文自己的结论；F1 只对该 27 题模式和该抽样有效 |
+| 应用 | [Jev for Scientific Decisions: Evaluating Semantic Choices and Their Consequences](https://arxiv.org/abs/2609.24965) | Boyuan Deng、Shuyi Fan、Hongyang Zhang、Xinhong Xie；2026-09-21；cs.CL/cs.AI | 科学流程中的语义选择评测：12 个模型配置、10 个案例 20 个有出处的 Choice 各重复 5 次；Jev 与另外 5 个配置并列语义全对，成功响应的中位延迟最低；一个文化史问题上 7 次错选改变了下游计数但最终标签仍正确 | 任务是“答案范围已知的语义选择”，算术与计数按官方建议交给程序；结论支持“准备好的决策任务”，不外推到开放推理 |
+| Jev-Anything | [Jev-Mem: System-One-Controlled Agentic Memory for Efficient AI Agents](https://arxiv.org/abs/2609.23986) · [代码](https://github.com/libingzheren/Jev-Mem) | Dongming Jiang、Yi Li、Bingzhe Li；2026-09-21；cs.AI/cs.LG | 记忆分类、关系组织、查询路由、检索预算、图遍历与停止条件由 System-One 控制器承担，LLM 只做复杂推理与答案合成；LoCoMo 综合 LLM-as-Judge 0.777（较最强基线相对 +11.0%），构建 158 s（快 6.6 倍），平均查询延迟 0.93 s（−36.7%） | 评测依赖 LLM-as-Judge 打分；“记忆” 这里是 Agent 记忆系统，与 Jev 产品本身无关；效率数字对照的是特定基线集 |
+| Jev-Anything | [REFLEX with Jev for Efficient Selective Control in LLM Agents](https://arxiv.org/abs/2609.26532) | Tiantong Wu、Wei Yang Bryan Lim；2026-09-22；cs.AI | 置信度足够高时执行 Jev 的受限决策，否则升级强模型；固定 100 任务 95% 成功率、强模型调用少 72.7%（三种回退模型族均成立）；可靠性受动作集大小与授权边界附近近似项影响；外部 BFCL 与 τ 风格评测中相对低成本生成级联优势有限 | 作者自己划定了收益边界：普通路由已很准时，换成 Jev 带来的额外收益不明显；100 任务是预先固定的基准，不是在线流量 |
+| Jev-Anything | [JEV-as-a-Judge: Accept When Confident, Escalate When Unsure](https://arxiv.org/abs/2609.26550) | Yubo Li、Yidi Miao、Ramayya Krishnan、Rema Padman；2026-09-22；cs.AI | 与 16 个生成式 / 奖励模型 Judge 及盲评人工裁决对比：常规偏好与有证据的事实判断上距最强 LLM Judge 不到 3 个百分点，费用约 0.36%；差距集中在低置信度判断；冻结级联（自信接受、存疑升级）以更低成本保留 99% 准确率 | 需要检查推导过程或识别“看似有理的错误答案”时差距明显扩大——这是适用范围的边界；与 LangChain 09-19/20 的五轨迹实验是不同研究，勿混用 |
+| Jev-Anything | [Open-Jev Judgments on CallScreenBench: Calibrated One-Pass Scam Screening with a Small Language Model](https://arxiv.org/abs/2609.23959) | Simiao Ren 等 9 人；2026-09-21；cs.CL | Qwen3-4B LoRA 微调出 JevLite，温度缩放的两标签 softmax 即 P(scam)；41 个场景 577 次逐轮判断，三种子集成 AUROC 0.974、校准误差 0.052，按预先登记的 0.02 边距不劣于 LLM Judge；合法来电零误报，同一挂断规则下提前 1.14 轮；单卡 64.5 ms / 次，比同底座生成答案快 4.9 倍 | 摘要明示：收益来自读出与校准而非准确率（微调 ModernBERT 不显著更差）、配方选择有测试集暴露、来电全部是合成数据；开放实现，不是 TypeSafe 官方组件 |
+| Jev-Anything | [JEVQA — Video Quality from Metadata, Bitstream, and Pixel Features with a General-Purpose Decision Model](https://arxiv.org/abs/2609.24395) | Werner Robitza；2026-09-21；eess.IV | 零样本视频质量预测：研究一（1,936 个编码 / 22 源，对 VMAF）仅元数据 Pearson 0.737 ≈ P.1204.1 的 0.733，加码流 0.797，加像素 + 码流 0.824，纯像素方案失败；研究二（AVT-VQDB-UHD-1，对 MOS）仅元数据 0.879 ≈ P.1204.1 的 0.898，码流特征无增益 | 论文自述同特征专门训练的模型在两个研究中都明显更好；Jev 不接收像素本身，像素特征需先转成文本，这一转换的成本与信息损失要单独评估 |
+| Jev-Anything | [Visual Jev: Accurate and Efficient Decisions from Shared Visual Context](https://arxiv.org/abs/2609.25845) · [代码](https://github.com/guanxuyu-sv/Visual-Jev) | Guanxu Yu、Yuhang Yao；2026-09-22；cs.CV/cs.LG | 一张图编码一次，多个问题后缀批执行并从语言模型头读候选概率；4 个基准上答案监督后训练把等权宏平均从 70.6% 提到 76.1%（增益集中在训练覆盖的两类任务）；N=32 时比逐问串行快 8.9 倍、比重算视觉前缀的批处理快 3.4 倍，峰值内存更高；类型化读出头的对照无一致精度优势 | 这是修改过的开放底座，不是调用 Jev 服务；官方接口不接收图像；加速倍数依赖“每图问题数”这一工作负载假设 |
+| 开源与横评 | [this-that-model-1.0: A typed decision model that decides in 30 ms, for a millionth of a cent](https://arxiv.org/abs/2609.23886) · [代码](https://github.com/FLock-io/this-that-model) | Zehua Cheng、Wei Dai、Jiahao Sun；2026-09-20；cs.CL | 约 2B 参数开源类型化决策模型，隐藏状态直读选项、单次前向答全部问题；单卡 30.9 ms / 次、32 次 / 秒、零输出 token；第三方记录的 68 题上 0.941（Brier 0.042）对 Jev 0.765（0.133）；多步算术 0.560 对 Jev 0.98–1.00；针对性二轮训练只改善目标 5 族、未迁移到其余 13 族 | 68 题的第三方队列很小，措辞与输入都是别人的；内部 42 族套件是自己选的；作者把“多步计算失败”如实写进摘要，引用时不要只取 0.941 |
+| 开源与横评 | [Evaluating Decision Models for Text Annotation in Computational Social Science](https://arxiv.org/abs/2609.24574) · [代码](https://github.com/hazemibrahim97/decision-models-css) | Hazem Ibrahim、Yasir Zaki；2026-09-21；cs.CL/cs.CY | 复刻 Ziems 等 (2024) 的 18 个计算社会科学分类任务（7,977 条），同一零样本协议下比 Jev、两个开放权重决策模型与 19 个 LLM；15 个正式任务中 14 个 Jev 落后单任务最佳 LLM，中位差 11.6 macro-F1，实测成本中位约为其 1/44；Jev 置信度校准优于 19 个 LLM 中的 16 个，但三个前沿模型中位校准误差更低（0.066 对 0.157）；共情任务上高置信度近随机；低置信度路由回 LLM 可用 1/4–1/2 成本追平或超过单用 LLM | 零样本协议，不含任何提示工程；"44 倍价差” 是中位实测而非保证；“实用定位” 是流水线第一步加路由，不是替代最强 LLM |
+| 开源与横评 | [Type-Safe Is Not Error-Free: A Constrained Decision Head Follows the Option Name, Not the Rubric Bound to It](https://arxiv.org/abs/2609.26758) | Yu Sun、Junhao Xu；2026-09-22；cs.AI | 只交换选项名与定义的对应（问题、状态、定义、选项集全不变）：1,200 个工作流决策中 0/1 → no/yes 使每百题多翻转 70.4 个答案（95% CI 67.6–73.1），AUC 0.94 → 0.23；4 个谓词上效应至少是中性对照的 7.4 倍且随选项数增强；均值池化的另一模型族翻转少 4.1 倍；托管 Jev AUC 0.8146 → 0.5806，翻转数是重测下限的 24 倍；换成随机字符串则回到中性区间且不损精度；全程类型错误率 0% | 这是对[官方已知不足](https://docs.typesafe.ai/model-jaggedness/jev-1.13)中“选项冲突”一条的受控放大；托管 Jev 的效应明显小于两个开源 Jev-like 模型，跨模型外推需谨慎；结论是“选项名语义极性”而非改名操作本身 |
+
+阅读这批论文时区分三类主张：**能力**（能否完成任务）、**效率**（延迟 / 成本节省，通常依赖特定对照与工作负载）和**失效**（何时判断失灵）。效率数字随对照模型、缓存与建模假设变化最大，引用时应连同对照条件一起给出。
 
 ### 直接关联社区争议的两篇预印本
 
@@ -59,6 +83,9 @@
 | [sysone-bench](https://github.com/instax-dutta/sysone-bench)及[报告与 09-22 补充](https://github.com/instax-dutta/sysone-bench/blob/master/FEEDBACK_REPORT.md) | 9 组任务、751 个计分判断；Jev 固定 1.13.0，本地 M2 上测试 Laya / Router / Qwen 约束解码 | 提供相同问题的哈希与原始结果；Jev 在多项任务领先，Laya 在 AG News、MNLI 子集更高；路由版 Laya 改善多语言结果 | 自编标签来自单一作者，公开数据只取小子集；不能混用 v1 与 v2–v4 指标。README 把判断数写成 states，详见下方核对 |
 | [Kev](https://github.com/jaredpalmer/kev) | 自有开发 / 测试切分，公开模型卡和训练配方 | 当前 README 已包含 Qwen3.5 的 0.8B / 4B / 9B；原 Qwen2.5-0.5B 是历史原型 | Jev 的比较只覆盖部分开发集；没有对应测试集成绩，不能把不同切分拼成领先结论 |
 | [Laya](https://github.com/NandhaKishorM/laya) | 开源决策模型及多语言路由实现 | 权重、实现与作者评测公开，适合本地实验 | 作者表格中的部分 Jev 数字来自外部测试，提示词和样本量不同；“本地无 API 费用”不等于硬件与运维成本为零 |
+| [CSS 标注横评，2609.24574](https://arxiv.org/abs/2609.24574) · [复现包](https://github.com/hazemibrahim97/decision-models-css) | 18 个计算社会科学分类任务、7,977 条样本的零样本横评：Jev、两个开放权重决策模型对 19 个 LLM | Jev 在 15 个正式任务中 14 个落后单任务最佳 LLM（中位差 11.6 macro-F1），实测成本中位约 1/44；置信度校准优于 16/19 个 LLM；低置信度路由回 LLM 用 1/4–1/2 成本追平或超过 | 复刻固定任务集的零样本协议，无提示工程；成本是中位实测而非报价；共情任务上高置信度但近随机，说明 confidence 不能替代任务验证 |
+| [JEV-as-a-Judge，2609.26550](https://arxiv.org/abs/2609.26550) | JEV 与 16 个生成式 / 奖励模型 Judge 的对比，配盲评人工裁决 | 常规偏好与证据事实判断距最强 LLM Judge 不到 3 个百分点、费用 0.36%；低置信度子集差距集中；冻结级联保留 99% 准确率、成本更低 | 与 danielgshea 的五轨迹实验是不同研究、不同数据；差距扩大的场景（检查推导、识别似真错误）恰好是 judge 的高价值场景 |
+| [Type-Safe Is Not Error-Free，2609.26758](https://arxiv.org/abs/2609.26758) | 1,200 个工作流决策上的选项名敏感性受控实验，覆盖 Jev 与两个开源 Jev-like 模型 | 语义选项名（no/yes）被交换后 AUC 0.94 → 0.23、每百题多翻转 70.4 个；托管 Jev 0.8146 → 0.5806；中性名（0/1、A/B）几乎无影响；类型错误率始终 0% | 单一研究、作者自建工作流决策；效应在模型族间差异大（均值池化族翻转少 4.1 倍），不能把开源模型上的数字直接安到 Jev 头上 |
 
 **sysone-bench 的统计口径核对**：读取其 [Jev 原始结果 JSON](https://github.com/instax-dutta/sysone-bench/blob/master/results/run_jev-1.13.0_20260921-212125.json)，逐组相加得到 `states = 541`、`decisions = 751`；例如 triage 为 40 条状态、160 个计分判断。因此本仓库不沿用 README 的“751 states”。这是对已公开文件的核算，不是重新运行模型。v2、v3、v4 的增量结果见反馈报告；早期 `REPORT.md` 只覆盖三组自编任务。
 

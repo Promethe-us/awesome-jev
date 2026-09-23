@@ -2,7 +2,7 @@
 
 **语言 / Language: 简体中文 · [English](SOURCES_EN.md)**
 
-> 核验日期：**2026-09-22，Asia/Shanghai（UTC+8）**。本轮重点更新 09-20 至 09-22 的信息，同时复查发布周资料。
+> 核验日期：**2026-09-22，Asia/Shanghai（UTC+8）**；**2026-09-24 增补论文区**（13 篇 arXiv 论文，核验方式见下文“论文检索与实验阅读”）。其余章节维持 09-22 快照。
 > 返回 [README](../README.md) · [项目目录](CATALOG.md) · [论文与评测](RESEARCH.md) · [安装指南](INSTALLATION.md)
 
 ## 覆盖范围与证据等级
@@ -12,7 +12,7 @@
 | 官方信息 | TypeSafe 发布文章、文档、SDK changelog、状态页；四个网关及 LangSmith Evals 的官方资料 | 文档承诺已经由本仓库实测，或各网关规格完全相同 |
 | X | **45 条不同帖文**的作者、日期与可读取文本；32 条来自 X 官方嵌入接口，另 13 条来自 FxTwitter 镜像 | 全平台穷尽检索、所有长文与视频均完整读取、所有演示均复现 |
 | GitHub | **51 个仓库**的公开 API 元数据；对新增重点项目及部分旧条目另读 README / 结果文件 | 星数代表质量，或所有项目代码均经过审计 |
-| 论文 | **6 篇**原始论文页面；对直接涉及先前工作争议的两篇另读 HTML 正文 | 这些都是 Jev 论文，或能据此证明 Jev 的私有架构 |
+| 论文 | **6 篇**原始论文页面，对其中涉及先前工作争议的两篇另读 HTML 正文（09-22 快照）；09-24 增补 **13 篇**（09-19 至 09-22 首发），经 arXiv API 逐篇核对标题 / 作者 / 首发日期，内容取自摘要 | 这些是 Jev 官方论文（仍不存在），或摘要数字已被本仓库复现 |
 | 工程与评测 | 作者博客、实验仓库、结果说明、创始人访谈及文字稿 | 不同样本、硬件、地区和计价口径可以直接合并排名 |
 | 小红书 | 搜索页、9 个笔记链接及二级索引；**未取得可核验的笔记正文** | 已完成平台内容覆盖，或标题中的速度 / 成本数字已经确认 |
 
@@ -32,6 +32,7 @@
 | Cloudflare / OpenRouter | [Cloudflare 模型页](https://developers.cloudflare.com/ai/models/typesafe/jev/)、[OpenRouter 模型页](https://openrouter.ai/typesafe/jev-1.13)及[官方 beta 公告](https://x.com/OpenRouter/status/2100744709589316009) |
 | LangSmith Evals / Gateway | [09-21 产品公告](https://www.langchain.com/blog/jev-is-now-available-in-langsmith-evals)、[Decision models 文档](https://docs.langchain.com/langsmith/llm-gateway-decision-models)；区分 Jev BYOK、托管 SemIf 及其 09-28 免费期限与地区 / 计划限制 |
 | 服务事件 | [官方状态页](https://status.typesafe.ai/)；09-20 Console 事件在 09-21 08:16 UTC 标为恢复，09-21 API 事件在 23:40 UTC 标为恢复；复读时页面更新标记为 09-22 07:28 UTC，显示服务在线 |
+| 2026-09 论文潮（09-24 增补） | 线索来自 [PaperWeekly 09-23 盘点](https://mp.weixin.qq.com/s/kK3du8zji4fa_9chnBl7Dw)；13 个 arXiv 编号经 [arXiv API](https://export.arxiv.org/api/query) 逐篇核对标题、作者与首发日期（13/13 命中，其中 09-21 首发确为 6 篇）；正文要点与数字取自各论文摘要；5 个配套 GitHub 仓库核对过 `full_name` 与星数（09-24 快照），未审计代码 |
 | 公司与融资 | [09-15 公司新闻稿](https://www.businesswire.com/news/home/20260915525333/en/)；保留有出处的信息，删除未核实的估值与人物细节 |
 
 以上都是日期快照。状态页会变化，模型别名、限流、价格与促销也应在实际使用前重查。
@@ -69,6 +70,7 @@
 
 - 检查官方发布文章、[文档索引](https://docs.typesafe.ai/llms.txt)和访谈中的公开技术材料。
 - [arXiv：Jev TypeSafe](https://arxiv.org/search/?query=Jev+TypeSafe&searchtype=all&abstracts=show&order=-announced_date_first&size=50) 本轮返回无结果；补充搜索精确 RLCD 全称及 OpenReview，未找到匹配的官方论文。精确全称的 arXiv 检索页另一次访问超时，不将这次失败计作“零结果”。
+- **09-24 论文增补**：微信公众号文章可读取原文（HTML 直取，正文完整），但其角色只是**发现线索**；13 篇论文以 [arXiv API 的 `id_list` 批量查询](https://export.arxiv.org/api/query)为准，逐篇核对编号、标题、作者与首发日期，全部命中后才收录。文章的分组（首批应用 / Jev-Anything / 开源平替与挑错）与“09-21 一天 6 篇”的说法与 API 返回一致；文章没给出各论文作者，作者名单取自 API。关键词站内检索可能漏检，09-22 关于“未找到官方论文”的检索结论按原样保留。
 - 阅读两篇先前工作预印本、校准基础论文、LLaDA / iLLaDA，以及同缩写但不同含义的 RLCD 论文；完整元数据与关联范围见 [RESEARCH.md](RESEARCH.md)。
 - 核对 judge 实验的 **5 个独立轨迹**、Archestra 的模型裁判一致子集、JevBench 的延迟修正、中文实验的 **40 个样本**与阈值选择方式。
 - `sysone-bench` 最初按 `main` 抓取失败，后确认默认分支为 `master`，成功读取 README、两版报告、硬件信息与原始 Jev JSON；核算为 541 条状态、751 个计分判断，更正作者概述的口径。未调用付费 API，也未重新训练或跑基准。

@@ -8,7 +8,7 @@
 
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Updated](https://img.shields.io/badge/Verified-2026--09--22-38bdf8)](docs/SOURCES.md)
+[![Updated](https://img.shields.io/badge/Verified-2026--09--24-38bdf8)](docs/SOURCES.md)
 
 **精选 Jev / System One 官方资料、社区实践与研究阅读**<br>
 **A source-backed collection of Jev resources, community projects, and research.**
@@ -17,7 +17,7 @@
 
 </div>
 
-> 社区整理，与 TypeSafe AI 官方无关。**本轮核验：2026-09-22（Asia/Shanghai）**；重点补充 09-20 至 09-22 的变化，并复核发布周资料。下文区分官方说明、作者实验和待核验线索。来源可读取不等于性能已被本仓库复现；覆盖范围与访问限制见 [核验记录](docs/SOURCES.md)。
+> 社区整理，与 TypeSafe AI 官方无关。**全库核验：2026-09-22（Asia/Shanghai）；2026-09-24 增补论文区**——新增 09-19 至 09-22 首发的 13 篇 arXiv 论文，标题 / 作者 / 首发日期经 arXiv API 逐篇核对，内容要点取自论文摘要，本仓库未复现实验。其余章节维持 09-22 快照。来源可读取不等于性能已被本仓库复现；覆盖范围与访问限制见 [核验记录](docs/SOURCES.md)。
 
 ## 📑 目录
 
@@ -35,10 +35,11 @@
 - [贡献](#contributing)
 
 <a id="latest"></a>
-## 🆕 最新变化（核验至 2026-09-22）
+## 🆕 最新变化（全库核验至 2026-09-22；论文区 09-24 增补）
 
 | 变化 | 对使用者的意义 | 一手来源 |
 |---|---|---|
+| **arXiv 出现 13 篇 Jev 相关论文** | 09-19（发布后 4 天）起挂出，至 09-22 共 13 篇，其中 09-21 一天 6 篇：首批应用、Agent 记忆 / Judge / 视觉（“Jev-Anything”）、开源平替与失效分析；数字均为作者报告 | [论文区](#papers) · [PaperWeekly 中文盘点，09-23](https://mp.weixin.qq.com/s/kK3du8zji4fa_9chnBl7Dw) |
 | **已取消候补名单** | 官方于 09-20 21:30 UTC（北京时间 09-21 05:30）宣布向所有用户开放；直接前往 Console | [官方 X 公告](https://x.com/typesafeai/status/2101786156572823624) |
 | **新用户起始 $5 额度** | 官方同帖回复公布约 1.2 亿输入 token 的起始额度；不是持续免费的承诺 | [官方回复](https://x.com/typesafeai/status/2101786280946499671) |
 | **Vercel 限时免费活动** | 09-19 公告称 Jev 在 AI Gateway 免费至 09-25；该活动与 TypeSafe 直连价格、赠送额度分开看，具体结束时间和账户条件以平台为准 | [Vercel Developers](https://x.com/vercel_dev/status/2101116818463281579) |
@@ -91,7 +92,8 @@ Jev 是 TypeSafe AI 的决策模型。程序提供文本状态和边界明确的
 | 09-19 | [Vercel 公布限时免费](https://x.com/vercel_dev/status/2101116818463281579)；[LangChain 发布 judge 实验](https://x.com/LangChain/status/2101454284927959080) |
 | 09-20 | [TypeSafe 取消候补名单](https://x.com/typesafeai/status/2101786156572823624)；社区继续探索语义搜索、播客广告识别和素材选择 |
 | 09-21 | [LangSmith Jev 评估集成](https://www.langchain.com/blog/jev-is-now-available-in-langsmith-evals)与 [SemIf 托管公告](https://x.com/Hacubu/status/2102064714851455363)；[Python SDK 0.7.1](https://docs.typesafe.ai/sdk/python/changelog)；[Simon Willison 分析](https://simonwillison.net/2026/Sep/21/jev/)；[创始人访谈](https://www.latent.space/p/jev) |
-| 09-22 | HN 新收录 [jevopt](https://news.ycombinator.com/item?id=49795171) 与 [jevframe](https://news.ycombinator.com/item?id=49795313) 等项目；这是收录日期，不代表项目当天首次发布 |
+| 09-22 | HN 新收录 [jevopt](https://news.ycombinator.com/item?id=49795171) 与 [jevframe](https://news.ycombinator.com/item?id=49795313) 等项目；这是收录日期，不代表项目当天首次发布。当天 arXiv 上的 Jev 相关论文累计达到 13 篇（[Visual Jev](https://arxiv.org/abs/2609.25845)、[REFLEX](https://arxiv.org/abs/2609.26532)、[JEV-as-a-Judge](https://arxiv.org/abs/2609.26550)、[Type-Safe Is Not Error-Free](https://arxiv.org/abs/2609.26758)） |
+| 09-23 | [PaperWeekly 中文盘点](https://mp.weixin.qq.com/s/kK3du8zji4fa_9chnBl7Dw)梳理这批论文；见[论文区](#papers) |
 
 <a id="official"></a>
 ## 🏢 官方资源与接入（Official Resources）
@@ -204,14 +206,39 @@ Jev 是 TypeSafe AI 的决策模型。程序提供文本状态和边界明确的
 - **中文场景已有可读小样本**：40 条工单中 Jev 31 条正确；含糊和边界输入仍有明显问题。[中文实验](https://github.com/yibie/laya-jev-lab)
 - **同输入横向测试出现更多任务**：sysone-bench 比较 Jev、Laya、路由版 Laya 与 Qwen 约束解码；各模型的优势随任务变化。其“751 states”实际对应原始文件中的 751 个计分判断，详见[口径核对](docs/RESEARCH.md)。[实验仓库](https://github.com/instax-dutta/sysone-bench)
 - **工具调用评测需要看多数类基线与标签来源**：Archestra 的 100 调用实验采用模型裁判一致子集，不能只读总准确率。[实验文章](https://archestra.ai/blog/we-tested-jev-on-100-real-agent-calls)
-- **类型正确不等于语义正确**：数学、日期、长上下文、对抗输入和跨问题恒等式都有已知限制。[官方说明](https://docs.typesafe.ai/model-jaggedness/jev-1.13)
+- **类型正确不等于语义正确**：数学、日期、长上下文、对抗输入和跨问题恒等式都有已知限制。[官方说明](https://docs.typesafe.ai/model-jaggedness/jev-1.13)。09-22 的[选项名敏感性论文](https://arxiv.org/abs/2609.26758)进一步实测：只交换选项名与定义的对应，Jev-like 开源模型 AUC 从 0.94 跌到 0.23，托管 Jev 同类现象但幅度较小，而类型错误率始终为 0%
+- **第三方横评开始出现**：09-21 的[计算社会科学标注横评](https://arxiv.org/abs/2609.24574)（18 任务 7,977 样本）报告 Jev 在 15 个正式任务中 14 个落后单任务最佳 LLM（中位差 11.6 macro-F1），但成本约为 1/44，且低置信度路由回 LLM 可用 1/4–1/2 成本追平；09-22 的 [REFLEX](https://arxiv.org/abs/2609.26532) 也报告外部评测对低成本生成级联的优势不稳定。均为作者报告，任务与提示词互不相同，不能合并排名
 
 完整方法比较、指标口径、局限与复核清单见 [RESEARCH.md](docs/RESEARCH.md)。
 
 <a id="papers"></a>
 ## 📄 论文与技术阅读（Papers & Technical Reading）
 
-本轮**未检索到 TypeSafe 官方 Jev / RLCD 论文**；官方博客、文档和新访谈提供产品说明。下面的 6 篇研究按关联性收录，不将背景论文包装成 Jev 的训练配方。
+本轮**仍未检索到 TypeSafe 官方 Jev / RLCD 论文**；官方博客、文档和新访谈提供产品说明。但 Jev 发布 4 天后（09-19），第一批第三方论文挂上 arXiv，至 09-22 累计 13 篇。下表按微信公众号 [PaperWeekly 的 09-23 盘点](https://mp.weixin.qq.com/s/kK3du8zji4fa_9chnBl7Dw)分为三组；标题、作者与首发日期已通过 arXiv API 逐篇核对（2026-09-24）。
+
+> **所有数字均为作者报告，本仓库未复现**；全部是 arXiv 预印本，未经同行评审。逐篇作者、方法与阅读边界见 [论文详解](docs/RESEARCH.md)。
+
+### 2026-09 论文潮（09-19 至 09-22，13 篇）
+
+| 分组 | 首发 | 论文 | 要点（作者报告） | 代码 |
+|---|---|---|---|---|
+| 应用 | 09-19 | [Replacing LLMs with Jev Decision Models for Low-Latency Edge Service Orchestration，2609.22753](https://arxiv.org/abs/2609.22753) | 边缘服务编排；中位决策延迟比结构化输出 DeepSeek 低 15.9–26.5%，无缓存时每正确完成任务的 API 费用低约七成；缓存基本抹平延迟差 | — |
+| 应用 | 09-19 | [Fast Intent-Driven Service Orchestration with Jev for 6G Edge Networks，2609.23136](https://arxiv.org/abs/2609.23136) | 6G 意图驱动编排；中位决策延迟比 DeepSeek 低 22.4%、比 Gemini 低 61.9%；真实图像服务 1,080 请求中 459 个正确按时（DeepSeek 463、Qwen 435） | — |
+| 应用 | 09-21 | [Calibrated Decisions at Scale: … Crash Narratives … (Jev)，2609.24052](https://arxiv.org/abs/2609.24052) | 德州事故叙述批量编码：筛查 499,500 条，27 题模式编码 195,857 条；对 2,416 条盲评人工判断 F1 0.908；概率用于抽选人工复核样本 | [GitHub](https://github.com/pozapas/jev-calibrated-narrative-coding) |
+| 应用 | 09-21 | [Jev for Scientific Decisions，2609.24965](https://arxiv.org/abs/2609.24965) | 科学流程中的语义选择；10 个案例上与其他 5 个配置并列语义全对，成功响应的中位延迟最低；强调语义选择、下游计算与最终标签分开检查 | — |
+| Jev-Anything | 09-21 | [Jev-Mem: System-One-Controlled Agentic Memory，2609.23986](https://arxiv.org/abs/2609.23986) | 记忆分类、检索预算、查询路由与停止条件交给 System-One 控制；LoCoMo 综合分 0.777，记忆构建 158 秒（比最快对照快 6.6 倍） | [GitHub](https://github.com/libingzheren/Jev-Mem) |
+| Jev-Anything | 09-22 | [REFLEX with Jev for Efficient Selective Control in LLM Agents，2609.26532](https://arxiv.org/abs/2609.26532) | 置信度足够高执行有限决策，否则升级到强模型；固定 100 任务保持 95% 成功率、强模型调用少 72.7%；但外部评测中相比低成本生成级联优势不稳定 | — |
+| Jev-Anything | 09-22 | [JEV-as-a-Judge: Accept When Confident, Escalate When Unsure，2609.26550](https://arxiv.org/abs/2609.26550) | 对比 16 个生成式 / 奖励模型 Judge；常规偏好与事实判断距最强 LLM Judge 不到 3 个百分点，费用约 0.36%；置信级联保留 99% 准确率 | — |
+| Jev-Anything | 09-21 | [Open-Jev Judgments on CallScreenBench，2609.23959](https://arxiv.org/abs/2609.23959) | Qwen3-4B 微调出 JevLite，单次前向读出诈骗概率；41 场景 577 次逐轮判断 AUROC 0.974；64.5 ms / 次、比同底座生成答案快 4.9 倍；作者自述无架构创新、配方选择有测试集暴露、来电均为合成 | — |
+| Jev-Anything | 09-21 | [JEVQA — Video Quality …，2609.24395](https://arxiv.org/abs/2609.24395) | 零样本视频质量；仅元数据相关 0.737 已接近标准化 P.1204.1（0.733），加码流 + 像素特征到 0.824；相同特征专门训练的模型仍明显更好 | — |
+| Jev-Anything | 09-22 | [Visual Jev: … Shared Visual Context，2609.25845](https://arxiv.org/abs/2609.25845) | 一图多问共享视觉上下文；每图 32 问时比逐问执行快 8.9 倍、比重算视觉前缀的批处理快 3.4 倍，代价是峰值内存更高 | [GitHub](https://github.com/guanxuyu-sv/Visual-Jev) |
+| 开源与横评 | 09-20 | [this-that-model-1.0，2609.23886](https://arxiv.org/abs/2609.23886) | 约 2B 参数开源类型化决策模型，单次判断 30.9 ms；第三方记录的 68 题上 0.941 对 Jev 0.765；多步计算任务 0.560 对 Jev 0.98–1.00 | [GitHub](https://github.com/FLock-io/this-that-model) |
+| 开源与横评 | 09-21 | [Evaluating Decision Models for Text Annotation in Computational Social Science，2609.24574](https://arxiv.org/abs/2609.24574) | 18 个计算社会科学任务 7,977 条样本，对比 19 个 LLM；15 个正式任务中 14 个 Jev 落后单任务最佳 LLM，中位差 11.6 macro-F1，成本约为其 1/44；低置信度路由回 LLM 可用 1/4–1/2 成本追平或更好 | [GitHub](https://github.com/hazemibrahim97/decision-models-css) |
+| 开源与横评 | 09-22 | [Type-Safe Is Not Error-Free，2609.26758](https://arxiv.org/abs/2609.26758) | 只交换选项名与定义的对应（0/1 ↔ no/yes）即大面积反转，AUC 0.94 → 0.23；托管 Jev 同类现象但幅度较小；全程类型错误率 0% | — |
+
+### 背景与辨析（发布周收录）
+
+本轮未检索到 TypeSafe 官方论文，因此**没有 Jev 的“训练配方”论文可读**。下面的 6 篇研究按关联性收录，不将背景论文包装成 Jev 的训练配方。
 
 | 分类 | 原始论文 | 关系 |
 |---|---|---|
@@ -229,6 +256,7 @@ Jev 是 TypeSafe AI 的决策模型。程序提供文本状态和边界明确的
 
 | 日期 | 材料 | 价值 |
 |---|---|---|
+| 09-23 | [PaperWeekly：13 篇论文盘点（中文）](https://mp.weixin.qq.com/s/kK3du8zji4fa_9chnBl7Dw) | 按“首批应用 / Jev-Anything / 开源平替与挑错”三组梳理 09-19 至 09-22 的 arXiv 论文潮；数字以各论文原文为准 |
 | 09-21 | [LangSmith：Jev 评估集成](https://www.langchain.com/blog/jev-is-now-available-in-langsmith-evals) | 将轨迹与问题映射到反馈字段；附在线评估配置步骤 |
 | 09-21 | [Latent Space × Diogo Almeida](https://www.latent.space/p/jev) | 创始人长访谈与文字稿；设计动机、使用方式和生态案例 |
 | 09-21 | [Simon Willison：Decision Models](https://simonwillison.net/2026/Sep/21/jev/) | 接口、搜索重排与黑箱可解释性 |

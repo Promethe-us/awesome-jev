@@ -84,6 +84,20 @@ For direct TypeSafe access and the Vercel, Cloudflare, OpenRouter, and LangSmith
 
 These are tools and experimental repositories, **not Jev academic papers**. See [methods and limitations](RESEARCH_EN.md).
 
+## I want to read the September 2026 Jev papers (the paper wave and its code)
+
+Jev-related papers started appearing on arXiv four days after launch; 13 had been posted by 09-22 (per-paper entries in [the research guide](RESEARCH_EN.md)). Five of them released companion repositories. **Stars are a 2026-09-24 GitHub API snapshot**; repository links were metadata-checked, and this repository has not audited their code.
+
+| Paper (first posted) | ★ | Companion repository and notes |
+|---|---|---|
+| [Calibrated Decisions at Scale (09-21)](https://arxiv.org/abs/2609.24052) | 0 | [pozapas/jev-calibrated-narrative-coding](https://github.com/pozapas/jev-calibrated-narrative-coding): batch crash-narrative coding pipeline |
+| [Jev-Mem (09-21)](https://arxiv.org/abs/2609.23986) | 47 | [libingzheren/Jev-Mem](https://github.com/libingzheren/Jev-Mem): System-One-controlled agent memory system |
+| [Visual Jev (09-22)](https://arxiv.org/abs/2609.25845) | 4 | [guanxuyu-sv/Visual-Jev](https://github.com/guanxuyu-sv/Visual-Jev): shared visual context for many questions per image |
+| [this-that-model-1.0 (09-20)](https://arxiv.org/abs/2609.23886) | 20 | [FLock-io/this-that-model](https://github.com/FLock-io/this-that-model): ~2B open typed decision model; weights on [Hugging Face](https://huggingface.co/flock-io/this-that-model-1.0) |
+| [CSS annotation benchmark (09-21)](https://arxiv.org/abs/2609.24574) | 0 | [hazemibrahim97/decision-models-css](https://github.com/hazemibrahim97/decision-models-css): replication package for the 18-task benchmark |
+
+The other eight papers (two edge / 6G orchestration, scientific decisions, REFLEX, JEV-as-a-Judge, CallScreenBench, JEVQA, and option-name sensitivity) had no companion repository found in this pass; a Chinese-language roundup is available from [PaperWeekly, 09-23](https://mp.weixin.qq.com/s/kK3du8zji4fa_9chnBl7Dw).
+
 ## I want data or database applications
 
 | Project | ★ | Notes |
@@ -152,6 +166,6 @@ Start with the [2026-09-22 research and evaluation guide](RESEARCH_EN.md), which
 
 1. Directly relevant to Jev / System One: models, SDKs, reimplementations, integrations, evaluations, or in-depth explanations.
 2. Published entries need an accessible source; X / Xiaohongshu entries should include author and date, and restricted leads must be marked unverified.
-3. Popularity figures need a snapshot date (here: 2026-09-22).
+3. Popularity figures need a snapshot date (main body: 2026-09-22; paper-wave section: 2026-09-24).
 
 PRs are welcome, especially for relevant material on Xiaohongshu, Jike, Bilibili, and other Chinese platforms.
