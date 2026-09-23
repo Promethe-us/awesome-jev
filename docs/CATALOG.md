@@ -96,6 +96,7 @@
 | [kylemclaren/jevql](https://github.com/kylemclaren/jevql) | 12 | 原生 PostgreSQL 的类 psql 客户端，无需扩展：SQL 在服务端执行，Jev 判断返回的行 |
 | [superagents-lab/jev-search](https://github.com/superagents-lab/jev-search) | 390 | Jev 驱动的网络搜索（信源选择 + 相关性排序） |
 | [kyotofin/tax-doc-classifier](https://github.com/kyotofin/tax-doc-classifier) | 358 | 作者报告在其 261 份 IRS 表格集合上的分类结果；不是跨领域准确率 |
+| [kylemclaren/jevpdf](https://github.com/kylemclaren/jevpdf) | 1 | 浏览器内按语义搜索 PDF：pdf.js 在本地提取文本行，Jev 对每行回答一次是/否，匹配的行逐页高亮并按概率排序 |
 
 ## 我想探索编译器和新的集成方向
 

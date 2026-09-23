@@ -94,6 +94,7 @@ These are tools and experimental repositories, **not Jev academic papers**. See 
 | [kylemclaren/jevql](https://github.com/kylemclaren/jevql) | 12 | psql-style client for vanilla PostgreSQL, no extension: SQL runs on the server, Jev judges the returned rows |
 | [superagents-lab/jev-search](https://github.com/superagents-lab/jev-search) | 390 | Jev-driven web search with source choice and relevance ranking |
 | [kyotofin/tax-doc-classifier](https://github.com/kyotofin/tax-doc-classifier) | 358 | Author-reported classification on 261 IRS forms in its collection; not cross-domain accuracy |
+| [kylemclaren/jevpdf](https://github.com/kylemclaren/jevpdf) | 1 | In-browser PDF search by meaning: pdf.js extracts lines locally, Jev answers one yes/no per line, and matching lines highlight page by page, ranked by probability |
 
 ## I want to explore compilers and new integrations
 
