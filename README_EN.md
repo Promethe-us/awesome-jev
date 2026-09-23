@@ -16,7 +16,7 @@
 
 </div>
 
-> Community-maintained; not affiliated with TypeSafe AI. **Full source audit: 2026-09-24 (Asia/Wuhan).** This page distinguishes official statements, authors' experiments, and unverified leads. Being able to read a source does not mean this repository reproduced its performance claims. See the [source audit](docs/SOURCES_EN.md) for coverage and access limits.
+> Community-maintained; not affiliated with TypeSafe AI. **Full source audit: 2026-09-24 (Asia/Shanghai).** This page distinguishes official statements, authors' experiments, and unverified leads. Being able to read a source does not mean this repository reproduced its performance claims. See the [source audit](docs/SOURCES_EN.md) for coverage and access limits.
 
 ## 📑 Contents
 
