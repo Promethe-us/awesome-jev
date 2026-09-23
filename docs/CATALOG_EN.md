@@ -95,6 +95,7 @@ These are tools and experimental repositories, **not Jev academic papers**. See 
 | [superagents-lab/jev-search](https://github.com/superagents-lab/jev-search) | 390 | Jev-driven web search with source choice and relevance ranking |
 | [kylemclaren/jevsearch](https://github.com/kylemclaren/jevsearch) | 2 | shadcn/ui ⌘K site-search block: keyword hits first, then one Jev request re-ranks the top 20; author-reported Hit@1 of 83% vs 41% keyword-only on 41 TypeSafe-docs queries; distinct from superagents-lab/jev-search |
 | [kyotofin/tax-doc-classifier](https://github.com/kyotofin/tax-doc-classifier) | 358 | Author-reported classification on 261 IRS forms in its collection; not cross-domain accuracy |
+| [kylemclaren/jevpdf](https://github.com/kylemclaren/jevpdf) | 1 | In-browser PDF search by meaning: pdf.js extracts lines locally, Jev answers one yes/no per line, and matching lines highlight page by page, ranked by probability |
 
 ## I want to explore compilers and new integrations
 
