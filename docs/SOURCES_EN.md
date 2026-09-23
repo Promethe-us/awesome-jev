@@ -50,6 +50,8 @@ Dates for X entries use **UTC**. For example, the waitlist-removal post was publ
 
 We visited the [Jev search page](https://www.xiaohongshu.com/search_result?keyword=jev&source=web_explore_feed). It returned a search page title but no readable note results; that does not prove the search had no matches. Detail pages reported temporary unavailability, redirected to login, or timed out. No connected platform search plugin was available in that audit session.
 
+Added on 2026-09-24: Xiaohongshu in recent years requires note links to carry a valid `xsec_token` (with `xsec_source`) security and anti-crawler parameter, bound to the session and source and subject to expiry; missing or expired tokens produce a login redirect, “temporarily unavailable,” or a 404. The access results above match this behavior and **do not prove the notes were deleted**; verification requires opening them in the app or with a valid token.
+
 Apart from the first lead from an older repository record, titles and index dates came from SMZDM reference lists [A](https://post.smzdm.com/p/ad798m6x/), [B](https://post.smzdm.com/p/a5ro30p3/), and [C](https://post.smzdm.com/p/aggqvg7m/). They were used only to discover links; **authors, publication dates, and note text were not verified against original platform content**.
 
 | Indexed date | Note link / title lead | Access result |

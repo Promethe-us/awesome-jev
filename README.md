@@ -177,7 +177,9 @@ Jev 是 TypeSafe AI 的决策模型。程序提供文本状态和边界明确的
 | 09-20，二级索引 | [一个视频搞懂Jev！](https://www.xiaohongshu.com/explore/6aaf548c000000000d025edf) | 作者 / 正文待核验 |
 | 09-18，二级索引 | [给Codex配上Jev，真不想回去了](https://www.xiaohongshu.com/explore/6aace869000000002a024546) | 作者 / 正文待核验 |
 | 09-18，二级索引 | [一文了解 Jev 模型到底是啥](https://www.xiaohongshu.com/explore/6aac6d53000000002802a9ff) | 作者 / 正文待核验 |
-| 09-23，中文聚合仓库索引（09-24 收录） | [DeepSleep《GPT6 太慢？试试 Jev》](https://www.xiaohongshu.com/explore/6aafe241000000001103375f) | 标题与署名来自 [CodeAlex52/awesome-jev-cn](https://github.com/CodeAlex52/awesome-jev-cn) 的索引；本轮访问返回“页面不存在”，正文未核实 |
+| 09-23，中文聚合仓库索引（09-24 收录） | [DeepSleep《GPT6 太慢？试试 Jev》](https://www.xiaohongshu.com/explore/6aafe241000000001103375f?xsec_source=pc_feed&xsec_token=ABBYuHgvK74N6nwyt2XSUtiXIRfSD7DdEkRk9hEf7bpsE%3D) | 标题、署名与带 `xsec_token` 的链接来自 [CodeAlex52/awesome-jev-cn](https://github.com/CodeAlex52/awesome-jev-cn) 的索引；带 token 访问仍返回“页面不存在”，正文未核实 |
+
+> **关于 `xsec_token`**：小红书近年为笔记链接引入 `xsec_token`（配合 `xsec_source`）作为安全校验与反爬参数，直链必须携带与会话 / 来源绑定的有效 token 才能打开；缺 token 的站外直访会跳登录、提示“当前笔记暂时无法浏览”或 404。因此本节多数笔记链接在浏览器直接打开会失败，**这不代表笔记已删除**；带 token 的链接也会随 token 过期失效。
 
 二级索引来自什么值得买的[参考来源列表 A](https://post.smzdm.com/p/ad798m6x/)、[列表 B](https://post.smzdm.com/p/a5ro30p3/)与[列表 C](https://post.smzdm.com/p/aggqvg7m/)，只用于发现原始链接。站内可检索 `Jev`、`Jev 模型`、`TypeSafe`、`Jev 实测`。完整访问情况与收录门槛见 [SOURCES.md](docs/SOURCES.md#xiaohongshu-checks)。
 

@@ -52,6 +52,8 @@
 
 访问了[站内 Jev 搜索页](https://www.xiaohongshu.com/search_result?keyword=jev&source=web_explore_feed)。返回页面有搜索标题，但未包含可读取的笔记结果；这不能证明搜索无命中。详情页返回“当前笔记暂时无法浏览”、登录跳转或超时。当前会话也没有可用的已连接平台检索插件。
 
+2026-09-24 补充：小红书近年为笔记直链引入 `xsec_token`（配合 `xsec_source`）安全校验与反爬参数，token 与会话 / 来源绑定且有时效；缺 token 或 token 失效时表现为登录跳转、“当前笔记暂时无法浏览”或 404 跳转。上述访问结果与该校验行为一致，**不证明笔记已被删除**；核验需在站内或携带有效 token 打开。
+
 除第一条来自仓库旧记录外，其余标题和日期来自什么值得买的参考列表：[A](https://post.smzdm.com/p/ad798m6x/)、[B](https://post.smzdm.com/p/a5ro30p3/)、[C](https://post.smzdm.com/p/aggqvg7m/)。它们只用于发现链接，**作者、发布日期及正文均未获平台原文复核**。
 
 | 索引日期 | 笔记链接 / 标题线索 | 访问结果 |
