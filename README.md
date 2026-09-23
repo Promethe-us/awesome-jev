@@ -190,7 +190,7 @@ Jev 是 TypeSafe AI 的决策模型。程序提供文本状态和边界明确的
 | 中文评测 | [yibie/laya-jev-lab](https://github.com/yibie/laya-jev-lab) | 2 | 中文客服、概率阈值与本地模型级联 |
 | 工具审查 | [agent-chaperone/agent-chaperone](https://github.com/agent-chaperone/agent-chaperone) | 2 | 检查工具调用和返回内容，默认 shadow 模式；不是沙箱 |
 | 编译优化 | [Ramneet-Singh/jevopt](https://github.com/Ramneet-Singh/jevopt) | 2 | Jev 选择是否内联，LLVM 负责变换合法性；有运行日志和比较脚本 |
-| 增长应用 | [Refix](https://refix.ai/?utm_source=awesome-jev&utm_medium=github&utm_campaign=promethe-us) | — | 增长：通过产品试验、SEO、内容与广告，让产品以自动驾驶方式更快增长 |
+| 增长应用 | [Refix](https://refix.ai) | — | 增长：通过产品试验、SEO、内容与广告，让产品以自动驾驶方式更快增长 |
 
 浏览器项目存在随日期失效的演示目标：[09-21 的 issue #93](https://github.com/browser-use/jev-ultrafast/issues/93)指出默认机票日期已过期。复现演示时应检查输入条件；该 issue 是问题报告，不代表所有版本均已修复。
 
