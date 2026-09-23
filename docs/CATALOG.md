@@ -2,7 +2,7 @@
 
 **语言 / Language: 简体中文 · [English](CATALOG_EN.md)**
 
-> 这是 [README](../README.md#ecosystem) 的扩展目录，按用途组织。**星数核验于 2026-09-22，取自 GitHub API**；`—` 表示本轮未取得数值，不代表零星。带数值的 GitHub 条目已核对仓库元数据；功能描述依据维护者资料，本仓库未运行验证其代码。
+> 这是 [README](../README.md#ecosystem) 的扩展目录，按用途组织。**星数核验于 2026-09-24，取自 GitHub API**；`—` 表示本轮未取得数值，不代表零星。带数值的 GitHub 条目已核对仓库元数据；功能描述依据维护者资料，本仓库未运行验证其代码。
 > 相关指南：[上手安装](INSTALLATION.md) · [论文与评测](RESEARCH.md) · [核验记录](SOURCES.md)。独立开放模型不是 TypeSafe 官方 Jev 权重。
 
 ## 我想先理解 Jev 是什么
@@ -21,86 +21,86 @@
 
 | 项目 | ★ | 说明 |
 |---|---|---|
-| [typesafe-ai/typesafe-sdk-python](https://github.com/typesafe-ai/typesafe-sdk-python) | 194 | Python ≥ 3.10；官方 changelog 已至 0.7.1（09-21） |
-| [typesafe-ai/typesafe-sdk-js](https://github.com/typesafe-ai/typesafe-sdk-js) | 218 | Node.js ≥ 20；包名 `@typesafe-ai/sdk` |
+| [typesafe-ai/typesafe-sdk-python](https://github.com/typesafe-ai/typesafe-sdk-python) | 212 | Python ≥ 3.10；官方 changelog 已至 0.7.1（09-21） |
+| [typesafe-ai/typesafe-sdk-js](https://github.com/typesafe-ai/typesafe-sdk-js) | 230 | Node.js ≥ 20；包名 `@typesafe-ai/sdk` |
 
 直连、Vercel、Cloudflare、OpenRouter、LangSmith 的模型标识和请求格式分别查看[安装指南](INSTALLATION.md)。官方已取消候补名单；账号额度以 Console 为准。
 
 ## 我想跑通第一个调用
 
 - [Playground](https://console.typesafe.ai/playground)（零代码）→ [API Key](https://console.typesafe.ai/keys) → [Python SDK](https://github.com/typesafe-ai/typesafe-sdk-python)
-- 没拿到 Key？用 [typesafe-ai/system-one-adapter-python](https://github.com/typesafe-ai/system-one-adapter-python)（248★，2026-09-22）拿任意 LLM 顶替
+- 没拿到 Key？用 [typesafe-ai/system-one-adapter-python](https://github.com/typesafe-ai/system-one-adapter-python)（281★，2026-09-24）拿任意 LLM 顶替
 - 完整步骤：[INSTALLATION.md](INSTALLATION.md)
 
 ## 我想给 Agent / 编程助手接上 Jev
 
 | 项目 | ★ | 说明 |
 |---|---|---|
-| [typesafe-ai/skills](https://github.com/typesafe-ai/skills) | 1,645 | 官方 Agent Skill（Claude Code 插件 / npx skills 双通道） |
-| [tamaratran/fast-jev-compaction](https://github.com/tamaratran/fast-jev-compaction) | 6,086 | Claude Code 插件：评分后筛除工具调用及结果，保留用户与助手正文 |
-| [gargpratyush/jev-router](https://github.com/gargpratyush/jev-router) | 319 | Claude Code 里按任务路由到最便宜模型 |
-| [devagrawal09/jev-review](https://github.com/devagrawal09/jev-review) | 509 | 分阶段代码评审 + 本地 Dashboard |
-| [NiazMorshed2007/jev-review](https://github.com/NiazMorshed2007/jev-review) | 198 | 本地优先持续质量评审 MCP 插件 |
-| [Alurith/jeff](https://github.com/Alurith/jeff) | 35 | 只读 CLI 语义代码评审 |
+| [typesafe-ai/skills](https://github.com/typesafe-ai/skills) | 1,993 | 官方 Agent Skill（Claude Code 插件 / npx skills 双通道） |
+| [tamaratran/fast-jev-compaction](https://github.com/tamaratran/fast-jev-compaction) | 6,527 | Claude Code 插件：评分后筛除工具调用及结果，保留用户与助手正文 |
+| [gargpratyush/jev-router](https://github.com/gargpratyush/jev-router) | 364 | Claude Code 里按任务路由到最便宜模型 |
+| [devagrawal09/jev-review](https://github.com/devagrawal09/jev-review) | 576 | 分阶段代码评审 + 本地 Dashboard |
+| [NiazMorshed2007/jev-review](https://github.com/NiazMorshed2007/jev-review) | 213 | 本地优先持续质量评审 MCP 插件 |
+| [Alurith/jeff](https://github.com/Alurith/jeff) | 37 | 只读 CLI 语义代码评审 |
 | [zdenham/jev-lint](https://github.com/zdenham/jev-lint) | 2 | 自然语言规则的语义 linter |
-| [thruwire/foreman](https://github.com/thruwire/foreman) | 479 | 软件工厂“工头” |
-| [samuelfaj/distill](https://github.com/samuelfaj/distill) | 683 | 编码 Agent；附 Jev 路由与 token 节省机制文档 |
-| [reticlehq/reticle](https://github.com/reticlehq/reticle) | 810 | Agent 产出验证工具；README 将 Jev 路由列为计划，尚未交付该集成 |
-| [kitze/skillbox](https://github.com/kitze/skillbox) | 224 | 自托管技能库，可选 Jev 集成 |
-| [DevMortimer/pi-warden](https://github.com/DevMortimer/pi-warden) | 138 | 用 Jev 检查编码 Agent 的写入与项目规则（09-24 收录；星数 09-24 快照，下同） |
-| [0xNatoshi/jev-codex-router](https://github.com/0xNatoshi/jev-codex-router) | 247 | 按调用选择 Codex 模型与推理深度；约 −60% 的节省来自 237 轮历史模拟，项目自述非实测账单（09-24 收录） |
+| [thruwire/foreman](https://github.com/thruwire/foreman) | 532 | 软件工厂“工头” |
+| [samuelfaj/distill](https://github.com/samuelfaj/distill) | 686 | 编码 Agent；附 Jev 路由与 token 节省机制文档 |
+| [reticlehq/reticle](https://github.com/reticlehq/reticle) | 827 | Agent 产出验证工具；README 将 Jev 路由列为计划，尚未交付该集成 |
+| [kitze/skillbox](https://github.com/kitze/skillbox) | 234 | 自托管技能库，可选 Jev 集成 |
+| [DevMortimer/pi-warden](https://github.com/DevMortimer/pi-warden) | 138 | 用 Jev 检查编码 Agent 的写入与项目规则（09-24 收录） |
+| [0xNatoshi/jev-codex-router](https://github.com/0xNatoshi/jev-codex-router) | 248 | 按调用选择 Codex 模型与推理深度；约 −60% 的节省来自 237 轮历史模拟，项目自述非实测账单（09-24 收录） |
 | [Pydantic AI：TypeSafe (Jev) 文档](https://pydantic.dev/docs/ai/models/typesafe/) | — | 框架官方接入文档：`TypeSafeModel`、类型化输出、布尔阈值、工具调用与低置信度回退（09-24 收录） |
 
 ## 我想做浏览器 / 手机 / 电脑自动化
 
 | 项目 | ★ | 说明 |
 |---|---|---|
-| [browser-use/jev-ultrafast](https://github.com/browser-use/jev-ultrafast) | 16,746 | browser-use 官方：Jev 驱动浏览器 Agent（动态索引动作空间） |
-| [wy-coliney/jev-browser-use](https://github.com/wy-coliney/jev-browser-use) | 340 | Jev 操作控件、Codex 输入和验证；作者的 5–10× 来自特定浏览器工作流 |
-| [droidrun/mobile-jev](https://github.com/droidrun/mobile-jev) | 334 | 移动端自动化 |
-| [jkudish/jev-browser](https://github.com/jkudish/jev-browser) | 233 | Jev 浏览器操作 |
-| [milind-soni/tiptour-macos](https://github.com/milind-soni/tiptour-macos) | 644 | 本地快速 computer use |
+| [browser-use/jev-ultrafast](https://github.com/browser-use/jev-ultrafast) | 18,959 | browser-use 官方：Jev 驱动浏览器 Agent（动态索引动作空间） |
+| [wy-coliney/jev-browser-use](https://github.com/wy-coliney/jev-browser-use) | 425 | Jev 操作控件、Codex 输入和验证；作者的 5–10× 来自特定浏览器工作流 |
+| [droidrun/mobile-jev](https://github.com/droidrun/mobile-jev) | 373 | 移动端自动化 |
+| [jkudish/jev-browser](https://github.com/jkudish/jev-browser) | 249 | Jev 浏览器操作 |
+| [milind-soni/tiptour-macos](https://github.com/milind-soni/tiptour-macos) | 659 | 本地快速 computer use |
 | 小红书旧记录（待核验） | — | CUA + Jev 线索；本轮正文不可读取，旧署名与成本说法未复核，见 [核验记录](SOURCES.md#xiaohongshu-checks) |
 
 ## 我想搭 Jev-like 开源模型 / 本地复刻
 
 | 项目 | ★ | 说明 |
 |---|---|---|
-| [NandhaKishorM/laya](https://github.com/NandhaKishorM/laya) | 12,413 | 独立开放决策模型；多语言路由与权重公开，跨模型比较需核对条件 |
-| [TheoLeeCJ/SemIf-OpenJev](https://github.com/TheoLeeCJ/SemIf-OpenJev) | 4,054 | 开源模型语义 if，单卡 3090 可跑（独立项目）；原 SemIf 已更名，星数为 09-24 快照 |
-| [TianyuCodings/NanoJev](https://github.com/TianyuCodings/NanoJev) | 1,886 | 纳米复刻：并行决策 + 动态候选 + 端到端训练 |
-| [vinnylarouge/jevlike](https://github.com/vinnylarouge/jevlike) | 1,181 | 单次前向评分的独立研究模型；作者明确未复现 Jev 私有训练方法 |
-| [bespokelabsai/nimble](https://github.com/bespokelabsai/nimble) | 1,535 | 开放数据 + 开放模型 + 开放配方（对比式数据策展） |
-| [jaredpalmer/kev](https://github.com/jaredpalmer/kev) | 2,757 | 当前为 Qwen3.5 的 0.8B / 4B / 9B 模型族；旧 Qwen3 系列和 0.5B 原型仍保留 |
-| [featherless-ai/simple-jev](https://github.com/featherless-ai/simple-jev) | 462 | 任意开源模型 → classifier/jev 端点 |
-| [ekzhang/openjev-sglang](https://github.com/ekzhang/openjev-sglang) | 259 | Jev 兼容 API（prefill-only, sglang） |
+| [NandhaKishorM/laya](https://github.com/NandhaKishorM/laya) | 19,984 | 独立开放决策模型；多语言路由与权重公开，跨模型比较需核对条件 |
+| [TheoLeeCJ/SemIf-OpenJev](https://github.com/TheoLeeCJ/SemIf-OpenJev) | 4,065 | 开源模型语义 if，单卡 3090 可跑（独立项目）；原 SemIf 已更名，星数为 09-24 快照 |
+| [TianyuCodings/NanoJev](https://github.com/TianyuCodings/NanoJev) | 2,103 | 纳米复刻：并行决策 + 动态候选 + 端到端训练 |
+| [vinnylarouge/jevlike](https://github.com/vinnylarouge/jevlike) | 1,264 | 单次前向评分的独立研究模型；作者明确未复现 Jev 私有训练方法 |
+| [bespokelabsai/nimble](https://github.com/bespokelabsai/nimble) | 1,677 | 开放数据 + 开放模型 + 开放配方（对比式数据策展） |
+| [jaredpalmer/kev](https://github.com/jaredpalmer/kev) | 5,746 | 当前为 Qwen3.5 的 0.8B / 4B / 9B 模型族；旧 Qwen3 系列和 0.5B 原型仍保留 |
+| [featherless-ai/simple-jev](https://github.com/featherless-ai/simple-jev) | 496 | 任意开源模型 → classifier/jev 端点 |
+| [ekzhang/openjev-sglang](https://github.com/ekzhang/openjev-sglang) | 298 | Jev 兼容 API（prefill-only, sglang） |
 
 ## 我想做评测、工具审查或论文辅助
 
 | 项目 | ★ | 说明 |
 |---|---|---|
-| [danielgshea/jev-as-a-judge](https://github.com/danielgshea/jev-as-a-judge) | 63 | 天气 Agent 轨迹评判；5 个案例重复 100 次，不能当作 500 个独立样本 |
-| [fstandhartinger/jevbench](https://github.com/fstandhartinger/jevbench) | 71 | 决策模型综合评测；需要区分原始测量、延迟修正和综合评分 |
+| [danielgshea/jev-as-a-judge](https://github.com/danielgshea/jev-as-a-judge) | 79 | 天气 Agent 轨迹评判；5 个案例重复 100 次，不能当作 500 个独立样本 |
+| [fstandhartinger/jevbench](https://github.com/fstandhartinger/jevbench) | 103 | 决策模型综合评测；需要区分原始测量、延迟修正和综合评分 |
 | [AbdelStark/jev-benchmarks](https://github.com/AbdelStark/jev-benchmarks) | 17 | 与本地 GLiNER2.5 的同任务对比试点；准确率、错误预算下覆盖率与延迟，条件公开（09-24 收录） |
 | [NanmiCoder/jev-arena](https://github.com/NanmiCoder/jev-arena) | 98 | 一万条评论同批对比 Jev 与 DeepSeek；GPT 复核口径，可回放逐条核查（09-24 收录） |
-| [instax-dutta/sysone-bench](https://github.com/instax-dutta/sysone-bench) | — | 同输入比较 Jev、Laya、Router 与 Qwen；已读原始结果，README 的 states / decisions 口径有差异 |
-| [yibie/laya-jev-lab](https://github.com/yibie/laya-jev-lab) | 2 | 中文客服小样本、置信度与级联实验；附原始输出和撤回结论 |
-| [agent-chaperone/agent-chaperone](https://github.com/agent-chaperone/agent-chaperone) | 2 | MCP 代理和工具 hooks 审查；默认 shadow，仅记录，不能替代沙箱 |
-| [JacobLinCool/jev-paper-judge](https://github.com/JacobLinCool/jev-paper-judge) | 0 | 评价论文表达清晰度与完整性，不验证科学结论是否正确 |
-| [ourines/hermes-jev](https://github.com/ourines/hermes-jev) | 1 | 为 Hermes 提供显式 Jev 决策工具，支持 TypeSafe / Cloudflare |
+| [instax-dutta/sysone-bench](https://github.com/instax-dutta/sysone-bench) | 4 | 同输入比较 Jev、Laya、Router 与 Qwen；已读原始结果，README 的 states / decisions 口径有差异 |
+| [yibie/laya-jev-lab](https://github.com/yibie/laya-jev-lab) | 8 | 中文客服小样本、置信度与级联实验；附原始输出和撤回结论 |
+| [agent-chaperone/agent-chaperone](https://github.com/agent-chaperone/agent-chaperone) | 20 | MCP 代理和工具 hooks 审查；默认 shadow，仅记录，不能替代沙箱 |
+| [JacobLinCool/jev-paper-judge](https://github.com/JacobLinCool/jev-paper-judge) | 1 | 评价论文表达清晰度与完整性，不验证科学结论是否正确 |
+| [ourines/hermes-jev](https://github.com/ourines/hermes-jev) | 2 | 为 Hermes 提供显式 Jev 决策工具，支持 TypeSafe / Cloudflare |
 
 这些是工具或实验仓库，**不是 Jev 的学术论文**。方法和局限见 [RESEARCH.md](RESEARCH.md)。
 
-## 我想读 2026-09 的 Jev 论文（论文潮与配套代码）
+## 我想读 2026-09 的 Jev 论文
 
-Jev 发布 4 天后 arXiv 开始出现相关论文，至 09-22 共 13 篇（逐篇条目见 [RESEARCH.md](RESEARCH.md)）。以下 5 篇公开了配套仓库；**星数为 2026-09-24 GitHub API 快照**，仓库链接已核对元数据，代码未经本仓库审计。
+Jev 发布 4 天后 arXiv 开始出现相关论文，至 09-22 共 13 篇（逐篇条目见 [RESEARCH.md](RESEARCH.md)）。以下 5 篇公开了配套仓库；仓库链接已核对元数据，代码未经本仓库审计。
 
 | 论文（首发） | ★ | 配套仓库与说明 |
 |---|---|---|
 | [Calibrated Decisions at Scale（09-21）](https://arxiv.org/abs/2609.24052) | 0 | [pozapas/jev-calibrated-narrative-coding](https://github.com/pozapas/jev-calibrated-narrative-coding)：事故叙述批量编码流水线 |
-| [Jev-Mem（09-21）](https://arxiv.org/abs/2609.23986) | 47 | [libingzheren/Jev-Mem](https://github.com/libingzheren/Jev-Mem)：System-One 控制的 Agent 记忆系统 |
+| [Jev-Mem（09-21）](https://arxiv.org/abs/2609.23986) | 49 | [libingzheren/Jev-Mem](https://github.com/libingzheren/Jev-Mem)：System-One 控制的 Agent 记忆系统 |
 | [Visual Jev（09-22）](https://arxiv.org/abs/2609.25845) | 4 | [guanxuyu-sv/Visual-Jev](https://github.com/guanxuyu-sv/Visual-Jev)：一图多问的共享视觉上下文实现 |
-| [this-that-model-1.0（09-20）](https://arxiv.org/abs/2609.23886) | 20 | [FLock-io/this-that-model](https://github.com/FLock-io/this-that-model)：约 2B 开源类型化决策模型；权重在 [Hugging Face](https://huggingface.co/flock-io/this-that-model-1.0) |
+| [this-that-model-1.0（09-20）](https://arxiv.org/abs/2609.23886) | 22 | [FLock-io/this-that-model](https://github.com/FLock-io/this-that-model)：约 2B 开源类型化决策模型；权重在 [Hugging Face](https://huggingface.co/flock-io/this-that-model-1.0) |
 | [CSS 标注横评（09-21）](https://arxiv.org/abs/2609.24574) | 0 | [hazemibrahim97/decision-models-css](https://github.com/hazemibrahim97/decision-models-css)：18 任务横评的复现包 |
 
 其余 8 篇（两篇边缘 / 6G 编排、科学决策、REFLEX、JEV-as-a-Judge、CallScreenBench、JEVQA、选项名敏感性）本轮未见配套仓库；微信端可见的中文盘点见 [PaperWeekly，09-23](https://mp.weixin.qq.com/s/kK3du8zji4fa_9chnBl7Dw)。
@@ -109,31 +109,31 @@ Jev 发布 4 天后 arXiv 开始出现相关论文，至 09-22 共 13 篇（逐�
 
 | 项目 | ★ | 说明 |
 |---|---|---|
-| [realZachi/pg-jev](https://github.com/realZachi/pg-jev) | 291 | PostgreSQL 扩展：自然语言查表 |
-| [colliber/duckdb-jev](https://github.com/colliber/duckdb-jev) | 20 | DuckDB：typed Jev 答案即 SQL 类型 |
+| [realZachi/pg-jev](https://github.com/realZachi/pg-jev) | 322 | PostgreSQL 扩展：自然语言查表 |
+| [colliber/duckdb-jev](https://github.com/colliber/duckdb-jev) | 24 | DuckDB：typed Jev 答案即 SQL 类型 |
 | [maayanlevy/mysql-ailike](https://github.com/maayanlevy/mysql-ailike) | 4 | MySQL：按语义过滤行 |
 | [kylemclaren/jevql](https://github.com/kylemclaren/jevql) | 12 | 原生 PostgreSQL 的类 psql 客户端，无需扩展：SQL 在服务端执行，Jev 判断返回的行 |
-| [superagents-lab/jev-search](https://github.com/superagents-lab/jev-search) | 390 | Jev 驱动的网络搜索（信源选择 + 相关性排序） |
-| [kylemclaren/jevsearch](https://github.com/kylemclaren/jevsearch) | 2 | shadcn/ui ⌘K 站内搜索组件：先出关键词结果，再用一次 Jev 请求重排前 20 条；作者报告在 41 条 TypeSafe 文档查询上 Hit@1 为 83%（纯关键词为 41%）；与 superagents-lab/jev-search 不是同一项目 |
-| [kyotofin/tax-doc-classifier](https://github.com/kyotofin/tax-doc-classifier) | 358 | 作者报告在其 261 份 IRS 表格集合上的分类结果；不是跨领域准确率 |
+| [superagents-lab/jev-search](https://github.com/superagents-lab/jev-search) | 432 | Jev 驱动的网络搜索（信源选择 + 相关性排序） |
+| [kylemclaren/jevsearch](https://github.com/kylemclaren/jevsearch) | 3 | shadcn/ui ⌘K 站内搜索组件：先出关键词结果，再用一次 Jev 请求重排前 20 条；作者报告在 41 条 TypeSafe 文档查询上 Hit@1 为 83%（纯关键词为 41%）；与 superagents-lab/jev-search 不是同一项目 |
+| [kyotofin/tax-doc-classifier](https://github.com/kyotofin/tax-doc-classifier) | 411 | 作者报告在其 261 份 IRS 表格集合上的分类结果；不是跨领域准确率 |
 | [kylemclaren/jevpdf](https://github.com/kylemclaren/jevpdf) | 1 | 浏览器内按语义搜索 PDF：pdf.js 在本地提取文本行，Jev 对每行回答一次是/否，匹配的行逐页高亮并按概率排序 |
 
 ## 我想探索编译器和新的集成方向
 
 | 项目 | ★ | 说明 |
 |---|---|---|
-| [Ramneet-Singh/jevopt](https://github.com/Ramneet-Singh/jevopt) | 2 | C/C++ 编译驱动；Jev 选择内联策略，LLVM 负责合法变换；附 Embench 运行记录 |
+| [Ramneet-Singh/jevopt](https://github.com/Ramneet-Singh/jevopt) | 3 | C/C++ 编译驱动；Jev 选择内联策略，LLVM 负责合法变换；附 Embench 运行记录 |
 | [jevframe](https://pypi.org/project/jevframe/) | — | Pandas / Polars 逐行语义判断，返回概率；支持并发控制与缓存 |
-| [MinusPodJev](https://github.com/ttlequals0/MinusPodJev) | — | 对播客转录片段做广告识别的 FastAPI 代理；含 14 期语料的离线评测；[作者 @TTLequals0，09-20](https://x.com/TTLequals0/status/2101776961282408786) |
+| [MinusPodJev](https://github.com/ttlequals0/MinusPodJev) | 1 | 对播客转录片段做广告识别的 FastAPI 代理；含 14 期语料的离线评测；[作者 @TTLequals0，09-20](https://x.com/TTLequals0/status/2101776961282408786) |
 
 ## 我想玩游戏 / 做实时 Agent
 
 | 项目 | ★ | 说明 |
 |---|---|---|
-| [OpenByteInc/QuantDinger](https://github.com/OpenByteInc/QuantDinger) | 11,967 | 交易平台的下单前语义判断；未配置提供商时可放行，不能据此推断风险控制效果 |
-| [jarrodwatts/jev-trader](https://github.com/jarrodwatts/jev-trader) | 1,910 | Monad 链上每区块一次交易决策 |
-| [fhshaik/typesafe-mario](https://github.com/fhshaik/typesafe-mario) | 340 | Jev 玩超级马里奥 |
-| [dabit3/jev-experiments](https://github.com/dabit3/jev-experiments) | 362 | 实验合集 |
+| [OpenByteInc/QuantDinger](https://github.com/OpenByteInc/QuantDinger) | 12,054 | 交易平台的下单前语义判断；未配置提供商时可放行，不能据此推断风险控制效果 |
+| [jarrodwatts/jev-trader](https://github.com/jarrodwatts/jev-trader) | 2,163 | Monad 链上每区块一次交易决策 |
+| [fhshaik/typesafe-mario](https://github.com/fhshaik/typesafe-mario) | 374 | Jev 玩超级马里奥 |
+| [dabit3/jev-experiments](https://github.com/dabit3/jev-experiments) | 374 | 实验合集 |
 | [jev-pong（在线）](https://jev-pong.ably.dev/) · [HN](https://news.ycombinator.com/item?id=49754516) | – | Jev vs GPT-5.6 / Claude Haiku 打乒乓 |
 | [trolley 问题（在线）](https://gpu.studio/trolley) | – | “Jev 会拉拉杆吗？” |
 | [SpriteFusion 实时关卡生成](https://www.spritefusion.com/blog/generating-game-level-in-real-time-with-jev) | – | 实时生成游戏关卡 |
@@ -141,7 +141,7 @@ Jev 发布 4 天后 arXiv 开始出现相关论文，至 09-22 共 13 篇（逐�
 
 ## 我想看横向评测与冷静分析
 
-优先阅读 [2026-09-22 论文与评测说明](RESEARCH.md)：新增 LangChain judge、Archestra 工具调用、JevBench 和中文客服实验；下面也保留早期解读入口，不据其标题推断结论。
+优先阅读 [2026-09-24 论文与评测说明](RESEARCH.md)：新增 LangChain judge、Archestra 工具调用、JevBench 和中文客服实验；下面也保留早期解读入口，不据其标题推断结论。
 
 | 资源 | 结论倾向 |
 |---|---|
@@ -160,16 +160,16 @@ Jev 发布 4 天后 arXiv 开始出现相关论文，至 09-22 共 13 篇（逐�
 
 | 仓库 | ★ |
 |---|---|
-| [Anil-matcha/awesome-jev-by-typesafe](https://github.com/Anil-matcha/awesome-jev-by-typesafe) | 776 |
-| [yibie/awesome-jev](https://github.com/yibie/awesome-jev) | 1,092 |
-| [v-modal/awesome-jev-tools](https://github.com/v-modal/awesome-jev-tools) | 630 |
-| [AbdelStark/awesome-typesafe-jev](https://github.com/AbdelStark/awesome-typesafe-jev) | 432 |
-| [cobanov/awesome-jev](https://github.com/cobanov/awesome-jev) | 318 |
-| [fatwang2/awesome-jev](https://github.com/fatwang2/awesome-jev) | 187 |
-| [logicrw/awesome-jev-projects](https://github.com/logicrw/awesome-jev-projects) | 339 |
-| [CodeAlex52/awesome-jev-cn](https://github.com/CodeAlex52/awesome-jev-cn) | 0（09-24） |
+| [Anil-matcha/awesome-jev-by-typesafe](https://github.com/Anil-matcha/awesome-jev-by-typesafe) | 818 |
+| [yibie/awesome-jev](https://github.com/yibie/awesome-jev) | 1,461 |
+| [v-modal/awesome-jev-tools](https://github.com/v-modal/awesome-jev-tools) | 689 |
+| [AbdelStark/awesome-typesafe-jev](https://github.com/AbdelStark/awesome-typesafe-jev) | 496 |
+| [cobanov/awesome-jev](https://github.com/cobanov/awesome-jev) | 371 |
+| [fatwang2/awesome-jev](https://github.com/fatwang2/awesome-jev) | 201 |
+| [logicrw/awesome-jev-projects](https://github.com/logicrw/awesome-jev-projects) | 435 |
+| [CodeAlex52/awesome-jev-cn](https://github.com/CodeAlex52/awesome-jev-cn) | 0 |
 
-旧表星数快照为 2026-09-22；09-24 增补的 awesome-jev-cn 是中文聚合仓库，整理 awesome-jev 并索引小红书 / B 站线索，其小红书条目见 [README 的待核验线索](../README.md#xiaohongshu)。
+全部星数为 2026-09-24 快照；awesome-jev-cn 是中文聚合仓库，整理 awesome-jev 并索引小红书 / B 站线索，其小红书条目见 [README 的待核验线索](../README.md#xiaohongshu)。
 
 ---
 
@@ -177,6 +177,6 @@ Jev 发布 4 天后 arXiv 开始出现相关论文，至 09-22 共 13 篇（逐�
 
 1. 与 Jev / System One 直接相关（模型、SDK、复刻、集成、评测、深度解读）
 2. 正式条目应有可访问来源；X / 小红书附作者与日期，受限线索明确标记待核验
-3. 热度数据注明快照日期（本文件主体：2026-09-22；论文潮一节：2026-09-24）
+3. 热度数据注明快照日期（本文件主体：2026-09-24）
 
 欢迎 PR 补充，尤其是小红书、即刻、B站等中文平台内容！

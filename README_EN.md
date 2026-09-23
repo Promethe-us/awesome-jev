@@ -201,15 +201,15 @@ Also: [programmer Yupi's tutorial](https://cloud.tencent.com/developer/article/2
 
 | Area | Project | ★ | What to examine |
 |---|---|---|---|
-| Browser | [browser-use/jev-ultrafast](https://github.com/browser-use/jev-ultrafast) | 18,946 | Dynamically indexes actions; text entry may still call a generative model |
-| Context management | [tamaratran/fast-jev-compaction](https://github.com/tamaratran/fast-jev-compaction) | 6,519 | Filters tool records; examine information loss and context-cache tradeoffs |
-| Open model | [NandhaKishorM/laya](https://github.com/NandhaKishorM/laya) | 19,900 | Independent open decision model; check conditions behind cross-model numbers |
-| Open model | [TheoLeeCJ/SemIf-OpenJev](https://github.com/TheoLeeCJ/SemIf-OpenJev) | 4,054 | Semantic condition checks on an open model; unaffiliated with TypeSafe; formerly named SemIf |
-| Open model | [jaredpalmer/kev](https://github.com/jaredpalmer/kev) | 5,688 | Expanded to a Qwen3.5 model family; no longer just a 0.5B prototype |
-| Training recipe | [bespokelabsai/nimble](https://github.com/bespokelabsai/nimble) | 1,676 | Contrastive data curation, model, and evaluation |
-| Training implementation | [TianyuCodings/NanoJev](https://github.com/TianyuCodings/NanoJev) | 2,100 | Small training pipeline; independent implementation, not official weights |
-| Agent evaluation | [danielgshea/jev-as-a-judge](https://github.com/danielgshea/jev-as-a-judge) | 78 | Inspect study design; distinguish repetitions from sample count |
-| General evaluation | [fstandhartinger/jevbench](https://github.com/fstandhartinger/jevbench) | 102 | Public tasks, adapters, results, and scoring definitions |
+| Browser | [browser-use/jev-ultrafast](https://github.com/browser-use/jev-ultrafast) | 18,959 | Dynamically indexes actions; text entry may still call a generative model |
+| Context management | [tamaratran/fast-jev-compaction](https://github.com/tamaratran/fast-jev-compaction) | 6,527 | Filters tool records; examine information loss and context-cache tradeoffs |
+| Open model | [NandhaKishorM/laya](https://github.com/NandhaKishorM/laya) | 19,984 | Independent open decision model; check conditions behind cross-model numbers |
+| Open model | [TheoLeeCJ/SemIf-OpenJev](https://github.com/TheoLeeCJ/SemIf-OpenJev) | 4,065 | Semantic condition checks on an open model; unaffiliated with TypeSafe; formerly named SemIf |
+| Open model | [jaredpalmer/kev](https://github.com/jaredpalmer/kev) | 5,746 | Expanded to a Qwen3.5 model family; no longer just a 0.5B prototype |
+| Training recipe | [bespokelabsai/nimble](https://github.com/bespokelabsai/nimble) | 1,677 | Contrastive data curation, model, and evaluation |
+| Training implementation | [TianyuCodings/NanoJev](https://github.com/TianyuCodings/NanoJev) | 2,103 | Small training pipeline; independent implementation, not official weights |
+| Agent evaluation | [danielgshea/jev-as-a-judge](https://github.com/danielgshea/jev-as-a-judge) | 79 | Inspect study design; distinguish repetitions from sample count |
+| General evaluation | [fstandhartinger/jevbench](https://github.com/fstandhartinger/jevbench) | 103 | Public tasks, adapters, results, and scoring definitions |
 | Independent evaluation | [AbdelStark/jev-benchmarks](https://github.com/AbdelStark/jev-benchmarks) | 17 | Pilot comparison against local GLiNER2.5; accuracy, coverage under an error budget, and latency, with public conditions |
 | Chinese evaluation | [yibie/laya-jev-lab](https://github.com/yibie/laya-jev-lab) | 8 | Chinese support tickets, probability thresholds, and local-model cascades |
 | Chinese evaluation | [NanmiCoder/jev-arena](https://github.com/NanmiCoder/jev-arena) | 98 | Ten thousand comments comparing Jev and DeepSeek side by side; AI-reviewed labels, replayable per-item checks |

@@ -202,15 +202,15 @@ Jev 是 TypeSafe AI 的决策模型。程序提供文本状态和边界明确的
 
 | 方向 | 项目 | ★ | 阅读重点 |
 |---|---|---|---|
-| 浏览器 | [browser-use/jev-ultrafast](https://github.com/browser-use/jev-ultrafast) | 18,946 | 动态索引动作；文本输入环节仍可调用生成模型 |
-| 上下文管理 | [tamaratran/fast-jev-compaction](https://github.com/tamaratran/fast-jev-compaction) | 6,519 | 筛选工具记录；检查信息损失和上下文缓存的取舍 |
-| 开放模型 | [NandhaKishorM/laya](https://github.com/NandhaKishorM/laya) | 19,900 | 独立开源决策模型；横向数字需检查测试条件 |
-| 开放模型 | [TheoLeeCJ/SemIf-OpenJev](https://github.com/TheoLeeCJ/SemIf-OpenJev) | 4,054 | 开放模型上的语义条件判断，与 TypeSafe 无隶属关系；原 SemIf 已更名 |
-| 开放模型 | [jaredpalmer/kev](https://github.com/jaredpalmer/kev) | 5,688 | 已扩展为 Qwen3.5 模型族，不能继续只描述为 0.5B 原型 |
-| 训练配方 | [bespokelabsai/nimble](https://github.com/bespokelabsai/nimble) | 1,676 | 对比数据策展、模型与评测 |
-| 训练实现 | [TianyuCodings/NanoJev](https://github.com/TianyuCodings/NanoJev) | 2,100 | 小型训练管线；独立实现而非官方权重 |
-| Agent 评测 | [danielgshea/jev-as-a-judge](https://github.com/danielgshea/jev-as-a-judge) | 78 | 可检查实验设计，严格区分重复次数和样本数 |
-| 综合评测 | [fstandhartinger/jevbench](https://github.com/fstandhartinger/jevbench) | 102 | 题目、模型适配器、结果和评分口径公开 |
+| 浏览器 | [browser-use/jev-ultrafast](https://github.com/browser-use/jev-ultrafast) | 18,959 | 动态索引动作；文本输入环节仍可调用生成模型 |
+| 上下文管理 | [tamaratran/fast-jev-compaction](https://github.com/tamaratran/fast-jev-compaction) | 6,527 | 筛选工具记录；检查信息损失和上下文缓存的取舍 |
+| 开放模型 | [NandhaKishorM/laya](https://github.com/NandhaKishorM/laya) | 19,984 | 独立开源决策模型；横向数字需检查测试条件 |
+| 开放模型 | [TheoLeeCJ/SemIf-OpenJev](https://github.com/TheoLeeCJ/SemIf-OpenJev) | 4,065 | 开放模型上的语义条件判断，与 TypeSafe 无隶属关系；原 SemIf 已更名 |
+| 开放模型 | [jaredpalmer/kev](https://github.com/jaredpalmer/kev) | 5,746 | 已扩展为 Qwen3.5 模型族，不能继续只描述为 0.5B 原型 |
+| 训练配方 | [bespokelabsai/nimble](https://github.com/bespokelabsai/nimble) | 1,677 | 对比数据策展、模型与评测 |
+| 训练实现 | [TianyuCodings/NanoJev](https://github.com/TianyuCodings/NanoJev) | 2,103 | 小型训练管线；独立实现而非官方权重 |
+| Agent 评测 | [danielgshea/jev-as-a-judge](https://github.com/danielgshea/jev-as-a-judge) | 79 | 可检查实验设计，严格区分重复次数和样本数 |
+| 综合评测 | [fstandhartinger/jevbench](https://github.com/fstandhartinger/jevbench) | 103 | 题目、模型适配器、结果和评分口径公开 |
 | 独立评测 | [AbdelStark/jev-benchmarks](https://github.com/AbdelStark/jev-benchmarks) | 17 | 与本地 GLiNER2.5 的同任务对比试点；准确率、错误预算下覆盖率与延迟，条件公开 |
 | 中文评测 | [yibie/laya-jev-lab](https://github.com/yibie/laya-jev-lab) | 8 | 中文客服、概率阈值与本地模型级联 |
 | 中文评测 | [NanmiCoder/jev-arena](https://github.com/NanmiCoder/jev-arena) | 98 | 一万条评论同批对比 Jev 与 DeepSeek；AI 复核口径、可回放逐条核查 |
