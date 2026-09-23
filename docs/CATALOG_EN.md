@@ -93,6 +93,7 @@ These are tools and experimental repositories, **not Jev academic papers**. See 
 | [maayanlevy/mysql-ailike](https://github.com/maayanlevy/mysql-ailike) | 4 | MySQL semantic row filtering |
 | [kylemclaren/jevql](https://github.com/kylemclaren/jevql) | 12 | psql-style client for vanilla PostgreSQL, no extension: SQL runs on the server, Jev judges the returned rows |
 | [superagents-lab/jev-search](https://github.com/superagents-lab/jev-search) | 390 | Jev-driven web search with source choice and relevance ranking |
+| [kylemclaren/jevsearch](https://github.com/kylemclaren/jevsearch) | 2 | shadcn/ui ⌘K site-search block: keyword hits first, then one Jev request re-ranks the top 20; author-reported Hit@1 of 83% vs 41% keyword-only on 41 TypeSafe-docs queries; distinct from superagents-lab/jev-search |
 | [kyotofin/tax-doc-classifier](https://github.com/kyotofin/tax-doc-classifier) | 358 | Author-reported classification on 261 IRS forms in its collection; not cross-domain accuracy |
 
 ## I want to explore compilers and new integrations
