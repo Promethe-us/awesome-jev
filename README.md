@@ -4,6 +4,8 @@
 
 # awesome-jev
 
+**语言 / Language: 简体中文 · [English](README_EN.md)**
+
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Updated](https://img.shields.io/badge/Verified-2026--09--22-38bdf8)](docs/SOURCES.md)

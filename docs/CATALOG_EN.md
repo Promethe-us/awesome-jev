@@ -1,0 +1,154 @@
+# Jev community project catalog
+
+> This expands the [README ecosystem section](../README_EN.md#ecosystem) and groups resources by use. **Stars were checked against the GitHub API on 2026-09-22**; `—` means no number was obtained in that audit, not zero stars. Repository metadata was checked for numbered GitHub entries. Feature descriptions follow maintainers' materials; this repository did not run their code.
+> Related guides: [getting started](INSTALLATION_EN.md) · [research and evaluations](RESEARCH_EN.md) · [source audit](SOURCES_EN.md). Independent open models are not TypeSafe's official Jev weights. [中文原文](CATALOG.md)
+
+## I want to understand Jev first
+
+| Resource | Useful for |
+|---|---|
+| [Official launch blog by Diogo Almeida](https://typesafe.ai/blog/introducing-system-one-models-and-jev) | First-hand motivation, architecture overview, RLCD, pricing, and official caveats |
+| [System One concepts](https://docs.typesafe.ai/concepts/system-one) | How decision models differ from chat models |
+| [State concepts](https://docs.typesafe.ai/concepts/state) | Organizing context into a structured state for Jev |
+| [Confidence documentation](https://docs.typesafe.ai/confidence) | `confidence` versus probability and how to use them |
+| [@CompleteSkeptic launch post (09-15)](https://x.com/CompleteSkeptic/status/2099925682726002904) | Founder's product introduction |
+| [Huang Xiaomu's Chinese Jev introduction (09-19)](https://x.com/ai_xiaomu/status/2101135680168771979) | Chinese-language primer; waitlist step is outdated |
+| [whatisjev.com (also available in Chinese)](https://whatisjev.com/zh/getting-started) | Community-maintained knowledge site |
+
+## Official SDKs and service entry points
+
+| Project | ★ | Notes |
+|---|---|---|
+| [typesafe-ai/typesafe-sdk-python](https://github.com/typesafe-ai/typesafe-sdk-python) | 194 | Python ≥ 3.10; official changelog reached 0.7.1 on 09-21 |
+| [typesafe-ai/typesafe-sdk-js](https://github.com/typesafe-ai/typesafe-sdk-js) | 218 | Node.js ≥ 20; package name `@typesafe-ai/sdk` |
+
+For direct TypeSafe access and the Vercel, Cloudflare, OpenRouter, and LangSmith identifiers and request shapes, use the [getting-started guide](INSTALLATION_EN.md). The official waitlist was removed; check the Console for account credit.
+
+## I want to make my first call
+
+- [Playground](https://console.typesafe.ai/playground) (no code) → [API key](https://console.typesafe.ai/keys) → [Python SDK](https://github.com/typesafe-ai/typesafe-sdk-python)
+- No key? [typesafe-ai/system-one-adapter-python](https://github.com/typesafe-ai/system-one-adapter-python) (248★ on 2026-09-22) can substitute an LLM, with that provider's credentials.
+- Full steps: [getting started](INSTALLATION_EN.md).
+
+## I want to integrate Jev with an agent or coding assistant
+
+| Project | ★ | Notes |
+|---|---|---|
+| [typesafe-ai/skills](https://github.com/typesafe-ai/skills) | 1,645 | Official Agent Skill; Claude Code plugin or `npx skills` installation |
+| [tamaratran/fast-jev-compaction](https://github.com/tamaratran/fast-jev-compaction) | 6,086 | Claude Code plugin; scores and filters tool calls and results while retaining user and assistant text |
+| [gargpratyush/jev-router](https://github.com/gargpratyush/jev-router) | 319 | Routes Claude Code tasks to the cheapest suitable model |
+| [devagrawal09/jev-review](https://github.com/devagrawal09/jev-review) | 509 | Staged code review and local dashboard |
+| [NiazMorshed2007/jev-review](https://github.com/NiazMorshed2007/jev-review) | 198 | Local-first, continuous quality-review MCP plugin |
+| [Alurith/jeff](https://github.com/Alurith/jeff) | 35 | Read-only CLI semantic code review |
+| [zdenham/jev-lint](https://github.com/zdenham/jev-lint) | 2 | Semantic linter with natural-language rules |
+| [thruwire/foreman](https://github.com/thruwire/foreman) | 479 | “Foreman” for a software factory |
+| [samuelfaj/distill](https://github.com/samuelfaj/distill) | 683 | Coding agent with documents on Jev routing and token savings |
+| [reticlehq/reticle](https://github.com/reticlehq/reticle) | 810 | Agent-output verification tool; README listed Jev routing as planned, not delivered |
+| [kitze/skillbox](https://github.com/kitze/skillbox) | 224 | Self-hosted skill library with optional Jev integration |
+
+## I want browser, phone, or computer automation
+
+| Project | ★ | Notes |
+|---|---|---|
+| [browser-use/jev-ultrafast](https://github.com/browser-use/jev-ultrafast) | 16,746 | Browser-use project: Jev-driven browser agent with a dynamically indexed action space |
+| [wy-coliney/jev-browser-use](https://github.com/wy-coliney/jev-browser-use) | 340 | Jev handles controls, Codex handles input and verification; author's 5–10× figure is for a specific browser workflow |
+| [droidrun/mobile-jev](https://github.com/droidrun/mobile-jev) | 334 | Mobile automation |
+| [jkudish/jev-browser](https://github.com/jkudish/jev-browser) | 233 | Jev browser operations |
+| [milind-soni/tiptour-macos](https://github.com/milind-soni/tiptour-macos) | 644 | Fast local computer use |
+| Older Xiaohongshu lead (unverified) | — | CUA + Jev claim; note text was inaccessible, and older author / cost claims were not rechecked. See [access log](SOURCES_EN.md#xiaohongshu-checks) |
+
+## I want an open Jev-like model or local reimplementation
+
+| Project | ★ | Notes |
+|---|---|---|
+| [NandhaKishorM/laya](https://github.com/NandhaKishorM/laya) | 12,413 | Independent open decision model with multilingual routing and public weights; check cross-model comparison conditions |
+| [TheoLeeCJ/SemIf](https://github.com/TheoLeeCJ/SemIf) | 3,421 | Open-model semantic `if`, runnable on one 3090 according to its project; independent of TypeSafe |
+| [TianyuCodings/NanoJev](https://github.com/TianyuCodings/NanoJev) | 1,886 | Small reimplementation with parallel decisions, dynamic candidates, and end-to-end training |
+| [vinnylarouge/jevlike](https://github.com/vinnylarouge/jevlike) | 1,181 | Independent research model using single-forward-pass scoring; author does not claim to reproduce Jev's private training method |
+| [bespokelabsai/nimble](https://github.com/bespokelabsai/nimble) | 1,535 | Open data, model, and recipe with contrastive data curation |
+| [jaredpalmer/kev](https://github.com/jaredpalmer/kev) | 2,757 | Qwen3.5 family at 0.8B / 4B / 9B; older Qwen3 series and 0.5B prototype remain |
+| [featherless-ai/simple-jev](https://github.com/featherless-ai/simple-jev) | 462 | Exposes a classifier / Jev-style endpoint for an open model |
+| [ekzhang/openjev-sglang](https://github.com/ekzhang/openjev-sglang) | 259 | Jev-compatible API using prefill-only SGLang |
+
+## I want evaluations, tool review, or paper assistance
+
+| Project | ★ | Notes |
+|---|---|---|
+| [danielgshea/jev-as-a-judge](https://github.com/danielgshea/jev-as-a-judge) | 63 | Judges weather-agent traces; five cases repeated 100 times, not 500 independent examples |
+| [fstandhartinger/jevbench](https://github.com/fstandhartinger/jevbench) | 71 | Decision-model benchmark; distinguish raw measurements, latency adjustments, and composite scores |
+| [instax-dutta/sysone-bench](https://github.com/instax-dutta/sysone-bench) | — | Matched-input Jev, Laya, Router, and Qwen comparison; original results were read, and README “states” differs from the decision count |
+| [yibie/laya-jev-lab](https://github.com/yibie/laya-jev-lab) | 2 | Small Chinese support-ticket study, confidence and cascade experiments, raw outputs, and retracted early conclusions |
+| [agent-chaperone/agent-chaperone](https://github.com/agent-chaperone/agent-chaperone) | 2 | MCP proxy and tool-hook review; default shadow mode only records and is not a sandbox |
+| [JacobLinCool/jev-paper-judge](https://github.com/JacobLinCool/jev-paper-judge) | 0 | Rates writing clarity and completeness, not scientific correctness |
+| [ourines/hermes-jev](https://github.com/ourines/hermes-jev) | 1 | Explicit Jev decision tool for Hermes, supporting TypeSafe / Cloudflare |
+
+These are tools and experimental repositories, **not Jev academic papers**. See [methods and limitations](RESEARCH_EN.md).
+
+## I want data or database applications
+
+| Project | ★ | Notes |
+|---|---|---|
+| [realZachi/pg-jev](https://github.com/realZachi/pg-jev) | 291 | PostgreSQL extension for natural-language table lookup |
+| [colliber/duckdb-jev](https://github.com/colliber/duckdb-jev) | 20 | DuckDB: typed Jev responses become SQL types |
+| [maayanlevy/mysql-ailike](https://github.com/maayanlevy/mysql-ailike) | 4 | MySQL semantic row filtering |
+| [superagents-lab/jev-search](https://github.com/superagents-lab/jev-search) | 390 | Jev-driven web search with source choice and relevance ranking |
+| [kyotofin/tax-doc-classifier](https://github.com/kyotofin/tax-doc-classifier) | 358 | Author-reported classification on 261 IRS forms in its collection; not cross-domain accuracy |
+
+## I want to explore compilers and new integrations
+
+| Project | ★ | Notes |
+|---|---|---|
+| [Ramneet-Singh/jevopt](https://github.com/Ramneet-Singh/jevopt) | 2 | C/C++ compiler driver; Jev selects inlining policy and LLVM enforces legal transformations; includes Embench logs |
+| [jevframe](https://pypi.org/project/jevframe/) | — | Row-wise semantic judgments for Pandas / Polars, returning probabilities with concurrency control and caching |
+| [MinusPodJev](https://github.com/ttlequals0/MinusPodJev) | — | FastAPI proxy detecting ads in podcast transcript segments; offline evaluation uses a 14-episode corpus. [Author @TTLequals0, 09-20](https://x.com/TTLequals0/status/2101776961282408786) |
+
+## I want games or real-time agents
+
+| Project | ★ | Notes |
+|---|---|---|
+| [OpenByteInc/QuantDinger](https://github.com/OpenByteInc/QuantDinger) | 11,967 | Pre-order semantic checks on a trading platform; with no provider configured, checks may permit orders, so risk-control performance cannot be inferred |
+| [jarrodwatts/jev-trader](https://github.com/jarrodwatts/jev-trader) | 1,910 | One trading decision per block on Monad |
+| [fhshaik/typesafe-mario](https://github.com/fhshaik/typesafe-mario) | 340 | Jev plays Super Mario |
+| [dabit3/jev-experiments](https://github.com/dabit3/jev-experiments) | 362 | Experiment collection |
+| [jev-pong (online)](https://jev-pong.ably.dev/) · [HN](https://news.ycombinator.com/item?id=49754516) | — | Jev versus GPT-5.6 / Claude Haiku in Pong |
+| [Trolley problem (online)](https://gpu.studio/trolley) | — | “Will Jev pull the lever?” |
+| [SpriteFusion real-time level generation](https://www.spritefusion.com/blog/generating-game-level-in-real-time-with-jev) | — | Game-level generation in real time |
+| [AI Will @FinanceYF5 game demo (09-20)](https://x.com/financeyf5/status/2101502474691698971) | — | Chinese-language account of multi-round play; costs are the poster's report, not independently reproduced |
+
+## I want comparisons and critical analysis
+
+Start with the [2026-09-22 research and evaluation guide](RESEARCH_EN.md), which covers the LangChain judge experiment, Archestra tool calls, JevBench, and Chinese support-ticket study. Earlier commentary remains below; titles alone are not conclusions.
+
+| Resource | Reading note |
+|---|---|
+| [Jev vs. classical ML](https://quicqdev.github.io/Jev-vs-ML/) | Early experiment lead; page could not be read during the last audit, so its numerical claims are not repeated |
+| [Jev vs. XGBoost and BERT](https://explainx.ai/blog/jev-vs-xgboost-bert-classifiers-2026) | Qualitative discussion; article says it did not run a matched-condition three-way benchmark |
+| [Jev means structured output is interesting again](https://www.seangoedecke.com/jev-means-structured-output-is-interesting-again/) | Renewed interest in structured output |
+| [Most People on the Internet Miss What Jev Is About](https://medium.com/@gemanor/most-people-on-the-internet-miss-what-jev-is-about-ad0a983537d5) | Addresses common misconceptions |
+| [You could have built Jev](https://sgnt.ai/p/jev/) | Idea for reading single-token probabilities; claims about Jev internals are the author's speculation |
+| [Jev's Architecture Unmasked](https://archerhume.com/posts/jevs-architecture-unmasked/) | Community architecture speculation, not an official disclosure |
+| [TypeSafe's Jev Can't See](https://mikulskibartosz.name/typesafe-jev-guess-what-i-drew) | Experiment on capability boundaries |
+| [Testing Jev as a validation gate for drug-discovery agents](https://frederickparsons.substack.com/p/can-a-fast-ai-gate-catch-chemistry) | Experiment in a high-stakes domain |
+| [Reddit prior-architecture dispute](https://www.reddit.com/r/LocalLLaMA/comments/1wijo3e/i_literally_built_the_jev_architecture_one_year/) | Prior-work claim and discussion |
+
+## Similar Awesome lists
+
+| Repository | ★ |
+|---|---|
+| [Anil-matcha/awesome-jev-by-typesafe](https://github.com/Anil-matcha/awesome-jev-by-typesafe) | 776 |
+| [yibie/awesome-jev](https://github.com/yibie/awesome-jev) | 1,092 |
+| [v-modal/awesome-jev-tools](https://github.com/v-modal/awesome-jev-tools) | 630 |
+| [AbdelStark/awesome-typesafe-jev](https://github.com/AbdelStark/awesome-typesafe-jev) | 432 |
+| [cobanov/awesome-jev](https://github.com/cobanov/awesome-jev) | 318 |
+| [fatwang2/awesome-jev](https://github.com/fatwang2/awesome-jev) | 187 |
+| [logicrw/awesome-jev-projects](https://github.com/logicrw/awesome-jev-projects) | 339 |
+
+---
+
+## Inclusion criteria
+
+1. Directly relevant to Jev / System One: models, SDKs, reimplementations, integrations, evaluations, or in-depth explanations.
+2. Published entries need an accessible source; X / Xiaohongshu entries should include author and date, and restricted leads must be marked unverified.
+3. Popularity figures need a snapshot date (here: 2026-09-22).
+
+PRs are welcome, especially for relevant material on Xiaohongshu, Jike, Bilibili, and other Chinese platforms.

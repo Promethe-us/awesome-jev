@@ -1,5 +1,7 @@
 # 来源与核验记录（Source Audit）
 
+**语言 / Language: 简体中文 · [English](SOURCES_EN.md)**
+
 > 核验日期：**2026-09-22，Asia/Shanghai（UTC+8）**。本轮重点更新 09-20 至 09-22 的信息，同时复查发布周资料。
 > 返回 [README](../README.md) · [项目目录](CATALOG.md) · [论文与评测](RESEARCH.md) · [安装指南](INSTALLATION.md)
 

@@ -1,5 +1,7 @@
 # Jev 生态项目目录（Community Catalog）
 
+**语言 / Language: 简体中文 · [English](CATALOG_EN.md)**
+
 > 这是 [README](../README.md#ecosystem) 的扩展目录，按用途组织。**星数核验于 2026-09-22，取自 GitHub API**；`—` 表示本轮未取得数值，不代表零星。带数值的 GitHub 条目已核对仓库元数据；功能描述依据维护者资料，本仓库未运行验证其代码。
 > 相关指南：[上手安装](INSTALLATION.md) · [论文与评测](RESEARCH.md) · [核验记录](SOURCES.md)。独立开放模型不是 TypeSafe 官方 Jev 权重。
 

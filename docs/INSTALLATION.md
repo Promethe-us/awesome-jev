@@ -1,5 +1,7 @@
 # Jev 上手指南（Getting Started with Jev）
 
+**语言 / Language: 简体中文 · [English](INSTALLATION_EN.md)**
+
 > 核验日期：**2026-09-22（Asia/Shanghai）**。接口和示例依据[官方 Quick start](https://docs.typesafe.ai/introduction/quickstart)。本轮核对文档，未使用账户密钥执行付费推理。另见[模型规格](https://docs.typesafe.ai/models)、[来源记录](SOURCES.md)。
 
 ## 0. 直接登录，无需候补名单

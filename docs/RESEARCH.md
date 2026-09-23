@@ -1,5 +1,7 @@
 # Jev 论文与评测阅读指南
 
+**语言 / Language: 简体中文 · [English](RESEARCH_EN.md)**
+
 > 核验日期：**2026-09-22（Asia/Shanghai）**。这里区分官方说明、学术论文、社区实现和实验结果；本仓库没有重新运行付费推理或训练实验。
 > 返回 [README](../README.md) · [项目目录](CATALOG.md) · [来源与核验范围](SOURCES.md)
 
