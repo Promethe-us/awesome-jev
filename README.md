@@ -252,7 +252,7 @@ Jev 是 TypeSafe AI 的决策模型。程序提供文本状态和边界明确的
 | 背景 | [iLLaDA，2606.25331](https://arxiv.org/abs/2606.25331) | 2026 年掩码扩散模型研究；不是 Jev 新版本 |
 | 缩写辨析 | [RLCD from Contrastive Distillation，2307.12950](https://arxiv.org/abs/2307.12950) | 全称与 TypeSafe 的 Calibrated Decisions 不同 |
 
-### 2026-09 论文潮（09-19 至 09-22，13 篇）
+### 2026-09 论文潮（截至09-23，13 篇）
 
 | 分组 | 首发 | 论文 | 要点（作者报告） | 代码 |
 |---|---|---|---|---|

@@ -251,7 +251,7 @@ The six background papers below are selected by relevance and are not presented 
 | Background | [iLLaDA, 2606.25331](https://arxiv.org/abs/2606.25331) | 2026 research on masked diffusion; not a new Jev version |
 | Acronym disambiguation | [RLCD from Contrastive Distillation, 2307.12950](https://arxiv.org/abs/2307.12950) | Its expansion differs from TypeSafe's “Calibrated Decisions” |
 
-### The September 2026 paper wave (09-19 through 09-22, 13 papers)
+### The September 2026 paper wave (as of 09-23, 13 papers)
 
 | Group | First posted | Paper | Key points (author-reported) | Code |
 |---|---|---|---|---|
