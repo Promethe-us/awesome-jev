@@ -1,6 +1,6 @@
 # Sources and verification log
 
-> Audit date: **2026-09-22, Asia/Shanghai (UTC+8)**; **two incremental updates plus a full link audit completed on 2026-09-24** (see the 09-24 rows in the key-facts table). The repository's master label is now **2026-09-24 (Asia/Wuhan)**.
+> Audit date: **2026-09-22, Asia/Shanghai (UTC+8)**; **two incremental updates plus a full link audit completed on 2026-09-24** (see the 09-24 rows in the key-facts table). The repository's master label and the [research guide](RESEARCH_EN.md) audit date are now **2026-09-24 (Asia/Wuhan)**.
 > [English README](../README_EN.md) · [Catalog](CATALOG_EN.md) · [Research and evaluations](RESEARCH_EN.md) · [Getting started](INSTALLATION_EN.md) · [中文原文](SOURCES.md)
 
 ## Coverage and evidence levels

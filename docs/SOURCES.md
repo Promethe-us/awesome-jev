@@ -2,7 +2,7 @@
 
 **语言 / Language: 简体中文 · [English](SOURCES_EN.md)**
 
-> 核验日期：**2026-09-22，Asia/Shanghai（UTC+8）**；**2026-09-24 两轮增补并完成全库链接核查**（见“关键事实”表 09-24 各行），仓库主标注更新为 **2026-09-24（Asia/Wuhan）**。
+> 核验日期：**2026-09-22，Asia/Shanghai（UTC+8）**；**2026-09-24 两轮增补并完成全库链接核查**（见“关键事实”表 09-24 各行），仓库主标注与[论文与评测页](RESEARCH.md)核验日期更新为 **2026-09-24（Asia/Wuhan）**。
 > 返回 [README](../README.md) · [项目目录](CATALOG.md) · [论文与评测](RESEARCH.md) · [安装指南](INSTALLATION.md)
 
 ## 覆盖范围与证据等级

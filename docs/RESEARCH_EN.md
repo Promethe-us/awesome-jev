@@ -1,6 +1,6 @@
 # Jev research and evaluation reading guide
 
-> Source audit: **2026-09-22 (Asia/Shanghai)**. This guide separates official descriptions, academic papers, community implementations, and experimental results. This repository has not rerun paid inference or training experiments.
+> Source audit: **2026-09-24 (Asia/Wuhan)**. This guide separates official descriptions, academic papers, community implementations, and experimental results. This repository has not rerun paid inference or training experiments.
 > [English README](../README_EN.md) · [Catalog](CATALOG_EN.md) · [Sources and coverage](SOURCES_EN.md) · [中文原文](RESEARCH.md)
 
 ## 1. Is there an official Jev paper?
