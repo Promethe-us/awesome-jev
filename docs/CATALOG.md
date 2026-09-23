@@ -67,7 +67,7 @@
 | 项目 | ★ | 说明 |
 |---|---|---|
 | [NandhaKishorM/laya](https://github.com/NandhaKishorM/laya) | 12,413 | 独立开放决策模型；多语言路由与权重公开，跨模型比较需核对条件 |
-| [TheoLeeCJ/SemIf](https://github.com/TheoLeeCJ/SemIf) | 3,421 | 开源模型语义 if，单卡 3090 可跑（独立项目） |
+| [TheoLeeCJ/SemIf-OpenJev](https://github.com/TheoLeeCJ/SemIf-OpenJev) | 4,054 | 开源模型语义 if，单卡 3090 可跑（独立项目）；原 SemIf 已更名，星数为 09-24 快照 |
 | [TianyuCodings/NanoJev](https://github.com/TianyuCodings/NanoJev) | 1,886 | 纳米复刻：并行决策 + 动态候选 + 端到端训练 |
 | [vinnylarouge/jevlike](https://github.com/vinnylarouge/jevlike) | 1,181 | 单次前向评分的独立研究模型；作者明确未复现 Jev 私有训练方法 |
 | [bespokelabsai/nimble](https://github.com/bespokelabsai/nimble) | 1,535 | 开放数据 + 开放模型 + 开放配方（对比式数据策展） |

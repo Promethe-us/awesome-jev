@@ -16,7 +16,7 @@
 
 </div>
 
-> Community-maintained; not affiliated with TypeSafe AI. **Full source audit: 2026-09-22 (Asia/Shanghai); two incremental updates on 2026-09-24.** The first added 13 arXiv papers first posted between September 19 and 22, each checked against the arXiv API for title, authors, and date. The second followed community leads to add independent evaluations, Chinese-language hands-on tests, Pydantic AI's official integration docs, and unverified X / Zhihu / Xiaohongshu leads (GitHub repositories checked via API, X posts via the public mirror, and unreadable sources clearly labeled). Summaries come from the originals; this repository did not reproduce the experiments. All other sections keep the 09-22 snapshot. Being able to read a source does not mean this repository reproduced its performance claims. See the [source audit](docs/SOURCES_EN.md) for coverage and access limits.
+> Community-maintained; not affiliated with TypeSafe AI. **Full source audit: 2026-09-22 (Asia/Shanghai).** This page distinguishes official statements, authors' experiments, and unverified leads. Being able to read a source does not mean this repository reproduced its performance claims. See the [source audit](docs/SOURCES_EN.md) for coverage and access limits.
 
 ## 📑 Contents
 
@@ -159,9 +159,9 @@ The name Jev refers to William Stanley Jevons; System One borrows terminology fr
 | 09-17 | [@TheINAOG](https://x.com/TheINAOG/status/2100384258804093139) | Extracts state from simulator RAM and looks ahead before acting; game-specific adapters reduce perception difficulty |
 | 09-17 | [@sid19arya0](https://x.com/sid19arya0/status/2100458351440048258) | Single Pokémon battle demo; not a cross-game model leaderboard |
 | 09-16 | [@jpschroeder](https://x.com/jpschroeder/status/2100347770867458384) | Driving decision demo; “recreated FSD” is the author's phrase, not verified real-road autonomous driving capability |
-| 09-17 | [@rinte0321](https://x.com/rinte0321/status/2100736454850908344) (verified via [mirror](https://api.fxtwitter.com/status/2100736454850908344) on 09-24) | Japanese e-commerce live-recommendation demo: mid-conversation product suggestions that react to the user's latest utterance (Jev + gpt-live-1); the experience is the author's description, video not reproduced |
-| 09-18 | [@ctatedev](https://x.com/ctatedev/status/2101022101750571357) (verified via [mirror](https://api.fxtwitter.com/status/2101022101750571357) on 09-24) | json-render + Jev experiment for dynamic interfaces: componentized UI rendered in milliseconds; an early generative-UI direction |
-| 09-19 | [@yanhua1010](https://x.com/yanhua1010/status/2101257759497089171) (verified via [mirror](https://api.fxtwitter.com/status/2101257759497089171) on 09-24) | Looks up a 12306 train ticket with the browser agent (Jev Ultrafast): an everyday-usability demo; the direct post page was restricted, text read via the mirror |
+| 09-17 | [@rinte0321](https://x.com/rinte0321/status/2100736454850908344) | Japanese e-commerce live-recommendation demo: mid-conversation product suggestions that react to the user's latest utterance (Jev + gpt-live-1); the experience is the author's description, video not reproduced |
+| 09-18 | [@ctatedev](https://x.com/ctatedev/status/2101022101750571357) | json-render + Jev experiment for dynamic interfaces: componentized UI rendered in milliseconds; an early generative-UI direction |
+| 09-19 | [@yanhua1010](https://x.com/yanhua1010/status/2101257759497089171) | Looks up a 12306 train ticket with the browser agent (Jev Ultrafast): an everyday-usability demo |
 
 <a id="xiaohongshu"></a>
 ## 📕 Xiaohongshu leads
@@ -195,27 +195,27 @@ Also: [programmer Yupi's tutorial](https://cloud.tencent.com/developer/article/2
 <a id="ecosystem"></a>
 ## 💻 GitHub ecosystem
 
-> Stars are a **2026-09-22 GitHub API snapshot** (the five rows added 09-24 were snapshotted on 2026-09-24) and indicate attention, not quality or performance. See the [full catalog](docs/CATALOG_EN.md) for more projects, categories, and updated repository names.
+> Stars are a **2026-09-24 GitHub API snapshot** and indicate attention, not quality or performance. See the [full catalog](docs/CATALOG_EN.md) for more projects, categories, and updated repository names.
 
 | Area | Project | ★ | What to examine |
 |---|---|---|---|
-| Browser | [browser-use/jev-ultrafast](https://github.com/browser-use/jev-ultrafast) | 16,746 | Dynamically indexes actions; text entry may still call a generative model |
-| Context management | [tamaratran/fast-jev-compaction](https://github.com/tamaratran/fast-jev-compaction) | 6,086 | Filters tool records; examine information loss and context-cache tradeoffs |
-| Open model | [NandhaKishorM/laya](https://github.com/NandhaKishorM/laya) | 12,413 | Independent open decision model; check conditions behind cross-model numbers |
-| Open model | [TheoLeeCJ/SemIf](https://github.com/TheoLeeCJ/SemIf) | 3,421 | Semantic condition checks on an open model; unaffiliated with TypeSafe |
-| Open model | [jaredpalmer/kev](https://github.com/jaredpalmer/kev) | 2,757 | Expanded to a Qwen3.5 model family; no longer just a 0.5B prototype |
-| Training recipe | [bespokelabsai/nimble](https://github.com/bespokelabsai/nimble) | 1,535 | Contrastive data curation, model, and evaluation |
-| Training implementation | [TianyuCodings/NanoJev](https://github.com/TianyuCodings/NanoJev) | 1,886 | Small training pipeline; independent implementation, not official weights |
-| Agent evaluation | [danielgshea/jev-as-a-judge](https://github.com/danielgshea/jev-as-a-judge) | 63 | Inspect study design; distinguish repetitions from sample count |
-| General evaluation | [fstandhartinger/jevbench](https://github.com/fstandhartinger/jevbench) | 71 | Public tasks, adapters, results, and scoring definitions |
-| Independent evaluation | [AbdelStark/jev-benchmarks](https://github.com/AbdelStark/jev-benchmarks) | 17 | Pilot comparison against local GLiNER2.5; accuracy, coverage under an error budget, and latency, with public conditions (09-24) |
-| Chinese evaluation | [yibie/laya-jev-lab](https://github.com/yibie/laya-jev-lab) | 2 | Chinese support tickets, probability thresholds, and local-model cascades |
-| Chinese evaluation | [NanmiCoder/jev-arena](https://github.com/NanmiCoder/jev-arena) | 98 | Ten thousand comments comparing Jev and DeepSeek side by side; AI-reviewed labels, replayable per-item checks (09-24) |
-| Tool review | [agent-chaperone/agent-chaperone](https://github.com/agent-chaperone/agent-chaperone) | 2 | Reviews tool calls and responses; default shadow mode is not a sandbox |
-| Agent guardrails | [DevMortimer/pi-warden](https://github.com/DevMortimer/pi-warden) | 138 | Uses Jev to review coding-agent writes and project rules; includes a maintainer evaluation (09-24) |
-| Model routing | [0xNatoshi/jev-codex-router](https://github.com/0xNatoshi/jev-codex-router) | 247 | Per-turn Codex model and reasoning routing; the ~−60% saving comes from a 237-turn historical simulation, not measured bills (09-24) |
-| Content index | [mizzlelover/jev-hub](https://github.com/mizzlelover/jev-hub) | 23 | Aggregates X long-form posts and demo videos with authors and original links; inclusion does not mean the demos were reproduced (09-24) |
-| Compiler optimization | [Ramneet-Singh/jevopt](https://github.com/Ramneet-Singh/jevopt) | 2 | Jev selects whether to inline; LLVM enforces transformation legality; includes run logs and comparison scripts |
+| Browser | [browser-use/jev-ultrafast](https://github.com/browser-use/jev-ultrafast) | 18,946 | Dynamically indexes actions; text entry may still call a generative model |
+| Context management | [tamaratran/fast-jev-compaction](https://github.com/tamaratran/fast-jev-compaction) | 6,519 | Filters tool records; examine information loss and context-cache tradeoffs |
+| Open model | [NandhaKishorM/laya](https://github.com/NandhaKishorM/laya) | 19,900 | Independent open decision model; check conditions behind cross-model numbers |
+| Open model | [TheoLeeCJ/SemIf-OpenJev](https://github.com/TheoLeeCJ/SemIf-OpenJev) | 4,054 | Semantic condition checks on an open model; unaffiliated with TypeSafe; formerly named SemIf |
+| Open model | [jaredpalmer/kev](https://github.com/jaredpalmer/kev) | 5,688 | Expanded to a Qwen3.5 model family; no longer just a 0.5B prototype |
+| Training recipe | [bespokelabsai/nimble](https://github.com/bespokelabsai/nimble) | 1,676 | Contrastive data curation, model, and evaluation |
+| Training implementation | [TianyuCodings/NanoJev](https://github.com/TianyuCodings/NanoJev) | 2,100 | Small training pipeline; independent implementation, not official weights |
+| Agent evaluation | [danielgshea/jev-as-a-judge](https://github.com/danielgshea/jev-as-a-judge) | 78 | Inspect study design; distinguish repetitions from sample count |
+| General evaluation | [fstandhartinger/jevbench](https://github.com/fstandhartinger/jevbench) | 102 | Public tasks, adapters, results, and scoring definitions |
+| Independent evaluation | [AbdelStark/jev-benchmarks](https://github.com/AbdelStark/jev-benchmarks) | 17 | Pilot comparison against local GLiNER2.5; accuracy, coverage under an error budget, and latency, with public conditions |
+| Chinese evaluation | [yibie/laya-jev-lab](https://github.com/yibie/laya-jev-lab) | 8 | Chinese support tickets, probability thresholds, and local-model cascades |
+| Chinese evaluation | [NanmiCoder/jev-arena](https://github.com/NanmiCoder/jev-arena) | 98 | Ten thousand comments comparing Jev and DeepSeek side by side; AI-reviewed labels, replayable per-item checks |
+| Tool review | [agent-chaperone/agent-chaperone](https://github.com/agent-chaperone/agent-chaperone) | 20 | Reviews tool calls and responses; default shadow mode is not a sandbox |
+| Agent guardrails | [DevMortimer/pi-warden](https://github.com/DevMortimer/pi-warden) | 138 | Uses Jev to review coding-agent writes and project rules; includes a maintainer evaluation |
+| Model routing | [0xNatoshi/jev-codex-router](https://github.com/0xNatoshi/jev-codex-router) | 248 | Per-turn Codex model and reasoning routing; the ~−60% saving comes from a 237-turn historical simulation, not measured bills |
+| Content index | [mizzlelover/jev-hub](https://github.com/mizzlelover/jev-hub) | 23 | Aggregates X long-form posts and demo videos with authors and original links; inclusion does not mean the demos were reproduced |
+| Compiler optimization | [Ramneet-Singh/jevopt](https://github.com/Ramneet-Singh/jevopt) | 3 | Jev selects whether to inline; LLVM enforces transformation legality; includes run logs and comparison scripts |
 | Growth application | [Refix](https://refix.ai) | — | Product growth through experiments, SEO, content, and advertising; description is the project's own claim |
 
 The browser project had a demo target that expired with time: [issue #93 on September 21](https://github.com/browser-use/jev-ultrafast/issues/93) reported that the default flight date had passed. Check inputs before reproducing that demo; the issue report does not establish whether every version is fixed.
@@ -236,9 +236,18 @@ See [research and evaluations](docs/RESEARCH_EN.md) for methods, metric definiti
 <a id="papers"></a>
 ## 📄 Papers and technical reading
 
-The audits **still have not found an official TypeSafe technical paper on Jev / RLCD**; the official blog, documentation, and founder interview explain the product. However, four days after launch (September 19), the first third-party papers appeared on arXiv, and 13 had been posted by September 22. The table below follows the three groups used in [PaperWeekly's September 23 roundup](https://mp.weixin.qq.com/s/kK3du8zji4fa_9chnBl7Dw); titles, authors, and first-submission dates were verified against the arXiv API on 2026-09-24.
+The last audit did not find an official TypeSafe technical paper on Jev / RLCD; the official blog, documentation, and founder interview explain the product. But eight days after launch (September 23), 13 related papers had been posted on arXiv.
 
-> **All numbers are author-reported and not reproduced by this repository.** All are arXiv preprints and none has been peer reviewed. Per-paper authors, methods, and reading boundaries are in the [research guide](docs/RESEARCH_EN.md).
+The six background papers below are selected by relevance and are not presented as Jev's training recipe:
+
+| Category | Original paper | Relationship |
+|---|---|---|
+| Prior work | [SalesRLAgent, 2503.23303](https://arxiv.org/abs/2503.23303) | Reinforcement-learning decisions in sales conversations; primary material in the prior-art discussion |
+| Prior work | [Confidence-Aware Routing, 2510.01237](https://arxiv.org/abs/2510.01237) | Estimates uncertainty before generation and selects a processing path |
+| Calibration foundation | [On Calibration of Modern Neural Networks, ICML 2017](https://proceedings.mlr.press/v70/guo17a.html) | Understanding confidence, accuracy, and post-hoc calibration |
+| Background | [LLaDA, 2502.09992](https://arxiv.org/abs/2502.09992) | Non-autoregressive language modeling; no direct architectural link to Jev confirmed |
+| Background | [iLLaDA, 2606.25331](https://arxiv.org/abs/2606.25331) | 2026 research on masked diffusion; not a new Jev version |
+| Acronym disambiguation | [RLCD from Contrastive Distillation, 2307.12950](https://arxiv.org/abs/2307.12950) | Its expansion differs from TypeSafe's “Calibrated Decisions” |
 
 ### The September 2026 paper wave (09-19 through 09-22, 13 papers)
 
@@ -258,19 +267,6 @@ The audits **still have not found an official TypeSafe technical paper on Jev / 
 | Open models and benchmarks | 09-21 | [Evaluating Decision Models for Text Annotation in Computational Social Science, 2609.24574](https://arxiv.org/abs/2609.24574) | 18 computational-social-science tasks, 7,977 items, against 19 LLMs; the decision model trails the per-task best LLM on 14 of 15 formal tasks (median gap 11.6 macro-F1) at about 1/44 of the cost; routing low-confidence items to an LLM matches or beats the LLM alone at 1/4–1/2 of its cost | [GitHub](https://github.com/hazemibrahim97/decision-models-css) |
 | Open models and benchmarks | 09-22 | [Type-Safe Is Not Error-Free, 2609.26758](https://arxiv.org/abs/2609.26758) | Swapping only the option-name-to-rubric assignment (0/1 ↔ no/yes) causes large-scale reversals, AUC 0.94 → 0.23; the hosted Jev shows the same pattern, smaller in magnitude; the type-error rate stays 0% throughout | — |
 
-### Background and disambiguation (launch-week entries)
-
-No official TypeSafe paper has been found, so **there is no “Jev training recipe” paper to read**. The six papers below are selected by relevance; background papers are not presented as Jev's training recipe.
-
-| Category | Original paper | Relationship |
-|---|---|---|
-| Prior work | [SalesRLAgent, 2503.23303](https://arxiv.org/abs/2503.23303) | Reinforcement-learning decisions in sales conversations; primary material in the prior-art discussion |
-| Prior work | [Confidence-Aware Routing, 2510.01237](https://arxiv.org/abs/2510.01237) | Estimates uncertainty before generation and selects a processing path |
-| Calibration foundation | [On Calibration of Modern Neural Networks, ICML 2017](https://proceedings.mlr.press/v70/guo17a.html) | Understanding confidence, accuracy, and post-hoc calibration |
-| Background | [LLaDA, 2502.09992](https://arxiv.org/abs/2502.09992) | Non-autoregressive language modeling; no direct architectural link to Jev confirmed |
-| Background | [iLLaDA, 2606.25331](https://arxiv.org/abs/2606.25331) | 2026 research on masked diffusion; not a new Jev version |
-| Acronym disambiguation | [RLCD from Contrastive Distillation, 2307.12950](https://arxiv.org/abs/2307.12950) | Its expansion differs from TypeSafe's “Calibrated Decisions” |
-
 Authors, dates, publication status, and reading boundaries are in the [research guide](docs/RESEARCH_EN.md).
 
 <a id="reading"></a>
@@ -278,6 +274,7 @@ Authors, dates, publication status, and reading boundaries are in the [research 
 
 | Date | Material | Why read it |
 |---|---|---|
+| 09-24 | [Programmer Yupi: hands-on review and step-by-step tutorial (Tencent Cloud, Chinese)](https://cloud.tencent.com/developer/article/2748472) | Working notes on a numeric sliding puzzle, 1,000 simulated emails, a matching game, and tagging 697 articles; email speed and cost are the author's tests, not general benchmarks; the [same-title Zhihu entry](https://zhuanlan.zhihu.com/p/2085400278489101833) should not be counted twice |
 | 09-23 | [PaperWeekly: roundup of 13 papers (Chinese)](https://mp.weixin.qq.com/s/kK3du8zji4fa_9chnBl7Dw) | Organizes the September 19–22 arXiv wave into “first applications / Jev-Anything / open alternatives and stress tests”; treat the papers themselves as the source of record for numbers |
 | 09-21 | [Kazik, “This Jev only does multiple choice” (authorized reprint, Chinese)](https://news.pedaily.cn/202609/569378.shtml) | The author's own test using Jev to pre-screen AI news: a 100-question comparison and one article answered by multiple questions at once; results shown as screenshots and narration — read as a self-report (added 09-24) |
 | 09-20 | [Guixingren Pro, “Hands-on Jev” (Huxiu reprint, Chinese)](https://www.huxiu.com/article/4892583.html) | 50 Chinese customer-service questions × 4 judgments × 15 repetitions: about 64–65% correct at roughly 0.73 s per question; **score fluctuation near the threshold** — a message scored 1.99 against a 2.00 human-handoff cutoff, and 3 questions flipped across 15 runs; the [WeChat original](https://mp.weixin.qq.com/s?__biz=MzkyNjU2ODM2NQ%3D%3D&chksm=c34d64c8d9c576303a91a12548bb0d3a63e9c0d03e25645cd7d460b5cfaf5d0a192546d90b33&idx=1&mid=2247633323&sn=936abc6916a79b3005f4fc6c42e8653f) sat behind a verification wall, numbers come from the readable reprint (added 09-24) |
@@ -292,7 +289,6 @@ Authors, dates, publication status, and reading boundaries are in the [research 
 | 09-17 | [LangChain: Building a Harness with Jev](https://www.langchain.com/blog/building-a-harness-with-jev) | Agent routing and pre-tool-execution decisions |
 | 09-16 | [Sean Goedecke: structured output](https://www.seangoedecke.com/jev-means-structured-output-is-interesting-again/) | Interface design and possible implementations |
 | 09-15 | [TypeSafe company press release](https://www.businesswire.com/news/home/20260915525333/en/) | Primary source for company and financing information |
-| Added 09-24 | [Programmer Yupi: hands-on review and step-by-step tutorial (Tencent Cloud, Chinese)](https://cloud.tencent.com/developer/article/2748472) | Working notes on a numeric sliding puzzle, 1,000 simulated emails, a matching game, and tagging 697 articles; email speed and cost are the author's tests, not general benchmarks; the [same-title Zhihu entry](https://zhuanlan.zhihu.com/p/2085400278489101833) should not be counted twice |
 
 Discussion entry points: [HN launch thread](https://news.ycombinator.com/item?id=49717558), [discussion of Simon's article (indexed 09-22)](https://news.ycombinator.com/item?id=49796843), [tool-call evaluation discussion](https://news.ycombinator.com/item?id=49788402), and [Reddit prior-art dispute](https://www.reddit.com/r/LocalLLaMA/comments/1wijo3e/i_literally_built_the_jev_architecture_one_year/). Popularity and participants' claims do not replace experimental or paper evidence.
 

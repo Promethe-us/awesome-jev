@@ -65,7 +65,7 @@ For direct TypeSafe access and the Vercel, Cloudflare, OpenRouter, and LangSmith
 | Project | ★ | Notes |
 |---|---|---|
 | [NandhaKishorM/laya](https://github.com/NandhaKishorM/laya) | 12,413 | Independent open decision model with multilingual routing and public weights; check cross-model comparison conditions |
-| [TheoLeeCJ/SemIf](https://github.com/TheoLeeCJ/SemIf) | 3,421 | Open-model semantic `if`, runnable on one 3090 according to its project; independent of TypeSafe |
+| [TheoLeeCJ/SemIf-OpenJev](https://github.com/TheoLeeCJ/SemIf-OpenJev) | 4,054 | Open-model semantic `if`, runnable on one 3090 according to its project; independent of TypeSafe; formerly named SemIf, stars snapshotted 09-24 |
 | [TianyuCodings/NanoJev](https://github.com/TianyuCodings/NanoJev) | 1,886 | Small reimplementation with parallel decisions, dynamic candidates, and end-to-end training |
 | [vinnylarouge/jevlike](https://github.com/vinnylarouge/jevlike) | 1,181 | Independent research model using single-forward-pass scoring; author does not claim to reproduce Jev's private training method |
 | [bespokelabsai/nimble](https://github.com/bespokelabsai/nimble) | 1,535 | Open data, model, and recipe with contrastive data curation |

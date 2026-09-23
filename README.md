@@ -17,7 +17,7 @@
 
 </div>
 
-> 社区整理，与 TypeSafe AI 官方无关。**全库核验：2026-09-22（Asia/Shanghai）；2026-09-24 两轮增补**——第一轮新增 09-19 至 09-22 首发的 13 篇 arXiv 论文（标题 / 作者 / 首发日期经 arXiv API 逐篇核对）；第二轮按社区线索补录独立评测、中文实测、Pydantic AI 接入与 X / 知乎 / 小红书待核验线索（GitHub 仓库经 API 核对，X 帖经镜像核对，无法读取的正文明确标注）。内容要点均取自原文，本仓库未复现实验。其余章节维持 09-22 快照。来源可读取不等于性能已被本仓库复现；覆盖范围与访问限制见 [核验记录](docs/SOURCES.md)。
+> 社区整理，与 TypeSafe AI 官方无关。**全库核验：2026-09-22（Asia/Shanghai）**。来源可读取不等于性能已被本仓库复现；覆盖范围与访问限制见 [核验记录](docs/SOURCES.md)。
 
 ## 📑 目录
 
@@ -160,9 +160,9 @@ Jev 是 TypeSafe AI 的决策模型。程序提供文本状态和边界明确的
 | 09-17 | [@TheINAOG](https://x.com/TheINAOG/status/2100384258804093139) | 从模拟器 RAM 提取状态并做动作前瞻；游戏专用适配器降低了感知难度 |
 | 09-17 | [@sid19arya0](https://x.com/sid19arya0/status/2100458351440048258) | 宝可梦对战的单次演示，不能当作跨游戏模型排行榜 |
 | 09-16 | [@jpschroeder](https://x.com/jpschroeder/status/2100347770867458384) | 驾驶决策演示；“复刻 FSD”是作者说法，不能写成真实道路自动驾驶能力已验证 |
-| 09-17 | [@rinte0321](https://x.com/rinte0321/status/2100736454850908344)（09-24 经[镜像核验](https://api.fxtwitter.com/status/2100736454850908344)） | 日文电商实时接客演示：对话中途按用户发言即时推荐商品（Jev + gpt-live-1）；体验为作者描述，视频未复现 |
-| 09-18 | [@ctatedev](https://x.com/ctatedev/status/2101022101750571357)（09-24 经[镜像核验](https://api.fxtwitter.com/status/2101022101750571357)） | json-render + Jev 的动态界面实验：组件化 UI 毫秒级渲染，属于生成式 UI 方向的早期尝试 |
-| 09-19 | [@yanhua1010](https://x.com/yanhua1010/status/2101257759497089171)（09-24 经[镜像核验](https://api.fxtwitter.com/status/2101257759497089171)） | 用浏览器 Agent（Jev Ultrafast）查 12306 动车票：日常任务可用性演示；原帖直连受限，文本经镜像读取 |
+| 09-17 | [@rinte0321](https://x.com/rinte0321/status/2100736454850908344) | 日文电商实时接客演示：对话中途按用户发言即时推荐商品（Jev + gpt-live-1）；体验为作者描述，视频未复现 |
+| 09-18 | [@ctatedev](https://x.com/ctatedev/status/2101022101750571357) | json-render + Jev 的动态界面实验：组件化 UI 毫秒级渲染，属于生成式 UI 方向的早期尝试 |
+| 09-19 | [@yanhua1010](https://x.com/yanhua1010/status/2101257759497089171) | 用浏览器 Agent（Jev Ultrafast）查 12306 动车票：日常任务可用性演示 |
 
 <a id="xiaohongshu"></a>
 ## 📕 小红书线索（Xiaohongshu）
@@ -196,27 +196,27 @@ Jev 是 TypeSafe AI 的决策模型。程序提供文本状态和边界明确的
 <a id="ecosystem"></a>
 ## 💻 GitHub 生态
 
-> 星数为 **2026-09-22 GitHub API 快照**（09-24 增补的五行快照于 2026-09-24），表示关注度，不是质量或性能评分。完整分类、更多项目和更新后的仓库名称见 [CATALOG.md](docs/CATALOG.md)。
+> 星数为 **2026-09-24 GitHub API 快照**，表示关注度，不是质量或性能评分。完整分类、更多项目和更新后的仓库名称见 [CATALOG.md](docs/CATALOG.md)。
 
 | 方向 | 项目 | ★ | 阅读重点 |
 |---|---|---|---|
-| 浏览器 | [browser-use/jev-ultrafast](https://github.com/browser-use/jev-ultrafast) | 16,746 | 动态索引动作；文本输入环节仍可调用生成模型 |
-| 上下文管理 | [tamaratran/fast-jev-compaction](https://github.com/tamaratran/fast-jev-compaction) | 6,086 | 筛选工具记录；检查信息损失和上下文缓存的取舍 |
-| 开放模型 | [NandhaKishorM/laya](https://github.com/NandhaKishorM/laya) | 12,413 | 独立开源决策模型；横向数字需检查测试条件 |
-| 开放模型 | [TheoLeeCJ/SemIf](https://github.com/TheoLeeCJ/SemIf) | 3,421 | 开放模型上的语义条件判断，与 TypeSafe 无隶属关系 |
-| 开放模型 | [jaredpalmer/kev](https://github.com/jaredpalmer/kev) | 2,757 | 已扩展为 Qwen3.5 模型族，不能继续只描述为 0.5B 原型 |
-| 训练配方 | [bespokelabsai/nimble](https://github.com/bespokelabsai/nimble) | 1,535 | 对比数据策展、模型与评测 |
-| 训练实现 | [TianyuCodings/NanoJev](https://github.com/TianyuCodings/NanoJev) | 1,886 | 小型训练管线；独立实现而非官方权重 |
-| Agent 评测 | [danielgshea/jev-as-a-judge](https://github.com/danielgshea/jev-as-a-judge) | 63 | 可检查实验设计，严格区分重复次数和样本数 |
-| 综合评测 | [fstandhartinger/jevbench](https://github.com/fstandhartinger/jevbench) | 71 | 题目、模型适配器、结果和评分口径公开 |
-| 独立评测 | [AbdelStark/jev-benchmarks](https://github.com/AbdelStark/jev-benchmarks) | 17 | 与本地 GLiNER2.5 的同任务对比试点；准确率、错误预算下覆盖率与延迟，条件公开（09-24） |
-| 中文评测 | [yibie/laya-jev-lab](https://github.com/yibie/laya-jev-lab) | 2 | 中文客服、概率阈值与本地模型级联 |
-| 中文评测 | [NanmiCoder/jev-arena](https://github.com/NanmiCoder/jev-arena) | 98 | 一万条评论同批对比 Jev 与 DeepSeek；AI 复核口径、可回放逐条核查（09-24） |
-| 工具审查 | [agent-chaperone/agent-chaperone](https://github.com/agent-chaperone/agent-chaperone) | 2 | 检查工具调用和返回内容，默认 shadow 模式；不是沙箱 |
-| Agent 审查 | [DevMortimer/pi-warden](https://github.com/DevMortimer/pi-warden) | 138 | 用 Jev 检查编码 Agent 的写入与项目规则，附维护者评测（09-24） |
-| 模型路由 | [0xNatoshi/jev-codex-router](https://github.com/0xNatoshi/jev-codex-router) | 247 | 按调用选 Codex 模型与推理深度；约 −60% 的节省来自 237 轮历史模拟，非实测账单（09-24） |
-| 内容索引 | [mizzlelover/jev-hub](https://github.com/mizzlelover/jev-hub) | 23 | X 长文与演示视频聚合，保留作者与原链；演示不因此视为已复现（09-24） |
-| 编译优化 | [Ramneet-Singh/jevopt](https://github.com/Ramneet-Singh/jevopt) | 2 | Jev 选择是否内联，LLVM 负责变换合法性；有运行日志和比较脚本 |
+| 浏览器 | [browser-use/jev-ultrafast](https://github.com/browser-use/jev-ultrafast) | 18,946 | 动态索引动作；文本输入环节仍可调用生成模型 |
+| 上下文管理 | [tamaratran/fast-jev-compaction](https://github.com/tamaratran/fast-jev-compaction) | 6,519 | 筛选工具记录；检查信息损失和上下文缓存的取舍 |
+| 开放模型 | [NandhaKishorM/laya](https://github.com/NandhaKishorM/laya) | 19,900 | 独立开源决策模型；横向数字需检查测试条件 |
+| 开放模型 | [TheoLeeCJ/SemIf-OpenJev](https://github.com/TheoLeeCJ/SemIf-OpenJev) | 4,054 | 开放模型上的语义条件判断，与 TypeSafe 无隶属关系；原 SemIf 已更名 |
+| 开放模型 | [jaredpalmer/kev](https://github.com/jaredpalmer/kev) | 5,688 | 已扩展为 Qwen3.5 模型族，不能继续只描述为 0.5B 原型 |
+| 训练配方 | [bespokelabsai/nimble](https://github.com/bespokelabsai/nimble) | 1,676 | 对比数据策展、模型与评测 |
+| 训练实现 | [TianyuCodings/NanoJev](https://github.com/TianyuCodings/NanoJev) | 2,100 | 小型训练管线；独立实现而非官方权重 |
+| Agent 评测 | [danielgshea/jev-as-a-judge](https://github.com/danielgshea/jev-as-a-judge) | 78 | 可检查实验设计，严格区分重复次数和样本数 |
+| 综合评测 | [fstandhartinger/jevbench](https://github.com/fstandhartinger/jevbench) | 102 | 题目、模型适配器、结果和评分口径公开 |
+| 独立评测 | [AbdelStark/jev-benchmarks](https://github.com/AbdelStark/jev-benchmarks) | 17 | 与本地 GLiNER2.5 的同任务对比试点；准确率、错误预算下覆盖率与延迟，条件公开 |
+| 中文评测 | [yibie/laya-jev-lab](https://github.com/yibie/laya-jev-lab) | 8 | 中文客服、概率阈值与本地模型级联 |
+| 中文评测 | [NanmiCoder/jev-arena](https://github.com/NanmiCoder/jev-arena) | 98 | 一万条评论同批对比 Jev 与 DeepSeek；AI 复核口径、可回放逐条核查 |
+| 工具审查 | [agent-chaperone/agent-chaperone](https://github.com/agent-chaperone/agent-chaperone) | 20 | 检查工具调用和返回内容，默认 shadow 模式；不是沙箱 |
+| Agent 审查 | [DevMortimer/pi-warden](https://github.com/DevMortimer/pi-warden) | 138 | 用 Jev 检查编码 Agent 的写入与项目规则，附维护者评测 |
+| 模型路由 | [0xNatoshi/jev-codex-router](https://github.com/0xNatoshi/jev-codex-router) | 248 | 按调用选 Codex 模型与推理深度；约 −60% 的节省来自 237 轮历史模拟，非实测账单 |
+| 内容索引 | [mizzlelover/jev-hub](https://github.com/mizzlelover/jev-hub) | 23 | X 长文与演示视频聚合，保留作者与原链；演示不因此视为已复现 |
+| 编译优化 | [Ramneet-Singh/jevopt](https://github.com/Ramneet-Singh/jevopt) | 3 | Jev 选择是否内联，LLVM 负责变换合法性；有运行日志和比较脚本 |
 | 增长应用 | [Refix](https://refix.ai) | — | 增长：通过产品试验、SEO、内容与广告，让产品以自动驾驶方式更快增长 |
 
 浏览器项目存在随日期失效的演示目标：[09-21 的 issue #93](https://github.com/browser-use/jev-ultrafast/issues/93)指出默认机票日期已过期。复现演示时应检查输入条件；该 issue 是问题报告，不代表所有版本均已修复。
@@ -237,9 +237,18 @@ Jev 是 TypeSafe AI 的决策模型。程序提供文本状态和边界明确的
 <a id="papers"></a>
 ## 📄 论文与技术阅读（Papers & Technical Reading）
 
-本轮**仍未检索到 TypeSafe 官方 Jev / RLCD 论文**；官方博客、文档和新访谈提供产品说明。但 Jev 发布 4 天后（09-19），第一批第三方论文挂上 arXiv，至 09-22 累计 13 篇。下表按微信公众号 [PaperWeekly 的 09-23 盘点](https://mp.weixin.qq.com/s/kK3du8zji4fa_9chnBl7Dw)分为三组；标题、作者与首发日期已通过 arXiv API 逐篇核对（2026-09-24）。
+本轮未检索到 TypeSafe 官方 Jev / RLCD 论文；官方博客、文档和新访谈提供产品说明。但 Jev 发布 8 天（09-23）后，累计 13 篇相关论文挂上 arXiv。
 
-> **所有数字均为作者报告，本仓库未复现**；全部是 arXiv 预印本，未经同行评审。逐篇作者、方法与阅读边界见 [论文详解](docs/RESEARCH.md)。
+以下 6 篇背景研究按关联性收录，不将背景论文包装成 Jev 的训练配方：
+
+| 分类 | 原始论文 | 关系 |
+|---|---|---|
+| 先前工作 | [SalesRLAgent，2503.23303](https://arxiv.org/abs/2503.23303) | 销售对话中的强化学习决策；先发讨论的原始材料 |
+| 先前工作 | [Confidence-Aware Routing，2510.01237](https://arxiv.org/abs/2510.01237) | 在生成前评估不确定性并选择处理路径 |
+| 校准基础 | [On Calibration of Modern Neural Networks，ICML 2017](https://proceedings.mlr.press/v70/guo17a.html) | 理解置信度、正确率和后处理校准 |
+| 背景 | [LLaDA，2502.09992](https://arxiv.org/abs/2502.09992) | 非自回归语言建模；未确认与 Jev 架构的直接关系 |
+| 背景 | [iLLaDA，2606.25331](https://arxiv.org/abs/2606.25331) | 2026 年掩码扩散模型研究；不是 Jev 新版本 |
+| 缩写辨析 | [RLCD from Contrastive Distillation，2307.12950](https://arxiv.org/abs/2307.12950) | 全称与 TypeSafe 的 Calibrated Decisions 不同 |
 
 ### 2026-09 论文潮（09-19 至 09-22，13 篇）
 
@@ -259,19 +268,6 @@ Jev 是 TypeSafe AI 的决策模型。程序提供文本状态和边界明确的
 | 开源与横评 | 09-21 | [Evaluating Decision Models for Text Annotation in Computational Social Science，2609.24574](https://arxiv.org/abs/2609.24574) | 18 个计算社会科学任务 7,977 条样本，对比 19 个 LLM；15 个正式任务中 14 个 Jev 落后单任务最佳 LLM，中位差 11.6 macro-F1，成本约为其 1/44；低置信度路由回 LLM 可用 1/4–1/2 成本追平或更好 | [GitHub](https://github.com/hazemibrahim97/decision-models-css) |
 | 开源与横评 | 09-22 | [Type-Safe Is Not Error-Free，2609.26758](https://arxiv.org/abs/2609.26758) | 只交换选项名与定义的对应（0/1 ↔ no/yes）即大面积反转，AUC 0.94 → 0.23；托管 Jev 同类现象但幅度较小；全程类型错误率 0% | — |
 
-### 背景与辨析（发布周收录）
-
-本轮未检索到 TypeSafe 官方论文，因此**没有 Jev 的“训练配方”论文可读**。下面的 6 篇研究按关联性收录，不将背景论文包装成 Jev 的训练配方。
-
-| 分类 | 原始论文 | 关系 |
-|---|---|---|
-| 先前工作 | [SalesRLAgent，2503.23303](https://arxiv.org/abs/2503.23303) | 销售对话中的强化学习决策；先发讨论的原始材料 |
-| 先前工作 | [Confidence-Aware Routing，2510.01237](https://arxiv.org/abs/2510.01237) | 在生成前评估不确定性并选择处理路径 |
-| 校准基础 | [On Calibration of Modern Neural Networks，ICML 2017](https://proceedings.mlr.press/v70/guo17a.html) | 理解置信度、正确率和后处理校准 |
-| 背景 | [LLaDA，2502.09992](https://arxiv.org/abs/2502.09992) | 非自回归语言建模；未确认与 Jev 架构的直接关系 |
-| 背景 | [iLLaDA，2606.25331](https://arxiv.org/abs/2606.25331) | 2026 年掩码扩散模型研究；不是 Jev 新版本 |
-| 缩写辨析 | [RLCD from Contrastive Distillation，2307.12950](https://arxiv.org/abs/2307.12950) | 全称与 TypeSafe 的 Calibrated Decisions 不同 |
-
 作者、日期、发表性质和阅读边界见 [论文详解](docs/RESEARCH.md)。
 
 <a id="reading"></a>
@@ -279,6 +275,7 @@ Jev 是 TypeSafe AI 的决策模型。程序提供文本状态和边界明确的
 
 | 日期 | 材料 | 价值 |
 |---|---|---|
+| 09-24 | [程序员鱼皮：一手实战测评 + 保姆级教程（腾讯云开发者）](https://cloud.tencent.com/developer/article/2748472) | 数字华容道、1,000 封模拟邮件、连连看、697 篇文章打标签的操作记录；邮件速度与费用为作者测试，不写成通用基准；[知乎同题入口](https://zhuanlan.zhihu.com/p/2085400278489101833)勿重复计数 |
 | 09-23 | [PaperWeekly：13 篇论文盘点（中文）](https://mp.weixin.qq.com/s/kK3du8zji4fa_9chnBl7Dw) | 按“首批应用 / Jev-Anything / 开源平替与挑错”三组梳理 09-19 至 09-22 的 arXiv 论文潮；数字以各论文原文为准 |
 | 09-21 | [数字生命卡兹克：这个只会做选择题的 Jev（授权转载）](https://news.pedaily.cn/202609/569378.shtml) | 将 Jev 用于 AI 信息预筛的作者自测：100 题比较、一条新闻同时回答多个问题；结果以截图与叙述呈现，标注为作者自测（09-24 收录） |
 | 09-20 | [硅星人Pro：实测 Jev（虎扑转载）](https://www.huxiu.com/article/4892583.html) | 50 条中文客服题 × 4 项判断 × 15 次重复：约 64–65% 正确、约 0.73 秒 / 题；**阈值附近的分数波动**——1.99 分对 2.00 分转人工截断，15 次中 3 题翻转；[公众号原帖](https://mp.weixin.qq.com/s?__biz=MzkyNjU2ODM2NQ%3D%3D&chksm=c34d64c8d9c576303a91a12548bb0d3a63e9c0d03e25645cd7d460b5cfaf5d0a192546d90b33&idx=1&mid=2247633323&sn=936abc6916a79b3005f4fc6c42e8653f)本轮被验证墙拦截，数字取自可读转载（09-24 收录） |
@@ -293,7 +290,6 @@ Jev 是 TypeSafe AI 的决策模型。程序提供文本状态和边界明确的
 | 09-17 | [LangChain：Building a Harness with Jev](https://www.langchain.com/blog/building-a-harness-with-jev) | Agent 路由和工具执行前判断 |
 | 09-16 | [Sean Goedecke：结构化输出](https://www.seangoedecke.com/jev-means-structured-output-is-interesting-again/) | 接口设计与不同实现路径 |
 | 09-15 | [TypeSafe 公司新闻稿](https://www.businesswire.com/news/home/20260915525333/en/) | 公司与融资信息的一手出处 |
-| 收录于 09-24 | [程序员鱼皮：一手实战测评 + 保姆级教程（腾讯云开发者）](https://cloud.tencent.com/developer/article/2748472) | 数字华容道、1,000 封模拟邮件、连连看、697 篇文章打标签的操作记录；邮件速度与费用为作者测试，不写成通用基准；[知乎同题入口](https://zhuanlan.zhihu.com/p/2085400278489101833)勿重复计数 |
 
 讨论入口：[HN 发布帖](https://news.ycombinator.com/item?id=49717558)、[Simon 文章讨论（09-22 收录）](https://news.ycombinator.com/item?id=49796843)、[工具调用评测讨论](https://news.ycombinator.com/item?id=49788402)、[Reddit 先前工作争议](https://www.reddit.com/r/LocalLLaMA/comments/1wijo3e/i_literally_built_the_jev_architecture_one_year/)。讨论热度和当事人主张都不能替代实验或论文证据。
 
