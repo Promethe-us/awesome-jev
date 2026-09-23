@@ -180,15 +180,15 @@ The name Jev refers to William Stanley Jevons; System One borrows terminology fr
 
 The secondary index came from SMZDM [reference list A](https://post.smzdm.com/p/ad798m6x/), [list B](https://post.smzdm.com/p/a5ro30p3/), and [list C](https://post.smzdm.com/p/aggqvg7m/), used only to discover original links. Useful Xiaohongshu search terms include `Jev`, `Jev 模型`, `TypeSafe`, and `Jev 实测`. See the [access log](docs/SOURCES_EN.md#xiaohongshu-checks) for the full attempt history and inclusion criteria.
 
-### Zhihu leads (unverified, added 09-24)
+### Zhihu articles (owner-confirmed accessible, added 09-24)
 
-> All three Zhihu entry points returned 403 this round and their text could not be read; titles and links come from search indexes. **Numbers and methods in the titles are not credited until the full text is read.**
+> All three entries open in a browser, confirmed by the repository owner on 2026-09-24; automated fetches are still blocked by Zhihu's anti-crawler wall (403), so key points will be added once the full text is read. **Numbers in the titles stay uncredited until checked against the full text.**
 
-| Entry point | Status |
+| Article | Status |
 |---|---|
-| [“385 ms per decision: wired into two real systems” (Chinese)](https://zhuanlan.zhihu.com/p/2085717977140352185) | Returned 403 on 09-24 |
-| [“JEV integration tested: still far from usable” (Chinese)](https://zhuanlan.zhihu.com/p/2085662736722276833) | Returned 403 on 09-24 |
-| [“Jev in practice 04: Jev + CDP browser automation” (Chinese)](https://zhuanlan.zhihu.com/p/2084848802809303864) | Returned 403 on 09-24 |
+| [“385 ms per decision: wired into two real systems” (Chinese)](https://zhuanlan.zhihu.com/p/2085717977140352185) | Owner-confirmed accessible on 09-24; automated fetch 403 |
+| [“JEV integration tested: still far from usable” (Chinese)](https://zhuanlan.zhihu.com/p/2085662736722276833) | Owner-confirmed accessible on 09-24; automated fetch 403 |
+| [“Jev in practice 04: Jev + CDP browser automation” (Chinese)](https://zhuanlan.zhihu.com/p/2084848802809303864) | Owner-confirmed accessible on 09-24; automated fetch 403 |
 
 Also: [programmer Yupi's tutorial](https://cloud.tencent.com/developer/article/2748472) has a [same-title Zhihu entry point](https://zhuanlan.zhihu.com/p/2085400278489101833); the experiment counts once and is listed under [in-depth articles](#reading), with the readable Tencent Cloud original as the reference.
 
