@@ -183,7 +183,7 @@ Jev 是 TypeSafe AI 的决策模型。程序提供文本状态和边界明确的
 
 二级索引来自什么值得买的[参考来源列表 A](https://post.smzdm.com/p/ad798m6x/)、[列表 B](https://post.smzdm.com/p/a5ro30p3/)与[列表 C](https://post.smzdm.com/p/aggqvg7m/)，只用于发现原始链接。站内可检索 `Jev`、`Jev 模型`、`TypeSafe`、`Jev 实测`。完整访问情况与收录门槛见 [SOURCES.md](docs/SOURCES.md#xiaohongshu-checks)。
 
-### 知乎文章（09-24 维护者确认可打开）
+### 知乎文章（截至09-24）
 
 > 三条入口已由维护者在浏览器中确认可打开（2026-09-24）；自动化抓取仍被知乎反爬拦截（403），正文要点待读取后补充。**标题中的数字在对照正文复核前不采信**。
 

@@ -182,7 +182,7 @@ The name Jev refers to William Stanley Jevons; System One borrows terminology fr
 
 The secondary index came from SMZDM [reference list A](https://post.smzdm.com/p/ad798m6x/), [list B](https://post.smzdm.com/p/a5ro30p3/), and [list C](https://post.smzdm.com/p/aggqvg7m/), used only to discover original links. Useful Xiaohongshu search terms include `Jev`, `Jev 模型`, `TypeSafe`, and `Jev 实测`. See the [access log](docs/SOURCES_EN.md#xiaohongshu-checks) for the full attempt history and inclusion criteria.
 
-### Zhihu articles (owner-confirmed accessible, added 09-24)
+### Zhihu articles (as of 09-24)
 
 > All three entries open in a browser, confirmed by the repository owner on 2026-09-24; automated fetches are still blocked by Zhihu's anti-crawler wall (403), so key points will be added once the full text is read. **Numbers in the titles stay uncredited until checked against the full text.**
 
