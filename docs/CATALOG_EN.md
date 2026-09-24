@@ -47,6 +47,7 @@ For direct TypeSafe access and the Vercel, Cloudflare, OpenRouter, and LangSmith
 | [kitze/skillbox](https://github.com/kitze/skillbox) | 234 | Self-hosted skill library with optional Jev integration |
 | [DevMortimer/pi-warden](https://github.com/DevMortimer/pi-warden) | 138 | Uses Jev to review coding-agent writes and project rules (added 09-24) |
 | [0xNatoshi/jev-codex-router](https://github.com/0xNatoshi/jev-codex-router) | 248 | Per-turn Codex model and reasoning routing; the ~−60% saving comes from a 237-turn historical simulation and, per the project, is not measured billing (added 09-24) |
+| [supercorp-ai/supercov](https://github.com/supercorp-ai/supercov) | 114 | Coverage, security and code quality for coding agents: Jev checks each source file so the agent knows what to fix first |
 | [Pydantic AI: TypeSafe (Jev) docs](https://pydantic.dev/docs/ai/models/typesafe/) | — | Framework's official integration docs: `TypeSafeModel`, typed outputs, boolean thresholds, tool calls, and low-confidence fallback (added 09-24) |
 
 ## I want browser, phone, or computer automation
