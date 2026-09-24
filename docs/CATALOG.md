@@ -49,6 +49,7 @@
 | [kitze/skillbox](https://github.com/kitze/skillbox) | 234 | 自托管技能库，可选 Jev 集成 |
 | [DevMortimer/pi-warden](https://github.com/DevMortimer/pi-warden) | 138 | 用 Jev 检查编码 Agent 的写入与项目规则（09-24 收录） |
 | [0xNatoshi/jev-codex-router](https://github.com/0xNatoshi/jev-codex-router) | 248 | 按调用选择 Codex 模型与推理深度；约 −60% 的节省来自 237 轮历史模拟，项目自述非实测账单（09-24 收录） |
+| [supercorp-ai/supercov](https://github.com/supercorp-ai/supercov) | 114 | 给编程 Agent 的测试覆盖率、安全与代码质量：Jev 检查每个源文件，Agent 就知道先修什么 |
 | [Pydantic AI：TypeSafe (Jev) 文档](https://pydantic.dev/docs/ai/models/typesafe/) | — | 框架官方接入文档：`TypeSafeModel`、类型化输出、布尔阈值、工具调用与低置信度回退（09-24 收录） |
 
 ## 我想做浏览器 / 手机 / 电脑自动化
