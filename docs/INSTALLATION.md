@@ -197,7 +197,7 @@ npx skills add typesafe-ai/skills --skill typesafe-ai
 | OpenRouter | [Jev 1.13 模型页](https://openrouter.ai/typesafe/jev-1.13) | beta 接入已由[官方公告](https://x.com/OpenRouter/status/2100744709589316009)确认；使用当前决策接口说明，勿套普通聊天请求 |
 | LangSmith Gateway | `typesafe/jev-1.13.0`；`/v1/systemone` | TypeSafe 密钥存为工作区 provider secret，客户端用 `LANGSMITH_API_KEY`；[决策模型文档](https://docs.langchain.com/langsmith/llm-gateway-decision-models) |
 
-**促销单独看**：Vercel 的 [09-19 公告](https://x.com/vercel_dev/status/2101116818463281579)称免费至 09-25；不是 TypeSafe 直连永久降价。本文没有用付费账户验证各网关的实际开通条件或账单。
+**促销单独看**：Vercel 的[模型页](https://vercel.com/ai-gateway/models/jev)写明促销计划于 2026-09-25 结束，但 09-26 页面仍显示 Free。它与 TypeSafe 直连价格分开；实际计费请以账户账单为准。本文未用付费账户验证。
 
 需要本地推理可研究 [Laya](https://github.com/NandhaKishorM/laya)、[Kev](https://github.com/jaredpalmer/kev) 等独立模型；不是官方 Jev 权重。比较条件见 [RESEARCH.md](RESEARCH.md)。
 

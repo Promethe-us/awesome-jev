@@ -2,7 +2,7 @@
 
 **语言 / Language: 简体中文 · [English](SOURCES_EN.md)**
 
-> 核验日期：**2026-09-22，Asia/Shanghai（UTC+8）**；**2026-09-24 两轮增补并完成全库链接核查**（见“关键事实”表 09-24 各行），仓库主标注与[论文与评测页](RESEARCH.md)核验日期更新为 **2026-09-24（Asia/Shanghai）**。
+> 2026-09-22 初次核验；2026-09-24 完成全库链接核查；**2026-09-26 增量核验**新增来源。README 徽章中的 09-24 仍表示上次全库核验，不表示本轮重查了全部旧链接。
 > 返回 [README](../README.md) · [项目目录](CATALOG.md) · [论文与评测](RESEARCH.md) · [安装指南](INSTALLATION.md)
 
 ## 覆盖范围与证据等级
@@ -38,6 +38,15 @@
 | 公司与融资 | [09-15 公司新闻稿](https://www.businesswire.com/news/home/20260915525333/en/)；保留有出处的信息，删除未核实的估值与人物细节 |
 
 以上都是日期快照。状态页会变化，模型别名、限流、价格与促销也应在实际使用前重查。
+
+## 2026-09-26 增量核验与取舍
+
+本轮重新打开 [TypeSafe Models](https://docs.typesafe.ai/models)：当前仍为 `jev-1.13.0`，`jev-latest` / `jev-preview` 均指向它，且暂无 preview。[状态页](https://status.typesafe.ai/)显示 API / Console 在线，09-23 延迟事件及此前事件均为已恢复的历史记录。Vercel 的[模型页](https://vercel.com/ai-gateway/models/jev)写促销于 09-25 结束，但 09-26 页面仍显示 Free；未使用账户核对账单，故不宣称 09-26 仍免费或必然收费。[接入公告](https://vercel.com/changelog/typesafe-ai-jev-now-available-on-ai-gateway)仍保留旧促销文案。
+
+- **框架与平台第一方材料**：[Pydantic Jev 模型文档](https://pydantic.dev/docs/ai/models/typesafe/)、[Evals 实例](https://pydantic.dev/articles/jev-evals)、[Gateway 公告](https://pydantic.dev/articles/jev-pydantic-ai-gateway)；[Composio TypeSafe 文档](https://docs.composio.dev/docs/providers/typesafe)及[更新记录](https://docs.composio.dev/reference/changelog)；[Rig 主仓库](https://github.com/0xPlaygrounds/rig)标示 experimental；[Ax 第一方站点源码](https://github.com/ax-llm/ax/blob/main/website/content/_index.md)；[Vercel Connect](https://vercel.com/connect/jev)及[eve 评估指南](https://github.com/vercel/eve/blob/main/docs/guides/evaluate.md)。Pydantic 的 `LLMJudge` / `GEval` 已由正式文章确认，不能仅从旧 issue 推断。
+- **社区仓库直接核验**：[TypeSafeAI 组织声明](https://github.com/TypeSafeAI)明确非官方；[playground](https://github.com/TypeSafeAI/typesafe-playground)区分 mock 和实时调用；[harness](https://github.com/TypeSafeAI/jev-harness)主体是离线契约、实时传输交给宿主。[verdict](https://github.com/khimaros/verdict)自述独立 wire-compatible 实现。[TradingAgents](https://github.com/TauricResearch/TradingAgents) 及其 [v0.5.1 release](https://github.com/TauricResearch/TradingAgents/releases)确认 Jev 仅是可选帖文筛选；[PyGPT](https://github.com/szczyglis-dev/py-gpt) README / 2.8.31 changelog 明示 inline 插件。[Convex 决策评测](https://github.com/get-convex/convex-evals) 与主编码评测分开。未给这些新增条目填写易变的星数。
+- **研究与原始记录**：8 篇新论文的 arXiv 原页逐篇列于 [RESEARCH.md](RESEARCH.md)；此前 13 个 ID 也重新打开检查仍可用，历史批次计数未当作当前总数。[Jev-Benchmark](https://github.com/ZF-Utokyo/Jev-Benchmark) 的 `benchmark/providers.py`、`benchmark/protocol.py`、`data/provenance.json` 与 `docs/protocol.md` 直接核对 ContractNLI 和 Jev 原生调用；[RLCDAlignBench](https://github.com/sumleo/RLCDAlignBench) 与[受限访问数据卡](https://huggingface.co/datasets/sumleo/RLCDAlignBench)核对数据范围和标签来源；[JEV-Star](https://github.com/sc2musa/Jev_Star) README 保留有限样本与同时改动接口的限制。
+- **未收录 / 未宣称**：`reticlehq/reticle` 现有条目仍明确是计划集成，未提升为已支持；`TypeSafeAI` 不归入官方；`verdict` 不归入官方模型；playground 的 110 个示例数不复制进目录，避免高频维护；`Jev in the Wild` 的 2,170 是论文方法下的 GitHub 样本，不是本仓库验证的集成数。暂不依据聚合站结果新增缺少代码或第一方证据的长尾项目。
 
 ## X 的核验方法
 

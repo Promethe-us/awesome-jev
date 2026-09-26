@@ -35,20 +35,22 @@
 - [贡献](#contributing)
 
 <a id="latest"></a>
-## 🆕 最新变化（核验至 2026-09-24）
+## 🆕 最新变化（增量核验至 2026-09-26）
 
 | 变化 | 对使用者的意义 | 一手来源 |
 |---|---|---|
+| **09-23 / 09-24 新论文与基准** | 新核验 8 篇直接研究 Jev 的预印本，涉及安全、医疗报告评判、法律文档、移动操作、游戏控制与评测；结果均为作者报告，方法与局限见研究页 | [论文与评测](docs/RESEARCH.md) |
+| **框架与接入更新** | Composio 的 Python / TypeScript 适配器、Rig 的实验性 Rust 适配器、Ax 的 TypeSafe 接入、Pydantic Evals 与 Gateway、Vercel Connect / eve 均有第一方说明 | [完整目录](docs/CATALOG.md) · [Pydantic Gateway](https://pydantic.dev/articles/jev-pydantic-ai-gateway) |
 | **第二轮社区增补（09-24）** | 新增独立评测（[jev-benchmarks](https://github.com/AbdelStark/jev-benchmarks)、[jev-arena](https://github.com/NanmiCoder/jev-arena)、[腾讯云 ADP 博客](https://adp.tencent.com/zh/blog/jev-vs-general-llm-automated-decision-selection)、[硅星人Pro 实测](https://www.huxiu.com/article/4892583.html)）、[Pydantic AI 官方接入文档](https://pydantic.dev/docs/ai/models/typesafe/)、三个工程项目与 X / 知乎 / 小红书待核验线索 | [评测页](docs/RESEARCH.md) · [核验记录](docs/SOURCES.md) |
 | **arXiv 出现 13 篇 Jev 相关论文** | 09-19（发布后 4 天）起挂出，至 09-22 共 13 篇，其中 09-21 一天 6 篇：首批应用、Agent 记忆 / Judge / 视觉（“Jev-Anything”）、开源平替与失效分析；数字均为作者报告 | [论文区](#papers) · [PaperWeekly 中文盘点，09-23](https://mp.weixin.qq.com/s/kK3du8zji4fa_9chnBl7Dw) |
 | **已取消候补名单** | 官方于 09-20 21:30 UTC（北京时间 09-21 05:30）宣布向所有用户开放；直接前往 Console | [官方 X 公告](https://x.com/typesafeai/status/2101786156572823624) |
 | **新用户起始 $5 额度** | 官方同帖回复公布约 1.2 亿输入 token 的起始额度；不是持续免费的承诺 | [官方回复](https://x.com/typesafeai/status/2101786280946499671) |
-| **Vercel 限时免费活动** | 09-19 公告称 Jev 在 AI Gateway 免费至 09-25；该活动与 TypeSafe 直连价格、赠送额度分开看，具体结束时间和账户条件以平台为准 | [Vercel Developers](https://x.com/vercel_dev/status/2101116818463281579) |
+| **Vercel 限时免费活动的历史记录** | 官方模型页写明促销计划于 2026-09-25 结束，但 09-26 页面仍显示 Free。实际计费以账户账单为准 | [Vercel 模型页](https://vercel.com/ai-gateway/models/jev) · [接入公告](https://vercel.com/changelog/typesafe-ai-jev-now-available-on-ai-gateway) |
 | **Python SDK v0.7.1** | 09-21 更新：提前验证 API Key，并从异常日志中排除密钥值；补充网关示例 | [官方 changelog](https://docs.typesafe.ai/sdk/python/changelog) |
 | **LangSmith 上线 Jev 评估集成** | 09-21 宣布支持 Jev-as-a-judge；Gateway 也支持自带 TypeSafe 密钥调用 Jev | [集成公告](https://www.langchain.com/blog/jev-is-now-available-in-langsmith-evals) · [Gateway 文档](https://docs.langchain.com/langsmith/llm-gateway-decision-models) |
 | **SemIf 托管限时免费** | LangSmith 提供独立开放模型 `semif-qwen3.5-4b`，免费至 09-28；限 US 组织的 Free / Developer / Plus 计划，并非 Jev 免费活动 | [官方说明](https://docs.langchain.com/langsmith/llm-gateway-decision-models) |
 | **当前文档仍列 Jev 1.13.0** | `jev-latest` 和 `jev-preview` 都指向该版本；SDK 更新不等于模型升级 | [Models](https://docs.typesafe.ai/models) |
-| **09-20 / 09-21 服务事件** | 状态页记录 Console / API 事件及恢复；本轮读取时显示服务在线。在线状态是时间点记录 | [官方状态页](https://status.typesafe.ai/) |
+| **历史服务事件** | 状态页显示 09-20、09-21 和 09-23 的事件均已恢复；09-26 读取时 API 与 Console 显示在线，属于时间点快照 | [官方状态页](https://status.typesafe.ai/) |
 | **新增研究与工程材料** | 创始人长访谈、中文小样本比较、Agent 调用评测和 JevBench；新增编译内联决策等项目 | [论文与评测](docs/RESEARCH.md) · [完整目录](docs/CATALOG.md) |
 
 <a id="overview"></a>
@@ -110,6 +112,8 @@ Jev 是 TypeSafe AI 的决策模型。程序提供文本状态和边界明确的
 | [System One LLM 适配器](https://github.com/typesafe-ai/system-one-adapter-python) | 用 LLM 实现类似接口；输出与性能不等同于 Jev |
 | [Cookbooks](https://docs.typesafe.ai/cookbooks) | 重排、引用核查、特征构造、分类与路由 |
 | [Pydantic AI：TypeSafe (Jev) 模型文档](https://pydantic.dev/docs/ai/models/typesafe/)（09-24 增补） | 第三方 Agent 框架的官方接入：`TypeSafeModel`、类型化输出、布尔阈值、工具调用与低置信度回退示例 |
+| [Pydantic Evals：Jev 评判示例](https://pydantic.dev/articles/jev-evals) · [Pydantic AI Gateway](https://pydantic.dev/articles/jev-pydantic-ai-gateway) | 官方示例使用 Jev 作自定义评判以及 `LLMJudge` / `GEval`；Gateway 用自带 TypeSafe 密钥转发原生 System One 请求 |
+| [Vercel Connect：Jev](https://vercel.com/connect/jev) · [Vercel eve 评估指南](https://github.com/vercel/eve/blob/main/docs/guides/evaluate.md) | Connect 按项目 / 环境控制凭证，eve 的 `auto` 与 `evaluate` 默认选择 AI Gateway 的 `typesafe-ai/jev` |
 | [已知不足](https://docs.typesafe.ai/model-jaggedness/jev-1.13) | 数值、日期、对抗输入和跨问题一致性等限制 |
 | [Workflow evals](https://evals.typesafe.ai/) · [状态页](https://status.typesafe.ai/) | 厂商实验与服务事件 |
 | [官方 X](https://x.com/typesafeai) · [Discord](https://discord.gg/typesafe) | 公告与社区交流 |
@@ -239,7 +243,9 @@ Jev 是 TypeSafe AI 的决策模型。程序提供文本状态和边界明确的
 <a id="papers"></a>
 ## 📄 论文与技术阅读（Papers & Technical Reading）
 
-本轮未检索到 TypeSafe 官方 Jev / RLCD 论文；官方博客、文档和新访谈提供产品说明。但 Jev 发布 8 天（09-23）后，累计 13 篇相关论文挂上 arXiv。
+截至 09-26 未发现 TypeSafe 官方 Jev / RLCD 技术论文；这里收录的直接研究均为第三方预印本。此前核验的 13 篇仅代表 **09-22 截止的历史批次**，不是当前论文总量。09-23 / 09-24 新核验 8 篇，详见 [RESEARCH.md](docs/RESEARCH.md)。
+
+新增研究中，[Decision Hijacking](https://arxiv.org/abs/2609.28613) 研究类型化决策受到提示注入后的概率变化；[Just Ask Jev](https://arxiv.org/abs/2609.29429) 提供对齐失效检测基准与受限访问的数据；[JEV vs. LLMs as Rubric Judges](https://arxiv.org/abs/2609.29769) 报告其任务中评判器的相关错误。另有[医疗报告](https://arxiv.org/abs/2609.27607)、[法律文档](https://arxiv.org/abs/2609.27678)、[移动操作](https://arxiv.org/abs/2609.30186)、[星际争霸控制](https://arxiv.org/abs/2609.27331)和[生态方法学](https://arxiv.org/abs/2609.30216)研究；不要把单篇实验结论推广为 Jev 的通用性能。
 
 以下 6 篇背景研究按关联性收录，不将背景论文包装成 Jev 的训练配方：
 
@@ -252,7 +258,7 @@ Jev 是 TypeSafe AI 的决策模型。程序提供文本状态和边界明确的
 | 背景 | [iLLaDA，2606.25331](https://arxiv.org/abs/2606.25331) | 2026 年掩码扩散模型研究；不是 Jev 新版本 |
 | 缩写辨析 | [RLCD from Contrastive Distillation，2307.12950](https://arxiv.org/abs/2307.12950) | 全称与 TypeSafe 的 Calibrated Decisions 不同 |
 
-### 2026-09 论文潮（截至09-23，13 篇）
+### 2026-09 早期论文批次（截至09-22，13 篇）
 
 | 分组 | 首发 | 论文 | 要点（作者报告） | 代码 |
 |---|---|---|---|---|
