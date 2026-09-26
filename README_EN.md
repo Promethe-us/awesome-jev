@@ -34,20 +34,22 @@
 - [Contributing](#contributing)
 
 <a id="latest"></a>
-## 🆕 Latest changes (verified through 2026-09-24)
+## 🆕 Latest changes (incrementally verified through 2026-09-26)
 
 | Change | What it means | Primary source |
 |---|---|---|
+| **September 23–24 research and benchmarks** | Eight newly verified preprints directly study Jev across security, radiology, legal inference, mobile agents, game control, and evaluation. Results are author-reported; see methods and limits in the research guide | [Research and evaluations](docs/RESEARCH_EN.md) |
+| **Framework and access updates** | First-party sources now document Composio's Python / TypeScript adapters, Rig's experimental Rust adapter, Ax's TypeSafe support, Pydantic Evals and Gateway, and Vercel Connect / eve | [Full catalog](docs/CATALOG_EN.md) · [Pydantic Gateway](https://pydantic.dev/articles/jev-pydantic-ai-gateway) |
 | **Second community increment (09-24)** | Adds independent evaluations ([jev-benchmarks](https://github.com/AbdelStark/jev-benchmarks), [jev-arena](https://github.com/NanmiCoder/jev-arena), [Tencent Cloud ADP's blog](https://adp.tencent.com/zh/blog/jev-vs-general-llm-automated-decision-selection), [Guixingren Pro's hands-on test](https://www.huxiu.com/article/4892583.html)), [Pydantic AI's official integration docs](https://pydantic.dev/docs/ai/models/typesafe/), three engineering projects, and unverified X / Zhihu / Xiaohongshu leads | [Research and evaluations](docs/RESEARCH_EN.md) · [Source audit](docs/SOURCES_EN.md) |
 | **13 Jev-related papers appeared on arXiv** | Starting September 19 (four days after launch), 13 papers had been posted by September 22, six of them on September 21 alone: first applications; agent memory, judge, and vision work (“Jev-Anything”); and open alternatives plus failure analysis. All numbers are author-reported | [Papers section](#papers) · [PaperWeekly's Chinese roundup, 09-23](https://mp.weixin.qq.com/s/kK3du8zji4fa_9chnBl7Dw) |
 | **Waitlist removed** | TypeSafe announced access for everyone at 21:30 UTC on September 20 (05:30 Beijing time on September 21); go directly to the Console | [Official X announcement](https://x.com/typesafeai/status/2101786156572823624) |
 | **$5 starting credit for new users** | An official reply described this as roughly 120 million input tokens; it is not a promise of ongoing free use | [Official reply](https://x.com/typesafeai/status/2101786280946499671) |
-| **Vercel's temporary free offer** | A September 19 announcement said Jev would be free on AI Gateway through September 25. Treat this separately from TypeSafe's direct price and starting credit; check Vercel for the exact cutoff and account terms | [Vercel Developers](https://x.com/vercel_dev/status/2101116818463281579) |
+| **Historical Vercel promotion** | Vercel scheduled the promotion to end on September 25, 2026, yet its model page still displayed Free on September 26. Check account billing for the applicable rate | [Vercel model page](https://vercel.com/ai-gateway/models/jev) · [Integration announcement](https://vercel.com/changelog/typesafe-ai-jev-now-available-on-ai-gateway) |
 | **Python SDK v0.7.1** | September 21 update: earlier API key validation, no key value in exception logs, and additional gateway examples | [Official changelog](https://docs.typesafe.ai/sdk/python/changelog) |
 | **Jev evaluation integration in LangSmith** | LangSmith announced Jev-as-a-judge support on September 21; its Gateway also supports Jev with your own TypeSafe key | [Integration announcement](https://www.langchain.com/blog/jev-is-now-available-in-langsmith-evals) · [Gateway docs](https://docs.langchain.com/langsmith/llm-gateway-decision-models) |
 | **Temporary free SemIf hosting** | LangSmith's separate open model, `semif-qwen3.5-4b`, was free through September 28 for eligible US organizations on Free, Developer, or Plus plans; this was not a free Jev offer | [Official documentation](https://docs.langchain.com/langsmith/llm-gateway-decision-models) |
 | **Docs still listed Jev 1.13.0** | Both `jev-latest` and `jev-preview` pointed to that version at the time; an SDK update is not a model update | [Models](https://docs.typesafe.ai/models) |
-| **September 20–21 service incidents** | The status page recorded Console and API incidents and their recovery. It showed the service online when checked; that status is a point-in-time observation | [Official status page](https://status.typesafe.ai/) |
+| **Historical service incidents** | The status page marks September 20, 21, and 23 incidents resolved; API and Console appeared online when checked on September 26. This is a point-in-time snapshot | [Official status page](https://status.typesafe.ai/) |
 | **More research and engineering material** | A long founder interview, a small Chinese-language comparison, an agent-call evaluation, JevBench, and projects including compiler inline decisions | [Research and evaluations](docs/RESEARCH_EN.md) · [Full catalog](docs/CATALOG_EN.md) |
 
 <a id="overview"></a>
@@ -109,6 +111,8 @@ The name Jev refers to William Stanley Jevons; System One borrows terminology fr
 | [System One LLM adapter](https://github.com/typesafe-ai/system-one-adapter-python) | Similar interface backed by an LLM; its output and performance are not equivalent to Jev |
 | [Cookbooks](https://docs.typesafe.ai/cookbooks) | Reranking, citation checking, feature construction, classification, and routing |
 | [Pydantic AI: TypeSafe (Jev) model docs](https://pydantic.dev/docs/ai/models/typesafe/) (added 09-24) | Official integration in a third-party agent framework: `TypeSafeModel`, typed outputs, boolean thresholds, tool calls, and low-confidence fallback examples |
+| [Pydantic Evals Jev example](https://pydantic.dev/articles/jev-evals) · [Pydantic AI Gateway](https://pydantic.dev/articles/jev-pydantic-ai-gateway) | Official examples use Jev for custom evaluation and `LLMJudge` / `GEval`; the Gateway forwards native System One requests with a bring-your-own TypeSafe key |
+| [Vercel Connect: Jev](https://vercel.com/connect/jev) · [Vercel eve evaluation guide](https://github.com/vercel/eve/blob/main/docs/guides/evaluate.md) | Connect scopes credentials to projects and environments; eve's `auto` and `evaluate` default to `typesafe-ai/jev` on AI Gateway |
 | [Known limitations](https://docs.typesafe.ai/model-jaggedness/jev-1.13) | Numbers, dates, adversarial input, and cross-question consistency, among others |
 | [Workflow evals](https://evals.typesafe.ai/) · [status page](https://status.typesafe.ai/) | Vendor experiments and service incidents |
 | [Official X](https://x.com/typesafeai) · [Discord](https://discord.gg/typesafe) | Announcements and community discussion |
@@ -238,7 +242,9 @@ See [research and evaluations](docs/RESEARCH_EN.md) for methods, metric definiti
 <a id="papers"></a>
 ## 📄 Papers and technical reading
 
-The last audit did not find an official TypeSafe technical paper on Jev / RLCD; the official blog, documentation, and founder interview explain the product. But eight days after launch (September 23), 13 related papers had been posted on arXiv.
+As of September 26, no official TypeSafe technical paper on Jev / RLCD was found. The directly related research here consists of third-party preprints. The previously verified 13 papers are a **historical batch through September 22**, not a current total. Eight further papers were verified from September 23–24; see [RESEARCH_EN.md](docs/RESEARCH_EN.md).
+
+New work includes [Decision Hijacking](https://arxiv.org/abs/2609.28613) on prompt injection and typed decision probabilities, [Just Ask Jev](https://arxiv.org/abs/2609.29429) with an alignment-failure benchmark and gated dataset, and [JEV vs. LLMs as Rubric Judges](https://arxiv.org/abs/2609.29769) on correlated judge errors. Other studies cover [radiology reports](https://arxiv.org/abs/2609.27607), [legal documents](https://arxiv.org/abs/2609.27678), [mobile agents](https://arxiv.org/abs/2609.30186), [StarCraft II control](https://arxiv.org/abs/2609.27331), and [ecosystem sampling](https://arxiv.org/abs/2609.30216). Their reported results are specific to the tested settings.
 
 The six background papers below are selected by relevance and are not presented as Jev's training recipe:
 
@@ -251,7 +257,7 @@ The six background papers below are selected by relevance and are not presented 
 | Background | [iLLaDA, 2606.25331](https://arxiv.org/abs/2606.25331) | 2026 research on masked diffusion; not a new Jev version |
 | Acronym disambiguation | [RLCD from Contrastive Distillation, 2307.12950](https://arxiv.org/abs/2307.12950) | Its expansion differs from TypeSafe's “Calibrated Decisions” |
 
-### The September 2026 paper wave (as of 09-23, 13 papers)
+### Early September 2026 batch (through 09-22, 13 papers)
 
 | Group | First posted | Paper | Key points (author-reported) | Code |
 |---|---|---|---|---|

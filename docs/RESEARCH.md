@@ -2,7 +2,7 @@
 
 **语言 / Language: 简体中文 · [English](RESEARCH_EN.md)**
 
-> 核验日期：**2026-09-24（Asia/Shanghai）**。这里区分官方说明、学术论文、社区实现和实验结果；本仓库没有重新运行付费推理或训练实验。
+> 2026-09-24 全库核验；**2026-09-26 增量核验**。这里区分官方说明、学术论文、社区实现和实验结果；本仓库没有重新运行付费推理或训练实验。
 > 返回 [README](../README.md) · [项目目录](CATALOG.md) · [来源与核验范围](SOURCES.md)
 
 ## 1. Jev 有没有官方论文？
@@ -41,6 +41,21 @@ Jev 于 09-15 发布；09-19（4 天后）第一批论文挂上 arXiv，至 09-2
 | 开源与横评 | [Type-Safe Is Not Error-Free: A Constrained Decision Head Follows the Option Name, Not the Rubric Bound to It](https://arxiv.org/abs/2609.26758) | Yu Sun、Junhao Xu；2026-09-22；cs.AI | 只交换选项名与定义的对应（问题、状态、定义、选项集全不变）：1,200 个工作流决策中 0/1 → no/yes 使每百题多翻转 70.4 个答案（95% CI 67.6–73.1），AUC 0.94 → 0.23；4 个谓词上效应至少是中性对照的 7.4 倍且随选项数增强；均值池化的另一模型族翻转少 4.1 倍；托管 Jev AUC 0.8146 → 0.5806，翻转数是重测下限的 24 倍；换成随机字符串则回到中性区间且不损精度；全程类型错误率 0% | 这是对[官方已知不足](https://docs.typesafe.ai/model-jaggedness/jev-1.13)中“选项冲突”一条的受控放大；托管 Jev 的效应明显小于两个开源 Jev-like 模型，跨模型外推需谨慎；结论是“选项名语义极性”而非改名操作本身 |
 
 阅读这批论文时区分三类主张：**能力**（能否完成任务）、**效率**（延迟 / 成本节省，通常依赖特定对照与工作负载）和**失效**（何时判断失灵）。效率数字随对照模型、缓存与建模假设变化最大，引用时应连同对照条件一起给出。
+
+### 09-23 / 09-24 新核验的直接 Jev 研究
+
+以下 8 篇均于 2026-09-26 重新打开 arXiv 原页，核对标题、作者、首发日期和 submission history；页面均只有 v1。它们是第三方预印本，不计入上方截至 09-22 的历史 13 篇，也不据此声称当前全网总量为 21 篇。结果是作者报告，未独立复现。
+
+| 论文（arXiv；首发；作者） | 研究对象与可查材料 | 阅读边界 |
+|---|---|---|
+| [JEV-Star: Fast, Low-Cost StarCraft II Control with Language-Model Planning](https://arxiv.org/abs/2609.27331)；09-23；Weiyu Ma 等 | JEV 选动作、GPT-6 做持续规划；[代码、回放与固定统计](https://github.com/sc2musa/Jev_Star) | 论文报告 4 场完整胜局；仓库当前 README 只概述旧版两场非作弊最高难度胜利，并称新版尚无新增实战成绩。版本与计数口径不可混用；微操样本有限，规划与接口改进同时发生 |
+| [Can Jev Judge Radiology Reports? Evaluating a System One Model for Clinical Factuality](https://arxiv.org/abs/2609.27607)；09-23；Jiaju Huang 等 | 双向判断生成报告与医生参考报告间的陈述支持关系 | 作者在两个专家数据集报告相关性；本地 RadMatch 在临床显著错误上更强。报告长度与错误口径影响指标，不能当作临床使用验证 |
+| [Same Scores, Different Decisions: Evaluating JEV and Language Models for Legal Document Understanding](https://arxiv.org/abs/2609.27678)；09-23；Fan Zhang 等 | [Jev-Benchmark](https://github.com/ZF-Utokyo/Jev-Benchmark) 以 ContractNLI 比较 Jev 与九个语言模型，改变假设可见性、请求输出和顺序 | 作者报告 Jev 费用和中位延迟最低，托管 LLM 基线准确率较高；重复正确性差异不构成一般稳定性优势。仓库有原始预测与可重跑适配器 |
+| [Decision Hijacking: Prompt Injection Attacks on Jev's Typed Probabilistic Decisions](https://arxiv.org/abs/2609.28613)；09-23；Tiantong Wu、Wei Yang Bryan Lim | 510 个重构 InjecAgent 案例与自适应攻击；检测概率及攻击者目标选择 | 作者报告新鲜验证调用中目标成功率从 1.8% 到 3.5%；研究的是受控注入面，既不能宣称绝对安全，也不能外推到所有代理 |
+| [Just Ask Jev: Reinforcement Learning for Calibrated Decisions as a Zero-Shot Detector of AI Alignment Failures](https://arxiv.org/abs/2609.29429)；09-24；Ruoqi Guo 等 | [RLCDAlignBench 代码](https://github.com/sumleo/RLCDAlignBench)与[受限访问数据](https://huggingface.co/datasets/sumleo/RLCDAlignBench)：44 个基准、十类失效、五个小型目标模型、7,193 条标注实例 | 标签主要来自各基准自带评判器，仅两个额外集合含人工标签；作者的 AUROC / 成本结论只适用于其协议，数据文件需申请访问 |
+| [JEV vs. LLMs as Rubric Judges: Cheaper, Faster, and Wrong in the Same Places](https://arxiv.org/abs/2609.29769)；09-24；Delip Rao、Chris Callison-Burch | 七个基准的九组面板，对比 Jev 与三个快速 LLM judge | 作者报告分级判据上的相关错误使置信度级联收益有限；费用和时延倍数依赖逐判据调用的对照方案，不代表通用优势 |
+| [Jev-Mobile: Jev as an Executor for Mobile GUI Agents](https://arxiv.org/abs/2609.30186)；09-24；Linghua Zhang | 视觉语言模型低频规划，Jev 根据 Android 无障碍树反复选择动作 | 作者报告 AndroidWorld 全套任务成功率 79%，对照分别为 78% 与 84%；时间和成本改善仅对成功轨迹统计，论文未在摘要给出代码仓库 |
+| [Jev in the Wild: A Data-Driven Analysis of the Jev Model's Functionality, Applications and Ecosystem](https://arxiv.org/abs/2609.30216)；09-24；Guoming Ling 等 | 作者按自身方法收集截至 09-22 的 2,170 个 GitHub 公开项目并分析用途分布 | 这是论文的数据集定义与作者计数，不等于本目录已核验的真实 Jev 集成数；不能由搜索规模推断项目质量或官方采用率 |
 
 ### 直接关联社区争议的两篇预印本
 

@@ -1,6 +1,6 @@
 # Jev community project catalog
 
-> This expands the [README ecosystem section](../README_EN.md#ecosystem) and groups resources by use. **Stars were checked against the GitHub API on 2026-09-24**; `—` means no number was obtained in that audit, not zero stars. Repository metadata was checked for numbered GitHub entries. Feature descriptions follow maintainers' materials; this repository did not run their code.
+> This expands the [README ecosystem section](../README_EN.md#ecosystem) and groups resources by use. **Numbered stars are a 2026-09-24 GitHub API snapshot**; `—` means no star count was collected, not zero, and September 26 additions omit stars to avoid churn. Repository metadata was checked for numbered GitHub entries. Feature descriptions follow maintainers' materials; this repository did not run their code.
 > Related guides: [getting started](INSTALLATION_EN.md) · [research and evaluations](RESEARCH_EN.md) · [source audit](SOURCES_EN.md). Independent open models are not TypeSafe's official Jev weights. [中文原文](CATALOG.md)
 
 ## I want to understand Jev first
@@ -24,11 +24,31 @@
 
 For direct TypeSafe access and the Vercel, Cloudflare, OpenRouter, and LangSmith identifiers and request shapes, use the [getting-started guide](INSTALLATION_EN.md). The official waitlist was removed; check the Console for account credit.
 
+## Framework and platform integrations
+
+| Integration | Type and verified scope |
+|---|---|
+| [Pydantic AI TypeSafeModel](https://pydantic.dev/docs/ai/models/typesafe/) · [Evals example](https://pydantic.dev/articles/jev-evals) | Pydantic's official typed-decision and low-confidence fallback integration. Pydantic Evals 2.46.0 can run `LLMJudge` / `GEval` on Jev without generating a reason |
+| [Pydantic AI Gateway](https://pydantic.dev/articles/jev-pydantic-ai-gateway) | Pydantic's bring-your-own TypeSafe key route forwards native `/v1/systemone` requests, not chat requests |
+| [Composio TypeSafe provider](https://docs.composio.dev/docs/providers/typesafe) | Official `@composio/typesafe` / `composio-typesafe` adapters let Jev select tools and closed-set arguments, returning call, partial, or abstain; `decide` does not execute the tool |
+| [Rig TypeSafe Jev integration](https://github.com/0xPlaygrounds/rig) | Rig's main repository lists `rig-typesafeai` and explicitly calls its typed judgments **experimental** |
+| [Ax TypeSafe integration](https://github.com/ax-llm/ax/blob/main/website/content/_index.md) | Ax's own docs describe Boolean / class outputs and a native client for scores and probabilities. Free-form text is not a native Jev output |
+| [Vercel Connect: Jev](https://vercel.com/connect/jev) · [eve evaluation guide](https://github.com/vercel/eve/blob/main/docs/guides/evaluate.md) | Vercel Connect scopes credentials to projects and environments with OIDC; eve's `auto` and `evaluate` default to `typesafe-ai/jev` on AI Gateway |
+
 ## I want to make my first call
 
 - [Playground](https://console.typesafe.ai/playground) (no code) → [API key](https://console.typesafe.ai/keys) → [Python SDK](https://github.com/typesafe-ai/typesafe-sdk-python)
 - No key? [typesafe-ai/system-one-adapter-python](https://github.com/typesafe-ai/system-one-adapter-python) (281★ on 2026-09-24) can substitute an LLM, with that provider's credentials.
 - Full steps: [getting started](INSTALLATION_EN.md).
+
+## Community experiments and optional applications
+
+| Project | ★ | Notes |
+|---|---|---|
+| [TypeSafeAI/typesafe-playground](https://github.com/TypeSafeAI/typesafe-playground) | — | **Unofficial community organization** playground with editable typed questions, A/B inputs, and mock / live Jev demos. Examples and mocks need no key; live calls do. It extends an earlier playground |
+| [TypeSafeAI/jev-harness](https://github.com/TypeSafeAI/jev-harness) | — | **Unofficial, research-stage** proposal-review contract: an LLM proposes, Jev answers four questions, and deterministic code produces a verdict and receipt. The main offline fixtures use mocks; a separate host supplies live transport. It does not apply patches or grant authorization |
+| [TauricResearch/TradingAgents](https://github.com/TauricResearch/TradingAgents) | — | **Optional Jev integration**: with `TYPESAFE_API_KEY`, the Sentiment Analyst filters StockTwits / Reddit posts and summarizes stance; without it, posts pass through unscreened. The trading framework itself is not Jev-specific |
+| [szczyglis-dev/py-gpt](https://github.com/szczyglis-dev/py-gpt) | — | Optional desktop Jev / System One inline plugin; `jev_evaluate(state, questions)` calls `/v1/systemone` with Choice / Score / Noul. Its September 25 v2.8.31 changelog records the plugin addition |
 
 ## I want to integrate Jev with an agent or coding assistant
 
@@ -48,7 +68,6 @@ For direct TypeSafe access and the Vercel, Cloudflare, OpenRouter, and LangSmith
 | [DevMortimer/pi-warden](https://github.com/DevMortimer/pi-warden) | 138 | Uses Jev to review coding-agent writes and project rules (added 09-24) |
 | [0xNatoshi/jev-codex-router](https://github.com/0xNatoshi/jev-codex-router) | 248 | Per-turn Codex model and reasoning routing; the ~−60% saving comes from a 237-turn historical simulation and, per the project, is not measured billing (added 09-24) |
 | [supercorp-ai/supercov](https://github.com/supercorp-ai/supercov) | 114 | Coverage, security and code quality for coding agents: Jev checks each source file so the agent knows what to fix first |
-| [Pydantic AI: TypeSafe (Jev) docs](https://pydantic.dev/docs/ai/models/typesafe/) | — | Framework's official integration docs: `TypeSafeModel`, typed outputs, boolean thresholds, tool calls, and low-confidence fallback (added 09-24) |
 
 ## I want browser, phone, or computer automation
 
@@ -73,6 +92,7 @@ For direct TypeSafe access and the Vercel, Cloudflare, OpenRouter, and LangSmith
 | [jaredpalmer/kev](https://github.com/jaredpalmer/kev) | 5,746 | Qwen3.5 family at 0.8B / 4B / 9B; older Qwen3 series and 0.5B prototype remain |
 | [featherless-ai/simple-jev](https://github.com/featherless-ai/simple-jev) | 496 | Exposes a classifier / Jev-style endpoint for an open model |
 | [ekzhang/openjev-sglang](https://github.com/ekzhang/openjev-sglang) | 298 | Jev-compatible API using prefill-only SGLang |
+| [khimaros/verdict](https://github.com/khimaros/verdict) | — | **Independent Jev-like / wire-compatible implementation**: a local GGUF / llama-server provides the `/v1/systemone` protocol. It does not represent TypeSafe Jev's internal mechanism, calibration, or performance |
 
 ## I want evaluations, tool review, or paper assistance
 
@@ -87,12 +107,15 @@ For direct TypeSafe access and the Vercel, Cloudflare, OpenRouter, and LangSmith
 | [agent-chaperone/agent-chaperone](https://github.com/agent-chaperone/agent-chaperone) | 20 | MCP proxy and tool-hook review; default shadow mode only records and is not a sandbox |
 | [JacobLinCool/jev-paper-judge](https://github.com/JacobLinCool/jev-paper-judge) | 1 | Rates writing clarity and completeness, not scientific correctness |
 | [ourines/hermes-jev](https://github.com/ourines/hermes-jev) | 2 | Explicit Jev decision tool for Hermes, supporting TypeSafe / Cloudflare |
+| [ZF-Utokyo/Jev-Benchmark](https://github.com/ZF-Utokyo/Jev-Benchmark) | — | ContractNLI legal inference comparing Jev 1.13 with nine language models. The repo has 123 test contracts, 30 fixed anchors, raw predictions, adapters, and 4,830 recorded attempts; see its [paper](https://arxiv.org/abs/2609.27678) for the reported findings |
+| [sumleo/RLCDAlignBench](https://github.com/sumleo/RLCDAlignBench) | — | Jev alignment-failure detection across ten failure types, 44 benchmarks, and five small target models. The [dataset](https://huggingface.co/datasets/sumleo/RLCDAlignBench) requires access approval and labels mostly come from each benchmark's scorer; see the [paper](https://arxiv.org/abs/2609.29429) |
+| [get-convex/convex-evals](https://github.com/get-convex/convex-evals) | — | **Separate decision benchmark** for Convex coding knowledge: 108 multiple-choice questions and three option permutations. Jev uses OpenRouter's `/api/alpha/decisions`; probabilities, confidence, and provider costs are stored. This does not make the whole coding-eval framework a Jev framework |
 
 These are tools and experimental repositories, **not Jev academic papers**. See [methods and limitations](RESEARCH_EN.md).
 
 ## I want to read the September 2026 Jev papers
 
-Jev-related papers started appearing on arXiv four days after launch; 13 had been posted by 09-22 (per-paper entries in [the research guide](RESEARCH_EN.md)). Five of them released companion repositories; repository links were metadata-checked, and this repository has not audited their code.
+Jev-related papers started appearing on arXiv four days after launch. The historical batch through September 22 had 13 papers, with eight more from September 23–24 verified separately (per-paper entries in [the research guide](RESEARCH_EN.md)). Five early papers released companion repositories; repository links were metadata-checked, and this repository has not audited their code.
 
 | Paper (first posted) | ★ | Companion repository and notes |
 |---|---|---|
@@ -132,6 +155,7 @@ The other eight papers (two edge / 6G orchestration, scientific decisions, REFLE
 | [OpenByteInc/QuantDinger](https://github.com/OpenByteInc/QuantDinger) | 12,054 | Pre-order semantic checks on a trading platform; with no provider configured, checks may permit orders, so risk-control performance cannot be inferred |
 | [jarrodwatts/jev-trader](https://github.com/jarrodwatts/jev-trader) | 2,163 | One trading decision per block on Monad |
 | [fhshaik/typesafe-mario](https://github.com/fhshaik/typesafe-mario) | 374 | Jev plays Super Mario |
+| [sc2musa/Jev_Star](https://github.com/sc2musa/Jev_Star) | — | Research-stage StarCraft II controller: GPT-6 plans while Jev chooses macro / micro actions. Replays and a paper are available, but game samples are limited and planning's contribution was not isolated; see the [preprint](https://arxiv.org/abs/2609.27331) |
 | [dabit3/jev-experiments](https://github.com/dabit3/jev-experiments) | 374 | Experiment collection |
 | [jev-pong (online)](https://jev-pong.ably.dev/) · [HN](https://news.ycombinator.com/item?id=49754516) | — | Jev versus GPT-5.6 / Claude Haiku in Pong |
 | [Trolley problem (online)](https://gpu.studio/trolley) | — | “Will Jev pull the lever?” |

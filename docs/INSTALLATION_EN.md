@@ -196,7 +196,7 @@ TypeSafe publishes [system-one-adapter-python](https://github.com/typesafe-ai/sy
 | OpenRouter | [Jev 1.13 model page](https://openrouter.ai/typesafe/jev-1.13) | Beta integration confirmed by an [official announcement](https://x.com/OpenRouter/status/2100744709589316009); follow its current decision-interface instructions, not a generic chat request |
 | LangSmith Gateway | `typesafe/jev-1.13.0`; `/v1/systemone` | Store the TypeSafe key as a workspace provider secret; the client uses `LANGSMITH_API_KEY`. [Decision-model docs](https://docs.langchain.com/langsmith/llm-gateway-decision-models) |
 
-**Promotions are separate:** Vercel's [September 19 announcement](https://x.com/vercel_dev/status/2101116818463281579) said its offer ran through September 25; it was not a permanent TypeSafe direct-price change. We did not use paid accounts to verify each gateway's actual access conditions or billing.
+**Promotions are separate:** Vercel's [model page](https://vercel.com/ai-gateway/models/jev) says the promotion was scheduled to end on September 25, 2026, yet still displayed Free on September 26. This is distinct from TypeSafe's direct rate; check your account billing for the applicable price. No paid account was tested here.
 
 For local inference, consider independent models such as [Laya](https://github.com/NandhaKishorM/laya) and [Kev](https://github.com/jaredpalmer/kev); they are not official Jev weights. See the [research guide](RESEARCH_EN.md) for comparison conditions.
 

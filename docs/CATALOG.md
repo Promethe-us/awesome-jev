@@ -2,7 +2,7 @@
 
 **语言 / Language: 简体中文 · [English](CATALOG_EN.md)**
 
-> 这是 [README](../README.md#ecosystem) 的扩展目录，按用途组织。**星数核验于 2026-09-24，取自 GitHub API**；`—` 表示本轮未取得数值，不代表零星。带数值的 GitHub 条目已核对仓库元数据；功能描述依据维护者资料，本仓库未运行验证其代码。
+> 这是 [README](../README.md#ecosystem) 的扩展目录，按用途组织。**带数值星数是 2026-09-24 GitHub API 快照**；`—` 表示未取星数，不代表零星，09-26 新条目不填星数以减少无意义改动。带数值的 GitHub 条目已核对仓库元数据；功能描述依据维护者资料，本仓库未运行验证其代码。
 > 相关指南：[上手安装](INSTALLATION.md) · [论文与评测](RESEARCH.md) · [核验记录](SOURCES.md)。独立开放模型不是 TypeSafe 官方 Jev 权重。
 
 ## 我想先理解 Jev 是什么
@@ -26,11 +26,31 @@
 
 直连、Vercel、Cloudflare、OpenRouter、LangSmith 的模型标识和请求格式分别查看[安装指南](INSTALLATION.md)。官方已取消候补名单；账号额度以 Console 为准。
 
+## 框架与平台集成
+
+| 接入 | 类型与核验范围 |
+|---|---|
+| [Pydantic AI：TypeSafeModel](https://pydantic.dev/docs/ai/models/typesafe/) · [Evals 示例](https://pydantic.dev/articles/jev-evals) | Pydantic 官方：类型化决策与低置信度回退；Evals 2.46.0 起可用 Jev 运行 `LLMJudge` / `GEval`，不生成评判理由 |
+| [Pydantic AI Gateway](https://pydantic.dev/articles/jev-pydantic-ai-gateway) | Pydantic 官方的自带 TypeSafe 密钥接入，转发原生 `/v1/systemone`；不是普通聊天接口 |
+| [Composio TypeSafe provider](https://docs.composio.dev/docs/providers/typesafe) | Composio 官方：`@composio/typesafe` / `composio-typesafe` 让 Jev 选工具及封闭集合参数，返回 call、partial 或 abstain；`decide` 本身不执行工具 |
+| [Rig 的 TypeSafe Jev 接入](https://github.com/0xPlaygrounds/rig) | Rig 主仓库列出 `rig-typesafeai`，明确标为 **experimental judgments**；Rust 的类型化判断接入 |
+| [Ax 的 TypeSafe 接入](https://github.com/ax-llm/ax/blob/main/website/content/_index.md) | Ax 第一方文档列出 TypeSafe / Jev 的布尔与分类输出及原生评分、概率客户端；自由文本不是原生 Jev 输出 |
+| [Vercel Connect：Jev](https://vercel.com/connect/jev) · [eve 评估指南](https://github.com/vercel/eve/blob/main/docs/guides/evaluate.md) | Vercel 官方：Connect 用项目 / 环境范围和 OIDC 管理凭证；eve 的 `auto`、`evaluate` 默认使用 AI Gateway 的 `typesafe-ai/jev` |
+
 ## 我想跑通第一个调用
 
 - [Playground](https://console.typesafe.ai/playground)（零代码）→ [API Key](https://console.typesafe.ai/keys) → [Python SDK](https://github.com/typesafe-ai/typesafe-sdk-python)
 - 没拿到 Key？用 [typesafe-ai/system-one-adapter-python](https://github.com/typesafe-ai/system-one-adapter-python)（281★，2026-09-24）拿任意 LLM 顶替
 - 完整步骤：[INSTALLATION.md](INSTALLATION.md)
+
+## 社区实验与可选应用
+
+| 项目 | ★ | 说明 |
+|---|---|---|
+| [TypeSafeAI/typesafe-playground](https://github.com/TypeSafeAI/typesafe-playground) | — | **非官方社区组织**的交互实验场；可编辑类型化问题、A/B 输入与模拟 / 实时 Jev 演示。无密钥时可看示例与 mock，实时调用需密钥；基于早期 playground 扩展 |
+| [TypeSafeAI/jev-harness](https://github.com/TypeSafeAI/jev-harness) | — | **非官方、研究阶段**提案审查契约：LLM 提议、Jev 回答四个问题、确定性代码给出判定与 receipt。仓库主体离线使用 mock；实时调用由独立宿主提供，不自动执行补丁或授予权限 |
+| [TauricResearch/TradingAgents](https://github.com/TauricResearch/TradingAgents) | — | **可选 Jev 集成**：配置 `TYPESAFE_API_KEY` 后，Sentiment Analyst 过滤 StockTwits / Reddit 帖文并汇总立场；无密钥时帖文不经筛选直接通过。整个交易框架并非 Jev 专属 |
+| [szczyglis-dev/py-gpt](https://github.com/szczyglis-dev/py-gpt) | — | 桌面助手的可选 Jev / System One inline 插件；`jev_evaluate(state, questions)` 使用 `/v1/systemone`，支持 Choice / Score / Noul；2026-09-25 的 2.8.31 更新记录新增该插件 |
 
 ## 我想给 Agent / 编程助手接上 Jev
 
@@ -50,7 +70,6 @@
 | [DevMortimer/pi-warden](https://github.com/DevMortimer/pi-warden) | 138 | 用 Jev 检查编码 Agent 的写入与项目规则（09-24 收录） |
 | [0xNatoshi/jev-codex-router](https://github.com/0xNatoshi/jev-codex-router) | 248 | 按调用选择 Codex 模型与推理深度；约 −60% 的节省来自 237 轮历史模拟，项目自述非实测账单（09-24 收录） |
 | [supercorp-ai/supercov](https://github.com/supercorp-ai/supercov) | 114 | 给编程 Agent 的测试覆盖率、安全与代码质量：Jev 检查每个源文件，Agent 就知道先修什么 |
-| [Pydantic AI：TypeSafe (Jev) 文档](https://pydantic.dev/docs/ai/models/typesafe/) | — | 框架官方接入文档：`TypeSafeModel`、类型化输出、布尔阈值、工具调用与低置信度回退（09-24 收录） |
 
 ## 我想做浏览器 / 手机 / 电脑自动化
 
@@ -75,6 +94,7 @@
 | [jaredpalmer/kev](https://github.com/jaredpalmer/kev) | 5,746 | 当前为 Qwen3.5 的 0.8B / 4B / 9B 模型族；旧 Qwen3 系列和 0.5B 原型仍保留 |
 | [featherless-ai/simple-jev](https://github.com/featherless-ai/simple-jev) | 496 | 任意开源模型 → classifier/jev 端点 |
 | [ekzhang/openjev-sglang](https://github.com/ekzhang/openjev-sglang) | 298 | Jev 兼容 API（prefill-only, sglang） |
+| [khimaros/verdict](https://github.com/khimaros/verdict) | — | **独立 Jev-like / wire-compatible 实现**：用本地 GGUF / llama-server 提供 `/v1/systemone` 相同协议；不代表 TypeSafe Jev 内部机制、校准或性能 |
 
 ## 我想做评测、工具审查或论文辅助
 
@@ -89,12 +109,15 @@
 | [agent-chaperone/agent-chaperone](https://github.com/agent-chaperone/agent-chaperone) | 20 | MCP 代理和工具 hooks 审查；默认 shadow，仅记录，不能替代沙箱 |
 | [JacobLinCool/jev-paper-judge](https://github.com/JacobLinCool/jev-paper-judge) | 1 | 评价论文表达清晰度与完整性，不验证科学结论是否正确 |
 | [ourines/hermes-jev](https://github.com/ourines/hermes-jev) | 2 | 为 Hermes 提供显式 Jev 决策工具，支持 TypeSafe / Cloudflare |
+| [ZF-Utokyo/Jev-Benchmark](https://github.com/ZF-Utokyo/Jev-Benchmark) | — | ContractNLI 法律合同推断：Jev 1.13 与九个语言模型；仓库有 123 份测试合同、30 个固定锚点、原始预测、适配器与 4,830 次尝试记录；具体结论见[论文](https://arxiv.org/abs/2609.27678) |
+| [sumleo/RLCDAlignBench](https://github.com/sumleo/RLCDAlignBench) | — | Jev 对齐失效检测研究：十类失效、44 个基准、五个小型目标模型；[数据集](https://huggingface.co/datasets/sumleo/RLCDAlignBench)需申请访问，标签主要来自基准自带评判器；见[论文](https://arxiv.org/abs/2609.29429) |
+| [get-convex/convex-evals](https://github.com/get-convex/convex-evals) | — | Convex 编码知识的**独立决策基准**，108 道选择题、三种选项排列；Jev 通过 OpenRouter 的 `/api/alpha/decisions` 调用，保存概率、置信度与提供商成本；不等于整个编码评测框架使用 Jev |
 
 这些是工具或实验仓库，**不是 Jev 的学术论文**。方法和局限见 [RESEARCH.md](RESEARCH.md)。
 
 ## 我想读 2026-09 的 Jev 论文
 
-Jev 发布 4 天后 arXiv 开始出现相关论文，至 09-22 共 13 篇（逐篇条目见 [RESEARCH.md](RESEARCH.md)）。以下 5 篇公开了配套仓库；仓库链接已核对元数据，代码未经本仓库审计。
+Jev 发布 4 天后 arXiv 开始出现相关论文；截至 09-22 的历史批次有 13 篇，09-23 / 09-24 另核验 8 篇（逐篇条目见 [RESEARCH.md](RESEARCH.md)）。以下 5 篇早期论文公开了配套仓库；仓库链接已核对元数据，代码未经本仓库审计。
 
 | 论文（首发） | ★ | 配套仓库与说明 |
 |---|---|---|
@@ -134,6 +157,7 @@ Jev 发布 4 天后 arXiv 开始出现相关论文，至 09-22 共 13 篇（逐�
 | [OpenByteInc/QuantDinger](https://github.com/OpenByteInc/QuantDinger) | 12,054 | 交易平台的下单前语义判断；未配置提供商时可放行，不能据此推断风险控制效果 |
 | [jarrodwatts/jev-trader](https://github.com/jarrodwatts/jev-trader) | 2,163 | Monad 链上每区块一次交易决策 |
 | [fhshaik/typesafe-mario](https://github.com/fhshaik/typesafe-mario) | 374 | Jev 玩超级马里奥 |
+| [sc2musa/Jev_Star](https://github.com/sc2musa/Jev_Star) | — | 研究阶段 StarCraft II 控制：GPT-6 规划、Jev 选择宏观 / 微操动作；有回放与论文，完整胜局和微操实验样本有限，且规划贡献未被单独消融；见[预印本](https://arxiv.org/abs/2609.27331) |
 | [dabit3/jev-experiments](https://github.com/dabit3/jev-experiments) | 374 | 实验合集 |
 | [jev-pong（在线）](https://jev-pong.ably.dev/) · [HN](https://news.ycombinator.com/item?id=49754516) | – | Jev vs GPT-5.6 / Claude Haiku 打乒乓 |
 | [trolley 问题（在线）](https://gpu.studio/trolley) | – | “Jev 会拉拉杆吗？” |
