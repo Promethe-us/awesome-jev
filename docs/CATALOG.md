@@ -101,6 +101,10 @@
 | [featherless-ai/simple-jev](https://github.com/featherless-ai/simple-jev) | 496 | 任意开源模型 → classifier/jev 端点 |
 | [ekzhang/openjev-sglang](https://github.com/ekzhang/openjev-sglang) | 298 | Jev 兼容 API（prefill-only, sglang） |
 | [khimaros/verdict](https://github.com/khimaros/verdict) | — | **独立 Jev-like / wire-compatible 实现**：用本地 GGUF / llama-server 提供 `/v1/systemone` 相同协议；不代表 TypeSafe Jev 内部机制、校准或性能 |
+| [tinnel123666888/OmniJev](https://github.com/tinnel123666888/OmniJev) | — | 全模态开源 Jev：图像、视频、屏幕与机器人场景的 choice / score / noul 概率；0.8B、2B、4B 权重。仓库强调机器人片段为离线回放，训练清单仍在审计，不能表述为闭环机器人控制或统一基准结论（09-27 收录） |
+| [ypcypc/JEMM](https://github.com/ypcypc/JEMM) | — | Apache-2.0 多模态 Jev-like HTTP 服务：文本或最多 4 张截图、choice / noul / score，返回候选概率与 confidence；需要至少 64 GB CUDA GPU，非 TypeSafe 官方项目（09-27 收录） |
+| [TypeLLM/TypeLLM](https://github.com/TypeLLM/TypeLLM) | — | Apache-2.0 的 SGLang 类型化生成层，受 Jev 启发；支持 JSON Schema、图像输入与依赖字段。其 JevBench 195/231（无 thinking）与 228/231（thinking）是维护者在 231 个公开任务上的报告，应连同方法与逐题结果阅读（09-27 收录） |
+| [nokia-applied-research/AnyJev](https://github.com/nokia-applied-research/AnyJev) | — | Apache-2.0：把开放 LLM 的输出变成可阈值化的类型化决策；支持 vLLM 与小样本闭式 head。README 的准确率、ECE 与可自动化覆盖率均是限定 BANKING77 条件下的作者结果（09-27 收录） |
 
 ## 我想做评测、工具审查或论文辅助
 

@@ -131,3 +131,13 @@
 - 扩大 X 线索对应的 GitHub 复查后，再收录了 [System One Connector](https://github.com/itsmostafa/system-one-connector)、[Jev MCP](https://github.com/jkudish/jev-mcp)、[jev-gate](https://github.com/MongLong0214/jev-gate) 和 [Jev IDS](https://github.com/jev-ids/jev-ids)。逐个读取 README、许可证和 GitHub 元数据；其中路由和 IDS 的数值均保留为作者在限定基准与条件下的报告，并写进适用边界。
 - 未把 [交易盈利提醒](https://x.com/MooninPapa/status/2104005602078798220)、单次游戏分数、社交媒体浏览量、单次速度 / 成本或没有代码的 demo 放进正式目录。它们可帮助发现项目，不能单独证明收益、准确率、安全性或可复现性。
 - 小红书仍没有取得可读正文：公开搜索不返回站内笔记，且站内页关闭连接。因此本轮没有把任何“小红书同名账号”“活动入口”或二级索引转写为笔记内容；等待能打开的原帖或作者提供的可访问来源。
+
+<a id="2026-09-27-已登录平台复查"></a>
+## 2026-09-27 已登录平台复查
+
+用户在内置浏览器完成 X 与小红书登录后，站内搜索和笔记正文可读。这改变了“能否发现线索”，不改变收录标准：帖子只负责指向候选；功能、许可证、权重、评测条件和限制须回到项目原始材料复核。
+
+- **X → TypeLLM**：[发现帖](https://x.com/aiwire_x/status/2104093221500658121) 指向 [TypeLLM](https://github.com/TypeLLM/TypeLLM)。仓库 README、许可证和 `evals/jevbench` 说明支持“基于 SGLang 的类型化生成”、图像输入、依赖字段，并报告在 231 个公开 JevBench 任务上的 195/231（无 thinking）和 228/231（thinking）。这些是维护者报告；目录链接到其方法与逐题结果，不把它写成独立基准排名。
+- **小红书 → OmniJev**：[项目作者帖](https://www.xiaohongshu.com/explore/6ab4a4230000000015015366) 指向 [官网](https://omnijev.net/)、[GitHub](https://github.com/tinnel123666888/OmniJev) 和 [Hugging Face 权重](https://huggingface.co/tinnel123/OmniJev)。源码 README 证实 0.8B、2B、4B 的 choice / score / noul 接口与公开演示，同时明确机器人内容是离线回放，可靠闭环机器人控制尚未建立；训练清单仍在审计。因此它收录到 Robotics 与开放模型，而不写成实机控制成果。
+- **小红书 → JEMM**：[“多模态 JEV 类模型”笔记](https://www.xiaohongshu.com/explore/6ab898da00000000190248ff) 指向的线索与 [ypcypc/JEMM](https://github.com/ypcypc/JEMM) 仓库匹配。README 证实其为 Apache-2.0、开源权重、基于文本或截图的 Jev-like 服务，使用 `/v1/systemone` 协议；要求至少 64 GB CUDA GPU，并明确不隶属 TypeSafe AI。笔记中的性能数字没有脱离原始评测条件单独宣传。
+- **广泛性与排除项**：站内搜索还出现很多自动化、机器人、论文解读和“开源复刻”帖子。没有可回溯代码、论文或作者材料的内容仍保持为发现线索，不纳入项目目录；[UniIntervene](https://github.com/Denghaoyuan123/UniIntervene) 虽在机器人相关笔记中被标注 Jev，但其原始 README 描述的是 agentic intervention / VLA 训练管线而非 Jev 集成，故不作为 Jev 项目收录。

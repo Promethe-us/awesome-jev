@@ -99,6 +99,10 @@ For direct TypeSafe access and the Vercel, Cloudflare, OpenRouter, and LangSmith
 | [featherless-ai/simple-jev](https://github.com/featherless-ai/simple-jev) | 496 | Exposes a classifier / Jev-style endpoint for an open model |
 | [ekzhang/openjev-sglang](https://github.com/ekzhang/openjev-sglang) | 298 | Jev-compatible API using prefill-only SGLang |
 | [khimaros/verdict](https://github.com/khimaros/verdict) | — | **Independent Jev-like / wire-compatible implementation**: a local GGUF / llama-server provides the `/v1/systemone` protocol. It does not represent TypeSafe Jev's internal mechanism, calibration, or performance |
+| [tinnel123666888/OmniJev](https://github.com/tinnel123666888/OmniJev) | — | Open omni-modal Jev with choice / score / noul probabilities for images, video, screens, and robot scenes; 0.8B, 2B, and 4B weights. Its README calls robot clips offline replays and says the training manifest is still audited, so it is not presented as closed-loop robot control or a uniform benchmark result (added 09-27) |
+| [ypcypc/JEMM](https://github.com/ypcypc/JEMM) | — | Apache-2.0 multimodal Jev-like HTTP service for text or up to four screenshots, returning choice / noul / score probabilities and confidence. It requires a CUDA GPU with at least 64 GB and is not affiliated with TypeSafe AI (added 09-27) |
+| [TypeLLM/TypeLLM](https://github.com/TypeLLM/TypeLLM) | — | Apache-2.0 SGLang layer for schema-guaranteed generation, inspired by Jev, with image input and dependency fields. Its JevBench 195/231 (without thinking) and 228/231 (with thinking) are maintainer-reported results on 231 public tasks; read its method and per-task answers (added 09-27) |
+| [nokia-applied-research/AnyJev](https://github.com/nokia-applied-research/AnyJev) | — | Apache-2.0 tooling that turns an open LLM into thresholdable typed decisions, including vLLM and small-sample closed-form heads. README accuracy, ECE, and auto-decidable-coverage results are author results under the stated BANKING77 setup (added 09-27) |
 
 ## I want evaluations, tool review, or paper assistance
 

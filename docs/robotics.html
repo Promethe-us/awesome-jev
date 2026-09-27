@@ -15,6 +15,7 @@
           <figure><img loading="lazy" src="https://raw.githubusercontent.com/RomanSlack/jev-drone/main/docs/climb.png" alt="jev-drone 的爬升仿真画面" /><figcaption><a href="https://github.com/RomanSlack/jev-drone">jev-drone：公开仿真截图 ↗</a></figcaption></figure>
           <figure><img loading="lazy" src="https://raw.githubusercontent.com/CATS-Lab/JEV-Drive/main/docs/images/lane-panorama.gif" alt="JEV-Drive 车道仿真动图" /><figcaption><a href="https://github.com/CATS-Lab/JEV-Drive">JEV-Drive：公开车道动图 ↗</a></figcaption></figure>
         </section>
+        <section class="project-video"><div><p class="eyebrow">NEW · MULTIMODAL DECISION</p><h2>OmniJev：把画面变成有边界的决策</h2><p>小红书的作者帖带来了线索；随后回到项目官网、源码与权重说明核验。它能回答机器人场景中的类型化问题，但仓库明确写明现有机器人片段是离线回放，不代表已建立闭环实机控制。</p><a href="https://github.com/tinnel123666888/OmniJev">代码、权重与结果边界 ↗</a></div><img loading="lazy" src="https://raw.githubusercontent.com/tinnel123666888/OmniJev/main/docs/media/robots.gif" alt="OmniJev 的四个机器人任务离线回放动图" /></section>
         <section class="project-video"><div><p class="eyebrow">SOURCE DEMO / SIMULATION</p><h2>一段可回溯的仿真运行</h2><p>视频来自 jev-drone 源仓库；它展示的是 MuJoCo 仿真中的路线运行，不是实机飞行或通用安全验证。</p><a href="https://github.com/RomanSlack/jev-drone">查看代码与完整说明 ↗</a></div><video controls preload="metadata" poster="https://raw.githubusercontent.com/RomanSlack/jev-drone/main/site/public/figures/course-poster.jpg"><source src="https://raw.githubusercontent.com/RomanSlack/jev-drone/main/site/public/figures/course-run.mp4" type="video/mp4" />你的浏览器不支持视频；请从项目仓库观看。</video></section>
         <h2>适合放在哪一层</h2>
         <p>Jev 可以在低频环节选择已有技能、判断是否重试、给事件分级、给候选动作排序，或建议升级给人。它不读取像素、不规划连续轨迹、不执行关节控制，也不应拥有最后的安全动作权限。</p>
@@ -26,6 +27,7 @@
           <tr><td><a href="https://github.com/RomanSlack/jev-drone">jev-drone</a></td><td>仿真；单次演示为主</td><td>MuJoCo 无人机约 2.5 Hz 的战术选择。</td><td>视觉、500 Hz 飞控和 50 Hz 安全反射都在独立模块；不是端到端视觉或通用飞行基准。</td></tr>
           <tr><td><a href="https://github.com/Vankleben/jev-arm-lab">jev-arm-lab</a></td><td>仿真；作者测量</td><td>xArm7 拾放的技能选择、抓取判断与进度。</td><td>有日志、故障注入和新鲜度门控；场景、样本和阈值不能迁移到实机。</td></tr>
           <tr><td><a href="https://github.com/FazalAAli/jev-robotics-demo">jev-robotics-demo</a></td><td>仿真原型</td><td>从代码采样并前瞻的候选小动作中选择。</td><td>各方各一条记录轨迹，不构成通用速度、费用或质量结论。</td></tr>
+          <tr><td><a href="https://github.com/tinnel123666888/OmniJev">OmniJev</a></td><td>离线回放；开源权重</td><td>对机器人场景输出 choice / score / noul 概率。</td><td>开源演示不是闭环控制；训练清单和部分评测仍需读项目限制说明。</td></tr>
           <tr><td><a href="https://github.com/robokrunch/jev-physical-ai">Jev for Physical AI</a></td><td>作者测量；模拟事件</td><td>仓储 AMR 事件分流、责任团队和紧急度。</td><td>300 个模板化事件，不是实机车队或生产准确率。</td></tr>
           <tr><td><a href="https://github.com/Alpha-Harper-Franklin/jev-vla">Jev + VLA</a></td><td>设计阶段</td><td>在 VLA 动作边界识别失败，选择恢复或重规划。</td><td>仓库明确没有接入、仿真运行或测量结果。</td></tr>
         </tbody></table>
