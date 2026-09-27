@@ -2,6 +2,8 @@
 
 <img src="cover.png" alt="awesome-jev" width="600"/>
 
+<img src=".github/social-preview.png" alt="awesome-jev: Jev knowledge map" width="900"/>
+
 # awesome-jev
 
 **Language: [简体中文](README.md) · English**
