@@ -141,3 +141,7 @@
 - **小红书 → OmniJev**：[项目作者帖](https://www.xiaohongshu.com/explore/6ab4a4230000000015015366) 指向 [官网](https://omnijev.net/)、[GitHub](https://github.com/tinnel123666888/OmniJev) 和 [Hugging Face 权重](https://huggingface.co/tinnel123/OmniJev)。源码 README 证实 0.8B、2B、4B 的 choice / score / noul 接口与公开演示，同时明确机器人内容是离线回放，可靠闭环机器人控制尚未建立；训练清单仍在审计。因此它收录到 Robotics 与开放模型，而不写成实机控制成果。
 - **小红书 → JEMM**：[“多模态 JEV 类模型”笔记](https://www.xiaohongshu.com/explore/6ab898da00000000190248ff) 指向的线索与 [ypcypc/JEMM](https://github.com/ypcypc/JEMM) 仓库匹配。README 证实其为 Apache-2.0、开源权重、基于文本或截图的 Jev-like 服务，使用 `/v1/systemone` 协议；要求至少 64 GB CUDA GPU，并明确不隶属 TypeSafe AI。笔记中的性能数字没有脱离原始评测条件单独宣传。
 - **广泛性与排除项**：站内搜索还出现很多自动化、机器人、论文解读和“开源复刻”帖子。没有可回溯代码、论文或作者材料的内容仍保持为发现线索，不纳入项目目录；[UniIntervene](https://github.com/Denghaoyuan123/UniIntervene) 虽在机器人相关笔记中被标注 Jev，但其原始 README 描述的是 agentic intervention / VLA 训练管线而非 Jev 集成，故不作为 Jev 项目收录。
+
+### 扩展 GitHub 复核
+
+在社交平台线索之外，本轮再以 `Jev`、`TypeSafe AI`、`System One`、`robotics / VLA` 组合与 09-15 至 09-27 创建日期检索 GitHub，先排除重复的 awesome 列表、空仓库、无 README 条目和只含营销结论的项目；再逐个读取 README、许可证和仓库元数据。新增的可审查项目覆盖：Agent skill 与编程工作流（Hermes Jev Skills、Astra-Ares、JevHarness）、本地决策模型（LLM2Jev）、仿真机器人（RoboJEV）、文档处理（docjev）和数据策展（jev-curate）。所有性能、成本和成功率保留为作者在具体数据、硬件或回放条件下的报告，未重跑付费调用，也未将社交媒体热度计入筛选标准。

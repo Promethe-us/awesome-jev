@@ -74,6 +74,9 @@
 | [ivancasco/aidlc-plugin-jev](https://github.com/ivancasco/aidlc-plugin-jev) | — | AI-DLC 规划文档的质量 / 阻断 / 缺口三类 gate；文档拆分后再送入 Jev，阈值只在小型 fixtures 调过，阻断门槛需用团队自己的文档复核（09-27 收录） |
 | [itsmostafa/system-one-connector](https://github.com/itsmostafa/system-one-connector) | — | MIT 的 `evaluate` CLI / MCP 连接器，可为 Codex、Claude Code、Claude Desktop、Hermes 和 pi 注册 Jev 或自托管 System One 模型；09-27 的 0.4.1 将 CLI 从 `jev` 改名为 `evaluate`，旧版不能用自更新跨过这次改名，需按维护者说明重装（09-27 收录） |
 | [jkudish/jev-mcp](https://github.com/jkudish/jev-mcp) | — | MIT MCP 服务器，提供 evidence verification、页面预筛、检索重排、分类、diff review / completion gate 等 11 个工具；README 对缺失或畸形模型回答走 `invalid_response` / review 路径，具体阈值仍需按团队数据校准（09-27 收录） |
+| [kerpopule/hermes-jev-skills](https://github.com/kerpopule/hermes-jev-skills) | — | MIT 的 10 个 Agent skill：模型路由、检索筛选、记忆选择、压缩、skill 选择、邮件分流、computer/browser use 等；README 推荐先用 shadow 模式并保留本地注入筛查。其延迟、过滤率与召回率是维护者在指定评分集和运行条件下的记录（09-27 收录） |
+| [miuuyy/Astra-Ares](https://github.com/miuuyy/Astra-Ares) | — | MIT 的实验性 Codex 分支：Jev 在 generation 之间选择 GPT-6 的 reasoning effort 与持续步数；需要自行构建补丁版 CLI，macOS Apple Silicon 是已测试平台。README 明示尚未测得对固定 effort 的节省和缓存收益（09-27 收录） |
+| [TianyuCodings/JevHarness](https://github.com/TianyuCodings/JevHarness) | — | 让 LLM 在开发期写 task-specific harness，冻结后由代码与 Jev 决策执行；提供 Pokémon 归档轨迹、选择树和回放。25%→75% 是同一 Eval 选择流程的示例，不是独立泛化性能估计（09-27 收录） |
 | [MongLong0214/jev-gate](https://github.com/MongLong0214/jev-gate) | — | Claude Code 的实验性任务路由插件，公开了 V3–V5 的宿主实验记录。作者自己的 V4 小任务试验中，默认策略没有触发委派；强制委派同质检通过但成本高 38%，因此不应将其当作已证实的节省方案（09-27 收录） |
 
 ## 我想做浏览器 / 手机 / 电脑自动化
@@ -101,6 +104,8 @@
 | [featherless-ai/simple-jev](https://github.com/featherless-ai/simple-jev) | 496 | 任意开源模型 → classifier/jev 端点 |
 | [ekzhang/openjev-sglang](https://github.com/ekzhang/openjev-sglang) | 298 | Jev 兼容 API（prefill-only, sglang） |
 | [khimaros/verdict](https://github.com/khimaros/verdict) | — | **独立 Jev-like / wire-compatible 实现**：用本地 GGUF / llama-server 提供 `/v1/systemone` 相同协议；不代表 TypeSafe Jev 内部机制、校准或性能 |
+| [Yinsongxu/LLM2Jev](https://github.com/Yinsongxu/LLM2Jev) | — | Apache-2.0 本地 Jev-like：SGLang / Transformers / MLX 支持文本和图片，prefill-only 候选评分并兼容 `/v1/systemone`；公开 Web、Snake、MuJoCo 演示。Qwen3.5-4B 的 76.2% / 231 题与延迟均是项目报告，需按其硬件和缓存条件比较（09-27 收录） |
+| [ThinkFlowLab/system1-agents](https://github.com/ThinkFlowLab/system1-agents) | — | Apache-2.0 的 System 1 Agent 示例集合，涵盖浏览器、电脑、游戏与机器人；把 Jev、Laya、Cua-S1 并列为可换决策模型，不能据此推断模型间质量可比（09-27 收录） |
 | [tinnel123666888/OmniJev](https://github.com/tinnel123666888/OmniJev) | — | 全模态开源 Jev：图像、视频、屏幕与机器人场景的 choice / score / noul 概率；0.8B、2B、4B 权重。仓库强调机器人片段为离线回放，训练清单仍在审计，不能表述为闭环机器人控制或统一基准结论（09-27 收录） |
 | [ypcypc/JEMM](https://github.com/ypcypc/JEMM) | — | Apache-2.0 多模态 Jev-like HTTP 服务：文本或最多 4 张截图、choice / noul / score，返回候选概率与 confidence；需要至少 64 GB CUDA GPU，非 TypeSafe 官方项目（09-27 收录） |
 | [TypeLLM/TypeLLM](https://github.com/TypeLLM/TypeLLM) | — | Apache-2.0 的 SGLang 类型化生成层，受 Jev 启发；支持 JSON Schema、图像输入与依赖字段。其 JevBench 195/231（无 thinking）与 228/231（thinking）是维护者在 231 个公开任务上的报告，应连同方法与逐题结果阅读（09-27 收录） |
@@ -153,6 +158,8 @@ Jev 发布 4 天后 arXiv 开始出现相关论文；截至 09-22 的历史批�
 | [kylemclaren/jevsearch](https://github.com/kylemclaren/jevsearch) | 3 | shadcn/ui ⌘K 站内搜索组件：先出关键词结果，再用一次 Jev 请求重排前 20 条；作者报告在 41 条 TypeSafe 文档查询上 Hit@1 为 83%（纯关键词为 41%）；与 superagents-lab/jev-search 不是同一项目 |
 | [kyotofin/tax-doc-classifier](https://github.com/kyotofin/tax-doc-classifier) | 411 | 作者报告在其 261 份 IRS 表格集合上的分类结果；不是跨领域准确率 |
 | [kylemclaren/jevpdf](https://github.com/kylemclaren/jevpdf) | 1 | 浏览器内按语义搜索 PDF：pdf.js 在本地提取文本行，Jev 对每行回答一次是/否，匹配的行逐页高亮并按概率排序 |
+| [jerryjliu/docjev](https://github.com/jerryjliu/docjev) | — | Apache-2.0 文档分类与拆分工具；有冻结数据、原始结果和可复现脚本。其 40 份分类 / 8 个拆分包的实文档试验是小型便利样本，README 已明确不构成通用准确率、速度或成本结论（09-27 收录） |
+| [AkashPriyadarshii/jev-curate](https://github.com/AkashPriyadarshii/jev-curate) | — | MIT Rust / Python 的 Parquet、Arrow、JSONL 数据筛选 CLI，内置推理数学、反谄媚和代码质量 rubric，测试使用 mock server。24 rows/s 是本地 mock benchmark，1500+/s 是目标值，不把它们作为线上吞吐结论（09-27 收录） |
 
 ## 我想探索编译器和新的集成方向
 
