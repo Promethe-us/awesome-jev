@@ -15,11 +15,13 @@
 
 *X · 小红书线索 · GitHub · 论文 · 评测 · 工程实践*
 
-想以网页模式浏览？点击下方 logo 进入导航站。
+想以网页模式浏览？点击下方 logo 进入导航站；完整项目、论文与平台来源均可在网页中检索。
 
 <a href="https://promethe-us.github.io/awesome-jev/" aria-label="打开 awesome-jev 网页导航站">
   <img src="docs/assets/jev-guide-mark.svg" alt="打开 awesome-jev 网页导航站" width="250" />
 </a>
+
+[应用地图](https://promethe-us.github.io/awesome-jev/#map) · [完整目录](https://promethe-us.github.io/awesome-jev/directory.html) · [论文与评测全录](https://promethe-us.github.io/awesome-jev/research-directory.html) · [来源审计全录](https://promethe-us.github.io/awesome-jev/source-log.html)
 
 </div>
 
