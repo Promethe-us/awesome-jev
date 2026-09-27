@@ -21,7 +21,7 @@
   <img src="docs/assets/jev-guide-mark.svg" alt="打开 awesome-jev 网页导航站" width="250" />
 </a>
 
-[应用地图](https://promethe-us.github.io/awesome-jev/#map) · [完整目录](https://promethe-us.github.io/awesome-jev/directory.html) · [论文与评测全录](https://promethe-us.github.io/awesome-jev/research-directory.html) · [来源审计全录](https://promethe-us.github.io/awesome-jev/source-log.html)
+[应用地图](https://promethe-us.github.io/awesome-jev/#map) · [完整目录](https://promethe-us.github.io/awesome-jev/directory.html) · [论文与评测全录](https://promethe-us.github.io/awesome-jev/research-directory.html) · [社交平台雷达](https://promethe-us.github.io/awesome-jev/social.html) · [来源审计全录](https://promethe-us.github.io/awesome-jev/source-log.html)
 
 </div>
 
