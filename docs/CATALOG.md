@@ -76,6 +76,7 @@
 | 项目 | ★ | 说明 |
 |---|---|---|
 | [browser-use/jev-ultrafast](https://github.com/browser-use/jev-ultrafast) | 18,959 | browser-use 官方：Jev 驱动浏览器 Agent（动态索引动作空间） |
+| [socai-io/jev-social](https://github.com/socai-io/jev-social) | — | Jev 为 Instagram、TikTok 和 LinkedIn 研究选择有界的搜索、检查或停止操作；`socai CLI` 在用户现有 Chrome 中执行，报告保留来源证据（09-26 收录） |
 | [wy-coliney/jev-browser-use](https://github.com/wy-coliney/jev-browser-use) | 425 | Jev 操作控件、Codex 输入和验证；作者的 5–10× 来自特定浏览器工作流 |
 | [droidrun/mobile-jev](https://github.com/droidrun/mobile-jev) | 373 | 移动端自动化 |
 | [jkudish/jev-browser](https://github.com/jkudish/jev-browser) | 249 | Jev 浏览器操作 |

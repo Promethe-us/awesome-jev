@@ -74,6 +74,7 @@ For direct TypeSafe access and the Vercel, Cloudflare, OpenRouter, and LangSmith
 | Project | ★ | Notes |
 |---|---|---|
 | [browser-use/jev-ultrafast](https://github.com/browser-use/jev-ultrafast) | 18,959 | Browser-use project: Jev-driven browser agent with a dynamically indexed action space |
+| [socai-io/jev-social](https://github.com/socai-io/jev-social) | — | Jev selects bounded search, inspect, or stop operations for Instagram, TikTok, and LinkedIn research; `socai CLI` executes them in the user's existing Chrome and the report retains source evidence (added 09-26) |
 | [wy-coliney/jev-browser-use](https://github.com/wy-coliney/jev-browser-use) | 425 | Jev handles controls, Codex handles input and verification; author's 5–10× figure is for a specific browser workflow |
 | [droidrun/mobile-jev](https://github.com/droidrun/mobile-jev) | 373 | Mobile automation |
 | [jkudish/jev-browser](https://github.com/jkudish/jev-browser) | 249 | Jev browser operations |
