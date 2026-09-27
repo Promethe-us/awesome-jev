@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="awesome-jev 的接入地图：从 Playground 到 SDK、网关和 Agent 工具。" />
+    <title>接入地图 · awesome-jev</title><link rel="stylesheet" href="assets/site.css" />
+  </head>
+  <body class="atlas-page">
+    <header class="site-header"><a class="brand" href="index.html"><span class="brand-mark">J</span><span>awesome-jev</span></a><nav aria-label="主导航"><a href="hands-on.html">手把手</a><a href="ecosystem.html">生态</a><a href="research.html">研究</a><a href="robotics.html">Robotics</a><a href="sources.html">来源</a></nav></header>
+    <main>
+      <section class="atlas-hero"><p class="eyebrow">BUILD / INTEGRATE</p><h1>选一条接入路径，<br />先跑通最小闭环。</h1><p>网页里给出入口、适用条件和边界；真正的密钥、额度与价格以服务商控制台为准。</p></section>
+      <section class="section atlas-grid">
+        <article class="atlas-card featured"><span class="evidence official">零代码</span><h2>Playground</h2><p>用代表性 state 先看 Choice、Score、Noul 在难例上的行为。保存中文、否定、缺信息和边界样本。</p><a href="https://console.typesafe.ai/playground">打开 Playground ↗</a></article>
+        <article class="atlas-card"><span class="evidence official">官方 SDK</span><h2>Python / JS</h2><p>直接调用原生 System One API。把 state、题目版本、候选顺序、返回模型和最终动作写入自己的日志。</p><div class="card-links"><a href="https://github.com/typesafe-ai/typesafe-sdk-python">Python SDK ↗</a><a href="https://github.com/typesafe-ai/typesafe-sdk-js">JS SDK ↗</a></div></article>
+        <article class="atlas-card"><span class="evidence official">网关</span><h2>已有 AI 平台</h2><p>Vercel、Cloudflare、OpenRouter、Pydantic AI 等接入各有模型标识和请求形状，不能把聊天接口配置照搬过来。</p><div class="card-links"><a href="https://vercel.com/connect/jev">Vercel ↗</a><a href="https://pydantic.dev/docs/ai/models/typesafe/">Pydantic AI ↗</a></div></article>
+      </section>
+      <section class="section dark-band"><div><p class="eyebrow">A SAFE DEFAULT</p><h2>模型给判断，<br />代码做决定。</h2></div><div class="decision-flow"><span>结构化 state</span><b>→</b><span>Jev 回答</span><b>→</b><span>阈值与规则</span><b>→</b><span>已注册动作 / 人工复核</span></div></section>
+      <section class="section use-grid"><div class="section-heading"><p class="eyebrow">THREE PRACTICAL WAYS</p><h2>从需求反推工具。</h2></div><article><h3>自己写一个判断</h3><p>先从 <a href="hands-on.html">手把手 Jev</a> 的客服分流例子开始。它有有限候选项，错误可回退，也容易构建留出集。</p></article><article><h3>给 Agent 接工具</h3><p>优先理解 MCP 工具实际会读取和发送什么。可在 <a href="ecosystem.html#agent-tools">生态页</a> 查看连接器、审查工具和明确的失败处理。</p></article><article><h3>比较性能主张</h3><p>不要把 README 的速度或节省直接当作你的结果。去 <a href="research.html">研究页</a> 看数据、对照和没有验证的部分。</p></article></section>
+    </main>
+    <footer class="site-footer"><div><a class="brand" href="index.html"><span class="brand-mark">J</span><span>awesome-jev</span></a><p>每条路径都回到原始资料。</p></div><div class="footer-links"><a href="ecosystem.html">生态</a><a href="sources.html">来源核验</a><a href="https://github.com/Promethe-us/awesome-jev">GitHub ↗</a></div></footer>
+  </body>
+</html>

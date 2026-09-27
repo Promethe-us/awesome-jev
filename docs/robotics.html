@@ -11,6 +11,11 @@
       <section class="article-hero"><p class="eyebrow">JEV ON ROBOTIS / ROBOTICS</p><h1>把 Jev 放在<br />控制器之后。</h1><p>机器人系统中的 Jev 应做低频、有边界的语义判断；感知、连续控制和最终安全否决必须留在专用模块与代码中。</p></section>
       <article class="article-content">
         <blockquote><strong>关于“Robotis”</strong>截至 2026-09-27，本库未发现 ROBOTIS 品牌的可核验 Jev 集成。“Robotis”保留为用户提出的检索词；本专题采用准确的 Robotics 标签，不把未证实的品牌案例写成事实。</blockquote>
+        <section class="project-media" aria-label="机器人项目的公开图像与演示">
+          <figure><img loading="lazy" src="https://raw.githubusercontent.com/RomanSlack/jev-drone/main/docs/climb.png" alt="jev-drone 的爬升仿真画面" /><figcaption><a href="https://github.com/RomanSlack/jev-drone">jev-drone：公开仿真截图 ↗</a></figcaption></figure>
+          <figure><img loading="lazy" src="https://raw.githubusercontent.com/CATS-Lab/JEV-Drive/main/docs/images/lane-panorama.gif" alt="JEV-Drive 车道仿真动图" /><figcaption><a href="https://github.com/CATS-Lab/JEV-Drive">JEV-Drive：公开车道动图 ↗</a></figcaption></figure>
+        </section>
+        <section class="project-video"><div><p class="eyebrow">SOURCE DEMO / SIMULATION</p><h2>一段可回溯的仿真运行</h2><p>视频来自 jev-drone 源仓库；它展示的是 MuJoCo 仿真中的路线运行，不是实机飞行或通用安全验证。</p><a href="https://github.com/RomanSlack/jev-drone">查看代码与完整说明 ↗</a></div><video controls preload="metadata" poster="https://raw.githubusercontent.com/RomanSlack/jev-drone/main/site/public/figures/course-poster.jpg"><source src="https://raw.githubusercontent.com/RomanSlack/jev-drone/main/site/public/figures/course-run.mp4" type="video/mp4" />你的浏览器不支持视频；请从项目仓库观看。</video></section>
         <h2>适合放在哪一层</h2>
         <p>Jev 可以在低频环节选择已有技能、判断是否重试、给事件分级、给候选动作排序，或建议升级给人。它不读取像素、不规划连续轨迹、不执行关节控制，也不应拥有最后的安全动作权限。</p>
         <pre><code>传感器 / 视觉 → 状态估计 → Jev：有边界的判断 → 已注册技能
@@ -33,7 +38,7 @@ if skill_requires_secure_grasp and grasp_probability &lt; calibrated_gate: deny
 if confidence &lt; calibrated_gate: request_review_or_safe_fallback</code></pre>
         <h3>评估轨迹，不评估截图</h3><p>在相同观测、候选技能、仿真种子和停止条件下，至少对比无 Jev、规则恢复、生成模型恢复和 Jev 恢复。报告完成率、危险误放行、无谓干预、端到端延迟、成本和失败轨迹。</p>
         <div class="article-note"><strong>一条规则</strong>Jev 提供判断信息；安全规则决定是否允许执行。不要把最终权限塞进自然语言 rubric。</div>
-        <div class="article-next"><a href="ROBOTICS.md">Markdown 原文 →</a><a href="hands-on.html">手把手 Jev →</a><a href="RESEARCH.md">研究与评测 →</a><a href="SOURCES.md">核验记录 →</a></div>
+        <div class="article-next"><a href="hands-on.html">手把手 Jev →</a><a href="research.html">研究与评测 →</a><a href="sources.html">核验记录 →</a><a href="ecosystem.html">生态地图 →</a></div>
       </article>
     </main>
   </body>
