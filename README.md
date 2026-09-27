@@ -1,6 +1,5 @@
 <div align="center">
 
-<img src="cover.png" alt="awesome-jev" width="600"/>
 
 <img src=".github/social-preview.png" alt="awesome-jev: Jev knowledge map" width="900"/>
 
