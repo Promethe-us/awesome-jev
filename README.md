@@ -232,6 +232,7 @@ Jev 是 TypeSafe AI 的决策模型。程序提供文本状态和边界明确的
 | 开放模型 | [NandhaKishorM/laya](https://github.com/NandhaKishorM/laya) | 19,984 | 独立开源决策模型；横向数字需检查测试条件 |
 | 开放模型 | [TheoLeeCJ/SemIf-OpenJev](https://github.com/TheoLeeCJ/SemIf-OpenJev) | 4,065 | 开放模型上的语义条件判断，与 TypeSafe 无隶属关系；原 SemIf 已更名 |
 | 开放模型 | [jaredpalmer/kev](https://github.com/jaredpalmer/kev) | 5,746 | 已扩展为 Qwen3.5 模型族，不能继续只描述为 0.5B 原型 |
+| 开放模型 | [OmniJev/OneJev](https://github.com/OmniJev/OneJev) | 0 | 多模态版本：截图、照片、视频和文本都能问，一次前向给出每个选项的校准概率；0.8B 到 27B 四档，Apache-2.0 |
 | 训练配方 | [bespokelabsai/nimble](https://github.com/bespokelabsai/nimble) | 1,677 | 对比数据策展、模型与评测 |
 | 训练实现 | [TianyuCodings/NanoJev](https://github.com/TianyuCodings/NanoJev) | 2,103 | 小型训练管线；独立实现而非官方权重 |
 | Agent 评测 | [danielgshea/jev-as-a-judge](https://github.com/danielgshea/jev-as-a-judge) | 79 | 可检查实验设计，严格区分重复次数和样本数 |
