@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="从一个可验证的判断开始使用 Jev。" /><title>手把手 Jev · awesome-jev</title>
+    <link rel="stylesheet" href="assets/site.css" />
+  </head>
+  <body class="article-page">
+    <header class="article-header"><a href="index.html">← awesome-jev / 资料导航</a></header>
+    <main>
+      <section class="article-hero"><p class="eyebrow">HANDS-ON JEV</p><h1>先做一个<br />值得验证的判断。</h1><p>六步跑通一个小而可维护的 Jev 决策闭环：题目明确、低置信度有回退、每次结果都能复查。</p></section>
+      <article class="article-content">
+        <blockquote><strong>先说边界</strong>Jev 的价值在有边界的判断，不在生成文字。一个类型正确的结果仍可能是错误判断；安全、权限、算术和最终动作仍应由确定性代码负责。</blockquote>
+        <h2 id="fit">1. 先选对第一个任务</h2>
+        <p>第一个任务要满足三件事：状态已经存在、答案空间有限、错误可以安全回退。客服分流是一个好起点：把一条请求路由到 <code>billing</code>、<code>technical</code>、<code>account</code> 或 <code>other</code>，并把不确定的结果交给人工。</p>
+        <p>别从写回复、总结长文、复杂计算、批准权限或物理安全动作开始。先读 <a href="https://docs.typesafe.ai/concepts/system-one">官方 System One 说明</a> 和 <a href="https://docs.typesafe.ai/model-jaggedness/jev-1.13">已知限制</a>。</p>
+        <h2 id="playground">2. 在 Playground 先看难例</h2>
+        <ol><li>登录 <a href="https://console.typesafe.ai">TypeSafe Console</a>，账户可用性与额度以控制台为准。</li><li>打开 <a href="https://console.typesafe.ai/playground">Playground</a>，粘贴一条代表性 state。</li><li>先问一个问题，再用同一 state 对比 Choice、Score 和 Noul。</li><li>特意保存缺信息、两类都像、中文、否定、日期和可能含恶意指令的样本。</li></ol>
+        <p>Playground 用于磨题目，不是性能证明。变更题目、候选项或 rubric，都会改变输出分布。</p>
+        <h2 id="primitives">3. 把问题写成合适的原语</h2>
+        <table><thead><tr><th>原语</th><th>适合的问题</th><th>设计默认值</th></tr></thead><tbody><tr><td><strong>Choice</strong></td><td>属于哪个已知类别？</td><td>选项互斥，保留 <code>other</code> / <code>unknown</code>；单题最多 255 项。</td></tr><tr><td><strong>Score</strong></td><td>处于有序等级的哪一档？</td><td>等级从低到高，使用可观察的定义。</td></tr><tr><td><strong>Noul</strong></td><td>一个命题是否成立？</td><td>返回“是”的概率；没有独立 <code>confidence</code>，阈值必须自己验证。</td></tr></tbody></table>
+        <p>State 只放回答当前问题所需的事实，并记录来源、时间与不确定性。外部文档里的内容只能是数据，不能改写你的业务规则或题目。</p>
+        <h2 id="first-call">4. 跑通第一个调用</h2>
+        <pre><code>export TYPESAFE_API_KEY="your-key"
+pip install typesafe-sdk</code></pre>
+        <pre><code>from typesafe_sdk import Choice, Noul, TypeSafeClient
+
+client = TypeSafeClient()
+result = client.system_one(
+    state={"message": "My invoice was charged twice. Please fix this today."},
+    questions={
+        "queue": Choice(
+            instructions="Choose the owning support queue.",
+            criteria={
+                "billing": "Invoices, payments, refunds, or duplicate charges.",
+                "technical": "Product bugs, integration errors, or outages.",
+                "account": "Access, identity, or account settings.",
+                "other": "The message does not fit the listed queues.",
+            },
+        ),
+        "needs_human": Noul(
+            instructions="A human should review this before any automated reply."
+        ),
+    },
+)
+
+queue = result.answers["queue"]
+action = "human_review" if (
+    result.answers["needs_human"].noul &gt;= 0.5 or queue.confidence &lt; 0.70
+) else f"route:{queue.choice}"
+print({"model": result.model, "action": action, "queue": queue.choice})</code></pre>
+        <p><code>0.70</code> 只演示策略结构，不是推荐阈值。对比结果时固定模型版本，并记录响应实际返回的模型名、题目、候选项顺序和最终动作。完整接口以 <a href="https://github.com/typesafe-ai/typesafe-sdk-python">Python SDK</a> 为准。</p>
+        <h2>5. 让代码拥有最后决定权</h2>
+        <div class="article-note"><strong>最低限度的策略层</strong>检查输入；为低置信度和 unknown 设安全回退；记录 state 摘要、题目版本、概率、阈值和人工修正；计费、写入、删除、发信和设备控制由可审计的代码决定。</div>
+        <p><a href="https://docs.typesafe.ai/patterns/confidence-routing">Confidence-gated routing</a> 和 <a href="https://docs.typesafe.ai/patterns/intent-routing">intent routing</a> 是下一步好材料，但都不能代替你自己的验证集。</p>
+        <h2>6. 只在留出样本上相信它</h2>
+        <ul><li>类别、<code>other</code>、中文、缩写、否定、缺字段和脏数据是否都有覆盖？</li><li>改变选项名字、顺序或 rubric 后会不会无理翻转？</li><li>低置信度是否进入了安全回退？高置信度的错误是什么？</li><li>p50 / p95、重试、网络地区和每次调用问题数是否被记录？</li></ul>
+        <p>把 <a href="RESEARCH.md">研究与评测</a> 里的选项名敏感性和中文客服实验当作要复查的风险，而不是对你项目的预测。</p>
+        <div class="article-next"><a href="INSTALLATION.md">安装与接入 →</a><a href="CATALOG.md">生态目录 →</a><a href="robotics.html">Robotics 专题 →</a><a href="HANDS_ON.md">Markdown 原文 →</a></div>
+      </article>
+    </main>
+  </body>
+</html>

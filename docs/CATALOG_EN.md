@@ -1,6 +1,6 @@
 # Jev community project catalog
 
-> This expands the [README ecosystem section](../README_EN.md#ecosystem) and groups resources by use. **Numbered stars are a 2026-09-24 GitHub API snapshot**; `—` means no star count was collected, not zero, and September 26 additions omit stars to avoid churn. Repository metadata was checked for numbered GitHub entries. Feature descriptions follow maintainers' materials; this repository did not run their code.
+> This expands the [README ecosystem section](../README_EN.md#ecosystem) and groups resources by use. **Numbered stars are a 2026-09-24 GitHub API snapshot**; `—` means no star count was collected, not zero, and September 26–27 additions omit stars to avoid churn. Repository metadata was checked for numbered GitHub entries. Feature descriptions follow maintainers' materials; this repository did not run their code.
 > Related guides: [getting started](INSTALLATION_EN.md) · [research and evaluations](RESEARCH_EN.md) · [source audit](SOURCES_EN.md). Independent open models are not TypeSafe's official Jev weights. [中文原文](CATALOG.md)
 
 ## I want to understand Jev first
@@ -49,6 +49,7 @@ For direct TypeSafe access and the Vercel, Cloudflare, OpenRouter, and LangSmith
 | [TypeSafeAI/jev-harness](https://github.com/TypeSafeAI/jev-harness) | — | **Unofficial, research-stage** proposal-review contract: an LLM proposes, Jev answers four questions, and deterministic code produces a verdict and receipt. The main offline fixtures use mocks; a separate host supplies live transport. It does not apply patches or grant authorization |
 | [TauricResearch/TradingAgents](https://github.com/TauricResearch/TradingAgents) | — | **Optional Jev integration**: with `TYPESAFE_API_KEY`, the Sentiment Analyst filters StockTwits / Reddit posts and summarizes stance; without it, posts pass through unscreened. The trading framework itself is not Jev-specific |
 | [szczyglis-dev/py-gpt](https://github.com/szczyglis-dev/py-gpt) | — | Optional desktop Jev / System One inline plugin; `jev_evaluate(state, questions)` calls `/v1/systemone` with Choice / Score / Noul. Its September 25 v2.8.31 changelog records the plugin addition |
+| [ziyacivan/jev-mail-filter](https://github.com/ziyacivan/jev-mail-filter) | — | Gmail Apps Script that labels, archives, creates tasks, flags suspicious mail, and makes a digest with Jev. Its README says every new email sends its sender, subject, and first 2,000 body characters to TypeSafe; review this against your own mail-data requirements before enabling it (added 09-27) |
 
 ## I want to integrate Jev with an agent or coding assistant
 
@@ -68,6 +69,10 @@ For direct TypeSafe access and the Vercel, Cloudflare, OpenRouter, and LangSmith
 | [DevMortimer/pi-warden](https://github.com/DevMortimer/pi-warden) | 138 | Uses Jev to review coding-agent writes and project rules (added 09-24) |
 | [0xNatoshi/jev-codex-router](https://github.com/0xNatoshi/jev-codex-router) | 248 | Per-turn Codex model and reasoning routing; the ~−60% saving comes from a 237-turn historical simulation and, per the project, is not measured billing (added 09-24) |
 | [supercorp-ai/supercov](https://github.com/supercorp-ai/supercov) | 114 | Coverage, security and code quality for coding agents: Jev checks each source file so the agent knows what to fix first |
+| [ivancasco/aidlc-plugin-jev](https://github.com/ivancasco/aidlc-plugin-jev) | — | Three AI-DLC gates for document quality, blocking issues, and missing concerns. It splits documents before sending pieces to Jev; thresholds were only tuned on small fixtures, so validate blocking gates on the team's own documents (added 09-27) |
+| [itsmostafa/system-one-connector](https://github.com/itsmostafa/system-one-connector) | — | MIT `evaluate` CLI / MCP connector that can register Jev or a self-hosted System One model with Codex, Claude Code, Claude Desktop, Hermes, and pi. Its 09-27 v0.4.1 renamed the CLI from `jev` to `evaluate`; the old updater cannot cross the rename, so follow the maintainer's reinstall steps (added 09-27) |
+| [jkudish/jev-mcp](https://github.com/jkudish/jev-mcp) | — | MIT MCP server with eleven tools for evidence verification, pre-screening pages, reranking, classification, diff review, and completion gates. Its README sends missing or malformed model answers to `invalid_response` / review; calibrate thresholds against team data (added 09-27) |
+| [MongLong0214/jev-gate](https://github.com/MongLong0214/jev-gate) | — | Experimental Claude Code task-routing plugin with public V3–V5 host records. In the author's V4 small-task trial the shipped policy never delegated; forced delegation passed the same checks but cost 38% more, so it is not evidence of a proven saving (added 09-27) |
 
 ## I want browser, phone, or computer automation
 
@@ -105,18 +110,20 @@ For direct TypeSafe access and the Vercel, Cloudflare, OpenRouter, and LangSmith
 | [NanmiCoder/jev-arena](https://github.com/NanmiCoder/jev-arena) | 98 | Ten thousand comments comparing Jev and DeepSeek side by side; AI-reviewed labels with replayable per-item checks (added 09-24) |
 | [instax-dutta/sysone-bench](https://github.com/instax-dutta/sysone-bench) | 4 | Matched-input Jev, Laya, Router, and Qwen comparison; original results were read, and README “states” differs from the decision count |
 | [yibie/laya-jev-lab](https://github.com/yibie/laya-jev-lab) | 8 | Small Chinese support-ticket study, confidence and cascade experiments, raw outputs, and retracted early conclusions |
+| [beese54/jev-ticket-triage](https://github.com/beese54/jev-ticket-triage) | — | Compares Jev and two LLMs on 770 Banking77 messages and 150 hand-checked tickets, with public conditions, charts, and a dashboard. All figures are author-reported; read the README's label and threshold handling with the results (added 09-27) |
 | [agent-chaperone/agent-chaperone](https://github.com/agent-chaperone/agent-chaperone) | 20 | MCP proxy and tool-hook review; default shadow mode only records and is not a sandbox |
 | [JacobLinCool/jev-paper-judge](https://github.com/JacobLinCool/jev-paper-judge) | 1 | Rates writing clarity and completeness, not scientific correctness |
 | [ourines/hermes-jev](https://github.com/ourines/hermes-jev) | 2 | Explicit Jev decision tool for Hermes, supporting TypeSafe / Cloudflare |
 | [ZF-Utokyo/Jev-Benchmark](https://github.com/ZF-Utokyo/Jev-Benchmark) | — | ContractNLI legal inference comparing Jev 1.13 with nine language models. The repo has 123 test contracts, 30 fixed anchors, raw predictions, adapters, and 4,830 recorded attempts; see its [paper](https://arxiv.org/abs/2609.27678) for the reported findings |
 | [sumleo/RLCDAlignBench](https://github.com/sumleo/RLCDAlignBench) | — | Jev alignment-failure detection across ten failure types, 44 benchmarks, and five small target models. The [dataset](https://huggingface.co/datasets/sumleo/RLCDAlignBench) requires access approval and labels mostly come from each benchmark's scorer; see the [paper](https://arxiv.org/abs/2609.29429) |
 | [get-convex/convex-evals](https://github.com/get-convex/convex-evals) | — | **Separate decision benchmark** for Convex coding knowledge: 108 multiple-choice questions and three option permutations. Jev uses OpenRouter's `/api/alpha/decisions`; probabilities, confidence, and provider costs are stored. This does not make the whole coding-eval framework a Jev framework |
+| [jev-ids/jev-ids](https://github.com/jev-ids/jev-ids) | — | MIT intrusion-detection research prototype with code and raw results for 2,000 NSL-KDD flows, three random seeds, and Jev / Gemini / Random Forest / Isolation Forest. The author reports lower k=1 F1 than Gemini but higher zero-day recall for Jev; it is specific to that dataset and an asynchronous side path, not production intrusion-prevention evidence (added 09-27) |
 
 These are tools and experimental repositories, **not Jev academic papers**. See [methods and limitations](RESEARCH_EN.md).
 
 ## I want to read the September 2026 Jev papers
 
-Jev-related papers started appearing on arXiv four days after launch. The historical batch through September 22 had 13 papers, with eight more from September 23–24 verified separately (per-paper entries in [the research guide](RESEARCH_EN.md)). Five early papers released companion repositories; repository links were metadata-checked, and this repository has not audited their code.
+Jev-related papers started appearing on arXiv four days after launch. The historical batch through September 22 had 13 papers, with eleven more from September 23–24 verified separately (per-paper entries in [the research guide](RESEARCH_EN.md)). Five early papers released companion repositories; repository links were metadata-checked, and this repository has not audited their code.
 
 | Paper (first posted) | ★ | Companion repository and notes |
 |---|---|---|

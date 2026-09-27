@@ -101,3 +101,33 @@
 - 聚合页中出现晚于本轮日期的更新条目时排除；新闻媒体首页不充当具体报道的来源。
 
 链接可读取、文档语法正确与实验可复现是不同层次的验证。本轮完成的是资料整理与文档核对，仍需持续跟进服务和社区变化。
+
+<a id="2026-09-27-机器人与入门资料增补"></a>
+## 2026-09-27 机器人与入门资料增补
+
+本轮为新的 **Jev on Robotis / Robotics** 与 **手把手 Jev** 页面做定向核验。检索 `Jev Robotis`、`Jev ROBOTIS`、`site:github.com/ROBOTIS-GIT Jev` 与 GitHub 仓库搜索，未发现可引用的一手 ROBOTIS 品牌集成；因此保留 Robotis 为用户提出的检索词，但不把它写成品牌案例。
+
+- **机器人项目与元数据**：通过 GitHub API 核对 [jev-drone](https://github.com/RomanSlack/jev-drone)、[jev-arm-lab](https://github.com/Vankleben/jev-arm-lab)、[jev-robotics-demo](https://github.com/FazalAAli/jev-robotics-demo)、[Jev for Physical AI](https://github.com/robokrunch/jev-physical-ai)、[Jev + VLA](https://github.com/Alpha-Harper-Franklin/jev-vla) 和 [jev-robotics-radar](https://github.com/Rosequan/jev-robotics-radar) 的仓库名称、说明、创建 / 更新时间与许可证；同时读取其 README。项目被按“仿真已运行 / 作者测量 / 设计阶段”标注，不按 star 数排序。
+- **可由材料支持的范围**：`jev-drone` 说明 Jev 在符号化视觉状态上约 2.5 Hz 作战术判断，并把高频飞控和安全反射留给代码；`jev-arm-lab` 公开了任务层判断、日志与故障图谱；`jev-robotics-demo` 只提供各一条记录运行；`jev-physical-ai` 的 300 个事件来自模板化模拟，README 明示非真实机器人与非生产准确率；`jev-vla` 自述设计阶段、没有可用接入或测量结果；`jev-robotics-radar` 是官网文本评分工具，不是机器人控制或事实核查研究。
+- **入门资料**：重新对照 [官方 Quickstart](https://docs.typesafe.ai/introduction/quickstart)、[API Reference](https://docs.typesafe.ai/api)、[Python SDK](https://github.com/typesafe-ai/typesafe-sdk-python)、[JavaScript SDK](https://docs.typesafe.ai/sdk/javascript)、[Confidence](https://docs.typesafe.ai/confidence)、[confidence-gated routing](https://docs.typesafe.ai/patterns/confidence-routing) 和 [intent routing](https://docs.typesafe.ai/patterns/intent-routing)。教程示例未使用账户密钥发起推理，`0.70` 只作为策略结构示例，不作为推荐阈值。
+- **网页层**：`docs/index.html`、`docs/hands-on.html`、`docs/robotics.html`、`docs/assets/site.css` 和 `docs/assets/site.js` 是仓库内纯静态界面，不加载分析脚本、第三方字体或用户数据；页面链接到 Markdown 原文，方便审查、离线阅读和 GitHub Pages 发布。
+
+<a id="2026-09-27-平台增量复查"></a>
+## 2026-09-27 平台增量复查
+
+这次按来源分别复查；这里记录的是**可追溯结果和排除理由**，不是平台热度榜。
+
+- **arXiv**：通过 [公开 API](https://export.arxiv.org/api/query?search_query=all%3AJev&start=0&max_results=100&sortBy=submittedDate&sortOrder=descending) 拉取按首发时间倒序的 100 条命中。9 月 25 日至本次检查没有新增 `Jev` 命中；但 9 月 24 日索引中补到此前遗漏的 [JevOut](https://arxiv.org/abs/2609.30243)、[渗透测试 harness 案例](https://arxiv.org/abs/2609.28940) 和 [企业编码 Agent 路由研究](https://arxiv.org/abs/2609.28919)。三篇标题、作者、首发时间和摘要都由 API 重核，正文结论仍按作者报告收录。
+- **GitHub**：用 Repository Search 的 `Jev TypeSafe`、首发 / 更新日期过滤寻找 09-25 至 09-27 的项目，再读重点 README 和逐仓库 API 元数据。新增 [JEV-Drive](https://github.com/CATS-Lab/JEV-Drive) 到 Robotics（有 AlpaSim 运行路径与局部 rollout，非实车），新增 [jev-ticket-triage](https://github.com/beese54/jev-ticket-triage) 到评测目录（公开方法和图表，结果未独立复现），并在入门页链接 [Building with TypeSafe Jev](https://github.com/aaddrick/building-with-typesafe-jev)（第三方技能）。其余大量新建、零星或 README 不完整的项目没有逐条入库。
+- **Hacker News**：以 [Algolia 的按时间检索接口](https://hn.algolia.com/api/v1/search_by_date?query=Jev&tags=story&hitsPerPage=100) 复查。09-26 的 [Just Ask Jev](https://news.ycombinator.com/item?id=49859957) 帖只是指向已收录的 arXiv 原文，且没有可补充的实质讨论；因此只更新审计记录，不把 HN 帖当作新的技术证据。
+- **X**：检索 `Jev`、`TypeSafe` 与日期组合时，公开搜索索引没有返回可核验的新单帖；直接 X 搜索在当前会话受访问限制。未把搜索摘要、转述或点赞数写入目录。
+- **小红书**：尝试打开站内 `Jev` 搜索页，连接被平台关闭（`ERR_CONNECTION_CLOSED`），未取得笔记正文。既有笔记继续是待核验线索；没有据标题、二级索引或截图补写速度、成本或实战效果。
+
+### X 的第二轮扩大检索
+
+第一轮只以少量可直接读取的帖子为证据，覆盖不足。本轮补读 [Jev Guide 的公开 GitHub 索引](https://github.com/2456868764/jevguide)：其 2026-09-27 提交的 [最新列表](https://raw.githubusercontent.com/2456868764/jevguide/main/index/latest.md) 按原帖日期列出 X 链接，并明确说明标题、摘要和分类是编辑整理。该索引在仓库 README 中标示为 3,215 条整理记录与 1,701 段原帖视频；这些**是索引作者的计数，不是本库核验的生态总量**。
+
+- 以索引发现线索后，逐个回到 GitHub API 与 README。9 月 27 日的 [Gmail filter 原帖](https://x.com/ziyacivan/status/2104008318616211880) 对应 [可读源码仓库](https://github.com/ziyacivan/jev-mail-filter)，已收录并写明邮件字段外传边界；[AI-DLC gate](https://github.com/ivancasco/aidlc-plugin-jev) 也经源码与测试说明核对后收录。
+- 扩大 X 线索对应的 GitHub 复查后，再收录了 [System One Connector](https://github.com/itsmostafa/system-one-connector)、[Jev MCP](https://github.com/jkudish/jev-mcp)、[jev-gate](https://github.com/MongLong0214/jev-gate) 和 [Jev IDS](https://github.com/jev-ids/jev-ids)。逐个读取 README、许可证和 GitHub 元数据；其中路由和 IDS 的数值均保留为作者在限定基准与条件下的报告，并写进适用边界。
+- 未把 [交易盈利提醒](https://x.com/MooninPapa/status/2104005602078798220)、单次游戏分数、社交媒体浏览量、单次速度 / 成本或没有代码的 demo 放进正式目录。它们可帮助发现项目，不能单独证明收益、准确率、安全性或可复现性。
+- 小红书仍没有取得可读正文：公开搜索不返回站内笔记，且站内页关闭连接。因此本轮没有把任何“小红书同名账号”“活动入口”或二级索引转写为笔记内容；等待能打开的原帖或作者提供的可访问来源。

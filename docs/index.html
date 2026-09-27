@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="awesome-jev：有出处、有判断、能动手的 Jev 资料库。" />
+    <meta name="theme-color" content="#101b32" />
+    <title>awesome-jev · field notes</title>
+    <link rel="stylesheet" href="assets/site.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#content">跳到正文</a>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="awesome-jev 首页">
+        <span class="brand-mark">J</span><span>awesome-jev</span>
+      </a>
+      <nav aria-label="主导航">
+        <a href="#start">从这里开始</a>
+        <a href="#robotics">Robotics</a>
+        <a href="#library">资料地图</a>
+        <a href="https://github.com/Promethe-us/awesome-jev">Repository ↗</a>
+      </nav>
+    </header>
+
+    <main id="content">
+      <section id="top" class="hero" aria-labelledby="hero-title">
+        <p class="eyebrow">FIELD NOTES · VERIFIED 2026-09-27</p>
+        <h1 id="hero-title">给 Jev 读者一张<br />真正能用的地图。</h1>
+        <p class="hero-copy">
+          从一个可验证的判断开始；再走向 Agent、评测、机器人与具身系统。每个入口都说明资料的证据等级和适用边界。
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="hands-on.html">开始：手把手 Jev <span>→</span></a>
+          <a class="button quiet" href="robotics.html">浏览 Robotics <span>↗</span></a>
+        </div>
+        <div class="principles" aria-label="资料库原则">
+          <div><strong>01</strong><span>来源优先</span></div>
+          <div><strong>02</strong><span>边界清楚</span></div>
+          <div><strong>03</strong><span>能复查</span></div>
+        </div>
+      </section>
+
+      <section id="start" class="section section-grid" aria-labelledby="start-title">
+        <div class="section-heading">
+          <p class="eyebrow">A PRACTICAL START</p>
+          <h2 id="start-title">先别急着接 API。</h2>
+          <p>第一个问题选得小、状态足够清楚、错误可以回退，后面的评测和集成才有意义。</p>
+        </div>
+        <div class="route-list">
+          <a class="route" href="hands-on.html#fit">
+            <span class="route-number">01</span>
+            <span><strong>判断任务是否合适</strong><small>路由、筛选、排序、门控，还是需要生成文字？</small></span>
+            <b>→</b>
+          </a>
+          <a class="route" href="hands-on.html#playground">
+            <span class="route-number">02</span>
+            <span><strong>在 Playground 看难例</strong><small>不是看一次成功，而是看缺信息、中文、否定与边缘情况。</small></span>
+            <b>→</b>
+          </a>
+          <a class="route" href="hands-on.html#first-call">
+            <span class="route-number">03</span>
+            <span><strong>跑通一个最小闭环</strong><small>SDK、低置信度回退、日志和独立验证集。</small></span>
+            <b>→</b>
+          </a>
+        </div>
+      </section>
+
+      <section class="section primitive-section" aria-labelledby="primitive-title">
+        <div class="section-heading compact">
+          <p class="eyebrow">THREE BUILDING BLOCKS</p>
+          <h2 id="primitive-title">先把问题写对。</h2>
+        </div>
+        <div class="primitive-grid">
+          <article><p>CHOICE</p><h3>从已知选项里挑一个</h3><span>工单属于哪个队列？下一步调用哪个已有技能？</span></article>
+          <article><p>SCORE</p><h3>落在有序等级的哪一档</h3><span>风险、紧急度、相关性需要怎样分级？</span></article>
+          <article><p>NOUL</p><h3>一个命题是否成立</h3><span>需要人工复核吗？注意：没有独立 confidence 字段。</span></article>
+        </div>
+        <p class="caption">候选项和分级应该可观察、互相区分，并为无法判断的情况留下出口。<a href="hands-on.html#primitives">阅读设计要点 →</a></p>
+      </section>
+
+      <section id="robotics" class="section robotics" aria-labelledby="robotics-title">
+        <div class="section-heading">
+          <p class="eyebrow">NEW SECTION · JEV ON ROBOTIS / ROBOTICS</p>
+          <h2 id="robotics-title">机器人里的 Jev，<br />应该站在控制器之后。</h2>
+          <p>公开资料中尚未发现 ROBOTIS 品牌的可核验 Jev 集成。“Robotis”保留为检索词；这里呈现的是更准确的 Robotics 实践。</p>
+          <a class="text-link" href="robotics.html">阅读完整 Robotics 专题 <span>→</span></a>
+        </div>
+        <div class="robotics-stack" aria-label="机器人系统分层">
+          <div class="stack-card safe"><span>固定安全边界</span><strong>代码拥有 veto</strong><small>碰撞、过期观测、低置信度与权限</small></div>
+          <div class="stack-card judge"><span>低频语义判断</span><strong>Jev 选择已有技能</strong><small>重试、暂停、升级、候选动作排序</small></div>
+          <div class="stack-card state"><span>感知与状态估计</span><strong>视觉 / 传感器 / 时间戳</strong><small>Jev 接收结构化状态，不读取像素</small></div>
+          <div class="stack-card control"><span>连续控制</span><strong>飞控、轨迹、执行器</strong><small>由专用控制器在高频循环中处理</small></div>
+        </div>
+      </section>
+
+      <section id="library" class="section library" aria-labelledby="library-title">
+        <div class="library-top">
+          <div class="section-heading compact">
+            <p class="eyebrow">THE LIBRARY</p>
+            <h2 id="library-title">按目的找资料。</h2>
+          </div>
+          <label class="search" for="resource-search">
+            <span>⌕</span>
+            <input id="resource-search" type="search" placeholder="筛选主题、项目或资料类型" autocomplete="off" />
+          </label>
+        </div>
+        <div class="filter-row" role="group" aria-label="按主题筛选">
+          <button class="filter active" type="button" data-filter="all">全部</button>
+          <button class="filter" type="button" data-filter="learn">入门</button>
+          <button class="filter" type="button" data-filter="build">接入</button>
+          <button class="filter" type="button" data-filter="robotics">Robotics</button>
+          <button class="filter" type="button" data-filter="research">研究</button>
+        </div>
+        <div id="resource-grid" class="resource-grid">
+          <a class="resource-card" data-topics="learn build" href="hands-on.html">
+            <span class="evidence official">官方资料为主</span><h3>手把手 Jev</h3><p>从任务选择到 SDK、策略层与留出验证集的连续路径。</p><span class="go">打开教程 →</span>
+          </a>
+          <a class="resource-card" data-topics="robotics build" href="robotics.html">
+            <span class="evidence code">代码与作者记录</span><h3>Jev on Robotics</h3><p>无人机、机械臂、车队分流与 VLA；每项标出仿真、原型或设计状态。</p><span class="go">查看专题 →</span>
+          </a>
+          <a class="resource-card" data-topics="build" href="INSTALLATION.md">
+            <span class="evidence official">官方资料为主</span><h3>安装与接入</h3><p>直连 API、SDK、网关、Agent Skill 与框架集成的区别。</p><span class="go">选择接入方式 →</span>
+          </a>
+          <a class="resource-card" data-topics="research" href="RESEARCH.md">
+            <span class="evidence paper">论文与评测</span><h3>研究与评测</h3><p>把数字留在它产生的实验条件里：数据、对照、局限和失败模式。</p><span class="go">检查证据 →</span>
+          </a>
+          <a class="resource-card" data-topics="build research" href="CATALOG.md">
+            <span class="evidence directory">项目目录</span><h3>生态目录</h3><p>Agent、浏览器、自动化、框架和开放替代实现；不是质量排行榜。</p><span class="go">浏览项目 →</span>
+          </a>
+          <a class="resource-card" data-topics="research" href="SOURCES.md">
+            <span class="evidence audit">收录方法</span><h3>来源与核验</h3><p>X、小红书、Reddit、论文和 GitHub 各自能提供什么，又不能证明什么。</p><span class="go">查看核验记录 →</span>
+          </a>
+        </div>
+        <p id="empty-state" class="empty-state" hidden>没有匹配的资料。试试“入门”、“机器人”或“评测”。</p>
+      </section>
+
+      <section class="section reading-rule" aria-labelledby="rule-title">
+        <p class="eyebrow">A READING RULE</p>
+        <h2 id="rule-title">每个结果都问一句：<br />“它在什么条件下成立？”</h2>
+        <div class="rule-columns">
+          <p><strong>链接可打开</strong><br />不等于已经复现，更不代表能用于你的任务。</p>
+          <p><strong>类型受约束</strong><br />不等于判断正确；低置信度和错误案例要进入设计。</p>
+          <p><strong>作者测得更快</strong><br />不等于你的网络、输入、并发、模型版本和成本也一样。</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div><a class="brand" href="#top"><span class="brand-mark">J</span><span>awesome-jev</span></a><p>社区维护，与 TypeSafe AI 无关。</p></div>
+      <div class="footer-links"><a href="https://github.com/Promethe-us/awesome-jev">Repository</a><a href="SOURCES.md">来源与收录标准</a><a href="https://github.com/Promethe-us/awesome-jev">GitHub ↗</a></div>
+    </footer>
+    <script src="assets/site.js"></script>
+  </body>
+</html>

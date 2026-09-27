@@ -44,7 +44,7 @@ Jev 于 09-15 发布；09-19（4 天后）第一批论文挂上 arXiv，至 09-2
 
 ### 09-23 / 09-24 新核验的直接 Jev 研究
 
-以下 8 篇均于 2026-09-26 重新打开 arXiv 原页，核对标题、作者、首发日期和 submission history；页面均只有 v1。它们是第三方预印本，不计入上方截至 09-22 的历史 13 篇，也不据此声称当前全网总量为 21 篇。结果是作者报告，未独立复现。
+以下 11 篇均经 arXiv API 于 2026-09-27 重查标题、作者、首发日期和 submission history；页面均为 v1。9 月 25 日至本次检索时没有新增 `Jev` 检索命中。它们是第三方预印本，不计入上方截至 09-22 的历史 13 篇，也不据此声称当前全网总量。结果是作者报告，未独立复现。
 
 | 论文（arXiv；首发；作者） | 研究对象与可查材料 | 阅读边界 |
 |---|---|---|
@@ -56,6 +56,9 @@ Jev 于 09-15 发布；09-19（4 天后）第一批论文挂上 arXiv，至 09-2
 | [JEV vs. LLMs as Rubric Judges: Cheaper, Faster, and Wrong in the Same Places](https://arxiv.org/abs/2609.29769)；09-24；Delip Rao、Chris Callison-Burch | 七个基准的九组面板，对比 Jev 与三个快速 LLM judge | 作者报告分级判据上的相关错误使置信度级联收益有限；费用和时延倍数依赖逐判据调用的对照方案，不代表通用优势 |
 | [Jev-Mobile: Jev as an Executor for Mobile GUI Agents](https://arxiv.org/abs/2609.30186)；09-24；Linghua Zhang | 视觉语言模型低频规划，Jev 根据 Android 无障碍树反复选择动作 | 作者报告 AndroidWorld 全套任务成功率 79%，对照分别为 78% 与 84%；时间和成本改善仅对成功轨迹统计，论文未在摘要给出代码仓库 |
 | [Jev in the Wild: A Data-Driven Analysis of the Jev Model's Functionality, Applications and Ecosystem](https://arxiv.org/abs/2609.30216)；09-24；Guoming Ling 等 | 作者按自身方法收集截至 09-22 的 2,170 个 GitHub 公开项目并分析用途分布 | 这是论文的数据集定义与作者计数，不等于本目录已核验的真实 Jev 集成数；不能由搜索规模推断项目质量或官方采用率 |
+| [JevOut: Natural Context Can Flip Decision Models](https://arxiv.org/abs/2609.30243)；09-24；Zixiang Xu | 在 508 个原本答对的决策中，优化保持自然的附加上下文，使 312 个转到预设错误选项；其中 229 个错误选项概率至少为 0.7；[代码](https://github.com/xzx34/JevOut) | 这是针对特定目标错误选项的自适应攻击实验，作者的成功率不是日常输入错误率；它提示把未经隔离的背景文本送入决策层有风险 |
+| [Calibrated Decision Models for Autonomous Penetration-Testing Harnesses](https://arxiv.org/abs/2609.28940)；09-24；Joas Antonio dos Santos Barbosa | 用 TypeSafe System One（Jev）在 NeuroSploit 中做发现裁决、严重度复核、代理裁剪和确认循环；13 个漏洞目标上的一组有 / 无 Jev 对照用于提出架构 | 这是探索性单次案例，不具统计显著性；文章也只提出后续的领域模型与评估方案，不能当作渗透测试效果证明 |
+| [Control the Harness, Control the Cost: Routing and Governing AI Coding Agents in the Enterprise](https://arxiv.org/abs/2609.28919)；09-24；Arian Abbasi、Alan Aqrawi、Ted Kwartler | 把 Jev 作为可自定义分类器，按会话开始、侧路和子代理启动点做模型路由；作者在公开数据集重定价模拟中报告成本变化 | 结果依赖价格表、提示缓存和模拟席位行为；是路由设计与建模研究，不是生产账单或通用节省承诺 |
 
 ### 直接关联社区争议的两篇预印本
 

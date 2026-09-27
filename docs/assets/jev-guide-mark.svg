@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="250" height="56" viewBox="0 0 250 56" role="img" aria-labelledby="title desc">
+  <title id="title">Open the awesome-jev web guide</title>
+  <desc id="desc">A black and lime green awesome-jev logo linking to the web guide.</desc>
+  <rect width="250" height="56" rx="12" fill="#101511"/>
+  <rect x="8" y="8" width="40" height="40" rx="9" fill="#c7f36b"/>
+  <path d="M19 18h18v5H25v6h10v5H25v7h12v5H19z" fill="#101511"/>
+  <text x="61" y="27" fill="#f5f7ee" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" letter-spacing=".4">AWESOME-JEV</text>
+  <text x="61" y="42" fill="#c7f36b" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="700" letter-spacing="1.2">OPEN WEB GUIDE ↗</text>
+</svg>

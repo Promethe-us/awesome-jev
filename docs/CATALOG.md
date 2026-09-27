@@ -2,7 +2,7 @@
 
 **语言 / Language: 简体中文 · [English](CATALOG_EN.md)**
 
-> 这是 [README](../README.md#ecosystem) 的扩展目录，按用途组织。**带数值星数是 2026-09-24 GitHub API 快照**；`—` 表示未取星数，不代表零星，09-26 新条目不填星数以减少无意义改动。带数值的 GitHub 条目已核对仓库元数据；功能描述依据维护者资料，本仓库未运行验证其代码。
+> 这是 [README](../README.md#ecosystem) 的扩展目录，按用途组织。**带数值星数是 2026-09-24 GitHub API 快照**；`—` 表示未取星数，不代表零星，09-26 / 09-27 新条目不填星数以减少无意义改动。带数值的 GitHub 条目已核对仓库元数据；功能描述依据维护者资料，本仓库未运行验证其代码。
 > 相关指南：[上手安装](INSTALLATION.md) · [论文与评测](RESEARCH.md) · [核验记录](SOURCES.md)。独立开放模型不是 TypeSafe 官方 Jev 权重。
 
 ## 我想先理解 Jev 是什么
@@ -51,6 +51,7 @@
 | [TypeSafeAI/jev-harness](https://github.com/TypeSafeAI/jev-harness) | — | **非官方、研究阶段**提案审查契约：LLM 提议、Jev 回答四个问题、确定性代码给出判定与 receipt。仓库主体离线使用 mock；实时调用由独立宿主提供，不自动执行补丁或授予权限 |
 | [TauricResearch/TradingAgents](https://github.com/TauricResearch/TradingAgents) | — | **可选 Jev 集成**：配置 `TYPESAFE_API_KEY` 后，Sentiment Analyst 过滤 StockTwits / Reddit 帖文并汇总立场；无密钥时帖文不经筛选直接通过。整个交易框架并非 Jev 专属 |
 | [szczyglis-dev/py-gpt](https://github.com/szczyglis-dev/py-gpt) | — | 桌面助手的可选 Jev / System One inline 插件；`jev_evaluate(state, questions)` 使用 `/v1/systemone`，支持 Choice / Score / Noul；2026-09-25 的 2.8.31 更新记录新增该插件 |
+| [ziyacivan/jev-mail-filter](https://github.com/ziyacivan/jev-mail-filter) | — | Gmail Apps Script：用 Jev 标注、归档、建立待办、标记可疑邮件与生成摘要；README 明确每封新邮件会向 TypeSafe 发送发件人、主题和正文前 2,000 字符，启用前应按自己的邮件数据要求审查（09-27 收录） |
 
 ## 我想给 Agent / 编程助手接上 Jev
 
@@ -70,6 +71,10 @@
 | [DevMortimer/pi-warden](https://github.com/DevMortimer/pi-warden) | 138 | 用 Jev 检查编码 Agent 的写入与项目规则（09-24 收录） |
 | [0xNatoshi/jev-codex-router](https://github.com/0xNatoshi/jev-codex-router) | 248 | 按调用选择 Codex 模型与推理深度；约 −60% 的节省来自 237 轮历史模拟，项目自述非实测账单（09-24 收录） |
 | [supercorp-ai/supercov](https://github.com/supercorp-ai/supercov) | 114 | 给编程 Agent 的测试覆盖率、安全与代码质量：Jev 检查每个源文件，Agent 就知道先修什么 |
+| [ivancasco/aidlc-plugin-jev](https://github.com/ivancasco/aidlc-plugin-jev) | — | AI-DLC 规划文档的质量 / 阻断 / 缺口三类 gate；文档拆分后再送入 Jev，阈值只在小型 fixtures 调过，阻断门槛需用团队自己的文档复核（09-27 收录） |
+| [itsmostafa/system-one-connector](https://github.com/itsmostafa/system-one-connector) | — | MIT 的 `evaluate` CLI / MCP 连接器，可为 Codex、Claude Code、Claude Desktop、Hermes 和 pi 注册 Jev 或自托管 System One 模型；09-27 的 0.4.1 将 CLI 从 `jev` 改名为 `evaluate`，旧版不能用自更新跨过这次改名，需按维护者说明重装（09-27 收录） |
+| [jkudish/jev-mcp](https://github.com/jkudish/jev-mcp) | — | MIT MCP 服务器，提供 evidence verification、页面预筛、检索重排、分类、diff review / completion gate 等 11 个工具；README 对缺失或畸形模型回答走 `invalid_response` / review 路径，具体阈值仍需按团队数据校准（09-27 收录） |
+| [MongLong0214/jev-gate](https://github.com/MongLong0214/jev-gate) | — | Claude Code 的实验性任务路由插件，公开了 V3–V5 的宿主实验记录。作者自己的 V4 小任务试验中，默认策略没有触发委派；强制委派同质检通过但成本高 38%，因此不应将其当作已证实的节省方案（09-27 收录） |
 
 ## 我想做浏览器 / 手机 / 电脑自动化
 
@@ -107,18 +112,20 @@
 | [NanmiCoder/jev-arena](https://github.com/NanmiCoder/jev-arena) | 98 | 一万条评论同批对比 Jev 与 DeepSeek；GPT 复核口径，可回放逐条核查（09-24 收录） |
 | [instax-dutta/sysone-bench](https://github.com/instax-dutta/sysone-bench) | 4 | 同输入比较 Jev、Laya、Router 与 Qwen；已读原始结果，README 的 states / decisions 口径有差异 |
 | [yibie/laya-jev-lab](https://github.com/yibie/laya-jev-lab) | 8 | 中文客服小样本、置信度与级联实验；附原始输出和撤回结论 |
+| [beese54/jev-ticket-triage](https://github.com/beese54/jev-ticket-triage) | — | 770 条 Banking77 与 150 条人工复核工单的 Jev / 两个 LLM 对比；仓库公开条件、图表与仪表盘。数字均为作者报告，数据标签与阈值处理需连同 README 一起审阅（09-27 收录） |
 | [agent-chaperone/agent-chaperone](https://github.com/agent-chaperone/agent-chaperone) | 20 | MCP 代理和工具 hooks 审查；默认 shadow，仅记录，不能替代沙箱 |
 | [JacobLinCool/jev-paper-judge](https://github.com/JacobLinCool/jev-paper-judge) | 1 | 评价论文表达清晰度与完整性，不验证科学结论是否正确 |
 | [ourines/hermes-jev](https://github.com/ourines/hermes-jev) | 2 | 为 Hermes 提供显式 Jev 决策工具，支持 TypeSafe / Cloudflare |
 | [ZF-Utokyo/Jev-Benchmark](https://github.com/ZF-Utokyo/Jev-Benchmark) | — | ContractNLI 法律合同推断：Jev 1.13 与九个语言模型；仓库有 123 份测试合同、30 个固定锚点、原始预测、适配器与 4,830 次尝试记录；具体结论见[论文](https://arxiv.org/abs/2609.27678) |
 | [sumleo/RLCDAlignBench](https://github.com/sumleo/RLCDAlignBench) | — | Jev 对齐失效检测研究：十类失效、44 个基准、五个小型目标模型；[数据集](https://huggingface.co/datasets/sumleo/RLCDAlignBench)需申请访问，标签主要来自基准自带评判器；见[论文](https://arxiv.org/abs/2609.29429) |
 | [get-convex/convex-evals](https://github.com/get-convex/convex-evals) | — | Convex 编码知识的**独立决策基准**，108 道选择题、三种选项排列；Jev 通过 OpenRouter 的 `/api/alpha/decisions` 调用，保存概率、置信度与提供商成本；不等于整个编码评测框架使用 Jev |
+| [jev-ids/jev-ids](https://github.com/jev-ids/jev-ids) | — | MIT 的入侵检测研究原型，公开 NSL-KDD 2,000 flow、三随机种子、Jev / Gemini / Random Forest / Isolation Forest 的代码与原始结果。作者报告 Jev 在 k=1 时 F1 低于 Gemini、zero-day recall 更高；只适用于该数据集与异步侧路，不能当作生产入侵防护结论（09-27 收录） |
 
 这些是工具或实验仓库，**不是 Jev 的学术论文**。方法和局限见 [RESEARCH.md](RESEARCH.md)。
 
 ## 我想读 2026-09 的 Jev 论文
 
-Jev 发布 4 天后 arXiv 开始出现相关论文；截至 09-22 的历史批次有 13 篇，09-23 / 09-24 另核验 8 篇（逐篇条目见 [RESEARCH.md](RESEARCH.md)）。以下 5 篇早期论文公开了配套仓库；仓库链接已核对元数据，代码未经本仓库审计。
+Jev 发布 4 天后 arXiv 开始出现相关论文；截至 09-22 的历史批次有 13 篇，09-23 / 09-24 另核验 11 篇（逐篇条目见 [RESEARCH.md](RESEARCH.md)）。以下 5 篇早期论文公开了配套仓库；仓库链接已核对元数据，代码未经本仓库审计。
 
 | 论文（首发） | ★ | 配套仓库与说明 |
 |---|---|---|
