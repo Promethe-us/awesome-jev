@@ -113,7 +113,67 @@ Jev 于 09-15 发布；09-19（4 天后）第一批论文挂上 arXiv，至 09-2
 
 **实验与产品发布分开看**：[09-21 的 LangSmith 公告](https://www.langchain.com/blog/jev-is-now-available-in-langsmith-evals)新增可直接配置的 Jev 评估器；它引用了上面的五轨迹实验，并不是一个新的独立准确率验证。
 
-## 5. 正确理解概率与已知不足
+## 5. 🔬 当前值得关注的研究问题
+
+下面的问题比继续增加应用清单更能检验 Jev / System One decision model 的实际边界。它们是研究议程，不是本仓库已经验证的结论。
+
+### 5.1 Calibration
+
+- Jev 返回的 probability 在具体任务上是否 calibrated？Choice / Score 的 `confidence` 与 correctness 有什么稳定关系？
+- ECE、Brier score、reliability curve 是否会随 domain、语言、类别不平衡和 OOD 输入明显变化？中文和多语言应单独报告。
+- 一个任务上选出的 threshold 能否迁移到另一任务、另一种 question wording 或新版本模型？重校准需要多少独立标注？
+
+API 返回概率只提供了做校准研究的条件，并不证明概率已经等于业务正确率。事故叙述编码论文报告了模型特定的重校准收益，而 CSS 横评也发现某些任务会出现高 confidence、低 accuracy；两者都支持按 domain 单独审计。
+
+### 5.2 Candidate / option sensitivity
+
+- option name、description wording 与 option ordering 各自会造成多大偏差？
+- label permutation、同义改写或将语义标签换成中性 ID 时，decision 是否 reversal？
+- 候选数量、相近选项和 rubric 冲突是否放大这种敏感性？
+
+[Type-Safe Is Not Error-Free](https://arxiv.org/abs/2609.26758) 已对选项名与 rubric 绑定做了受控实验；后续需要跨领域、跨语言、跨模型版本复现，并把类型正确率与语义正确率分开报告。
+
+### 5.3 Selective prediction / escalation
+
+比“Jev 是否应单独使用”更实际的问题是何时接受、何时升级：
+
+```text
+Jev
+ |
+ +-- confidence high --> accept under application policy
+ |
+ +-- confidence low ---> strong LLM / human review
+```
+
+需要研究 threshold 的选择、accuracy-cost frontier、escalation rate、不同错误成本下的策略，以及 Jev + LLM cascade 是否优于单独 LLM 或更便宜的生成式 cascade。[REFLEX](https://arxiv.org/abs/2609.26532) 与 [JEV-as-a-Judge](https://arxiv.org/abs/2609.26550) 给出了初步协议和作者结果，但收益边界依赖任务、动作集、回退模型和标签质量。
+
+### 5.4 Distribution shift
+
+- domain shift 后的 probability 与 threshold 是否仍可靠？
+- OOD 输入会表现为低 confidence，还是可能自信地选错？
+- training distribution 外的 typed decision 在语言、格式和类别变化下是否稳定？
+- prompt injection、无关上下文和其他 adversarial input 如何影响选择与概率？
+
+研究应同时报告 OOD detection、校准、错误类型和拒绝覆盖率，而不是只报告类型合法率。类型合法并不意味着分布外判断可靠。
+
+### 5.5 Multi-question interaction
+
+Jev 的接口支持 shared state + multiple questions；TypeSafe / Gateway 文档将其描述为一次请求中的并行判断。仍值得用受控实验核验：
+
+- question 数量增加时 latency、token usage 与失败率如何变化？
+- question wording、排列或加入无关问题，是否影响其他 question 的概率与选择？
+- shared context 是否产生 cross-question interference？
+- parallel decisions 的逐题与联合 calibration 是否稳定，业务不变量能否保持？
+
+官方已知不足已经提醒跨问题结果未必满足预期恒等式。因此测试不应只看单题准确率，还应记录整组 schema 的一致性。
+
+### 5.6 Long-horizon agents
+
+Jev 的单步 decision 快，不代表 long-horizon agent 自动稳定。值得分别测量 repeated decision error accumulation、stopping error、routing error、memory selection error、错误后的 recovery、uncertainty accumulation，以及 history / state representation 对后续决策的影响。
+
+单步准确率即使很高，也不能直接推出几十步 trajectory 的任务成功率。研究应报告完整轨迹、失败首次出现的位置、可恢复与不可恢复错误、重试次数、升级率和最终任务结果，而不是把独立单步指标当成长程成功率。
+
+## 6. 正确理解概率与已知不足
 
 [官方 Confidence 文档](https://docs.typesafe.ai/confidence)说明：Choice / Score 的 `confidence` 根据返回概率分布计算，概括分布集中程度；它不是单独向模型询问“你有多确定”的自由文本自评。**Noul 不返回独立的 `confidence`。** 高集中度也不自动证明现实任务上的高正确率。
 
@@ -121,7 +181,7 @@ Jev 于 09-15 发布；09-19（4 天后）第一批论文挂上 arXiv，至 09-2
 
 “输出类型受约束”只缩小了答案空间，仍可能选错、受提示注入影响或遗漏关键上下文。把算术、时间比较、动作权限和业务不变量交给确定性代码；模型负责无法轻易写成规则的窄范围语义判断。
 
-## 6. 复核新评测时至少记录这些信息
+## 7. 复核新评测时至少记录这些信息
 
 1. **数据**：独立样本数、语言、类别分布、标注人 / 模型裁判、训练与测试划分。
 2. **版本**：实际响应的模型 ID、SDK 版本、提示词和候选项；保留选项排列。

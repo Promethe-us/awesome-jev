@@ -1,8 +1,8 @@
-# Jev on Robotis / Robotics
+# Jev in Robotics
 
 **Language / 语言: [简体中文](ROBOTICS.md) · English**
 
-> Verified through **2026-09-27 (Asia/Shanghai)**. This page collects public Jev projects involving robots or embodied systems. “Robotis” remains the requested search term; it is **not** evidence of a Jev integration by the ROBOTIS brand.
+> Verified through **2026-09-27 (Asia/Shanghai)**. This page primarily covers robotics systems; most public entries are simulations, prototypes, or author experiments. We also searched separately for the **ROBOTIS** brand and platform and found no verifiable official Jev integration. `ROBOTIS` and the general field of `robotics` are not interchangeable terms.
 
 ## The short version
 
@@ -15,6 +15,68 @@ sensors / vision -> state estimation -> Jev: bounded judgment -> registered skil
 ```
 
 When observations are stale, confidence is low, measurements conflict, or the outcome affects people or equipment, deterministic code should reject, hold, slow down, or escalate. Jev `confidence` is not the probability an action succeeds; calibrate thresholds on separate records. [Known limitations](https://docs.typesafe.ai/model-jaggedness/jev-1.13) · [Confidence](https://docs.typesafe.ai/confidence)
+
+## Three typical roles for Jev in robotics
+
+### 1. High-level task / skill decision
+
+```text
+Observation
+    |
+    v
+VLM / State Representation
+    |
+    v
+Jev
+    |
+    v
+Skill / Subtask
+    |
+    v
+Robot Policy / Controller
+```
+
+Jev can select a registered, auditable skill such as `grasp`, `move`, or `place`; choose the next task stage, object, or target; or assess whether a subtask is complete. This is a discrete, high-level semantic decision. The robot policy or controller still converts the selected objective into trajectories, joint commands, and actuator behavior.
+
+### 2. Safety / verification gate
+
+```text
+Policy / Agent proposal
+          |
+          v
+         Jev
+ approve / retry / fallback / reject
+          |
+          v
+Robot Controller
+```
+
+Such a gate can assess whether a proposal meets task constraints, whether an outcome needs a retry, when to fall back, or when to request human intervention. It is a semantic signal for system policy. It **cannot replace collision checking, motion-planning safety, hard safety constraints, emergency stops, or robot-controller safety**; deterministic safety layers must retain final execution authority.
+
+### 3. Perception + Jev hybrid pipeline
+
+```text
+Image / Video / Sensor
+          |
+          v
+ VLM / Perception Model
+          |
+          v
+ textual / structured state
+          |
+          v
+         Jev
+          |
+          v
+    typed decision
+          |
+          v
+ policy / controller
+```
+
+According to the [TypeSafe model documentation](https://docs.typesafe.ai/models) at this audit point, official Jev accepts textual state as a string, JSON object, or text array and does not directly accept image, audio, or video input. A perception model should first convert sensor input into textual or structured state. Visual Jev, OneJev, OmniJev, LLM2Jev, and similar work are papers or community multimodal Jev-like implementations; they are not evidence that official Jev supports image or video input.
+
+> **High-level decision is not low-level policy.** Jev fits `state -> discrete decision`; a robot policy fits `observation -> continuous action`. A typical hybrid is `observation -> perception / VLM -> Jev high-level decision -> VLA / policy -> continuous action`. Jev should not currently be described as directly predicting continuous 6-DoF actions, joint positions, joint velocities, torques, or high-frequency motor commands.
 
 ## Reading labels
 

@@ -1,6 +1,6 @@
 # Sources and verification log
 
-> Initial audit: 2026-09-22; full link audit: 2026-09-24; **incremental source check: 2026-09-26**. The README badge still denotes the last full audit, not a recheck of every older link this round.
+> Initial audit: 2026-09-22; full link audit: 2026-09-24; **incremental source checks through 2026-09-28**. The README badge denotes the latest targeted verification date, not a recheck of every older link this round.
 > [English README](../README_EN.md) · [Catalog](CATALOG_EN.md) · [Research and evaluations](RESEARCH_EN.md) · [Getting started](INSTALLATION_EN.md) · [中文原文](SOURCES.md)
 
 ## Coverage and evidence levels
@@ -27,6 +27,8 @@ Main entries prefer official pages, authors' original posts, primary papers, and
 | No waitlist and starting credit | [Official access announcement](https://x.com/typesafeai/status/2101786156572823624), [same-thread credit reply](https://x.com/typesafeai/status/2101786280946499671) |
 | Python and JS usage | [Python changelog](https://docs.typesafe.ai/sdk/python/changelog), [JS SDK](https://docs.typesafe.ai/sdk/javascript); added 0.7.1, breaking changes, and distinct package name |
 | Vercel integration and temporary offer | [September 16 integration announcement](https://vercel.com/changelog/typesafe-ai-jev-now-available-on-ai-gateway), [September 19 original promotion](https://x.com/vercel_dev/status/2101116818463281579); no inferred cutoff time zone or unpublished account terms |
+| Vercel Evaluation / TypeSafe-compatible API (targeted check, 09-28) | [Evaluation](https://vercel.com/docs/ai-gateway/modalities/evaluation) confirms AI SDK 7, `POST /v1/evaluate`, and the TypeSafe-compatible API; [TypeSafe API](https://vercel.com/docs/ai-gateway/sdks-and-apis/typesafe) confirms that an existing TypeSafe client can change its base URL while retaining the Noul schema. The [model page](https://vercel.com/ai-gateway/models/jev) no longer showed the earlier Free state on 09-28 |
+| TanStack AI Evaluate (targeted check, 09-28) | [Evaluate](https://tanstack.com/ai/latest/docs/evaluate/evaluate) and the [TypeSafe adapter](https://tanstack.com/ai/latest/docs/adapters/typesafe) confirm `decide()`, Choice / Score / Boolean, and decider adapters for TypeSafe, Vercel AI Gateway, Cloudflare, and OpenRouter. A shared abstraction is not treated as evidence that provider APIs are fully equivalent |
 | Cloudflare / OpenRouter | [Cloudflare model page](https://developers.cloudflare.com/ai/models/typesafe/jev/), [OpenRouter model page](https://openrouter.ai/typesafe/jev-1.13), and [official beta announcement](https://x.com/OpenRouter/status/2100744709589316009) |
 | LangSmith Evals / Gateway | [September 21 product announcement](https://www.langchain.com/blog/jev-is-now-available-in-langsmith-evals), [decision-model docs](https://docs.langchain.com/langsmith/llm-gateway-decision-models); distinguished bring-your-own-key Jev from hosted SemIf and its September 28 promotion with region / plan restrictions |
 | Service incidents | [Official status page](https://status.typesafe.ai/); the September 20 Console incident was marked resolved at 08:16 UTC on September 21, and the September 21 API incident at 23:40 UTC. On rereading, the page showed an update timestamp of 07:28 UTC on September 22 and the service online |

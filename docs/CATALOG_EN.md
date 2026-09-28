@@ -34,6 +34,7 @@ For direct TypeSafe access and the Vercel, Cloudflare, OpenRouter, and LangSmith
 | [Rig TypeSafe Jev integration](https://github.com/0xPlaygrounds/rig) | Rig's main repository lists `rig-typesafeai` and explicitly calls its typed judgments **experimental** |
 | [Ax TypeSafe integration](https://github.com/ax-llm/ax/blob/main/website/content/_index.md) | Ax's own docs describe Boolean / class outputs and a native client for scores and probabilities. Free-form text is not a native Jev output |
 | [Vercel Connect: Jev](https://vercel.com/connect/jev) · [eve evaluation guide](https://github.com/vercel/eve/blob/main/docs/guides/evaluate.md) | Vercel Connect scopes credentials to projects and environments with OIDC; eve's `auto` and `evaluate` default to `typesafe-ai/jev` on AI Gateway |
+| [TanStack AI Evaluate](https://tanstack.com/ai/latest/docs/evaluate/evaluate) · [TypeSafe adapter](https://tanstack.com/ai/latest/docs/adapters/typesafe) | TanStack documents `decide()` with `choice()` / `score()` / `boolean()`. Its listed decider adapters cover TypeSafe `jev-latest`, Vercel AI Gateway `typesafe-ai/jev`, Cloudflare `typesafe/jev`, and OpenRouter `~typesafe/jev-latest`. They share TanStack's calling abstraction, but authentication, model identifiers, provider metadata, and gateway behavior still require provider-specific checks; this is not a claim of complete API equivalence |
 
 ## I want to make my first call
 

@@ -2,7 +2,7 @@
 
 **语言 / Language: 简体中文 · [English](SOURCES_EN.md)**
 
-> 2026-09-22 初次核验；2026-09-24 完成全库链接核查；**2026-09-26 增量核验**新增来源。README 徽章中的 09-24 仍表示上次全库核验，不表示本轮重查了全部旧链接。
+> 2026-09-22 初次核验；2026-09-24 完成全库链接核查；**增量核验至 2026-09-28**。README 徽章表示最新定向核验日期，不表示本轮重查了全部旧链接。
 > 返回 [README](../README.md) · [项目目录](CATALOG.md) · [论文与评测](RESEARCH.md) · [安装指南](INSTALLATION.md)
 
 ## 覆盖范围与证据等级
@@ -29,6 +29,8 @@
 | 不再需要候补名单、起始额度 | [官方开放公告](https://x.com/typesafeai/status/2101786156572823624)、[同线程额度回复](https://x.com/typesafeai/status/2101786280946499671) |
 | Python 与 JS 使用方式 | [Python changelog](https://docs.typesafe.ai/sdk/python/changelog)、[JS SDK](https://docs.typesafe.ai/sdk/javascript)；补充 0.7.1、破坏性变化和独立包名 |
 | Vercel 接入与限时活动 | [09-16 接入公告](https://vercel.com/changelog/typesafe-ai-jev-now-available-on-ai-gateway)、[09-19 活动原帖](https://x.com/vercel_dev/status/2101116818463281579)；不推断未公布的截止时区或账户条件 |
+| Vercel Evaluation / TypeSafe-compatible API（09-28 定向复查） | [Evaluation](https://vercel.com/docs/ai-gateway/modalities/evaluation)确认 AI SDK 7、`POST /v1/evaluate` 与 TypeSafe-compatible API 三种入口；[TypeSafe API](https://vercel.com/docs/ai-gateway/sdks-and-apis/typesafe)确认现有 TypeSafe client 可更换 base URL，并保留 Noul schema。09-28 的[模型页](https://vercel.com/ai-gateway/models/jev)已不再显示此前 Free 状态 |
+| TanStack AI Evaluate（09-28 定向复查） | [Evaluate](https://tanstack.com/ai/latest/docs/evaluate/evaluate)与 [TypeSafe adapter](https://tanstack.com/ai/latest/docs/adapters/typesafe)确认 `decide()`、Choice / Score / Boolean，以及 TypeSafe、Vercel AI Gateway、Cloudflare、OpenRouter 四个 decider adapter；共享抽象不作为 provider API 完全等价的证据 |
 | Cloudflare / OpenRouter | [Cloudflare 模型页](https://developers.cloudflare.com/ai/models/typesafe/jev/)、[OpenRouter 模型页](https://openrouter.ai/typesafe/jev-1.13)及[官方 beta 公告](https://x.com/OpenRouter/status/2100744709589316009) |
 | LangSmith Evals / Gateway | [09-21 产品公告](https://www.langchain.com/blog/jev-is-now-available-in-langsmith-evals)、[Decision models 文档](https://docs.langchain.com/langsmith/llm-gateway-decision-models)；区分 Jev BYOK、托管 SemIf 及其 09-28 免费期限与地区 / 计划限制 |
 | 服务事件 | [官方状态页](https://status.typesafe.ai/)；09-20 Console 事件在 09-21 08:16 UTC 标为恢复，09-21 API 事件在 23:40 UTC 标为恢复；复读时页面更新标记为 09-22 07:28 UTC，显示服务在线 |
