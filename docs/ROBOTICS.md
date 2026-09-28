@@ -1,8 +1,8 @@
-# Jev on Robotis / Robotics
+# Jev in Robotics（机器人系统）
 
 **语言 / Language: 简体中文 · [English](ROBOTICS_EN.md)**
 
-> 核验至 **2026-09-27（Asia/Shanghai）**。本页收录的是 Jev 参与机器人或具身系统的公开项目；它们多数是仿真、原型或作者实验。这里的“Robotis”保留为发起检索时的关键词，**不是** ROBOTIS 品牌已接入 Jev 的证明。
+> 核验至 **2026-09-27（Asia/Shanghai）**。本页主要讨论 robotics（机器人）场景，收录的公开项目多数是仿真、原型或作者实验。我们也单独检索了 **ROBOTIS** 品牌 / 平台，目前未发现可核验的官方 Jev 集成；`ROBOTIS` 与泛指机器人领域的 `robotics` 不是一回事。
 
 ## 先说结论
 
@@ -17,6 +17,68 @@ Jev 在机器人系统里适合放在低频、可枚举的语义判断环节：�
 ```
 
 当状态过期、低置信度、观测互相矛盾或涉及碰撞、人身与设备风险时，确定性安全层应拒绝、保持、降速或转人工。Jev 的 `confidence` 不是动作成功概率，阈值要在单独的验证记录上校准。[官方限制](https://docs.typesafe.ai/model-jaggedness/jev-1.13) · [Confidence](https://docs.typesafe.ai/confidence)
+
+## Jev 在 Robotics 中的三种典型角色
+
+### 1. High-level task / skill decision
+
+```text
+Observation
+    |
+    v
+VLM / State Representation
+    |
+    v
+Jev
+    |
+    v
+Skill / Subtask
+    |
+    v
+Robot Policy / Controller
+```
+
+Jev 可以从已注册、可审计的候选中选择 `grasp` / `move` / `place` 等 skill，选择下一阶段任务、object / target，或判断 subtask 是否完成。它负责的是离散、高层、semantic decision；真正把目标变成轨迹、关节或执行器命令的是 robot policy / controller。
+
+### 2. Safety / verification gate
+
+```text
+Policy / Agent proposal
+          |
+          v
+         Jev
+ approve / retry / fallback / reject
+          |
+          v
+Robot Controller
+```
+
+这种 gate 可以判断提案是否满足任务约束、结果是否需要 retry、何时 fallback 或请求 human intervention。它是供系统策略使用的语义判断，**不能替代 collision checking、motion-planning safety、hard safety constraints、emergency stop 或 robot-controller safety**；最终允许执行的权力必须留在确定性安全层。
+
+### 3. Perception + Jev hybrid pipeline
+
+```text
+Image / Video / Sensor
+          |
+          v
+ VLM / Perception Model
+          |
+          v
+ textual / structured state
+          |
+          v
+         Jev
+          |
+          v
+    typed decision
+          |
+          v
+ policy / controller
+```
+
+按本页核验时的 [TypeSafe 模型文档](https://docs.typesafe.ai/models)，官方 Jev 接收文本状态（字符串、JSON 对象或文本数组），不直接接收图片、音频或视频。因此视觉 / 传感器输入应先由感知模型转换成文本或结构化状态。Visual Jev、OneJev、OmniJev、LLM2Jev 等属于论文或社区的 multimodal Jev-like implementation，不能据此写成“官方 Jev 支持 image / video input”。
+
+> **High-level decision 不是 low-level policy。** Jev 最自然的是 `state -> discrete decision`；robot policy 是 `observation -> continuous action`。一个混合系统通常是 `observation -> perception / VLM -> Jev high-level decision -> VLA / policy -> continuous action`。当前不应把 Jev 描述成直接预测 continuous 6-DoF action、joint position、joint velocity、torque 或 high-frequency motor command 的模型。
 
 ## 收录状态
 

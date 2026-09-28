@@ -9,7 +9,7 @@
 
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Updated](https://img.shields.io/badge/Verified-2026--09--27-38bdf8)](docs/SOURCES.md)
+[![Updated](https://img.shields.io/badge/Verified-2026--09--28-38bdf8)](docs/SOURCES.md)
 
 **精选 Jev / System One 官方资料、社区实践与研究阅读**<br>
 **A source-backed collection of Jev resources, community projects, and research.**
@@ -26,12 +26,14 @@
 
 </div>
 
-> 社区整理，与 TypeSafe AI 官方无关。**全库基线核验：2026-09-24；增量复查至 2026-09-27（Asia/Shanghai）**。来源可读取不等于性能已被本仓库复现；覆盖范围与访问限制见 [核验记录](docs/SOURCES.md)。
+> 社区整理，与 TypeSafe AI 官方无关。**全库基线核验：2026-09-24；增量复查至 2026-09-28（Asia/Shanghai）**。来源可读取不等于性能已被本仓库复现；覆盖范围与访问限制见 [核验记录](docs/SOURCES.md)。
 
 ## 📑 目录
 
 - [最新变化](#latest)
 - [30 秒了解 Jev](#overview)
+- [Jev 在 Agent Loop 中的位置](#agent-loop)
+- [Jev 接入方式速查](#integration-matrix)
 - [时间线](#timeline)
 - [网页导航、手把手 Jev 与 Robotics](#web-guide)
 - [官方资源与接入](#official)
@@ -45,7 +47,7 @@
 - [贡献](#contributing)
 
 <a id="latest"></a>
-## 🆕 最新变化（增量核验至 2026-09-27）
+## 🆕 最新变化（增量核验至 2026-09-28）
 
 | 变化 | 对使用者的意义 | 一手来源 |
 |---|---|---|
@@ -53,11 +55,12 @@
 | **09-27 网页导航与专题** | 新增 GitHub Pages 导航站、手把手 Jev 与 Robotics 专题；Robotis 仍是检索词，未发现可核验的 ROBOTIS 品牌集成 | [网页导航站](https://promethe-us.github.io/awesome-jev/) · [手把手 Jev](docs/HANDS_ON.md) · [Robotics](docs/ROBOTICS.md) |
 | **09-27 平台线索复查** | 以公开 X 索引发现线索后，再逐项读取 GitHub 元数据、README 和许可证；新增 MCP、连接器、路由与 IDS 项目，并保留作者实验边界 | [完整目录](docs/CATALOG.md) · [来源核验](docs/SOURCES.md) |
 | **框架与接入更新** | Composio 的 Python / TypeScript 适配器、Rig 的实验性 Rust 适配器、Ax 的 TypeSafe 接入、Pydantic Evals 与 Gateway、Vercel Connect / eve 均有第一方说明 | [完整目录](docs/CATALOG.md) · [Pydantic Gateway](https://pydantic.dev/articles/jev-pydantic-ai-gateway) |
+| **Vercel Gateway 接口补全** | Vercel 现已正式记录 AI SDK 7 `experimental_evaluate`、`POST /v1/evaluate`，以及可让现有 TypeSafe client 仅更换 base URL 的兼容 API；三种接口的字段名并不完全相同 | [Evaluation](https://vercel.com/docs/ai-gateway/modalities/evaluation) · [TypeSafe-compatible API](https://vercel.com/docs/ai-gateway/sdks-and-apis/typesafe) |
 | **第二轮社区增补（09-24）** | 新增独立评测（[jev-benchmarks](https://github.com/AbdelStark/jev-benchmarks)、[jev-arena](https://github.com/NanmiCoder/jev-arena)、[腾讯云 ADP 博客](https://adp.tencent.com/zh/blog/jev-vs-general-llm-automated-decision-selection)、[硅星人Pro 实测](https://www.huxiu.com/article/4892583.html)）、[Pydantic AI 官方接入文档](https://pydantic.dev/docs/ai/models/typesafe/)、三个工程项目与 X / 知乎 / 小红书待核验线索 | [评测页](docs/RESEARCH.md) · [核验记录](docs/SOURCES.md) |
 | **arXiv 出现 13 篇 Jev 相关论文** | 09-19（发布后 4 天）起挂出，至 09-22 共 13 篇，其中 09-21 一天 6 篇：首批应用、Agent 记忆 / Judge / 视觉（“Jev-Anything”）、开源平替与失效分析；数字均为作者报告 | [论文区](#papers) · [PaperWeekly 中文盘点，09-23](https://mp.weixin.qq.com/s/kK3du8zji4fa_9chnBl7Dw) |
 | **已取消候补名单** | 官方于 09-20 21:30 UTC（北京时间 09-21 05:30）宣布向所有用户开放；直接前往 Console | [官方 X 公告](https://x.com/typesafeai/status/2101786156572823624) |
 | **新用户起始 $5 额度** | 官方同帖回复公布约 1.2 亿输入 token 的起始额度；不是持续免费的承诺 | [官方回复](https://x.com/typesafeai/status/2101786280946499671) |
-| **Vercel 限时免费活动的历史记录** | 官方模型页写明促销计划于 2026-09-25 结束，但 09-26 页面仍显示 Free。实际计费以账户账单为准 | [Vercel 模型页](https://vercel.com/ai-gateway/models/jev) · [接入公告](https://vercel.com/changelog/typesafe-ai-jev-now-available-on-ai-gateway) |
+| **Vercel 限时免费活动已结束** | 09-28 复查时模型页已列按输入 token 计价，不再显示此前的 Free 状态；实际费用仍以账户账单为准 | [Vercel 模型页](https://vercel.com/ai-gateway/models/jev) · [接入公告](https://vercel.com/changelog/typesafe-ai-jev-now-available-on-ai-gateway) |
 | **Python SDK v0.7.1** | 09-21 更新：提前验证 API Key，并从异常日志中排除密钥值；补充网关示例 | [官方 changelog](https://docs.typesafe.ai/sdk/python/changelog) |
 | **LangSmith 上线 Jev 评估集成** | 09-21 宣布支持 Jev-as-a-judge；Gateway 也支持自带 TypeSafe 密钥调用 Jev | [集成公告](https://www.langchain.com/blog/jev-is-now-available-in-langsmith-evals) · [Gateway 文档](https://docs.langchain.com/langsmith/llm-gateway-decision-models) |
 | **SemIf 托管限时免费** | LangSmith 提供独立开放模型 `semif-qwen3.5-4b`，免费至 09-28；限 US 组织的 Free / Developer / Plus 计划，并非 Jev 免费活动 | [官方说明](https://docs.langchain.com/langsmith/llm-gateway-decision-models) |
@@ -92,6 +95,65 @@ Jev 是 TypeSafe AI 的决策模型。程序提供文本状态和边界明确的
 `confidence` 是由概率分布计算的统计量，不是模型的自由文本自评；也不应直接当成业务正确率。输出符合类型仍可能选错。[Primitives](https://docs.typesafe.ai/primitives) · [Confidence](https://docs.typesafe.ai/confidence)
 
 名字中的 Jev 指向 William Stanley Jevons，System One 借用《思考，快与慢》的命名；这属于官方产品定位，并不构成对生物认知机制的证明。[命名说明](https://typesafe.ai/blog/introducing-system-one-models-and-jev)
+
+<a id="agent-loop"></a>
+## 🧠 Jev 在 Agent Loop 中的位置
+
+Jev 更自然的角色是 **decision layer（决策层）**，而不是替代 Generative LLM 的 **generative layer（生成层）**：生成模型提出方案、解释和候选动作，Jev 对边界明确的问题做快速的类型化判断，应用代码再执行系统策略。
+
+```text
+User / Environment
+        |
+        v
+ Generative Model
+ propose / reason
+        |
+        v
+ +-----------------+
+ |       Jev       |
+ | route / score   |
+ | verify / gate   |
+ +-----------------+
+        |
+        v
+ Application Code
+ permission / fallback / action
+        |
+        v
+ Tool / Environment
+```
+
+常见放置点包括：
+
+- **Model routing**：在事先允许的模型中，为简单任务选便宜模型，为复杂或不确定任务升级强模型。
+- **Tool approval / gating**：对 LLM / Agent 提议的工具调用做类型化判断，供策略代码参考。
+- **Stopping**：判断任务是否满足完成条件，或是否需要继续、重试、补充信息。
+- **Verification**：按明确 rubric 检查结果是否符合约束；它不能证明开放世界事实必然正确。
+- **Memory / retrieval gating**：判断哪些历史信息值得保留、检索或加入 context。
+
+Jev 返回概率与类型化 decision；真正的 **permission、authentication、sandbox、tool execution、retry、fallback 和 human-in-the-loop** 仍应由 application code / system policy 控制。Jev 可以为安全策略提供一个语义信号，但**不是 security boundary**。
+
+### 🚫 Jev 不是什么
+
+- 不是传统聊天模型或自由文本生成模型，也不是 tool executor。
+- 不是 authentication / permission system，也不是物理机器人的 safety controller。
+- typed output 不等于语义正确；probability / confidence 也不自动等于已经校准的正确率。
+
+<a id="integration-matrix"></a>
+## 🔌 Jev 接入方式速查
+
+| 技术栈 / 场景 | 接入方式 | 模型 / API 标识 | 适合什么 | 注意事项 |
+|---|---|---|---|---|
+| TypeSafe 原生 API / SDK | Python `typesafe-sdk`、JS/TS `@typesafe-ai/sdk`，或 HTTP | `jev-latest` / `jev-1.13.0`；`POST https://api.typesafe.ai/v1/systemone` | 直接使用原生 System One 请求与响应 | 原生原语是 Choice / Score / Noul；密钥、错误和版本以 [TypeSafe 文档](https://docs.typesafe.ai/api)为准 |
+| Vercel AI SDK 7 | `experimental_evaluate` 或 `gateway.evaluationModel(...)` | `typesafe-ai/jev` | TypeScript 应用中的 choice / score / boolean 评估、Gateway 日志与策略 | AI SDK 使用 `boolean` 而非原生 `noul`；需要 AI SDK 7，字段看 [Evaluation 文档](https://vercel.com/docs/ai-gateway/modalities/evaluation) |
+| Vercel AI Gateway HTTP / TypeSafe client | `POST /v1/evaluate`；或将 TypeSafe client 的 base URL 改为 `https://ai-gateway.vercel.sh/typesafe` | `typesafe-ai/jev`；兼容端点 `/typesafe/v1/systemone` | 非 AI SDK 服务、已有 TypeSafe client 迁移、Gateway 计费与观测 | `/v1/evaluate` 与 TypeSafe-compatible API 是两种 schema；不支持用普通 OpenAI-compatible chat endpoint 代替；见[兼容 API](https://vercel.com/docs/ai-gateway/sdks-and-apis/typesafe) |
+| TanStack AI | `decide()` + `choice()` / `score()` / `boolean()`；按 provider 选择 decider adapter | TypeSafe `jev-latest`；Vercel `typesafe-ai/jev`；Cloudflare `typesafe/jev`；OpenRouter `~typesafe/jev-latest` | 在同一类型化调用上切换四个已记录 adapter | adapter 可替换不代表供应商语义完全等价；认证、模型标识、响应 metadata 与网关行为分别核对；见 [TanStack Evaluate](https://tanstack.com/ai/latest/docs/evaluate/evaluate) |
+| LangChain / LangSmith | LangSmith Evals 或 Gateway System One API | Gateway `typesafe/jev-1.13.0` | Agent 轨迹评判、评估流水线、带 TypeSafe provider secret 的网关调用 | Jev-as-a-judge 仍需验证集与升级路径；不要把五条轨迹实验当通用准确率；见 [LangSmith 文档](https://docs.langchain.com/langsmith/llm-gateway-decision-models) |
+| Cloudflare | Workers AI `env.AI.run`；TanStack 可用 `cloudflareDecider()` | `typesafe/jev` | Cloudflare Worker 内的类型化决策与 Gateway 路由 | Cloudflare 的认证、上下文和计费以其模型页为准；第三方限制不自动等同 TypeSafe 直连 |
+| OpenRouter | OpenRouter 的 structured decision 接口；TanStack 可用 `openRouterDecider()` | OpenRouter 模型页列 Jev 1.13；TanStack 使用 `~typesafe/jev-latest` | 已使用 OpenRouter 凭证、希望通过统一 provider 访问 Jev 的服务 | 不要假定普通 chat-completions 请求适用；模型标识和 response schema 以 [OpenRouter 模型页](https://openrouter.ai/typesafe/jev-1.13)及所用 framework 文档为准 |
+| Vercel eve | `auto` / `evaluate` policy | 默认 `typesafe-ai/jev` | 对 tool call 做自动评估，将不确定或高风险请求交人工 | Jev 只提供评估；eve / application policy 才决定批准、拒绝或升级；见 [eve 指南](https://github.com/vercel/eve/blob/main/docs/guides/evaluate.md) |
+
+**迁移提醒：**TypeSafe 原生接口使用 Choice / Score / Noul；部分 framework / gateway 暴露 Choice / Score / Boolean 或更一般的 evaluation 抽象。迁移 provider 时重新核对 request schema、response schema、probability、confidence、threshold 与 fallback behavior，不要假设接口完全等价。
 
 <a id="timeline"></a>
 ## 🗓️ 时间线
@@ -140,13 +202,7 @@ Jev 是 TypeSafe AI 的决策模型。程序提供文本状态和边界明确的
 | [Workflow evals](https://evals.typesafe.ai/) · [状态页](https://status.typesafe.ai/) | 厂商实验与服务事件 |
 | [官方 X](https://x.com/typesafeai) · [Discord](https://discord.gg/typesafe) | 公告与社区交流 |
 
-| 接入渠道 | 已核验的入口 / 标识 | 注意事项 |
-|---|---|---|
-| TypeSafe 直连 | `POST https://api.typesafe.ai/v1/systemone`；`jev-1.13.0` / `jev-latest` | 原生 Choice / Score / Noul；[安装指南](docs/INSTALLATION.md) |
-| Vercel AI Gateway | `typesafe-ai/jev`；AI SDK 的 `experimental_evaluate` | 实验 API 中使用 Boolean 等类型；不要直接混用原生 Noul 请求；[接入公告](https://vercel.com/changelog/typesafe-ai-jev-now-available-on-ai-gateway) |
-| Cloudflare | `typesafe/jev`；官方示例使用 `env.AI.run` | 第三方模型页面列 32,000 上下文；计费查看 Cloudflare 控制台；[模型页](https://developers.cloudflare.com/ai/models/typesafe/jev/) |
-| OpenRouter | Jev 1.13 模型页与 beta 公告已确认 | 属于结构化决策接口，不能假定适用普通 chat-completions 请求；[模型页](https://openrouter.ai/typesafe/jev-1.13) · [公告](https://x.com/OpenRouter/status/2100744709589316009) |
-| LangSmith Gateway | `typesafe/jev-1.13.0`；System One API | 工作区配置 TypeSafe provider secret，客户端使用 LangSmith 密钥；与托管 SemIf 分开；[文档](https://docs.langchain.com/langsmith/llm-gateway-decision-models) |
+各渠道的模型标识、接口差异和用途已集中到上方[接入方式速查](#integration-matrix)；更完整的首次调用步骤见[安装指南](docs/INSTALLATION.md)。
 
 <a id="x"></a>
 ## 🐦 X 精选（Twitter）

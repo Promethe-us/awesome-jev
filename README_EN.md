@@ -9,7 +9,7 @@
 
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Verified](https://img.shields.io/badge/Verified-2026--09--27-38bdf8)](docs/SOURCES_EN.md)
+[![Verified](https://img.shields.io/badge/Verified-2026--09--28-38bdf8)](docs/SOURCES_EN.md)
 
 **A source-backed collection of Jev / System One resources, community projects, and research.**
 
@@ -23,12 +23,14 @@ Prefer the web guide? Click the logo below to open it.
 
 </div>
 
-> Community-maintained; not affiliated with TypeSafe AI. **Full-audit baseline: 2026-09-24; incremental review through 2026-09-27 (Asia/Shanghai).** This page distinguishes official statements, authors' experiments, and unverified leads. Being able to read a source does not mean this repository reproduced its performance claims. See the [source audit](docs/SOURCES_EN.md) for coverage and access limits.
+> Community-maintained; not affiliated with TypeSafe AI. **Full-audit baseline: 2026-09-24; incremental review through 2026-09-28 (Asia/Shanghai).** This page distinguishes official statements, authors' experiments, and unverified leads. Being able to read a source does not mean this repository reproduced its performance claims. See the [source audit](docs/SOURCES_EN.md) for coverage and access limits.
 
 ## 📑 Contents
 
 - [Latest changes](#latest)
 - [Jev in 30 seconds](#overview)
+- [Where Jev fits in an agent loop](#agent-loop)
+- [Jev integration quick reference](#integration-matrix)
 - [Timeline](#timeline)
 - [Web guide, Hands-on Jev, and Robotics](#web-guide)
 - [Official resources and access](#official)
@@ -42,7 +44,7 @@ Prefer the web guide? Click the logo below to open it.
 - [Contributing](#contributing)
 
 <a id="latest"></a>
-## 🆕 Latest changes (incrementally verified through 2026-09-27)
+## 🆕 Latest changes (incrementally verified through 2026-09-28)
 
 | Change | What it means | Primary source |
 |---|---|---|
@@ -50,11 +52,12 @@ Prefer the web guide? Click the logo below to open it.
 | **09-27 web guide and focused sections** | A GitHub Pages guide, Hands-on Jev, and a Robotics section are now available. Robotis remains a search term; no verifiable ROBOTIS-brand integration was found | [Web guide](https://promethe-us.github.io/awesome-jev/) · [Hands-on Jev](docs/HANDS_ON_EN.md) · [Robotics](docs/ROBOTICS_EN.md) |
 | **09-27 platform-lead review** | Public X indexes were used only to discover leads; each added MCP, connector, routing, or IDS project was checked against GitHub metadata, README, and license, with author-study limits retained | [Catalog](docs/CATALOG_EN.md) · [Source audit](docs/SOURCES_EN.md) |
 | **Framework and access updates** | First-party sources now document Composio's Python / TypeScript adapters, Rig's experimental Rust adapter, Ax's TypeSafe support, Pydantic Evals and Gateway, and Vercel Connect / eve | [Full catalog](docs/CATALOG_EN.md) · [Pydantic Gateway](https://pydantic.dev/articles/jev-pydantic-ai-gateway) |
+| **Expanded Vercel Gateway surfaces** | Vercel now documents AI SDK 7 `experimental_evaluate`, `POST /v1/evaluate`, and a TypeSafe-compatible API that lets an existing client migrate by changing its base URL. Their field names are not identical | [Evaluation](https://vercel.com/docs/ai-gateway/modalities/evaluation) · [TypeSafe-compatible API](https://vercel.com/docs/ai-gateway/sdks-and-apis/typesafe) |
 | **Second community increment (09-24)** | Adds independent evaluations ([jev-benchmarks](https://github.com/AbdelStark/jev-benchmarks), [jev-arena](https://github.com/NanmiCoder/jev-arena), [Tencent Cloud ADP's blog](https://adp.tencent.com/zh/blog/jev-vs-general-llm-automated-decision-selection), [Guixingren Pro's hands-on test](https://www.huxiu.com/article/4892583.html)), [Pydantic AI's official integration docs](https://pydantic.dev/docs/ai/models/typesafe/), three engineering projects, and unverified X / Zhihu / Xiaohongshu leads | [Research and evaluations](docs/RESEARCH_EN.md) · [Source audit](docs/SOURCES_EN.md) |
 | **13 Jev-related papers appeared on arXiv** | Starting September 19 (four days after launch), 13 papers had been posted by September 22, six of them on September 21 alone: first applications; agent memory, judge, and vision work (“Jev-Anything”); and open alternatives plus failure analysis. All numbers are author-reported | [Papers section](#papers) · [PaperWeekly's Chinese roundup, 09-23](https://mp.weixin.qq.com/s/kK3du8zji4fa_9chnBl7Dw) |
 | **Waitlist removed** | TypeSafe announced access for everyone at 21:30 UTC on September 20 (05:30 Beijing time on September 21); go directly to the Console | [Official X announcement](https://x.com/typesafeai/status/2101786156572823624) |
 | **$5 starting credit for new users** | An official reply described this as roughly 120 million input tokens; it is not a promise of ongoing free use | [Official reply](https://x.com/typesafeai/status/2101786280946499671) |
-| **Historical Vercel promotion** | Vercel scheduled the promotion to end on September 25, 2026, yet its model page still displayed Free on September 26. Check account billing for the applicable rate | [Vercel model page](https://vercel.com/ai-gateway/models/jev) · [Integration announcement](https://vercel.com/changelog/typesafe-ai-jev-now-available-on-ai-gateway) |
+| **Vercel promotion has ended** | On September 28 the model page listed input-token pricing and no longer showed the earlier Free state. Check account billing for the applicable charge | [Vercel model page](https://vercel.com/ai-gateway/models/jev) · [Integration announcement](https://vercel.com/changelog/typesafe-ai-jev-now-available-on-ai-gateway) |
 | **Python SDK v0.7.1** | September 21 update: earlier API key validation, no key value in exception logs, and additional gateway examples | [Official changelog](https://docs.typesafe.ai/sdk/python/changelog) |
 | **Jev evaluation integration in LangSmith** | LangSmith announced Jev-as-a-judge support on September 21; its Gateway also supports Jev with your own TypeSafe key | [Integration announcement](https://www.langchain.com/blog/jev-is-now-available-in-langsmith-evals) · [Gateway docs](https://docs.langchain.com/langsmith/llm-gateway-decision-models) |
 | **Temporary free SemIf hosting** | LangSmith's separate open model, `semif-qwen3.5-4b`, was free through September 28 for eligible US organizations on Free, Developer, or Plus plans; this was not a free Jev offer | [Official documentation](https://docs.langchain.com/langsmith/llm-gateway-decision-models) |
@@ -89,6 +92,65 @@ Model, price, budget, rate, and language information comes from [Models](https:/
 `confidence` is computed from the probability distribution, not a free-form self-assessment. It should not be treated as task accuracy either: a type-correct output can still choose the wrong answer. [Primitives](https://docs.typesafe.ai/primitives) · [Confidence](https://docs.typesafe.ai/confidence)
 
 The name Jev refers to William Stanley Jevons; System One borrows terminology from *Thinking, Fast and Slow*. This describes the company's product positioning, not proof of a biological cognitive mechanism. [Naming explanation](https://typesafe.ai/blog/introducing-system-one-models-and-jev)
+
+<a id="agent-loop"></a>
+## 🧠 Where Jev fits in an agent loop
+
+Jev fits most naturally as a **decision layer**, not as a replacement for a Generative LLM's **generative layer**. A generative model proposes plans, explanations, or candidate actions; Jev answers bounded questions with typed decisions; application code then enforces system policy.
+
+```text
+User / Environment
+        |
+        v
+ Generative Model
+ propose / reason
+        |
+        v
+ +-----------------+
+ |       Jev       |
+ | route / score   |
+ | verify / gate   |
+ +-----------------+
+        |
+        v
+ Application Code
+ permission / fallback / action
+        |
+        v
+ Tool / Environment
+```
+
+Common placements include:
+
+- **Model routing:** select a cheaper model for simple work or escalate difficult and uncertain cases within an allowed model set.
+- **Tool approval / gating:** make a typed assessment of a tool call proposed by an LLM or agent for policy code to consume.
+- **Stopping:** assess whether completion criteria are met or whether the system should continue, retry, or ask for information.
+- **Verification:** test an output against an explicit rubric; this does not prove that open-world facts are correct.
+- **Memory / retrieval gating:** decide which history should be retained, retrieved, or added to context.
+
+Jev returns probabilities and typed decisions. Actual **permission, authentication, sandboxing, tool execution, retries, fallbacks, and human-in-the-loop controls** still belong in application code and system policy. Jev may supply a semantic signal to a safety policy, but it is **not a security boundary**.
+
+### 🚫 What Jev is not
+
+- It is not a conventional chat model, a free-form generator, or a tool executor.
+- It is not an authentication or permission system, nor a physical-robot safety controller.
+- Typed output does not imply semantic correctness; probability or confidence does not automatically equal calibrated correctness probability.
+
+<a id="integration-matrix"></a>
+## 🔌 Jev integration quick reference
+
+| Stack / scenario | Integration | Model / API identifier | Best suited to | Caveats |
+|---|---|---|---|---|
+| Native TypeSafe API / SDK | Python `typesafe-sdk`, JS/TS `@typesafe-ai/sdk`, or HTTP | `jev-latest` / `jev-1.13.0`; `POST https://api.typesafe.ai/v1/systemone` | Native System One request and response semantics | Native primitives are Choice / Score / Noul; follow [TypeSafe docs](https://docs.typesafe.ai/api) for keys, errors, and versions |
+| Vercel AI SDK 7 | `experimental_evaluate` or `gateway.evaluationModel(...)` | `typesafe-ai/jev` | Choice / score / boolean evaluation in TypeScript with Gateway logging and policy | AI SDK calls the primitive `boolean`, not native `noul`; AI SDK 7 is required. See [Evaluation](https://vercel.com/docs/ai-gateway/modalities/evaluation) |
+| Vercel AI Gateway HTTP / TypeSafe client | `POST /v1/evaluate`, or point a TypeSafe client at `https://ai-gateway.vercel.sh/typesafe` | `typesafe-ai/jev`; compatible endpoint `/typesafe/v1/systemone` | Non-AI-SDK services, existing TypeSafe-client migration, Gateway billing and observability | `/v1/evaluate` and the TypeSafe-compatible API use different schemas; ordinary OpenAI-compatible chat endpoints do not substitute for either. See [compatible API](https://vercel.com/docs/ai-gateway/sdks-and-apis/typesafe) |
+| TanStack AI | `decide()` with `choice()` / `score()` / `boolean()` and a provider-specific decider adapter | TypeSafe `jev-latest`; Vercel `typesafe-ai/jev`; Cloudflare `typesafe/jev`; OpenRouter `~typesafe/jev-latest` | One typed calling style across four documented adapters | Swappable adapters do not make providers semantically identical; verify auth, identifiers, response metadata, and gateway behavior separately. See [TanStack Evaluate](https://tanstack.com/ai/latest/docs/evaluate/evaluate) |
+| LangChain / LangSmith | LangSmith Evals or Gateway System One API | Gateway `typesafe/jev-1.13.0` | Agent-trace judging, evaluation pipelines, and gateway calls with a TypeSafe provider secret | Jev-as-a-judge still needs validation and escalation; do not generalize the five-trace experiment. See [LangSmith docs](https://docs.langchain.com/langsmith/llm-gateway-decision-models) |
+| Cloudflare | Workers AI `env.AI.run`; TanStack can use `cloudflareDecider()` | `typesafe/jev` | Typed decisions in a Worker and Cloudflare Gateway routing | Check Cloudflare's own model page for authentication, context, and billing; third-party limits need not match direct TypeSafe access |
+| OpenRouter | OpenRouter's structured-decision interface; TanStack can use `openRouterDecider()` | The OpenRouter model page lists Jev 1.13; TanStack uses `~typesafe/jev-latest` | Services already using OpenRouter credentials that want Jev through a unified provider | Do not assume ordinary chat-completions requests apply; verify identifiers and response schema against the [OpenRouter model page](https://openrouter.ai/typesafe/jev-1.13) and the framework in use |
+| Vercel eve | `auto` / `evaluate` policy | Defaults to `typesafe-ai/jev` | Evaluating tool calls and escalating uncertain or high-risk requests to a person | Jev supplies the assessment; eve or application policy decides whether to approve, reject, or escalate. See the [eve guide](https://github.com/vercel/eve/blob/main/docs/guides/evaluate.md) |
+
+**Migration note:** Native TypeSafe uses Choice / Score / Noul, while frameworks and gateways may expose Choice / Score / Boolean or a broader evaluation abstraction. Recheck the request schema, response schema, probability, confidence, threshold, and fallback behavior whenever changing provider; do not assume API equivalence.
 
 <a id="timeline"></a>
 ## 🗓️ Timeline
@@ -137,13 +199,7 @@ The name Jev refers to William Stanley Jevons; System One borrows terminology fr
 | [Workflow evals](https://evals.typesafe.ai/) · [status page](https://status.typesafe.ai/) | Vendor experiments and service incidents |
 | [Official X](https://x.com/typesafeai) · [Discord](https://discord.gg/typesafe) | Announcements and community discussion |
 
-| Access channel | Verified endpoint / identifier | Notes |
-|---|---|---|
-| Direct TypeSafe API | `POST https://api.typesafe.ai/v1/systemone`; `jev-1.13.0` / `jev-latest` | Native Choice / Score / Noul; [getting started](docs/INSTALLATION_EN.md) |
-| Vercel AI Gateway | `typesafe-ai/jev`; AI SDK `experimental_evaluate` | Its experimental API uses types such as Boolean; do not mix its request shape with native Noul. [Announcement](https://vercel.com/changelog/typesafe-ai-jev-now-available-on-ai-gateway) |
-| Cloudflare | `typesafe/jev`; official example uses `env.AI.run` | Its model page listed a 32,000 context window; check Cloudflare's console for billing. [Model page](https://developers.cloudflare.com/ai/models/typesafe/jev/) |
-| OpenRouter | Jev 1.13 model page and beta announcement confirmed | This is a structured decision interface; ordinary chat-completions requests may not apply. [Model page](https://openrouter.ai/typesafe/jev-1.13) · [announcement](https://x.com/OpenRouter/status/2100744709589316009) |
-| LangSmith Gateway | `typesafe/jev-1.13.0`; System One API | Configure a TypeSafe provider secret in the workspace and use a LangSmith key in the client; distinct from hosted SemIf. [Docs](https://docs.langchain.com/langsmith/llm-gateway-decision-models) |
+Provider identifiers, interface differences, and intended uses are consolidated in the [integration quick reference](#integration-matrix) above. See the [getting-started guide](docs/INSTALLATION_EN.md) for a fuller first-call walkthrough.
 
 <a id="x"></a>
 ## 🐦 Selected X posts

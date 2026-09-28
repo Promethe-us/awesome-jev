@@ -111,7 +111,67 @@ The table summarizes authors' public material. **It does not combine different d
 
 **Separate the experiment from the product release:** The [September 21 LangSmith announcement](https://www.langchain.com/blog/jev-is-now-available-in-langsmith-evals) adds a configurable Jev evaluator and cites the five-trace experiment above. It is not a new independent accuracy validation.
 
-## 5. Probabilities and known limitations
+## 5. 🔬 Research questions worth prioritizing
+
+The questions below test the practical boundaries of Jev and System One decision models more directly than another list of applications. They are a research agenda, not findings already established by this repository.
+
+### 5.1 Calibration
+
+- Are Jev probabilities calibrated on the target workflow? What stable relationship, if any, connects Choice / Score `confidence` to correctness?
+- How do ECE, Brier score, and reliability curves change across domains, languages, class imbalance, and OOD inputs? Chinese and multilingual workloads need separate reporting.
+- Can a threshold selected for one task transfer to another task, question wording, or model version? How much independent labeled data is required for recalibration?
+
+An API that returns probabilities makes calibration research possible; it does not prove that those probabilities equal business correctness rates. The crash-narrative paper reports model-specific gains from recalibration, while the CSS benchmark finds tasks with high confidence and low accuracy. Both motivate domain-specific audits.
+
+### 5.2 Candidate / option sensitivity
+
+- How much do option names, description wording, and option ordering affect the result?
+- Do label permutations, paraphrases, or replacing semantic labels with neutral IDs reverse decisions?
+- Do larger candidate sets, near-duplicate options, and rubric conflicts amplify sensitivity?
+
+[Type-Safe Is Not Error-Free](https://arxiv.org/abs/2609.26758) provides a controlled study of option-name / rubric binding. Follow-up work should reproduce it across domains, languages, and model versions, while reporting type validity separately from semantic correctness.
+
+### 5.3 Selective prediction / escalation
+
+A more practical question than whether Jev should operate alone is when to accept and when to escalate:
+
+```text
+Jev
+ |
+ +-- confidence high --> accept under application policy
+ |
+ +-- confidence low ---> strong LLM / human review
+```
+
+Research should compare threshold selection, the accuracy-cost frontier, escalation rate, policies under asymmetric error costs, and whether a Jev + LLM cascade beats either a standalone LLM or a cheaper generative cascade. [REFLEX](https://arxiv.org/abs/2609.26532) and [JEV-as-a-Judge](https://arxiv.org/abs/2609.26550) offer initial protocols and author-reported results, but their benefit boundaries depend on the task, action set, fallback model, and label quality.
+
+### 5.4 Distribution shift
+
+- Do probabilities and thresholds remain reliable after domain shift?
+- Do OOD inputs produce low confidence, or can the model be confidently wrong?
+- Are typed decisions stable outside the training distribution when language, format, or classes change?
+- How do prompt injection, irrelevant context, and other adversarial inputs affect choices and probabilities?
+
+Studies should report OOD detection, calibration, error types, and selective coverage rather than type-validity alone. A valid output type does not establish reliable out-of-distribution behavior.
+
+### 5.5 Multi-question interaction
+
+The interface supports a shared state with multiple questions, described by TypeSafe and Gateway documentation as parallel decisions within one request. Controlled studies should still test:
+
+- How latency, token usage, and failure rate change as the question count grows.
+- Whether wording, ordering, or an irrelevant added question changes another question's probabilities or choice.
+- Whether shared context introduces cross-question interference.
+- Whether per-question and joint calibration stay stable and whether business invariants hold.
+
+The official known-limitations guide already warns that separate answers need not satisfy expected cross-question identities. Evaluation should therefore cover the consistency of a whole schema, not just isolated accuracy.
+
+### 5.6 Long-horizon agents
+
+A fast single Jev decision does not make a long-horizon agent stable. Useful studies should separate repeated-decision error accumulation, stopping error, routing error, memory-selection error, recovery after a wrong decision, uncertainty accumulation, and the effect of history / state representation on later decisions.
+
+Even high single-step accuracy does not directly imply high task success over a trajectory of dozens of steps. Report complete traces, where the first failure occurs, recoverable versus unrecoverable errors, retries, escalation rate, and final task outcomes rather than treating an isolated metric as long-horizon success.
+
+## 6. Probabilities and known limitations
 
 The [official Confidence guide](https://docs.typesafe.ai/confidence) says Choice / Score `confidence` is calculated from the returned probability distribution and summarizes its concentration. It is not an answer to a separate free-form “how sure are you?” question. **Noul returns no separate `confidence`.** A concentrated distribution does not itself prove correctness on a real task.
 
