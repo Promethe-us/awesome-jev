@@ -183,6 +183,7 @@ Jev 发布 4 天后 arXiv 开始出现相关论文；截至 09-22 的历史批�
 | [trolley 问题（在线）](https://gpu.studio/trolley) | – | “Jev 会拉拉杆吗？” |
 | [SpriteFusion 实时关卡生成](https://www.spritefusion.com/blog/generating-game-level-in-real-time-with-jev) | – | 实时生成游戏关卡 |
 | [AI Will @FinanceYF5：游戏演示（09-20）](https://x.com/financeyf5/status/2101502474691698971) | — | 多局游戏的中文分享；成本为帖子报告，未独立复现 |
+| [cwdx/1-million-emojis](https://github.com/cwdx/1-million-emojis) · [在线](https://chriswijnia.com/lab/emoji) | — | MIT 协议的共享 1,000 × 1,000 emoji 画布，人和 Jev 一起画：每画完一笔，Jev 用一次请求回答一个 Choice（笔画旁按位置命名的候选 emoji）和一个 Noul（这一笔是否是未完成的形状）；高于 0.7 时由代码补完形状，否则按概率采样；多人实时同步，无需注册（09-30 收录） |
 
 ## 我想看横向评测与冷静分析
 
