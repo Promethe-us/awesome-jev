@@ -181,6 +181,7 @@ The other eight papers (two edge / 6G orchestration, scientific decisions, REFLE
 | [Trolley problem (online)](https://gpu.studio/trolley) | — | “Will Jev pull the lever?” |
 | [SpriteFusion real-time level generation](https://www.spritefusion.com/blog/generating-game-level-in-real-time-with-jev) | — | Game-level generation in real time |
 | [AI Will @FinanceYF5 game demo (09-20)](https://x.com/financeyf5/status/2101502474691698971) | — | Chinese-language account of multi-round play; costs are the poster's report, not independently reproduced |
+| [cwdx/1-million-emojis](https://github.com/cwdx/1-million-emojis) · [online](https://chriswijnia.com/lab/emoji) | — | MIT shared 1,000 × 1,000 emoji canvas where humans paint and Jev paints alongside them: after each stroke, one Jev request answers a Choice over named emoji-and-place options and a Noul on whether the stroke is unfinished; code finishes the shape above 0.7, otherwise samples the pick from the probabilities. Realtime, no sign-up (added 09-30) |
 
 ## I want comparisons and critical analysis
 
