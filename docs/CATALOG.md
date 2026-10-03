@@ -111,6 +111,7 @@
 | [ypcypc/JEMM](https://github.com/ypcypc/JEMM) | — | Apache-2.0 多模态 Jev-like HTTP 服务：文本或最多 4 张截图、choice / noul / score，返回候选概率与 confidence；需要至少 64 GB CUDA GPU，非 TypeSafe 官方项目（09-27 收录） |
 | [TypeLLM/TypeLLM](https://github.com/TypeLLM/TypeLLM) | — | Apache-2.0 的 SGLang 类型化生成层，受 Jev 启发；支持 JSON Schema、图像输入与依赖字段。其 JevBench 195/231（无 thinking）与 228/231（thinking）是维护者在 231 个公开任务上的报告，应连同方法与逐题结果阅读（09-27 收录） |
 | [nokia-applied-research/AnyJev](https://github.com/nokia-applied-research/AnyJev) | — | Apache-2.0：把开放 LLM 的输出变成可阈值化的类型化决策；支持 vLLM 与小样本闭式 head。README 的准确率、ECE 与可自动化覆盖率均是限定 BANKING77 条件下的作者结果（09-27 收录） |
+| [SamratDuttaOfficial/WaterSheep](https://github.com/SamratDuttaOfficial/WaterSheep) | — | Apache-2.0 开源权重模型，基于 ModernBERT-base 微调：支持 noul / choice / score 以及多标签问题，每个选项都给出概率；本地 `/v1/systemone` 服务可直接用 TypeSafe 官方 Python SDK 调用，另有可在浏览器中运行的 ONNX 版本。仅支持英文；README 中的准确率与 ECE 为作者自测结果（10-04 收录） |
 
 ## 我想做评测、工具审查或论文辅助
 
