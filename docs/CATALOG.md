@@ -112,6 +112,7 @@
 | [TypeLLM/TypeLLM](https://github.com/TypeLLM/TypeLLM) | — | Apache-2.0 的 SGLang 类型化生成层，受 Jev 启发；支持 JSON Schema、图像输入与依赖字段。其 JevBench 195/231（无 thinking）与 228/231（thinking）是维护者在 231 个公开任务上的报告，应连同方法与逐题结果阅读（09-27 收录） |
 | [nokia-applied-research/AnyJev](https://github.com/nokia-applied-research/AnyJev) | — | Apache-2.0：把开放 LLM 的输出变成可阈值化的类型化决策；支持 vLLM 与小样本闭式 head。README 的准确率、ECE 与可自动化覆盖率均是限定 BANKING77 条件下的作者结果（09-27 收录） |
 | [SamratDuttaOfficial/WaterSheep](https://github.com/SamratDuttaOfficial/WaterSheep) | — | Apache-2.0 开源权重模型，基于 ModernBERT-base 微调：支持 noul / choice / score 以及多标签问题，每个选项都给出概率；本地 `/v1/systemone` 服务可直接用 TypeSafe 官方 Python SDK 调用，另有可在浏览器中运行的 ONNX 版本。仅支持英文；README 中的准确率与 ECE 为作者自测结果（10-04 收录） |
+| [zime-ai/dwight-4b](https://huggingface.co/zime-ai/dwight-4b) | — | Zime AI 发布的 Apache-2.0 开源权重模型，基于 Qwen3-4B-Instruct-2507 微调，面向销售通话转录：yes/no、choice 或 0-10 score 问题只输出一个选项 token，并给出每个选项的概率；另有模式输出带原文引用的 JSON 洞察。可用 vLLM 自托管，社区提供 GGUF 版本。仅支持英文 B2B 通话；模型卡中与 Jev 1.13 的对比为作者自测结果（10-15 收录） |
 
 ## 我想做评测、工具审查或论文辅助
 
