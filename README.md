@@ -326,6 +326,8 @@ Jev 返回概率与类型化 decision；真正的 **permission、authentication�
 
 新增研究中，[Decision Hijacking](https://arxiv.org/abs/2609.28613) 研究类型化决策受到提示注入后的概率变化；[Just Ask Jev](https://arxiv.org/abs/2609.29429) 提供对齐失效检测基准与受限访问的数据；[JEV vs. LLMs as Rubric Judges](https://arxiv.org/abs/2609.29769) 报告其任务中评判器的相关错误。另有[医疗报告](https://arxiv.org/abs/2609.27607)、[法律文档](https://arxiv.org/abs/2609.27678)、[移动操作](https://arxiv.org/abs/2609.30186)、[星际争霸控制](https://arxiv.org/abs/2609.27331)和[生态方法学](https://arxiv.org/abs/2609.30216)研究；不要把单篇实验结论推广为 Jev 的通用性能。
 
+新增视频研究：[VideoJev: System One Model for Video Understanding and Interaction](https://arxiv.org/abs/2610.18615)（Yuhan Zhu 等，2026-10-13；[代码](https://github.com/MCG-NJU/VideoJev)）将视频时序定位与多选问答统一为候选打分，在共享视频前缀上一次前向处理多个问题；这是独立的 System One 模型研究，不是 TypeSafe 官方模型或 API 集成。
+
 以下 6 篇背景研究按关联性收录，不将背景论文包装成 Jev 的训练配方：
 
 | 分类 | 原始论文 | 关系 |
