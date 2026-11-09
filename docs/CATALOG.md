@@ -37,6 +37,7 @@
 | [Ax 的 TypeSafe 接入](https://github.com/ax-llm/ax/blob/main/website/content/_index.md) | Ax 第一方文档列出 TypeSafe / Jev 的布尔与分类输出及原生评分、概率客户端；自由文本不是原生 Jev 输出 |
 | [Vercel Connect：Jev](https://vercel.com/connect/jev) · [eve 评估指南](https://github.com/vercel/eve/blob/main/docs/guides/evaluate.md) | Vercel 官方：Connect 用项目 / 环境范围和 OIDC 管理凭证；eve 的 `auto`、`evaluate` 默认使用 AI Gateway 的 `typesafe-ai/jev` |
 | [TanStack AI：Evaluate](https://tanstack.com/ai/latest/docs/evaluate/evaluate) · [TypeSafe adapter](https://tanstack.com/ai/latest/docs/adapters/typesafe) | TanStack 官方提供 `decide()` 与 `choice()` / `score()` / `boolean()`。已记录的 decider adapter 包括 TypeSafe `jev-latest`、Vercel AI Gateway `typesafe-ai/jev`、Cloudflare `typesafe/jev` 和 OpenRouter `~typesafe/jev-latest`；它们共享 TanStack 的调用抽象，但认证、模型标识、provider metadata 与网关行为仍应分别核对，不代表各 provider API 完全等价 |
+| [Buddy：Jev action](https://buddy.works/docs/integrations/typesafe) · [发布文章](https://buddy.works/blog/jev-action-typed-decisions-in-buddy-pipelines) | Buddy 官方 pipeline action，使用 TypeSafe API key。`state` 可为内联文本或 pipeline 文件系统中的文件，每个 action 提一个 `SCORE` / `CHOICE` / `BOOLEAN` 问题；结果与 confidence 写入 `BUDDY_ACTION_JEV_*` 变量，供后续 action 的触发条件使用。Buddy 用 `BOOLEAN` 而非原生 `noul`；Jev 只给判断，是否部署、通知或等待人工批准由 pipeline 决定 |
 
 ## 我想跑通第一个调用
 
